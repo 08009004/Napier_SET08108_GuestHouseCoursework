@@ -78,21 +78,21 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="26cd7c02-b8e6-480f-9c31-ee43b68088fe"
+            Id="3d29749c-a01c-428a-9bba-8c9c0ebaa039"
             isDerived="false"
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
             name="includes"
             isAbstract="false">
-            <classMoniker
-              Id="3a3f11ca-5024-47cc-908a-f6f93ba5f1d3"
-              LastKnownName="EveningMeal"
+            <interfaceMoniker
+              Id="41663005-da0d-4fef-b2b0-e17c932aaef3"
+              LastKnownName="Extra"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="51c60883-e170-4ba2-a1ef-42a351576724"
+                  Id="0977cff6-0fe7-4426-8acb-84dae0f70e38"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -104,7 +104,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="5c44b6ba-2df9-4863-a3cb-ebbd5abd3847"
+                  Id="d4e653eb-e7ed-47b2-9ef7-4054f8f0df87"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -114,13 +114,13 @@
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="78daf235-6167-4d58-b7aa-626d4a935569"
+                      Id="cc82c3bf-22b7-4ad4-9490-3283409f4327"
                       name="Lower"
                       value="0" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="8e6e3504-478f-439a-8c9a-72e41511bb7d"
+                      Id="dc7b37fb-1b84-4688-863c-61692817474e"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
@@ -129,21 +129,21 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="7cfaa218-f66b-4956-bd22-8edb40eb099f"
+            Id="4be3cead-f6a8-4bd5-8ed4-d487d609e7d4"
             isDerived="false"
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="includes"
+            name="asks for extras"
             isAbstract="false">
             <classMoniker
-              Id="aba9fa43-ee71-4174-9624-46ce416bfc27"
-              LastKnownName="Breakfast"
+              Id="dc58d788-3efc-43fe-a399-77d87c8205c6"
+              LastKnownName="ExtraFactory"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="2c2f2b26-693e-4b99-bc8b-f6a6a2f51382"
+                  Id="dbf1d520-4768-4c6b-8d47-b4bfa821c09b"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -155,78 +155,14 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="f8f7b1e7-55c0-4b1d-81ac-92cb5911ec9c"
+                  Id="49508bca-c8c6-4344-a9aa-c6e12b662ba0"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="9159b13a-4f21-4d5e-8db1-2f640b8366d7"
-                      name="Lower"
-                      value="0" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="233fa710-9709-4b65-9e74-9186e081cc37"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="09c708a4-a5a5-4c94-9072-f832732ffb23"
-            isDerived="false"
-            sourceEndRoleName=""
-            targetEndRoleName=""
-            isLeaf="false"
-            name="includes"
-            isAbstract="false">
-            <classMoniker
-              Id="5ae94f79-419e-45b6-88f2-b03b308920c2"
-              LastKnownName="CarHire"
-              LastKnownLocation="ModelingProject.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="f2c5994c-fbb5-42c4-b85b-33b7b0aa282e"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="69a2d11b-e539-4aab-8e44-96557b409125"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="b9e2888e-5de5-4cbb-ab29-6bd3281ac621"
-                      name="Lower"
-                      value="0" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="3f11d490-bb94-4957-adb8-0a1444aced8e"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -922,13 +858,39 @@
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="361c8d5f-bbf8-4f3a-9e38-fcc0d5ff93d1">
+            Id="584b1073-9103-474f-abe8-0887a70b6298">
             <interfaceMoniker
-              Id="41663005-da0d-4fef-b2b0-e17c932aaef3"
-              LastKnownName="Extra"
+              Id="6e7ad4c0-a20f-4a61-a280-c631dbac5c46"
+              LastKnownName="Meal"
               LastKnownLocation="ModelingProject.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6b0e7e2c-3d8e-4886-8f4d-ee419997c30b"
+            name="GetCost"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2f940088-46e6-40dc-8eed-7ce4a1436d23"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ba7de8c3-c6f3-47a7-a388-f92c1dc4c5c5"
+                      LastKnownName="double"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -936,7 +898,34 @@
         Id="41663005-da0d-4fef-b2b0-e17c932aaef3"
         name="Extra"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="b1d73946-a4cd-4534-92f2-18a68db6c0ac"
+            name="GetCost"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="616748f3-8b6d-4890-9aee-890f85bf2a59"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ba7de8c3-c6f3-47a7-a388-f92c1dc4c5c5"
+                      LastKnownName="double"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -947,13 +936,39 @@
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="2f56c1e0-7209-4e52-b261-10091fee4a97">
+            Id="e39aaa3e-f8bd-44fe-ae92-114c4cfbc8dc">
             <interfaceMoniker
-              Id="41663005-da0d-4fef-b2b0-e17c932aaef3"
-              LastKnownName="Extra"
+              Id="6e7ad4c0-a20f-4a61-a280-c631dbac5c46"
+              LastKnownName="Meal"
               LastKnownLocation="ModelingProject.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0829260f-5b72-448f-a18e-4a16855434cb"
+            name="GetCost"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="31a6ef2b-2554-479e-bf59-6d5f1afeffca"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ba7de8c3-c6f3-47a7-a388-f92c1dc4c5c5"
+                      LastKnownName="double"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -972,7 +987,353 @@
               LastKnownLocation="ModelingProject.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="beef4b09-ac4c-4dbb-bf08-4fbda4ca187a"
+            name="start"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c708db4e-33b4-4648-8b26-366d8cbead47"
+                LastKnownName="DateTime"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2b103d53-637f-4ba2-97b3-e0e16fa99a14"
+            name="Start"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c708db4e-33b4-4648-8b26-366d8cbead47"
+                LastKnownName="DateTime"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2dcf4a1b-e685-407b-946a-04812171cf57"
+            name="End"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c708db4e-33b4-4648-8b26-366d8cbead47"
+                LastKnownName="DateTime"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e70bc16b-8bdb-43d6-a2c4-f08d6621983d"
+            name="end"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c708db4e-33b4-4648-8b26-366d8cbead47"
+                LastKnownName="DateTime"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b3eb2788-7d0d-46c1-9402-6e27d64525d8"
+            name="driverName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="2ba2460b-ca48-406a-bd02-ce816bf083a2"
+                LastKnownName="string"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1018b6db-cfc3-48fb-9de2-3c8b0c97af58"
+            name="DriverName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="2ba2460b-ca48-406a-bd02-ce816bf083a2"
+                LastKnownName="string"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e40537c9-17ee-4227-9cf7-6b7365d39c5d"
+            name="GetCost"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bb946a6c-5ef8-47e8-b892-cdbcafe52bf2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ba7de8c3-c6f3-47a7-a388-f92c1dc4c5c5"
+                      LastKnownName="double"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dc58d788-3efc-43fe-a399-77d87c8205c6"
+        name="ExtraFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="fb507e9c-1da9-4431-9107-137ff153020f"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="creates"
+            isAbstract="false">
+            <classMoniker
+              Id="aba9fa43-ee71-4174-9624-46ce416bfc27"
+              LastKnownName="Breakfast"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7da9ff9c-be9d-4d45-99f3-802bb047b81d"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eaba71de-8814-482a-81e2-902e8b32593c"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="43061ff5-485e-415a-a0a0-c2259a34d97c"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8f547cc1-efbd-4884-9f11-747ab98770d3"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="cd57ab79-4f80-4241-8674-d42d11a5148a"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="creates"
+            isAbstract="false">
+            <classMoniker
+              Id="5ae94f79-419e-45b6-88f2-b03b308920c2"
+              LastKnownName="CarHire"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="70ccbdc1-06ea-4c8b-a061-cf2aa8ad8265"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="53503d45-e651-4756-91e1-1b57e9b3781d"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c9bb7656-a52f-44b6-ae60-46dc7b46fd30"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f91638c6-518f-4e01-aa81-f976e548ec6a"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="dec09094-ccd8-4821-b6db-d90e4071ac22"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="creates"
+            isAbstract="false">
+            <classMoniker
+              Id="3a3f11ca-5024-47cc-908a-f6f93ba5f1d3"
+              LastKnownName="EveningMeal"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1ffe56a-c37b-460f-a012-c8d6cc1cccd7"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7d49218f-6cc4-473f-9e09-2c9cc1d5d12e"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="0d9c0cb8-f8c0-4a1c-ad75-891c78f40d24"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="12e5c32e-0bba-4b27-86f6-165994d86cc7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ba7de8c3-c6f3-47a7-a388-f92c1dc4c5c5"
+        name="double" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="6e7ad4c0-a20f-4a61-a280-c631dbac5c46"
+        name="Meal"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="d4ac9203-b899-4ca3-8362-7481639f90d3"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="41663005-da0d-4fef-b2b0-e17c932aaef3"
+              LastKnownName="Extra"
+              LastKnownLocation="ModelingProject.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributes>
+          <property
+            Id="fb6f3ae3-7305-4ba1-b6c5-ff5112656204"
+            name="DietaryRequirements"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="2ba2460b-ca48-406a-bd02-ce816bf083a2"
+                LastKnownName="string"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+      </Interface>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
