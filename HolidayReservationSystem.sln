@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "HolidayReservationSystem", "HolidayReservationSystem\HolidayReservationSystem.modelproj", "{9D4EE995-6682-4F74-9F69-9807CBCB136F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{63DA71CC-1ADA-4A6E-97E2-B6CF7BA09BE4}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject", "ModelingProject\ModelingProject.modelproj", "{F5099A7F-A146-45EB-AE74-180D1C28A11D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9D4EE995-6682-4F74-9F69-9807CBCB136F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D4EE995-6682-4F74-9F69-9807CBCB136F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D4EE995-6682-4F74-9F69-9807CBCB136F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D4EE995-6682-4F74-9F69-9807CBCB136F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DA71CC-1ADA-4A6E-97E2-B6CF7BA09BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DA71CC-1ADA-4A6E-97E2-B6CF7BA09BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DA71CC-1ADA-4A6E-97E2-B6CF7BA09BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DA71CC-1ADA-4A6E-97E2-B6CF7BA09BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5099A7F-A146-45EB-AE74-180D1C28A11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5099A7F-A146-45EB-AE74-180D1C28A11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5099A7F-A146-45EB-AE74-180D1C28A11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5099A7F-A146-45EB-AE74-180D1C28A11D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
