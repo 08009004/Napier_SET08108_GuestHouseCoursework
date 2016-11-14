@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.ComponentModel;
+using System.Reflection;
+
 namespace Program
 {
     /// <summary>
@@ -23,6 +26,19 @@ namespace Program
         public MainWindow()
         {
             InitializeComponent();
+
+            CSVWriter.Persist<Person>(new Person("John", 54));
+
+            XMLWriter.Persist<Person>(new Person("John", 54));
+            XMLWriter.Persist<Person>(new Person("James", 65));
+            /*
+            List<Person> l = new List<Person>();
+            l.Add(new Person("John", 65));
+            l.Add(new Person("Joe", 65));
+            XMLWriter.Persist<List<Person>>(l);   
+            */
+
+            MessageBox.Show("XMLReader " + XMLReader.RecoverAll<Person>().ElementAt(0).ToString());
         }
     }
 }

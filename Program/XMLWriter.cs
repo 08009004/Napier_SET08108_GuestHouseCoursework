@@ -12,38 +12,29 @@ namespace Program
      * 
      * http://stackoverflow.com/questions/4123590/serialize-an-object-to-xml
      */
-    class XMLWriter
+    static class XMLWriter
     {
-        public void AlgorithmInterface<T>(T obj)
+        public static void Persist<T>(T obj)
         {
-            try
-            {
-      //          writeCVSFile(data.FlightCode, generateCSVData(data));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("An error occurred:" + e.Message);
-            }
+   //         try
+   //         {
+                writeData(@"holiday_reservation_system.xml", obj);
+   //         }
+   //         catch (Exception e)
+   //         {
+   //             Console.WriteLine("An error occurred:" + e.Message);
+   //         }
         }
         
-        private String generateXmlData<T>(T value)
+        private static void writeData<T>(String filepath, T obj)
         {
-            if (value == null) return string.Empty;  // Short circuit method if null object was passed
-            
             StringBuilder xmlData = new StringBuilder();
             XmlSerializer s = new XmlSerializer(typeof(T));
-
-            TextWriter WriteFileStream = new StreamWriter(@"h:\test.xml");
-            s.Serialize(WriteFileStream, value);
-
-            WriteFileStream.Close(); // Cleanup
-            
-            return xmlData.ToString();
-        }
-
-        private void writeXmlFile(String code, String xml)
-        {
-            System.IO.File.AppendAllText(code + ".xml", xml);
+            Console.WriteLine(filepath);
+            Console.Read();
+            TextWriter tw = new StreamWriter(filepath);
+            s.Serialize(tw, obj);
+            tw.Close(); // Cleanup
         }
     }
 }
