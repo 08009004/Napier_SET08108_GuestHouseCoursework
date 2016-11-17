@@ -47,13 +47,15 @@ namespace Program
             int l;
             List<String> separated = new List<String>();
 
-            while (personData.Length > 0)
+            while (personData.Contains(","))
             {
                 int lenght = personData.Length;
                 l = personData.IndexOf(",");
                 separated.Add(personData.Substring(0, l));
-                personData = personData.Substring(l+1, (personData.Length-l));
+                personData = personData.Substring(l+1, (personData.Length-(l+1)));
             }
+
+            separated.Add(personData);
 
             return separated;
         }
