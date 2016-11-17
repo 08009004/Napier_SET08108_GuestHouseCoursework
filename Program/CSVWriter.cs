@@ -5,61 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-using System.Reflection;
-using System.Windows;
-
 namespace Program
 {
+    /*
+     * Static utility class to persist process objects to CSV files.
+     */
     static class CSVWriter
     {
-
+        /*
+         * Selects the csv file where the data is persisted according on the
+         * type of the object passed as a parameter.
+         */
         public static void Persist<T>(T obj)
         {
-            generateCSVData<T>(obj);
-        }
-
-        private static String generateCSVData<T>(T obj)
-        {
-            StringBuilder csv = new StringBuilder();
-            listProperties<T>(obj);
-//            csv.Append("flight code, " + data.FlightCode + ", ");
-//            csv.Append("airline, " + data.Airline + ", ");
-//            csv.Append("departure, " + data.Departure + ", ");
-//            csv.Append("arrival time, " + data.ArrivalTime);
-            return csv.ToString();
-        }
-
-        private static void writeCVSFile(String code, String csv)
-        {
-            System.IO.File.AppendAllText(code + ".csv", csv);
-        }
-
-        private static List<String> listProperties<T>(T obj)
-        {
-            // http://stackoverflow.com/questions/737151/how-to-get-the-list-of-properties-of-a-class
-            /* foreach (Object o in p.GetType().GetProperties(BindingFlags.Public 
-                                                            | BindingFlags.NonPublic 
-                                                            | BindingFlags.Instance)) 
-             {
-                 MessageBox.Show(o.ToString());
-             }
-            */                                                                                              
-            // using System.ComponentModel;
-            // using  System.Reflection;
-
-            List<string> l = new List<string>();
-
-            foreach (Object o in typeof(T).GetType().GetProperties(BindingFlags.Public
-                                                            | BindingFlags.NonPublic
-                                                            | BindingFlags.Instance))
+            switch (typeof(T).Name)
             {
-                l.Add(o.ToString());
+                case "Person": 
+                    writeCSVData<T>(@"person.csv", obj);
+                    break;
             }
-
-            foreach (string s in l) MessageBox.Show(s);
-
-            return l;
         }
 
+        /*
+         * Persists obj.ToString() to the CSV file filename.
+         */
+        private static void writeCSVData<T>(String filename, T obj)
+        {
+            System.IO.File.AppendAllText(filename, obj.ToString());
+        }
     }
 }

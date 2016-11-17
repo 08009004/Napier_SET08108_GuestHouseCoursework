@@ -27,18 +27,14 @@ namespace Program
         {
             InitializeComponent();
 
-            CSVWriter.Persist<Person>(new Person("John", 54));
-
-            XMLWriter.Persist<Person>(new Person("John", 54));
-            XMLWriter.Persist<Person>(new Person("James", 65));
-            /*
+            
             List<Person> l = new List<Person>();
             l.Add(new Person("John", 65));
             l.Add(new Person("Joe", 65));
-            XMLWriter.Persist<List<Person>>(l);   
-            */
+            l.Add(new Person("Jane", 26));
+            l.Add(new Person("Nina", 40));
 
-            MessageBox.Show("XMLReader " + XMLReader.RecoverAll<Person>().ElementAt(0).ToString());
+            foreach (Person p in l) CSVWriter.Persist(p);
         }
     }
 }

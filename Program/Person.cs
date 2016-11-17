@@ -37,7 +37,10 @@ namespace Program
 
         public override String ToString()
         {
-            return "Name: " + Name + " Age: " + Age;
+            StringBuilder sb = new StringBuilder();
+            foreach (int i in list) sb.Append(i + ",");
+            sb.Length--;
+            return "Name,Age,list," + Name + "," + Age + "," + sb.ToString() + "\r\n";
         }
     }
 }
