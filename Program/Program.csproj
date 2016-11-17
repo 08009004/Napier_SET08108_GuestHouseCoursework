@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CSVReader.cs" />
     <Compile Include="CSVWriter.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="XMLReader.cs" />

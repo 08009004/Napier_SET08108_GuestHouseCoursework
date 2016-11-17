@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using System.ComponentModel;
-using System.Reflection;
 
 namespace Program
 {
@@ -34,7 +32,9 @@ namespace Program
             l.Add(new Person("Jane", 26));
             l.Add(new Person("Nina", 40));
 
-            foreach (Person p in l) CSVWriter.Persist(p);
+    //        foreach (Person p in l) CSVWriter.Persist(p);
+
+            CSVReader.Read(@"person.csv");
         }
     }
 }
