@@ -12,18 +12,23 @@ using System.Windows;  // temp (dev)
 // http://www.wpf-tutorial.com/dialogs/the-openfiledialog/
 // NOTE FOR STARTUP:
 // http://stackoverflow.com/questions/6301529/open-a-text-file-with-wpf
-//
+
+/*
+ * Static utility class, recovers objects data from CSV files.
+ */
 namespace Program
 {
     class CSVReader
     {
 
-        /*
+        /* DEPRECATED
+         * 
          * Selects and reads all persisted instances from the CSV file
          * related to the type of the object passed as a parameter, and
          * returns a list of CSV instances (as strings).
          * Returns null if the type passed as a parameter is not persisted.
          */
+        /*
         public static List<String> RecoverInstances<T>()
         {
             switch (typeof(T).Name)
@@ -34,13 +39,14 @@ namespace Program
                     return null;
             }
         }
+         */
 
         /*
          * Reads from a CSV file and returns a list of strings, each 
          * corresponding to a line from the file.
          */
         // resource: https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
-        private static List<String> read<T>(String filename)
+        public static List<String> ReadData<T>(String filename)
         {
             List<String> instances = new List<String>();
             String line;

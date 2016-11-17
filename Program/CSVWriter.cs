@@ -10,7 +10,7 @@ using System.IO;
 namespace Program
 {
     /*
-     * Static utility class to persist process objects to CSV files.
+     * Static utility class, persists process objects data to CSV files.
      */
     static class CSVWriter
     {

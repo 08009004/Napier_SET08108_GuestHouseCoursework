@@ -55,9 +55,9 @@
     </ApplicationDefinition>
     <Compile Include="CSVReader.cs" />
     <Compile Include="CSVWriter.cs" />
+    <Compile Include="DataPersistenceFacade.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="XMLReader.cs" />
-    <Compile Include="XMLWriter.cs" />
+    <Compile Include="PersonFactory.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
