@@ -17,25 +17,50 @@ namespace Program
 {
     class CSVReader
     {
+
         /*
-         * 
-         * https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
+         * Selects and reads all persisted instances from the CSV file
+         * related to the type of the object passed as a parameter, and
+         * returns a list of CSV instances (as strings).
+         * Returns null if the type passed as a parameter is not persisted.
          */
-        public static void Read(String filename)
+        public static List<String> RecoverInstances<T>()
         {
+            switch (typeof(T).Name)
+            {
+                case "Person":
+                    return read<Person>(@"person.csv");
+                default:
+                    return null;
+            }
+        }
+
+        /*
+         * Reads from a CSV file and returns a list of strings, each 
+         * corresponding to a line from the file.
+         */
+        // resource: https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
+        private static List<String> read<T>(String filename)
+        {
+            List<String> instances = new List<String>();
+            String line;
+
             try
             {   // Open the text file using a stream reader.
                 StreamReader sr = new StreamReader(filename);
-                String line = sr.ReadToEnd();
-                MessageBox.Show(line);
-                
+                line = sr.ReadLine();
+                while (line != null)
+                {
+                    instances.Add(line);
+                    line = sr.ReadLine();
+                }
             }
             catch (Exception e)
             {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
+                MessageBox.Show("ERROR: " + e.Message);
             }
 
+            return instances;
         }
     }
 }

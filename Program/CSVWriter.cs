@@ -15,8 +15,8 @@ namespace Program
     static class CSVWriter
     {
         /*
-         * Selects the csv file where the data is persisted according on the
-         * type of the object passed as a parameter.
+         * Selects and writes to the CSV file related to the type
+         * of the object passed as a parameter.
          */
         public static void Persist<T>(T obj)
         {

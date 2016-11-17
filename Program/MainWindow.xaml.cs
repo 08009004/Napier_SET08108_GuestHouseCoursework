@@ -34,7 +34,7 @@ namespace Program
 
     //        foreach (Person p in l) CSVWriter.Persist(p);
 
-            CSVReader.Read(@"person.csv");
+            CSVReader.Read<Person>(@"person.csv");
         }
     }
 }
