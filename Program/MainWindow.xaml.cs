@@ -33,8 +33,13 @@ namespace Program
             l.Add(new Person("Nina", 40));
     //        foreach (Person p in l) CSVWriter.Persist(p);
 
-            foreach (String s in CSVReader.separate("Name,Age,list,Jane,26,0,56,8546"))
-                MessageBox.Show(s);
+            Dictionary<String, String> d = CSVReader.index("Name,Age,list,Jane,26,0,56,8546");
+            String v;
+            foreach (String k in d.Keys)
+            {
+                if (d.TryGetValue(k, out v)) MessageBox.Show("key: " + k + "; value: " + v);
+            }
+                
 
     //        CSVReader.Read<Person>(@"person.csv");
         }

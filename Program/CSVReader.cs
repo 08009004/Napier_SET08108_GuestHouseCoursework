@@ -46,9 +46,33 @@ namespace Program
          * corresponding to a line from the file.
          */
         // resource: https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
-        public static List<String> ReadData<T>(String filename)
+        public static Dictionary<String, String> ReadData<T>(String filename)
         {
-            List<String> instances = new List<String>();
+            List<String> csvInstances = read(filename);
+            List<String> instance;
+            int keyIndex = 0;
+            int valueIndex = 0;
+            Dictionary<String, String> instances = new Dictionary<string, string>();
+
+            foreach (String csvInstance in csvInstances)
+            {
+                instance = separate(csvInstance);
+                foreach (String s in instance)
+                instances.Add(instance.ElementAt(keyIndex), instance.ElementAt(valueIndex));
+
+            }
+
+            return instances;
+        }
+
+        /*
+         * Reads from a CSV file and returns a list of strings, each 
+         * corresponding to a line from the file.
+         */
+        // resource: https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
+        private static List<String> read(String filename)
+        {
+            List<String> csvInstances = new List<String>();
             String line;
 
             try
@@ -57,7 +81,7 @@ namespace Program
                 line = sr.ReadLine();
                 while (line != null)
                 {
-                    instances.Add(line);
+                    csvInstances.Add(line);
                     line = sr.ReadLine();
                 }
             }
@@ -66,14 +90,39 @@ namespace Program
                 MessageBox.Show("ERROR: " + e.Message);
             }
 
-            return instances;
+            return csvInstances;
         }
 
         /*
-         * Separates each coma separated field from the string passed
+         * Indexes a csv instance (string) into a dictionary<attribute, value>
+         */
+        public static Dictionary<String, String> index(String csvInstance)
+        {
+            Dictionary<String, String> indexedInstance = new Dictionary<string, string>();
+            List<String> seperatedInstance = separate(csvInstance);
+            if (seperatedInstance.Count % 2 != 0) ;// trow exception
+
+            /* List<T>.GetRange(Int32, Int32) returns a shallow copy of a range 
+             * of elements in the source List<T>.
+             * https://msdn.microsoft.com/en-us/library/21k0e39c(v=vs.110).aspx
+             */
+            int size = seperatedInstance.Count;
+            List<String> keys = seperatedInstance.GetRange(0, size/2);
+            List<String> values = seperatedInstance.GetRange(size/2, size/2);
+
+            for (int i = 0; i < size / 2; i++)
+            {
+                indexedInstance.Add(keys.ElementAt(i), values.ElementAt(i));
+            }
+
+            return indexedInstance;
+        }
+
+        /*
+         * Separates each 'coma separated' field from the string passed
          * as a parameter.
          */
-        public static List<String> separate(String csv)
+        private static List<String> separate(String csv)
         {
             List<String> separated = new List<String>(); 
             int nxtComaIndex = csv.IndexOf(",");
