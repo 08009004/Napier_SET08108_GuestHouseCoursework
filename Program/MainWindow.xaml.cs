@@ -31,10 +31,12 @@ namespace Program
             l.Add(new Person("Joe", 65));
             l.Add(new Person("Jane", 26));
             l.Add(new Person("Nina", 40));
-
     //        foreach (Person p in l) CSVWriter.Persist(p);
 
-            CSVReader.Read<Person>(@"person.csv");
+            foreach (String s in DataPersistenceFacade.seperate("Name,Age,list,Jane,26,0,56,8546"))
+                MessageBox.Show(s);
+
+    //        CSVReader.Read<Person>(@"person.csv");
         }
     }
 }

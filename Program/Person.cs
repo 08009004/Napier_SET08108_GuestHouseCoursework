@@ -7,12 +7,11 @@ using System.Xml.Serialization;
 
 namespace Program
 {
-    [Serializable]
     public class Person
     {
         public String Name { get; set; }
+        public int UniqueID { get; set; }
 
-    //    [XmlIgnoreAttribute]
         public int Age { get; set; }
 
         private int Test { get; set; }
@@ -40,7 +39,10 @@ namespace Program
             StringBuilder sb = new StringBuilder();
             foreach (int i in list) sb.Append(i + ",");
             sb.Length--;
-            return "Name,Age,list," + Name + "," + Age + "," + sb.ToString() + "\r\n";
+            return "UID,Name,Age,list," + UniqueID + "," 
+                                        + Name + "," 
+                                        + Age + "," 
+                                        + sb.ToString() + "\r\n";
         }
     }
 }

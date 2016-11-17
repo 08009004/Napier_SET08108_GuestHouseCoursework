@@ -29,11 +29,34 @@ namespace Program
          * from the respective CSV file, and  returns a list of CSV instances 
          * (as strings).
          */
-        public static List<String> RecoverPersons()
+        public static List<Person> RecoverPersons()
         {
-            return CSVReader.ReadData<Person>(@"person.csv");
+          //  return CSVReader.ReadData<Person>(@"person.csv");
+            return new List<Person>();
         }
 
+        private static String[] parsePerson(String personData)
+        {
+            String[] data = new String[9];
+            
+            return data;
+        }
+
+        public static List<String> seperate(String personData) 
+        {
+            int l;
+            List<String> separated = new List<String>();
+
+            while (personData.Length > 0)
+            {
+                int lenght = personData.Length;
+                l = personData.IndexOf(",");
+                separated.Add(personData.Substring(0, l));
+                personData = personData.Substring(l+1, (personData.Length-l));
+            }
+
+            return separated;
+        }
         
     }
 }

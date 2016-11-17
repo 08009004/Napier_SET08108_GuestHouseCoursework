@@ -13,7 +13,8 @@ namespace Program
     {
         public static List<Person> RestorePersistedInstances()
         {
-
+            List<Person> recovered = new List<Person>();
+            return recovered;
         } 
     }
 }
