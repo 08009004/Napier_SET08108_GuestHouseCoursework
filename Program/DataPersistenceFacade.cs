@@ -35,30 +35,5 @@ namespace Program
             return new List<Person>();
         }
 
-        private static String[] parsePerson(String personData)
-        {
-            String[] data = new String[9];
-            
-            return data;
-        }
-
-        public static List<String> seperate(String personData) 
-        {
-            int l;
-            List<String> separated = new List<String>();
-
-            while (personData.Contains(","))
-            {
-                int lenght = personData.Length;
-                l = personData.IndexOf(",");
-                separated.Add(personData.Substring(0, l));
-                personData = personData.Substring(l+1, (personData.Length-(l+1)));
-            }
-
-            separated.Add(personData);
-
-            return separated;
-        }
-        
     }
 }

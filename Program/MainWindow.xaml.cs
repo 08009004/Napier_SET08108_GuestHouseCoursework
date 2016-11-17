@@ -33,7 +33,7 @@ namespace Program
             l.Add(new Person("Nina", 40));
     //        foreach (Person p in l) CSVWriter.Persist(p);
 
-            foreach (String s in DataPersistenceFacade.seperate("Name,Age,list,Jane,26,0,56,8546"))
+            foreach (String s in CSVReader.separate("Name,Age,list,Jane,26,0,56,8546"))
                 MessageBox.Show(s);
 
     //        CSVReader.Read<Person>(@"person.csv");

@@ -68,5 +68,29 @@ namespace Program
 
             return instances;
         }
+
+        /*
+         * Separates each coma separated field from the string passed
+         * as a parameter.
+         */
+        public static List<String> separate(String csv)
+        {
+            List<String> separated = new List<String>(); 
+            int nxtComaIndex = csv.IndexOf(",");
+
+            /* String.IndexOf(Char) returns the zero-based index position of
+             * value if that character is found, or -1 if it is not.
+             * https://msdn.microsoft.com/en-us/library/kwb0bwyd(v=vs.110).aspx
+             */
+            while (nxtComaIndex > 0)
+            {
+                separated.Add(csv.Substring(0, nxtComaIndex));
+                csv = csv.Substring(nxtComaIndex + 1, (csv.Length - (nxtComaIndex + 1)));
+                nxtComaIndex = csv.IndexOf(",");
+            }
+
+            separated.Add(csv);
+            return separated;
+        }
     }
 }
