@@ -10,11 +10,11 @@ using System.Xml.Serialization;
 namespace Program
 {
     [Serializable]
-    abstract class XmlWritable
+    public abstract class XmlWritable
     {
         public XmlWritable() { }
 
-        public abstract String ToCsv();
+//        public abstract String ToCsv();
 
     }
 }

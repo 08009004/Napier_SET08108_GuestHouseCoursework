@@ -58,6 +58,9 @@
     <Compile Include="DataPersistenceFacade.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonFactory.cs" />
+    <Compile Include="XmlReader.cs" />
+    <Compile Include="XmlWritable.cs" />
+    <Compile Include="XmlWriter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

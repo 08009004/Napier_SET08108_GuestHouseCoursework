@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
+
 
 namespace Program
 {
-    public class Person
+
+    public class Person : XmlWritable
     {
         public String Name { get; set; }
         public int UniqueID { get; set; }
@@ -20,7 +21,7 @@ namespace Program
 
         public Person()
         {
-            // parameterless constructor required for serialization.
+            // parameterless constructor required for XML serialization.
         }
         
 
