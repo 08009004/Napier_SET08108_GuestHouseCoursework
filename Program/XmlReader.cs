@@ -10,6 +10,11 @@ using System.IO;
 
 namespace Program
 {
+    /*
+     * 
+     * 
+     */
+    // resource: https://msdn.microsoft.com/en-us/library/90c86ass(v=vs.110).aspx
     class XmlReader
     {
         public static List<T> RecoverAll<T>()
