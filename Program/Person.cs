@@ -4,19 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Custom imports:
+using System.Runtime.Serialization;
+using System.Xml;
+using System.Collections;
 
 namespace Program
 {
-
-    public class Person : XmlWritable
+    [DataContract(Name = "Person")]
+    public class Person
     {
+        [DataMember()]
         public String Name { get; set; }
+        [DataMember()]
         public int UniqueID { get; set; }
-
+        [DataMember()]
         public int Age { get; set; }
-
+        [DataMember()]
         private int Test { get; set; }
-        
+        [DataMember()]
         private List<int> list = new List<int>();
 
         public Person()
