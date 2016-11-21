@@ -23,6 +23,46 @@ namespace Program
     {
         public MainWindow()
         {
+        
+            Person p = new Person("Jane", "Doe");
+            p.CustomerRef = 256987;
+            p.Address = "this or that address";
+            p.PassportNumber = "08055NL";
+            p.Age = 29;
+            CSVWriter.Persist(p);
+
+            Person q = new Person("John", "Doob");
+            q.CustomerRef = 58;
+            q.Address = "some place else";
+            q.PassportNumber = "QQQ000";
+            q.Age = 92;
+            CSVWriter.Persist(q);
+
+            Person r = new Person("Doug", "Star");
+            r.CustomerRef = 943246;
+            r.Address = "erewhon 90210";
+            r.PassportNumber = "nfgYt2";
+            r.Age = 7;
+            CSVWriter.Persist(r);
+
+            Person s = new Person("Lester", "Smooth");
+            s.CustomerRef = 75632;
+            s.Address = "jingle bells Strasse";
+            s.PassportNumber = "UT567E";
+            s.Age = 45;
+            CSVWriter.Persist(s);
+           
+
+            List<Dictionary<string, string>> ld = CSVReader.ReadData("person.csv");
+            String v;
+            foreach (Dictionary<string, string> d in ld)
+            {
+                foreach (String k in d.Keys)
+                {
+                    if (d.TryGetValue(k, out v)) MessageBox.Show("key: " + k + "; value: " + v);
+                }
+            }
+/*
             InitializeComponent();
 
             
@@ -44,7 +84,7 @@ namespace Program
                 
 
     //        CSVReader.Read<Person>(@"person.csv");
- */
+
        //     XmlWriter.Persist<List<Person>>(l);
             List<String> temp = new List<string>();
             temp.Add("#PERSON\r\n");
@@ -68,7 +108,7 @@ namespace Program
                 enum GuestField { PASSPORT_NUMBER, AGE }
              * 
              * 
-             */
+
 
             Dictionary<String, String> d = CSVReader.index("#PERSON\r\n"
                                                             + "John,Smith\r\n"
@@ -81,6 +121,7 @@ namespace Program
             {
                 if (d.TryGetValue(k, out v)) MessageBox.Show("key: " + k + "; value: " + v);
             }
+ */
         }
     }
 }

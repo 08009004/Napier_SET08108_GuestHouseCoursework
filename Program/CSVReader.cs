@@ -36,14 +36,10 @@ namespace Program
          * corresponding to a line from the file.
          */
         // resource: https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
-        public static Dictionary<String, String> ReadData<T>(String filename)
+        public static List<Dictionary<string, string>> ReadData(String filename)
         {
-            List<String> csvLines = readLines(filename);
-            List<String> csvInstances = aggregateInstances(csvLines);
-            Dictionary<string, string> instanceAttributes = new Dictionary<string, string>();
-
-
-            return new Dictionary<string, string>();
+            List<String> csvInstances = aggregateInstances(readLines(filename));
+            return indexInstances(csvInstances);
         }
 
         /*
@@ -95,14 +91,14 @@ namespace Program
                 {
                     if (!fileLines.ElementAt(i).StartsWith("#")) throw new ArgumentException("write message");
                     
-                    s += fileLines.ElementAt(i);
-                    s += fileLines.ElementAt(i + 1);
+                    s += fileLines.ElementAt(i) + ",";
+                    s += fileLines.ElementAt(i + 1) + ",";
                     
                     i = i + 2;
                 } while (i < fileLines.Count
                          && !fileLines.ElementAt(i).StartsWith("#PERSON"));
 
-                csvInstances.Add(s);
+                csvInstances.Add(s.Substring(0, s.Count() - 1));
             }
 
             return csvInstances;
@@ -112,7 +108,7 @@ namespace Program
          * Indexes a list of csv instances (strings) into a list of 
          * dictionary<attribute, value>
          */
-        private List<Dictionary<string, string>> indexInstances(List<String> csvInstances)
+        private static List<Dictionary<string, string>> indexInstances(List<String> csvInstances)
         {
             List<Dictionary<string, string>> indexedInstances = new List<Dictionary<string, string>>();
 
@@ -120,7 +116,7 @@ namespace Program
             {
                 indexedInstances.Add(index(csvInstance));
             }
-            return new List<Dictionary<string, string>>();
+            return indexedInstances;
         }
 
         /*
@@ -137,21 +133,24 @@ namespace Program
                 switch (seperatedInstance[i])
                 {
                     case "#PERSON":
-                        foreach (PersonField k in Enum.GetValues(typeof(PersonField))) 
+                        PersonField[] keysArr0 = (PersonField[]) Enum.GetValues(typeof(PersonField));
+                        foreach (PersonField k in keysArr0) 
                         {
-                            indexedInstance.Add(k.ToString(), seperatedInstance[i + 1]);
+                            indexedInstance.Add(k.ToString(), seperatedInstance[i + Array.IndexOf(keysArr0, k) + 1]);
                         }
                         break;
                     case "#CUSTOMER":
+                        CustomerField[] keysArr1 = (CustomerField[])Enum.GetValues(typeof(CustomerField));
                         foreach (CustomerField k in Enum.GetValues(typeof(CustomerField)))
                         {
-                            indexedInstance.Add(k.ToString(), seperatedInstance[i + 1]);
+                            indexedInstance.Add(k.ToString(), seperatedInstance[i + Array.IndexOf(keysArr1, k) + 1]);
                         }
                         break;
                     case "#GUEST":
+                        GuestField[] keysArr2 = (GuestField[])Enum.GetValues(typeof(GuestField));
                         foreach (GuestField k in Enum.GetValues(typeof(GuestField)))
                         {
-                            indexedInstance.Add(k.ToString(), seperatedInstance[i + 1]);
+                            indexedInstance.Add(k.ToString(), seperatedInstance[i + Array.IndexOf(keysArr2, k) + 1]);
                         }
                         break;
                     default : break;

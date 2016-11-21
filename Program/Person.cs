@@ -13,37 +13,25 @@ namespace Program
 {
     public class Person : CSVWritable
     {
-        public String Name { get; set; }
-        public int UniqueID { get; set; }
-        public int Age { get; set; }
-        private int Test { get; set; }
-        private List<int> list = new List<int>();
+        public String FirstName { get; set; }
+        public String SecondName { get; set; }
+        public int CustomerRef { get; set; }
+        public String Address { get; set; }
+        public String PassportNumber { get; set; }
+        public int Age { get; set; }        
 
-        public Person()
+        public Person(String firstName, String secondName)
         {
-            // parameterless constructor required for XML serialization.
-        }
-        
+            FirstName = firstName;
+            SecondName = secondName;
 
-        public Person(String name, int age)
-        {
-            Name = name;
-            Age = age;
-
-            list.Add(0);
-            list.Add(56);
-            list.Add(8546);
         }
 
         public String ToCSV()
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (int i in list) sb.Append(i + ";");
-            sb.Length--;
-            return "#PERSON\r\n" + UniqueID + ","
-                                        + Name + ","
-                                        + Age + ","
-                                        + sb.ToString() + "\r\n";
+            return "#PERSON\r\n" + FirstName + "," + SecondName + "\r\n"
+                 + "#CUSTOMER\r\n" + CustomerRef + "," + Address + "\r\n"
+                 + "#GUEST\r\n" + PassportNumber + "," + Age + "\r\n";
         }
     }
 }
