@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 // Custom imports:
 using System.IO;
-using System.Windows;  // temp (dev)
 
 // NOTE FOR GUI: open file dialogue
 // http://www.wpf-tutorial.com/dialogs/the-openfiledialog/
@@ -52,24 +51,15 @@ namespace Program
             List<String> csvLines = new List<String>();
             String line;
 
-            try
-            {   // Open the text file using a stream reader.
-                StreamReader sr = new StreamReader(filename);
-                line = sr.ReadLine();
-                while (line != null)
-                {
-                    csvLines.Add(line);
-                    line = sr.ReadLine();
-                }
-
-                sr.Close();
-            }
-            catch (Exception e)
+            StreamReader sr = new StreamReader(filename);
+            line = sr.ReadLine();
+            while (line != null)
             {
-                MessageBox.Show("ERROR: " + e.Message);
-                // TODO: throw exception here
+                csvLines.Add(line);
+                line = sr.ReadLine();
             }
 
+            sr.Close();
             return csvLines;
         }
 
@@ -77,7 +67,7 @@ namespace Program
          * Agregates csv lines into a list of strings, each element
          * of which represents a CSVWritable instance.
          */
-        public static List<String> aggregateInstances(List<String> fileLines)
+        private static List<String> aggregateInstances(List<String> fileLines)
         {
             List<String> csvInstances = new List<String>();
             String s;
@@ -89,7 +79,10 @@ namespace Program
 
                 do
                 {
-                    if (!fileLines.ElementAt(i).StartsWith("#")) throw new ArgumentException("write message");
+                    if (!fileLines.ElementAt(i).StartsWith("#"))
+                    {
+                        throw new ArgumentException("Invalid CSV file content");
+                    }
                     
                     s += fileLines.ElementAt(i) + ",";
                     s += fileLines.ElementAt(i + 1) + ",";
@@ -110,7 +103,8 @@ namespace Program
          */
         private static List<Dictionary<string, string>> indexInstances(List<String> csvInstances)
         {
-            List<Dictionary<string, string>> indexedInstances = new List<Dictionary<string, string>>();
+            List<Dictionary<string, string>> indexedInstances 
+                                        = new List<Dictionary<string, string>>();
 
             foreach (String csvInstance in csvInstances)
             {
@@ -120,12 +114,14 @@ namespace Program
         }
 
         /*
-         * Indexes a csv instance (string) into a dictionary<attribute, value>
+         * Indexes a csv instance (string) into a dictionary<attribute, value> 
+         * instance
          */
-        public static Dictionary<String, String> index(String csvInstance)
+        private static Dictionary<String, String> index(String csvInstance)
         {
-            Dictionary<String, String> indexedInstance = new Dictionary<string, string>();
-            String[] seperatedInstance = separate(csvInstance);
+            Dictionary<String, String> indexedInstance 
+                                        = new Dictionary<string, string>();
+            String[] seperatedInstance = csvInstance.Split(',');
             if (seperatedInstance.Length % 2 != 0) ;// trow exception
 
             for (int i = 0; i < seperatedInstance.Length; i++)
@@ -136,21 +132,27 @@ namespace Program
                         PersonField[] keysArr0 = (PersonField[]) Enum.GetValues(typeof(PersonField));
                         foreach (PersonField k in keysArr0) 
                         {
-                            indexedInstance.Add(k.ToString(), seperatedInstance[i + Array.IndexOf(keysArr0, k) + 1]);
+                            indexedInstance.Add(
+                                k.ToString(), 
+                                seperatedInstance[i + Array.IndexOf(keysArr0, k) + 1]);
                         }
                         break;
                     case "#CUSTOMER":
                         CustomerField[] keysArr1 = (CustomerField[])Enum.GetValues(typeof(CustomerField));
                         foreach (CustomerField k in Enum.GetValues(typeof(CustomerField)))
                         {
-                            indexedInstance.Add(k.ToString(), seperatedInstance[i + Array.IndexOf(keysArr1, k) + 1]);
+                            indexedInstance.Add(
+                                k.ToString(), 
+                                seperatedInstance[i + Array.IndexOf(keysArr1, k) + 1]);
                         }
                         break;
                     case "#GUEST":
                         GuestField[] keysArr2 = (GuestField[])Enum.GetValues(typeof(GuestField));
                         foreach (GuestField k in Enum.GetValues(typeof(GuestField)))
                         {
-                            indexedInstance.Add(k.ToString(), seperatedInstance[i + Array.IndexOf(keysArr2, k) + 1]);
+                            indexedInstance.Add(
+                                k.ToString(), 
+                                seperatedInstance[i + Array.IndexOf(keysArr2, k) + 1]);
                         }
                         break;
                     default : break;
@@ -158,15 +160,6 @@ namespace Program
             }
 
             return indexedInstance;
-        }
-
-        /*
-         * Separates each 'coma separated' field from the string passed
-         * as a parameter.
-         */
-        public static String[] separate(String csv)
-        {
-            return csv.Replace("\r\n", ",").Split(',');
         }
     }
 }
