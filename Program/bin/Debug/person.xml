@@ -1,23 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Person>
-    <Name>John</Name>
-    <UniqueID>0</UniqueID>
-    <Age>65</Age>
-  </Person>
-  <Person>
-    <Name>Joe</Name>
-    <UniqueID>0</UniqueID>
-    <Age>65</Age>
-  </Person>
-  <Person>
-    <Name>Jane</Name>
-    <UniqueID>0</UniqueID>
-    <Age>26</Age>
-  </Person>
-  <Person>
-    <Name>Nina</Name>
-    <UniqueID>0</UniqueID>
-    <Age>40</Age>
-  </Person>
-</ArrayOfPerson>
+#PERSON
+0,John,65,0;56;8546
+#PERSON
+0,Joe,65,0;56;8546
+#PERSON
+0,Jane,26,0;56;8546
+#PERSON
+0,Nina,40,0;56;8546

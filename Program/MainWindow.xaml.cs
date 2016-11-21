@@ -32,7 +32,7 @@ namespace Program
             l.Add(new Person("Jane", 26));
             l.Add(new Person("Nina", 40));
 
-    //        foreach (Person p in l) CSVWriter.Persist(p);
+            foreach (Person p in l) CSVWriter.Persist(p);
 
 /*
             Dictionary<String, String> d = CSVReader.index("Name,Age,list,Jane,26,0,56,8546");
@@ -45,7 +45,17 @@ namespace Program
 
     //        CSVReader.Read<Person>(@"person.csv");
  */
-            XmlWriter.Persist<List<Person>>(l);
+       //     XmlWriter.Persist<List<Person>>(l);
+            List<String> temp = new List<string>();
+            temp.Add("#PERSON\r\n");
+            temp.Add("0,John,65,0;56;8546\r\n");
+            temp.Add("#CUSTOMER\r\n");
+            temp.Add("0123568\r\n");
+            temp.Add("#PERSON\r\n");
+            temp.Add("0,Joe,65,0;56;8546\r\n");
+        
+            List<String> li = CSVReader.aggregateInstance(temp);
+            foreach (String s in li) MessageBox.Show(s);
         }
     }
 }

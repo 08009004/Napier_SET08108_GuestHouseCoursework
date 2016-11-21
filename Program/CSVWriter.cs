@@ -14,29 +14,25 @@ namespace Program
      */
     static class CSVWriter
     {
-        /* DEPRECATED
-         * 
-         * Selects and writes to the CSV file related to the type
-         * of the object passed as a parameter.
-         */
-        /*
-        public static void Persist<T>(T obj)
+        
+        private static string personFile = @"person.csv";
+
+        public static void Persist(CSVWritable obj)
         {
-            switch (typeof(T).Name)
+            switch (obj.GetType().Name)
             {
                 case "Person": 
-                    
+                    WriteData(personFile, obj);
                     break;
             }
         }
-         */
 
         /*
          * Persists obj.ToString() to the CSV file filename.
          */
-        public static void WriteData<T>(String filename, T obj)
+        public static void WriteData(String filename, CSVWritable obj)
         {
-            System.IO.File.AppendAllText(filename, obj.ToString());
+            System.IO.File.AppendAllText(filename, obj.ToCSV());
         }
     }
 }

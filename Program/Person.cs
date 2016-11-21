@@ -11,18 +11,12 @@ using System.Collections;
 
 namespace Program
 {
-    [DataContract(Name = "Person")]
-    public class Person
+    public class Person : CSVWritable
     {
-        [DataMember()]
         public String Name { get; set; }
-        [DataMember()]
         public int UniqueID { get; set; }
-        [DataMember()]
         public int Age { get; set; }
-        [DataMember()]
         private int Test { get; set; }
-        [DataMember()]
         private List<int> list = new List<int>();
 
         public Person()
@@ -41,14 +35,14 @@ namespace Program
             list.Add(8546);
         }
 
-        public override String ToString()
+        public String ToCSV()
         {
             StringBuilder sb = new StringBuilder();
-            foreach (int i in list) sb.Append(i + ",");
+            foreach (int i in list) sb.Append(i + ";");
             sb.Length--;
-            return "UID,Name,Age,list," + UniqueID + "," 
-                                        + Name + "," 
-                                        + Age + "," 
+            return "#PERSON\r\n" + UniqueID + ","
+                                        + Name + ","
+                                        + Age + ","
                                         + sb.ToString() + "\r\n";
         }
     }
