@@ -16,7 +16,7 @@ namespace Program
     {
         
         private static string personFile = @"person.csv";
-        private static string bookingFile = @"person.csv";
+        private static string bookingFile = @"booking.csv";
 
         public static void Persist(CSVWritable obj)
         {
@@ -25,11 +25,17 @@ namespace Program
                 case "Person": 
                     WriteData(personFile, obj);
                     break;
+                case "Customer":
+                    WriteData(personFile, obj);
+                    break;
+                case "Guest":
+                    WriteData(personFile, obj);
+                    break;
             }
         }
 
         /*
-         * Persists obj.ToString() to the CSV file filename.
+         * Persists obj.ToCSV() to the CSV file filename.
          */
         public static void WriteData(String filename, CSVWritable obj)
         {

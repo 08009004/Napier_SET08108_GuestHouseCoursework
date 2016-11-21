@@ -12,7 +12,6 @@ namespace Program
      */
     static class DataPersistenceFacade
     {
-        private static string personFile = @"person.csv";
         /*
          * Writes the data concerning all instances of Person in the  
          * list passed as a parameter to the respective CSV file.
@@ -20,7 +19,7 @@ namespace Program
         public static bool Persist(List<Person> persons)
         {
             bool wasPersisted = false;
-            foreach (Person p in persons) CSVWriter.WriteData(personFile, p);
+            foreach (Person p in persons) CSVWriter.WriteData(@"person.csv", p);
 
             return wasPersisted;
         }
