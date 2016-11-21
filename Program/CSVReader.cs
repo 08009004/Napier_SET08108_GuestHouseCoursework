@@ -22,9 +22,9 @@ namespace Program
      * Enumeration, for each CSVWritable class, of its fields in the order
      * they appear in the persisted file.
      */
-    enum PersonFields {  NAME, AGE }
-    enum CustomerFields { F1 }
-    enum GuestFields { F0, F1 }
+    enum PersonField {  FIRST_NAME, SECOND_NAME }
+    enum CustomerField { CUSTOMER_NUMBER, ADDRESS }
+    enum GuestField { PASSPORT_NUMBER, AGE }
 
     /* 
      * Static utility class, reads system objects data from CSV files.
@@ -39,7 +39,9 @@ namespace Program
         public static Dictionary<String, String> ReadData<T>(String filename)
         {
             List<String> csvLines = readLines(filename);
- //           List<String[]> csvInstances = aggregatePerson(csvLines);
+            List<String> csvInstances = aggregateInstances(csvLines);
+            Dictionary<string, string> instanceAttributes = new Dictionary<string, string>();
+
 
             return new Dictionary<string, string>();
         }
@@ -79,12 +81,11 @@ namespace Program
          * Agregates csv lines into a list of strings, each element
          * of which represents a CSVWritable instance.
          */
-        public static List<String> aggregateInstance(List<String> fileLines)
+        public static List<String> aggregateInstances(List<String> fileLines)
         {
             List<String> csvInstances = new List<String>();
             String s;
             int i = 0;
-            int j = 0;
 
             while (i < fileLines.Count)
             {
@@ -108,12 +109,18 @@ namespace Program
         }
 
         /*
-         * Separates each 'coma separated' field from the string passed
-         * as a parameter.
+         * Indexes a list of csv instances (strings) into a list of 
+         * dictionary<attribute, value>
          */
-        private static String[] separate(String csv)
+        private List<Dictionary<string, string>> indexInstances(List<String> csvInstances)
         {
-            return csv.Split(',');
+            List<Dictionary<string, string>> indexedInstances = new List<Dictionary<string, string>>();
+
+            foreach (String csvInstance in csvInstances)
+            {
+                indexedInstances.Add(index(csvInstance));
+            }
+            return new List<Dictionary<string, string>>();
         }
 
         /*
@@ -122,23 +129,45 @@ namespace Program
         public static Dictionary<String, String> index(String csvInstance)
         {
             Dictionary<String, String> indexedInstance = new Dictionary<string, string>();
-            List<String> seperatedInstance = separate(csvInstance).ToList();
-            if (seperatedInstance.Count % 2 != 0) ;// trow exception
+            String[] seperatedInstance = separate(csvInstance);
+            if (seperatedInstance.Length % 2 != 0) ;// trow exception
 
-            /* List<T>.GetRange(Int32, Int32) returns a shallow copy of a range 
-             * of elements in the source List<T>.
-             * https://msdn.microsoft.com/en-us/library/21k0e39c(v=vs.110).aspx
-             */
-            int size = seperatedInstance.Count;
-            List<String> keys = seperatedInstance.GetRange(0, size / 2);
-            List<String> values = seperatedInstance.GetRange(size / 2, size / 2);
-
-            for (int i = 0; i < size / 2; i++)
+            for (int i = 0; i < seperatedInstance.Length; i++)
             {
-                indexedInstance.Add(keys.ElementAt(i), values.ElementAt(i));
+                switch (seperatedInstance[i])
+                {
+                    case "#PERSON":
+                        foreach (PersonField k in Enum.GetValues(typeof(PersonField))) 
+                        {
+                            indexedInstance.Add(k.ToString(), seperatedInstance[i + 1]);
+                        }
+                        break;
+                    case "#CUSTOMER":
+                        foreach (CustomerField k in Enum.GetValues(typeof(CustomerField)))
+                        {
+                            indexedInstance.Add(k.ToString(), seperatedInstance[i + 1]);
+                        }
+                        break;
+                    case "#GUEST":
+                        foreach (GuestField k in Enum.GetValues(typeof(GuestField)))
+                        {
+                            indexedInstance.Add(k.ToString(), seperatedInstance[i + 1]);
+                        }
+                        break;
+                    default : break;
+                }
             }
 
             return indexedInstance;
+        }
+
+        /*
+         * Separates each 'coma separated' field from the string passed
+         * as a parameter.
+         */
+        public static String[] separate(String csv)
+        {
+            return csv.Replace("\r\n", ",").Split(',');
         }
     }
 }

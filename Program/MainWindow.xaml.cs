@@ -51,11 +51,36 @@ namespace Program
             temp.Add("0,John,65,0;56;8546\r\n");
             temp.Add("#CUSTOMER\r\n");
             temp.Add("0123568\r\n");
-            temp.Add("#PERSON\r\n");
-            temp.Add("0,Joe,65,0;56;8546\r\n");
-        
-            List<String> li = CSVReader.aggregateInstance(temp);
-            foreach (String s in li) MessageBox.Show(s);
+            temp.Add("#GUEST\r\n");
+            temp.Add("tempo,TEMPI0");
+            /*            temp.Add("#PERSON\r\n");
+                        temp.Add("0,Joe,65,0;56;8546\r\n");
+                        temp.Add("#GUEST\r\n");
+                        temp.Add("tempo,TEMPI0");
+                        temp.Add("#PERSON\r\n");
+                        temp.Add("0,John,65,0;56;8546\r\n");
+
+                        List<String> li = CSVReader.aggregateInstances(temp);
+                        foreach (String s in li) MessageBox.Show(s);
+             * 
+             * enum PersonField {  FIRST_NAME, SECOND_NAME }
+                enum CustomerField { CUSTOMER_NUMBER, ADDRESS }
+                enum GuestField { PASSPORT_NUMBER, AGE }
+             * 
+             * 
+             */
+
+            Dictionary<String, String> d = CSVReader.index("#PERSON\r\n"
+                                                            + "John,Smith\r\n"
+                                                            + "#CUSTOMER\r\n"
+                                                            + "0123568,20 that street POSTCODE\r\n"
+                                                            + "#GUEST\r\n"
+                                                            + "08855NL,99");
+            String v;
+            foreach (String k in d.Keys)
+            {
+                if (d.TryGetValue(k, out v)) MessageBox.Show("key: " + k + "; value: " + v);
+            }
         }
     }
 }

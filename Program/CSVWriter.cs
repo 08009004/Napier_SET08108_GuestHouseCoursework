@@ -16,6 +16,7 @@ namespace Program
     {
         
         private static string personFile = @"person.csv";
+        private static string bookingFile = @"person.csv";
 
         public static void Persist(CSVWritable obj)
         {
