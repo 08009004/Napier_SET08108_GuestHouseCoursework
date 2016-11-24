@@ -57,13 +57,12 @@
     <Compile Include="Bookings.xaml.cs">
       <DependentUpon>Bookings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConcreteDecoratorCustomer.cs" />
-    <Compile Include="ConcreteDecoratorGuest.cs" />
-    <Compile Include="ConcretePerson.cs" />
     <Compile Include="CSVReader.cs" />
     <Compile Include="CSVWritable.cs" />
     <Compile Include="CSVWriter.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="DataPersistenceFacade.cs" />
+    <Compile Include="Guest.cs" />
     <Compile Include="NewBooking.xaml.cs">
       <DependentUpon>NewBooking.xaml</DependentUpon>
     </Compile>

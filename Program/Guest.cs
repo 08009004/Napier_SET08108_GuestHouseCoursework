@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class ConcreteDecoratorGuest : PersonDecorator
+    class Guest : PersonDecorator
     {
         // Properties:
         private String passportNb;
@@ -33,7 +33,7 @@ namespace Program
         * throws ArgumentException if age is lesser than zero, or if 
         * passportNb equals String.Empty or null
         */
-        public ConcreteDecoratorGuest(String passportNb, int age) 
+        public Guest(String passportNb, int age)
         {
             if (String.IsNullOrEmpty(passportNb))
             {
@@ -57,10 +57,10 @@ namespace Program
          */
         public override String ToCSV()
         {
-            return base.ToCSV() + "#GUEST\r\n" 
-                                + passportNb 
-                                + "," 
-                                + age 
+            return base.ToCSV() + "#GUEST\r\n"
+                                + passportNb
+                                + ","
+                                + age
                                 + "\r\n";
         }
     }

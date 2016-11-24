@@ -26,7 +26,7 @@ namespace Program
         /*
          * Persists obj.ToCSV() to the CSV file filename.
          */
-        public static void WriteData(String filename, CSVWritable obj)
+        public static void WriteData(String filename, PersonComponent obj)
         {
             System.IO.File.AppendAllText(filename, obj.ToCSV());
         }

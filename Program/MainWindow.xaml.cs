@@ -23,12 +23,12 @@ namespace Program
     {
         public MainWindow()
         {
-            ConcretePerson p1 = new ConcretePerson("pierre", "ruiz");
-            ConcreteDecoratorCustomer cust1 = new ConcreteDecoratorCustomer("this address", 1);
+            Person p1 = new Person("pierre", "ruiz");
+            Customer cust1 = new Customer("this address", 1);
             cust1.SetComponent(p1);
 
-            ConcretePerson p2 = new ConcretePerson("caroline", "gallacher");
-            ConcreteDecoratorGuest guest1 = new ConcreteDecoratorGuest("08855NL", 36);
+            Person p2 = new Person("caroline", "gallacher");
+            Guest guest1 = new Guest("08855NL", 36);
             guest1.SetComponent(p2);
 
             CSVWriter.Persist(cust1);
