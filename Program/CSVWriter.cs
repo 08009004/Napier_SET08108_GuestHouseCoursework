@@ -18,20 +18,9 @@ namespace Program
         private static string personFile = @"person.csv";
         private static string bookingFile = @"booking.csv";
 
-        public static void Persist(CSVWritable obj)
+        public static void Persist(PersonComponent obj)
         {
-            switch (obj.GetType().Name)
-            {
-                case "Person": 
-                    WriteData(personFile, obj);
-                    break;
-                case "Customer":
-                    WriteData(personFile, obj);
-                    break;
-                case "Guest":
-                    WriteData(personFile, obj);
-                    break;
-            }
+            System.IO.File.AppendAllText(personFile, obj.ToCSV());
         }
 
         /*

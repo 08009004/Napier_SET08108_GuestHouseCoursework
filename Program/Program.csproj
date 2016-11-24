@@ -57,6 +57,9 @@
     <Compile Include="Bookings.xaml.cs">
       <DependentUpon>Bookings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConcreteDecoratorCustomer.cs" />
+    <Compile Include="ConcreteDecoratorGuest.cs" />
+    <Compile Include="ConcretePerson.cs" />
     <Compile Include="CSVReader.cs" />
     <Compile Include="CSVWritable.cs" />
     <Compile Include="CSVWriter.cs" />
@@ -65,6 +68,8 @@
       <DependentUpon>NewBooking.xaml</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
+    <Compile Include="PersonComponent.cs" />
+    <Compile Include="PersonDecorator.cs" />
     <Compile Include="PersonFactory.cs" />
     <Page Include="Bookings.xaml">
       <SubType>Designer</SubType>
