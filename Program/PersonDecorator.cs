@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    /* Abstract class defining the minimum implementation of 
+     * a concrete PersonDecorator.
+     */
     abstract class PersonDecorator : PersonComponent
     {
         // Property: the decorator component
@@ -20,8 +23,8 @@ namespace Program
         }
 
         /*
-         * Returns a textual representation of the PersonDecorator 
-         * in order to persist it to a CSV file.
+         * Returns a textual representation of the decorated 
+         * PersonComponent in order to persist it to a CSV file.
          */
         public override String ToCSV()
         {

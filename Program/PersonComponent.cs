@@ -14,7 +14,7 @@ namespace Program
     {
         /*
          * Must return a textual representation of the  
-         * BookingComponent in order to persist it to a CSV file.
+         * PersonComponent in order to persist it to a CSV file.
          */
         public abstract String ToCSV();
     }

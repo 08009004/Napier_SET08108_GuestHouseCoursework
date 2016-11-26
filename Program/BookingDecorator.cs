@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    /* Abstract class defining the minimum implementation of 
+     * a concrete BookingDecorator.
+     */
     abstract class BookingDecorator : BookingComponent
     {
         // Property : the decorator component
