@@ -18,14 +18,6 @@ using System.IO;
 namespace Program
 {
     /* 
-     * Enumeration, for each CSVWritable class, of its fields in the order
-     * they appear in the persisted file.
-     */
-    enum PersonField {  NAME }
-    enum CustomerField { CUSTOMER_NUMBER, ADDRESS }
-    enum GuestField { PASSPORT_NUMBER, AGE }
-
-    /* 
      * Static utility class, reads system objects data from CSV files.
      */
     class CSVReader

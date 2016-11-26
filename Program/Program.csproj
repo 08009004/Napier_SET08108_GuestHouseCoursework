@@ -61,8 +61,10 @@
     <Compile Include="CSVWritable.cs" />
     <Compile Include="CSVWriter.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerField.cs" />
     <Compile Include="DataPersistenceFacade.cs" />
     <Compile Include="Guest.cs" />
+    <Compile Include="GuestField.cs" />
     <Compile Include="NewBooking.xaml.cs">
       <DependentUpon>NewBooking.xaml</DependentUpon>
     </Compile>
@@ -92,6 +94,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PersonField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
