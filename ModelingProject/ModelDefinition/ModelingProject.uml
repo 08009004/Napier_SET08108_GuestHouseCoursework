@@ -592,6 +592,31 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="4fe14b9c-c84e-421a-90c2-50477ea308ab"
+            name="Customer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="009148f6-152c-483c-8055-99919435d0fe"
+                  name="String address"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a41fdfe5-f8bd-444d-a1c7-1b4a02a68d05"
+                  name="int customerRefNb"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -710,6 +735,31 @@
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7bf53b6d-eeb3-4db9-9769-25a18d88fbf9"
+            name="Guest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5563b8b8-8836-4a9e-88c8-e74c115be0ba"
+                  name="String passportNb"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8a7212e4-56c9-46f8-b3f7-3840d052ed39"
+                  name="int age"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -1494,26 +1544,8 @@
         </generalsInternal>
         <ownedAttributesInternal>
           <property
-            Id="0e73d6cc-24c2-49d7-ad10-d2050c8b98f4"
-            name="FirstName"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="1e46e0ac-c202-4b37-9731-8ed486dd8d77"
-            name="firstName"
+            name="name"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -1532,26 +1564,7 @@
           </property>
           <property
             Id="a689e061-7dd9-4301-8853-8c5b8937df9b"
-            name="SecondName"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="7d9c71d6-0487-42e9-a21e-f4714f00c1ba"
-            name="secondName"
-            visibility="Private"
+            name="Name"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1571,7 +1584,7 @@
         <ownedOperationsInternal>
           <operation
             Id="dcbac186-bae3-4756-8cce-8ec0bc1da1ac"
-            name="ConcretePerson"
+            name="Person"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1580,15 +1593,8 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="448d1ef8-053d-4504-a6d9-139786da6c4f"
-                  name="String firstName"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="bfaa1537-105f-47b5-ae64-9012a8853bcb"
-                  name="String secondName"
+                  Id="3eb4c1ed-8f16-40de-98a8-a44373df49d6"
+                  name="String name"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -1606,6 +1612,30 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="7276b489-e7b7-4fb0-ac26-1312002c7ae6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2c963692-4820-4124-a6c8-2c8f0982e50e"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e242b07-bd05-466f-b951-8c1c67b71993"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
@@ -1682,7 +1712,7 @@
           <property
             Id="cf7b558b-6fd0-4041-83af-0e033c451e98"
             name="person"
-            visibility="Protected"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1922,7 +1952,7 @@
           </operation>
           <operation
             Id="673be64a-cec8-4ef7-9e68-1990c7965994"
-            name="NewCustomer"
+            name="GetNewCustomer"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1944,21 +1974,14 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1bbd80df-0b0a-406d-bb02-4f881ae395aa"
-                  name="String firstName"
+                  Id="72ecf0f4-7822-41ce-9971-f64bb76c06d7"
+                  name="String name"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1ecb7837-2a65-4b44-a94e-78a1a8ceb259"
-                  name="String secondName"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ab824ef2-d82f-4d30-bc09-4933ddcea9d1"
+                  Id="61436f4a-7ca9-4fdb-9051-e1c64a9869c5"
                   name="String address"
                   direction="In"
                   isUnique="false" />
@@ -1967,41 +1990,13 @@
           </operation>
           <operation
             Id="9a68ff3a-f79f-4dd7-ae79-f1bd2c500f6c"
-            name="NewGuest"
+            name="GetNewGuest"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="fb1f1245-e41f-4c9b-affb-4c49146cebc7"
-                  name="String firstName"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="97a41ec3-c343-4257-8a95-8a7303ab91b7"
-                  name="String secondName"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="691f2e98-4c2b-4dee-a88a-e4c5d7462d74"
-                  name="String passportNb"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="efb5749b-520b-4ca3-abd4-d97b04059d8f"
-                  name="int age"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="7702799d-ec24-460a-a754-adc9df0b8921"
@@ -2015,47 +2010,23 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="48ed7f1f-abde-4e35-9159-84d804e8549c"
-            name="Decorate"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="9a6f052f-61ad-404d-8680-d709b3e3ab8b"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="728be8c7-8b73-48cc-b8e9-77d2f5adb4a1"
-                      LastKnownName="Guest"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="5ec911f8-032d-4422-b911-fd06dce642c0"
-                  name="Customer cust"
+                  Id="0938ee3e-b454-494e-999e-549c4606d6f2"
+                  name="String name"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="edb76ea5-270f-4ea0-b94d-29d075dbcc8e"
+                  Id="66ccba52-0846-4d51-b889-1940e396fdfb"
                   name="String passportNb"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="d7b5be8c-fecc-4e95-8b5e-f745e657507b"
+                  Id="49658ffa-d333-41ab-b50e-6d78e5d5494c"
                   name="int age"
                   direction="In"
                   isUnique="false" />
@@ -2089,6 +2060,127 @@
                     <classMoniker
                       Id="c2692cb2-229b-4340-b1ce-1de0ee842d42"
                       LastKnownName="PersonFactory"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="77a54aec-c0fb-4e89-83c8-f23e8c1af3ea"
+            name="GetNewGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="64f9bd57-c83d-492a-8532-782f963c74ed"
+                  name="Customer customer"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="65dfca32-bf3f-4789-be03-a20771a8dc8e"
+                  name="String passportNb"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a77ac2d0-8fe7-4275-bff6-531483cd26d5"
+                  name="int age"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5fe02cdc-0471-46c5-96b2-3a077079695f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="728be8c7-8b73-48cc-b8e9-77d2f5adb4a1"
+                      LastKnownName="Guest"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0f931663-99ea-4cdf-955c-bd422250f3db"
+            name="RestoreCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb27cbdd-1062-45eb-9f3a-9f38dccbd62d"
+                  name="Dictionary&lt;String"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="03596b07-ec68-437a-a497-ab1c6399fce0"
+                  name="String&gt; attributes"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d64300ad-a5cc-480b-a985-28b016989305"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a214f3f1-afce-4ccb-b3ec-9caf8f3e2251"
+                      LastKnownName="Customer"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="672613a9-76c0-4b6e-8af3-cd1ce865c4e4"
+            name="RestoreGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7392364c-2a5a-4aa5-8b9d-d68fcaabdf9d"
+                  name="Dictionary&lt;String"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d71ac35e-51d5-4386-a0a2-a8998c172e10"
+                  name="String&gt; attributes"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1d243fbd-3cd7-47ad-bda3-c4c98b50fa26"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="728be8c7-8b73-48cc-b8e9-77d2f5adb4a1"
+                      LastKnownName="Guest"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
