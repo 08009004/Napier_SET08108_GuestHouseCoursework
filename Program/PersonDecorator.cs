@@ -8,7 +8,7 @@ namespace Program
 {
     abstract class PersonDecorator : PersonComponent
     {
-        protected PersonComponent person;
+        private PersonComponent person;
 
         /*
          * Sets the component of that will be decorated by this decorator.
