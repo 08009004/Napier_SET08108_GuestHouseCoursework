@@ -28,23 +28,23 @@ namespace Program
         }
 
         /*
-       * Constructor.
-       * 
-       * throws ArgumentException if customerRefNb is lesser than zero, or if 
-       * address equals String.Empty or null
-       */
+         * Constructor.
+         * 
+         * throws ArgumentException if customerRefNb is not strictly greater 
+         * than 0, or if address equals either String.Empty or null
+         */
         public Customer(String address, int customerRefNb)
         {
             if (String.IsNullOrEmpty(address))
             {
-                throw new ArgumentException("ConcreteDecoratorCustomer.address"
+                throw new ArgumentException("Customer.address"
                                             + " must not be null nor String.Empty");
             }
 
-            if (customerRefNb < 0)
+            if (customerRefNb <= 0)
             {
-                throw new ArgumentException("ConcreteDecoratorCustomer.customerRefNb"
-                                            + " must not be lesser than 0");
+                throw new ArgumentException("Customer.customerRefNb must be"
+                                            + " strictly greater than 0");
             }
 
             this.address = address;
