@@ -20,8 +20,23 @@ namespace Program
         }
 
         /*
-         * Returns a textual representation of the BookingDecorator 
-         * in order to persist it to a CSV file.
+         * Returns the cost of the decorated BookingComponent.
+         */
+        public override double GetCost()
+        {
+            double cost = 0;
+
+            if (booking != null)
+            {
+                cost = booking.GetCost();
+            }
+
+            return cost;
+        }
+
+        /*
+         * Returns a textual representation of the decorated 
+         * BookingDecorator in order to persist it to a CSV file.
          */
         public override String ToCSV()
         {
