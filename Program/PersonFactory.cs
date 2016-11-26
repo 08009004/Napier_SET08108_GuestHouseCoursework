@@ -12,9 +12,10 @@ namespace Program
      */
     class PersonFactory
     {
+        //Properties:
         private int nextCustNb;
         private static PersonFactory instance;
-        public PersonFactory Instance
+        public static PersonFactory Instance
         {
             get
             {
@@ -30,7 +31,10 @@ namespace Program
          * Private constructor, to prevent class instantiation from
          * external classes (singleton class).
          */
-        private PersonFactory() { }
+        private PersonFactory() 
+        {
+            this.nextCustNb = 1;
+        }
 
         /*
          * Generates a new customer instance on the basis of the data 

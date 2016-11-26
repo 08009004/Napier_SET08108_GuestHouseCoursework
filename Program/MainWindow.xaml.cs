@@ -23,16 +23,50 @@ namespace Program
     {
         public MainWindow()
         {
-            Person p1 = new Person("pierre", "ruiz");
-            Customer cust1 = new Customer("this address", 1);
-            cust1.SetComponent(p1);
+            PersonFactory personFactory = PersonFactory.Instance;
+            Customer c1 = PersonFactory.Instance.GetNewCustomer("pierre ruiz", "my address");
+            Customer c2 = PersonFactory.Instance.GetNewCustomer("lola", "her address");
+            Guest g1 = PersonFactory.Instance.GetNewGuest("caroline Gallacher", "08855NL", 36);
+            Guest g2 = PersonFactory.Instance.GetNewGuest("leslie", "ABABC", 99);
 
-            Person p2 = new Person("caroline", "gallacher");
-            Guest guest1 = new Guest("08855NL", 36);
-            guest1.SetComponent(p2);
+            CSVWriter.Persist(c1);
+            CSVWriter.Persist(g1);
+            CSVWriter.Persist(g2);
+            CSVWriter.Persist(c2);
 
-            CSVWriter.Persist(cust1);
-            CSVWriter.Persist(guest1);
+            List<Dictionary<string, string>> csvPersons = CSVReader.ReadData(@"person.csv");
+            List<Dictionary<string, string>> csvCustomers = new List<Dictionary<string, string>>();
+            List<Dictionary<string, string>> csvGuests = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> d in csvPersons)
+            {
+                if (d.ContainsKey("CUSTOMER_NUMBER")) csvCustomers.Add(d);
+                if (d.ContainsKey("PASSPORT_NUMBER")) csvGuests.Add(d);
+            }
+
+            List<PersonComponent> customers = new List<PersonComponent>();
+            List<PersonComponent> guests = new List<PersonComponent>();
+
+            foreach (Dictionary<string, string> d in csvCustomers)
+            {
+                customers.Add(PersonFactory.Instance.RestoreCustomer(d));
+            }
+            
+            foreach (Dictionary<string, string> d in csvGuests)
+            {
+                customers.Add(PersonFactory.Instance.RestoreGuest(d));
+            }
+
+            foreach (PersonComponent p in customers)
+            {
+                MessageBox.Show("Customer: " + p.ToCSV());
+            }
+
+            foreach (PersonComponent p in guests)
+            {
+                MessageBox.Show("Guest: " + p.ToCSV());
+            }
+
 
         
 // works:   List<Dictionary<string, string>> ld = CSVReader.ReadData("person.csv");

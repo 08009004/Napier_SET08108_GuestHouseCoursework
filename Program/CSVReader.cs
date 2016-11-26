@@ -21,7 +21,7 @@ namespace Program
      * Enumeration, for each CSVWritable class, of its fields in the order
      * they appear in the persisted file.
      */
-    enum PersonField {  FIRST_NAME, SECOND_NAME }
+    enum PersonField {  NAME }
     enum CustomerField { CUSTOMER_NUMBER, ADDRESS }
     enum GuestField { PASSPORT_NUMBER, AGE }
 

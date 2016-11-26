@@ -37,7 +37,8 @@ namespace Program
 
         /*
          * Returns a textual representation of the Person object
-         * in order to persist it to a CSV file.
+         * in order to persist it to a CSV file; fields must come
+         * in the same order as enumerated in PersonFields.cs
          */
         public override String ToCSV()
         {

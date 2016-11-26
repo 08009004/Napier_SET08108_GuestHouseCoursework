@@ -53,7 +53,8 @@ namespace Program
 
         /*
          * Returns a textual representation of the decorated ConcretePerson  
-         * (post Guest decoration) in order to persist it to a CSV file.
+         * (post Guest decoration) in order to persist it to a CSV file;
+         * fields must come in the same order as enumerated in GuestFields.cs
          */
         public override String ToCSV()
         {

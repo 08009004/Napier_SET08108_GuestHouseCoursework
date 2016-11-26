@@ -996,6 +996,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="233be9ca-03ac-4838-965f-00b39d5172e8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="e78016a4-4dd0-4a40-b391-9ab9230d5d00" name="Lower" value="0">
+                      <elementDefinition Id="d465f990-f2de-4740-9107-3e05d0133216" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6d1c093c-54ea-456d-bfbb-60143d0e826e" name="Upper" value="1">
+                      <elementDefinition Id="f642574e-bbf5-44cb-9c01-3a1c93952a10" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="461a9daf-17aa-4bf3-a9b7-3d37912b86bb" />
                 </memberEnd>
               </associationHasOwnedEnds>
