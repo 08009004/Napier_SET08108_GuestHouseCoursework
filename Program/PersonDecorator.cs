@@ -8,10 +8,11 @@ namespace Program
 {
     abstract class PersonDecorator : PersonComponent
     {
+        // Property: the decorator component
         private PersonComponent person;
 
         /*
-         * Sets the component of that will be decorated by this decorator.
+         * Sets the component that this decorator decorates.
          */
         public void SetComponent(PersonComponent component)
         {
