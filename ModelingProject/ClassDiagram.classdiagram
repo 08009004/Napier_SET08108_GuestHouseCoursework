@@ -986,7 +986,7 @@
       <class Id="34a34d49-88a6-414e-84f7-0e8c9242495d" name="BookingFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6d4326c9-0228-4787-8724-7e76be7ed98b" />
         <targetEnds>
-          <association Id="16896ece-cd4b-4ced-a26a-accab4d1089e" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="16896ece-cd4b-4ced-a26a-accab4d1089e" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="generates" isAbstract="false">
             <classMoniker Id="243371c1-3eba-4495-9562-be3dd36539b5" LastKnownName="Booking" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1012,7 +1012,7 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="087e04c3-f269-4cf0-b4a6-ae3f9cc10c30" />
           </association>
-          <association Id="87937549-84fc-42c3-baa5-bf03131d7cd5" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="87937549-84fc-42c3-baa5-bf03131d7cd5" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="adds on" isAbstract="false">
             <classMoniker Id="34473669-a5c2-4ac0-802b-5197a4cfad0b" LastKnownName="Breakfast" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1022,13 +1022,23 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="9c42b758-0368-48cd-856b-c88c5a2bd47a" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="27e6d10c-0b2a-46bf-8b6c-0dab77f3937e" name="Lower" value="0">
+                      <elementDefinition Id="fe06ee6f-2aad-45eb-ad04-f30d1da7d9cc" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="4bccb5bb-8606-48f2-b451-82276d176c0c" name="Upper" value="*">
+                      <elementDefinition Id="187d0aea-5d21-45ec-a3d6-27762c7bf3c4" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="41b714ab-c606-438b-8c0e-8683f92fa3a6" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="fc39973d-2e0a-4419-ae99-6026ee5610e8" />
           </association>
-          <association Id="d8a06cbd-d560-4cd3-9fd0-268e3da09236" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="d8a06cbd-d560-4cd3-9fd0-268e3da09236" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="adds on" isAbstract="false">
             <classMoniker Id="2ee73d70-b2c3-408d-b98f-7479c2df2db4" LastKnownName="EveningMeal" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1038,13 +1048,23 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="cc26dc92-cb6b-41d9-9d03-bc590a443d5d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="0ecde41f-aed7-48e7-826a-2cb32e154662" name="Lower" value="0">
+                      <elementDefinition Id="d0213a82-2f20-4714-96d9-13f181681026" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="8e0c4611-a992-4070-87e1-1c93a43752ba" name="Upper" value="*">
+                      <elementDefinition Id="934d5391-39dd-4bb4-81b8-0ac169bb3600" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="9249b2bc-9f47-438f-ae6f-f3c1913a0fd4" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="515e776b-7f6d-49d8-8670-4b7c71edbc84" />
           </association>
-          <association Id="ffe9cd42-2250-430e-816f-0e6803c638fa" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="ffe9cd42-2250-430e-816f-0e6803c638fa" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="adds on" isAbstract="false">
             <classMoniker Id="21980b84-38dc-42f6-af70-c6a3d601ff37" LastKnownName="CarHire" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1054,6 +1074,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="df1599bd-d239-4c99-bc35-1f288f6f75e3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="f4395242-fdea-429c-aece-7cd83368a942" name="Lower" value="0">
+                      <elementDefinition Id="bb9c1848-95a3-46e8-93fd-54763dd52fa1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7b98182f-ac25-4695-9c3a-037bdc8eb19d" name="Upper" value="*">
+                      <elementDefinition Id="e3e31994-ddb8-4dee-a4c7-61d44ad87bab" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="a5bfb795-74ce-4044-95b0-80da4e3b6ea5" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -1089,7 +1119,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="8eff6b4d-3257-407e-bae3-057dc97095d6" name="InstantiateBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="8eff6b4d-3257-407e-bae3-057dc97095d6" name="GetNewBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b13ac0af-8dad-4d61-9b57-e60be6603399" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -1101,8 +1131,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="e14b59e0-d267-4714-ae73-6cdb4173a033" name="PersonComponent customer" direction="In" isUnique="false">
-                  <elementDefinition Id="18a8f76f-b58b-4d45-81e3-ecc531212d49" />
+                <parameter Id="34a3cbcb-c966-4dfd-84a3-c6514438a667" name="PersonComponent customer" direction="In" isUnique="false">
+                  <elementDefinition Id="38ce1de1-624f-46b2-9c8e-95c0cf525b3b" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1118,6 +1148,11 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="07030b51-e693-49c3-ab0b-eb8499b72795" name="BookingComponent booking" direction="In" isUnique="false">
+                  <elementDefinition Id="ceb331fb-937f-468f-af35-cca08ae01874" />
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation Id="b7a6a225-cb0e-4b62-9a9d-5d615af36ed0" name="AddBreakfast" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -1131,6 +1166,11 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1b7cb6a0-341b-4bd0-a793-38ba79abe830" name="BookingComponent booking" direction="In" isUnique="false">
+                  <elementDefinition Id="caaa8176-bb34-4f73-bc03-0a98fb14969b" />
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation Id="3de1a7ab-8272-4b94-8f98-2653119bb165" name="AddCarHire" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -1142,6 +1182,11 @@
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f841b403-16d7-4903-861c-c0a6860b018b" LastKnownName="CarHire" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ffea15ff-4a2e-42f2-bfc4-8aaf3c547987" name="BookingComponent booking" direction="In" isUnique="false">
+                  <elementDefinition Id="4ced4077-0c94-48ad-ac92-ac66c5f52d2f" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1161,6 +1206,24 @@
           </operation>
           <operation Id="1b902391-3b0c-48a1-9b05-0d33ec628345" name="BookingFactory" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="37495955-054b-4ac8-8cc8-90e3cde3cd9b" />
+          </operation>
+          <operation Id="8c1c363c-4561-418f-9c3c-eccd33985daa" name="RestoreBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2785dd4c-1d67-4f27-8ef4-89a33458e105" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="72cd9ebd-2c5b-472b-a6d5-9224c774fc7c" name="int bookingNb" direction="In" isUnique="false">
+                  <elementDefinition Id="d4777250-20cb-4f52-8968-2c280502d243" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b7c3b314-d4f5-46c6-8b56-1866512b403e" direction="Return" isUnique="false">
+                  <elementDefinition Id="95f0c910-fa66-41db-a484-7f92100b87a7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9409f34c-cfab-4d42-a582-6ab234e7be91" LastKnownName="Booking" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>

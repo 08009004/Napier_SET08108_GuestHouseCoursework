@@ -2314,6 +2314,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
+            name="generates"
             isAbstract="false">
             <classMoniker
               Id="eb9c2ffa-a03b-481e-93c9-59924dff777a"
@@ -2364,6 +2365,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
+            name="adds on"
             isAbstract="false">
             <classMoniker
               Id="aba9fa43-ee71-4174-9624-46ce416bfc27"
@@ -2391,7 +2393,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="fe06ee6f-2aad-45eb-ad04-f30d1da7d9cc"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="187d0aea-5d21-45ec-a3d6-27762c7bf3c4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -2401,6 +2416,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
+            name="adds on"
             isAbstract="false">
             <classMoniker
               Id="3a3f11ca-5024-47cc-908a-f6f93ba5f1d3"
@@ -2428,7 +2444,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d0213a82-2f20-4714-96d9-13f181681026"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="934d5391-39dd-4bb4-81b8-0ac169bb3600"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -2438,6 +2467,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
+            name="adds on"
             isAbstract="false">
             <classMoniker
               Id="5ae94f79-419e-45b6-88f2-b03b308920c2"
@@ -2465,7 +2495,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bb9c1848-95a3-46e8-93fd-54763dd52fa1"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e3e31994-ddb8-4dee-a4c7-61d44ad87bab"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -2537,7 +2580,7 @@
           </operation>
           <operation
             Id="b13ac0af-8dad-4d61-9b57-e60be6603399"
-            name="InstantiateBooking"
+            name="GetNewBooking"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -2559,7 +2602,7 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="18a8f76f-b58b-4d45-81e3-ecc531212d49"
+                  Id="38ce1de1-624f-46b2-9c8e-95c0cf525b3b"
                   name="PersonComponent customer"
                   direction="In"
                   isUnique="false" />
@@ -2588,6 +2631,13 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ceb331fb-937f-468f-af35-cca08ae01874"
+                  name="BookingComponent booking"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -2612,6 +2662,13 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="caaa8176-bb34-4f73-bc03-0a98fb14969b"
+                  name="BookingComponent booking"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -2635,6 +2692,13 @@
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4ced4077-0c94-48ad-ac92-ac66c5f52d2f"
+                  name="BookingComponent booking"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -2671,6 +2735,37 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="2785dd4c-1d67-4f27-8ef4-89a33458e105"
+            name="RestoreBooking"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d4777250-20cb-4f52-8968-2c280502d243"
+                  name="int bookingNb"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="95f0c910-fa66-41db-a484-7f92100b87a7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="eb9c2ffa-a03b-481e-93c9-59924dff777a"
+                      LastKnownName="Booking"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
