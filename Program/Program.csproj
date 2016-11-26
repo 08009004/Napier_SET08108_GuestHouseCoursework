@@ -67,6 +67,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerField.cs" />
     <Compile Include="DataPersistenceFacade.cs" />
+    <Compile Include="EveningMeal.cs" />
     <Compile Include="Guest.cs" />
     <Compile Include="GuestField.cs" />
     <Compile Include="NewBooking.xaml.cs">
