@@ -8,22 +8,13 @@ namespace Program
 {
     class Person : PersonComponent
     {
-        // Properties:
-        private String firstName;
-        public String FirstName
+        // Property:
+        private String name;
+        public String Name
         {
             get
             {
-                return this.firstName;
-            }
-        }
-
-        private String secondName;
-        public String SecondName
-        {
-            get
-            {
-                return this.secondName;
+                return this.name;
             }
         }
 
@@ -33,31 +24,24 @@ namespace Program
          * throws ArgumentException if firstName or secondName is null or
          * equals String.Empty
          */
-        public Person(String firstName, String secondName)
+        public Person(String name)
         {
-            if (String.IsNullOrEmpty(firstName))
+            if (String.IsNullOrEmpty(name))
             {
-                throw new ArgumentException("ConcretePerson.firstName must"
-                                            + " not be null nor String.Empty");
+                throw new ArgumentException("ConcretePerson.Name must not"
+                                            + " be null nor String.Empty");
             }
 
-            if (String.IsNullOrEmpty(secondName))
-            {
-                throw new ArgumentException("ConcretePerson.secondName must"
-                                            + " not be null nor String.Empty");
-            }
-
-            this.firstName = firstName;
-            this.secondName = secondName;
+            this.name = name;
         }
 
         /*
-         * Returns a textual representation of the ConcretePerson object
+         * Returns a textual representation of the Person object
          * in order to persist it to a CSV file.
          */
         public override String ToCSV()
         {
-            return "#PERSON\r\n" + FirstName + "," + SecondName + "\r\n";
+            return "#PERSON\r\n" + Name + "\r\n";
         }
     }
 }
