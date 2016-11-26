@@ -144,18 +144,18 @@
             <elementDefinition Id="d7415cfb-452a-4ca4-a811-76b00497bb17" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="e0e8d22b-f68a-4656-a8b9-564d49fe59ca" name="PersonComponent" direction="In" isUnique="false">
-                  <elementDefinition Id="589c3535-389b-4011-88cf-d5df0092fbeb" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="c58b392a-2009-4143-a87a-92c844ec1861" LastKnownName="Guest" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="fb2ec1f3-48ce-425a-81c8-d042ab793d2a" direction="Return" isUnique="false">
                   <elementDefinition Id="09304fac-2bb4-460a-95df-777fad0448d5" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="da4713f3-e88b-4fbf-b205-cc0e984ad346" name="guest" direction="In" isUnique="false">
+                  <elementDefinition Id="3039f100-b0fa-4fb5-b193-f1a20968cb96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c58b392a-2009-4143-a87a-92c844ec1861" LastKnownName="Guest" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -214,13 +214,19 @@
             <elementDefinition Id="4fe14b9c-c84e-421a-90c2-50477ea308ab" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="a0099f57-1bfa-47b1-9cef-aa01c45f2f6a" name="String address" direction="In" isUnique="false">
-                  <elementDefinition Id="009148f6-152c-483c-8055-99919435d0fe" />
+                <parameter Id="45417566-1950-4203-acb7-471f19e9bcdf" name="address" direction="In" isUnique="false">
+                  <elementDefinition Id="de2c7e9b-0500-428e-b1b9-da611d27bdb0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="cae839e1-5079-4177-9c0e-f0f531700644" name="int customerRefNb" direction="In" isUnique="false">
-                  <elementDefinition Id="a41fdfe5-f8bd-444d-a1c7-1b4a02a68d05" />
+                <parameter Id="fe7aafcc-76f9-4e37-a3cb-862294f1db1a" name="customerRefNb" direction="In" isUnique="false">
+                  <elementDefinition Id="0a448fd8-e8f3-4ed1-9a11-119ea3f682ce" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -281,13 +287,19 @@
             <elementDefinition Id="7bf53b6d-eeb3-4db9-9769-25a18d88fbf9" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="bebf7ce4-9efd-4684-8573-29ee9d22dd2c" name="String passportNb" direction="In" isUnique="false">
-                  <elementDefinition Id="5563b8b8-8836-4a9e-88c8-e74c115be0ba" />
+                <parameter Id="33b50e0b-0b13-4dcc-a0ac-78688f83f02c" name="passportNb" direction="In" isUnique="false">
+                  <elementDefinition Id="a22076ff-e60a-4b4b-9ff8-c6093993045f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="be9bada4-5011-4e2a-8e66-755bd71fe42d" name="int age" direction="In" isUnique="false">
-                  <elementDefinition Id="8a7212e4-56c9-46f8-b3f7-3840d052ed39" />
+                <parameter Id="872c1577-84d3-4eea-a712-6dbf512a0f67" name="age" direction="In" isUnique="false">
+                  <elementDefinition Id="e3de5f40-38d3-4bda-ac09-abaa3fab0ad2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -540,8 +552,11 @@
             <elementDefinition Id="dcbac186-bae3-4756-8cce-8ec0bc1da1ac" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="50a0ffca-5fff-4717-a9ee-1b83ac8fccfb" name="String name" direction="In" isUnique="false">
-                  <elementDefinition Id="3eb4c1ed-8f16-40de-98a8-a44373df49d6" />
+                <parameter Id="526afd60-ea1b-4493-911d-0ff0738c2e26" name="name" direction="In" isUnique="false">
+                  <elementDefinition Id="6f4a5281-1ffd-4aa9-b6cb-c392044f715a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -615,8 +630,11 @@
             <elementDefinition Id="ba77c5da-39e2-489d-a408-39c687f764b9" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="ddfd064f-074f-4f40-bc2c-3ff72fe2100c" name="PersonComponent component" direction="In" isUnique="false">
-                  <elementDefinition Id="774f29fc-1934-41e8-8ff9-f40d324dcf21" />
+                <parameter Id="795c928c-12af-4bc5-8003-0b8224c2fb59" name="component" direction="In" isUnique="false">
+                  <elementDefinition Id="926f5693-1a8b-462b-9557-12932d1abfef" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8d10dd8-7e30-43a4-ae4f-94c3274d0a61" LastKnownName="PersonComponent" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -759,13 +777,19 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="4158351e-35b8-4a78-aeb0-12039da70135" name="String name" direction="In" isUnique="false">
-                  <elementDefinition Id="72ecf0f4-7822-41ce-9971-f64bb76c06d7" />
+                <parameter Id="19241329-6eeb-4948-8123-0c445b9c50f7" name="name" direction="In" isUnique="false">
+                  <elementDefinition Id="5de88f5e-4b32-446a-8424-7f2c78e56fd6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="16133270-c18d-4daa-bb8d-c266b45726c1" name="String address" direction="In" isUnique="false">
-                  <elementDefinition Id="61436f4a-7ca9-4fdb-9051-e1c64a9869c5" />
+                <parameter Id="742d10b4-d948-46f0-82f7-493c70f1a939" name="address" direction="In" isUnique="false">
+                  <elementDefinition Id="d94cb16a-f211-42b3-ab78-c53bd9a72aa1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -782,18 +806,27 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="240e4380-4603-4f8e-b37c-60e441c1f390" name="String name" direction="In" isUnique="false">
-                  <elementDefinition Id="0938ee3e-b454-494e-999e-549c4606d6f2" />
+                <parameter Id="0ea70409-74c9-4642-91ba-ebefdb130327" name="name" direction="In" isUnique="false">
+                  <elementDefinition Id="a3927917-aac9-4856-b46b-5ec3cd85b12c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="25cca288-9277-49c0-8319-0dbb52f6f9db" name="String passportNb" direction="In" isUnique="false">
-                  <elementDefinition Id="66ccba52-0846-4d51-b889-1940e396fdfb" />
+                <parameter Id="b06cb0d6-b71b-4ff7-85a1-89e29fc3417b" name="passportNb" direction="In" isUnique="false">
+                  <elementDefinition Id="66eef0e2-4e8c-4244-a9a3-31810b35345b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="17b390b9-0f98-4d80-86ba-27e60555caab" name="int age" direction="In" isUnique="false">
-                  <elementDefinition Id="49658ffa-d333-41ab-b50e-6d78e5d5494c" />
+                <parameter Id="e965c4a4-e945-400e-b2e9-81fb298b10e2" name="age" direction="In" isUnique="false">
+                  <elementDefinition Id="65ff5972-e5cd-4e85-8f9b-063376b80aed" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -818,25 +851,34 @@
             <elementDefinition Id="77a54aec-c0fb-4e89-83c8-f23e8c1af3ea" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="644ea6dc-9e67-4df3-ad9a-65a819d0cf4f" name="Customer customer" direction="In" isUnique="false">
-                  <elementDefinition Id="64f9bd57-c83d-492a-8532-782f963c74ed" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="239d55fd-e411-4dcd-91d0-efec4e657a2e" name="String passportNb" direction="In" isUnique="false">
-                  <elementDefinition Id="65dfca32-bf3f-4789-be03-a20771a8dc8e" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="01db356a-236f-4263-b82c-a918085ed346" name="int age" direction="In" isUnique="false">
-                  <elementDefinition Id="a77ac2d0-8fe7-4275-bff6-531483cd26d5" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="2b923d96-2fd0-49e2-981b-d1dcbf90d91d" direction="Return" isUnique="false">
                   <elementDefinition Id="5fe02cdc-0471-46c5-96b2-3a077079695f" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="c58b392a-2009-4143-a87a-92c844ec1861" LastKnownName="Guest" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e921ba0b-409e-45cc-b2a9-0072f680093d" name="customer" direction="In" isUnique="false">
+                  <elementDefinition Id="fa9d834e-c55c-4e48-aef3-2357e09478fd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ec6c2375-9173-40bc-a33f-2a517bc9da5a" LastKnownName="Customer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d47c512e-33fb-4598-9bc9-3061baa88ffe" name="passportNb" direction="In" isUnique="false">
+                  <elementDefinition Id="65ec0186-00f8-46a1-879c-bec981f25a24" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a2090128-6e70-46f6-8188-6878c4752659" name="age" direction="In" isUnique="false">
+                  <elementDefinition Id="0cb316f5-cb87-401f-8fb0-3bf0cf414f38" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -846,21 +888,24 @@
             <elementDefinition Id="0f931663-99ea-4cdf-955c-bd422250f3db" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="4b64733c-fc10-4c6a-a16f-0c43c6bffc63" name="Dictionary&lt;String" direction="In" isUnique="false">
-                  <elementDefinition Id="fb27cbdd-1062-45eb-9f3a-9f38dccbd62d" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="5bc119d5-f3b3-4d96-a558-e49a0730e6ac" name="String&gt; attributes" direction="In" isUnique="false">
-                  <elementDefinition Id="03596b07-ec68-437a-a497-ab1c6399fce0" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="cd2a40fc-f290-4d5b-9110-da9f74a34e47" direction="Return" isUnique="false">
                   <elementDefinition Id="d64300ad-a5cc-480b-a985-28b016989305" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="ec6c2375-9173-40bc-a33f-2a517bc9da5a" LastKnownName="Customer" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a806edbf-49a1-4c9b-8169-fa7715ff5701" name="attributes" direction="In" isUnique="false">
+                  <elementDefinition Id="ea156e56-a20c-4acc-85fc-22d83c32ea78" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e222c303-bcc5-4c36-a370-6ef0840dd8d1" LastKnownName="Dictionary&lt;String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4d050e9a-f14a-429f-b37c-7ecbb40dda8e" name="String&gt;" direction="In" isUnique="false">
+                  <elementDefinition Id="f0b2a754-d073-4454-9156-797d4b3faf31" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -869,21 +914,24 @@
             <elementDefinition Id="672613a9-76c0-4b6e-8af3-cd1ce865c4e4" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="2a976774-5ab0-4223-b66d-21346eff0011" name="Dictionary&lt;String" direction="In" isUnique="false">
-                  <elementDefinition Id="7392364c-2a5a-4aa5-8b9d-d68fcaabdf9d" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="cc765683-b38b-47fa-8199-388791477888" name="String&gt; attributes" direction="In" isUnique="false">
-                  <elementDefinition Id="d71ac35e-51d5-4386-a0a2-a8998c172e10" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="40bbaca0-160d-46de-ba52-643301712e17" direction="Return" isUnique="false">
                   <elementDefinition Id="1d243fbd-3cd7-47ad-bda3-c4c98b50fa26" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="c58b392a-2009-4143-a87a-92c844ec1861" LastKnownName="Guest" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8d8773bd-5598-4c8c-bc71-f7faf1edb94a" name="attributes" direction="In" isUnique="false">
+                  <elementDefinition Id="a7156585-9a1c-49dc-9fc8-943fa3e4864f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e222c303-bcc5-4c36-a370-6ef0840dd8d1" LastKnownName="Dictionary&lt;String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0ac93905-648f-4f96-a093-2ce4ed0be26c" name="String&gt;" direction="In" isUnique="false">
+                  <elementDefinition Id="08393e7d-ff1d-4650-a1fe-54f8e3a9ad2e" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -946,11 +994,6 @@
         <elementDefinition Id="a214f3f1-afce-4ccb-b3ec-9caf8f3e2251" />
       </referencedType>
     </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="21b43456-164e-402a-a5cc-d2802e3cf9bc" name="float" isAbstract="false" isLeaf="false" cachedFullName="float">
-        <elementDefinition Id="83d293e5-ac8f-4485-8874-617e63dc57fe" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <class Id="70bcd5d7-09e8-4840-afb7-5d9afde5353c" name="BookingDecorator" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="bef20076-aaff-4624-9ada-e54585bd3641" />
@@ -968,7 +1011,7 @@
                 <parameter Id="968e7c65-9ea4-45bb-af0f-7acafade4294" direction="Return" isUnique="false">
                   <elementDefinition Id="f1475558-193b-4f2f-a492-704ff4a063c7" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="21b43456-164e-402a-a5cc-d2802e3cf9bc" LastKnownName="float" />
+                    <referencedTypeMoniker Id="4875d7db-aadb-4498-8818-8d65b77bb476" LastKnownName="double" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1131,8 +1174,11 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="34a3cbcb-c966-4dfd-84a3-c6514438a667" name="PersonComponent customer" direction="In" isUnique="false">
-                  <elementDefinition Id="38ce1de1-624f-46b2-9c8e-95c0cf525b3b" />
+                <parameter Id="ca8ef004-4874-46b1-9929-e5da9003ce8d" name="customer" direction="In" isUnique="false">
+                  <elementDefinition Id="78eb0e41-47cd-4b7e-affe-bc1907e1171e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ec6c2375-9173-40bc-a33f-2a517bc9da5a" LastKnownName="Customer" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1149,8 +1195,11 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="07030b51-e693-49c3-ab0b-eb8499b72795" name="BookingComponent booking" direction="In" isUnique="false">
-                  <elementDefinition Id="ceb331fb-937f-468f-af35-cca08ae01874" />
+                <parameter Id="4d9a72cb-c96b-4c62-b7fb-d43f6a502b31" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="e60e6794-1bd3-4657-9dbb-e5ac6d00a3fc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1167,8 +1216,11 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="1b7cb6a0-341b-4bd0-a793-38ba79abe830" name="BookingComponent booking" direction="In" isUnique="false">
-                  <elementDefinition Id="caaa8176-bb34-4f73-bc03-0a98fb14969b" />
+                <parameter Id="0eaed9ff-8f76-49e8-9c28-ae3a2b21e32e" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="74a0d295-9e1d-4575-95a5-014520e61e27" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1185,8 +1237,11 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="ffea15ff-4a2e-42f2-bfc4-8aaf3c547987" name="BookingComponent booking" direction="In" isUnique="false">
-                  <elementDefinition Id="4ced4077-0c94-48ad-ac92-ac66c5f52d2f" />
+                <parameter Id="b669d07e-3e27-4c49-97cf-8abc709fc6da" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="3b16e5e1-e174-43f6-bf80-3ed4a1c8feb4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1211,15 +1266,18 @@
             <elementDefinition Id="2785dd4c-1d67-4f27-8ef4-89a33458e105" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="72cd9ebd-2c5b-472b-a6d5-9224c774fc7c" name="int bookingNb" direction="In" isUnique="false">
-                  <elementDefinition Id="d4777250-20cb-4f52-8968-2c280502d243" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="b7c3b314-d4f5-46c6-8b56-1866512b403e" direction="Return" isUnique="false">
                   <elementDefinition Id="95f0c910-fa66-41db-a484-7f92100b87a7" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="9409f34c-cfab-4d42-a582-6ab234e7be91" LastKnownName="Booking" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6df9408e-0902-4011-b9d8-9b3d365cd312" name="bookingNb" direction="In" isUnique="false">
+                  <elementDefinition Id="718538e2-93ef-40b6-9037-79b5d322bfb6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1286,6 +1344,16 @@
     <packageHasNamedElement>
       <referencedType Id="d8d10dd8-7e30-43a4-ae4f-94c3274d0a61" name="PersonComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonComponent">
         <elementDefinition Id="4bcd1725-84a0-431f-a6e1-87a051b9a471" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e222c303-bcc5-4c36-a370-6ef0840dd8d1" name="Dictionary&lt;String" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;String">
+        <elementDefinition Id="82a4f1e0-575b-43b1-aad4-94b5791799fc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" name="BookingComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingComponent">
+        <elementDefinition Id="4beb07b7-3b41-4b8b-9800-62981cba1271" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
