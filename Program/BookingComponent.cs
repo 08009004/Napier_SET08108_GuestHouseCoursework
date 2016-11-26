@@ -13,6 +13,17 @@ namespace Program
     abstract class BookingComponent
     {
         /*
+         * Must return the number of guests included in this 
+         * BookingComponent.
+         */
+        public abstract int GetNbGuests();
+
+        /*
+         * Must return the number of nights booked.
+         */
+        public abstract int GetNbNights();
+
+        /*
          * Must return the cost of the BookingComponent
          */
         public abstract double GetCost();

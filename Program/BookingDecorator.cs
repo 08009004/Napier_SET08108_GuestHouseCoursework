@@ -11,43 +11,72 @@ namespace Program
      */
     abstract class BookingDecorator : BookingComponent
     {
-        // Property : the decorator component
-        private BookingComponent booking;
+        // Property : the BookingDecorator component
+        public BookingComponent DecoratedComponent { get; set; }
 
         /*
-         * Sets the component that this decorator decorates.
-         */
-        public void SetComponent(BookingComponent component)
-        {
-            this.booking = component;
-        }
-
-        /*
-         * Returns the cost of the decorated BookingComponent.
+         * Returns the cost of the decorated BookingComponent
+         * (or -1 if the root component is not a concrete Booking).
          */
         public override double GetCost()
         {
-            double cost = 0;
+            double cost = -1;
 
-            if (booking != null)
+            if (DecoratedComponent != null)
             {
-                cost = booking.GetCost();
+                cost = DecoratedComponent.GetCost();
             }
 
             return cost;
         }
 
         /*
+         * Returns the number of guests included in the decorated 
+         * BookingComponent (or -1 if the root component is not a
+         * concrete Booking).
+         */
+        public override int GetNbGuests()
+        {
+            int nbGuests = -1;
+
+            if (DecoratedComponent != null)
+            {
+                nbGuests = DecoratedComponent.GetNbGuests();
+            }
+
+            return nbGuests;
+        }
+
+        /*
+         * Returns the number of nights included in the decorated 
+         * BookingComponent (or -1 if the root component is not a
+         * concrete Booking).
+         */
+        public override int GetNbNights()
+        {
+            int nbNights = -1;
+
+            if (DecoratedComponent != null)
+            {
+                nbNights = DecoratedComponent.GetNbGuests();
+            }
+
+            return nbNights;
+        }
+
+        /*
          * Returns a textual representation of the decorated 
-         * BookingDecorator in order to persist it to a CSV file.
+         * BookingDecorator in order to persist it to a CSV file
+         * (or String.Empty if the root component is not a 
+         * concrete Booking).
          */
         public override String ToCSV()
         {
             String csv = String.Empty;
 
-            if (booking != null)
+            if (DecoratedComponent != null)
             {
-                csv = booking.ToCSV();
+                csv = DecoratedComponent.ToCSV();
             }
 
             return csv;

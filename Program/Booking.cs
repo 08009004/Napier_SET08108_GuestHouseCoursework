@@ -61,12 +61,28 @@ namespace Program
         }
 
         /*
+         * Returns the number of guests included in this Booking.
+         */
+        public int GetNbGuests()
+        {
+            return guests.Count;
+        }
+
+        /*
+         * Returns the number of nights booked.
+         */
+        public int GetNbNights()
+        {
+            return (departure - arrival).Days;
+        }
+
+        /*
          * Returns the basic cost (extras excluded) of the booking.
          */
         public double GetCost()
         {
             double cost = 0;
-            int nights = (departure - arrival).Days;
+            int nights = this.GetNbNights();
 
             foreach (Guest g in guests)
             {

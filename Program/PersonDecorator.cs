@@ -12,15 +12,8 @@ namespace Program
     abstract class PersonDecorator : PersonComponent
     {
         // Property: the decorator component
-        private PersonComponent person;
+        public PersonComponent DecoratedComponent { get; set; }
 
-        /*
-         * Sets the component that this decorator decorates.
-         */
-        public void SetComponent(PersonComponent component)
-        {
-            this.person = component;
-        }
 
         /*
          * Returns a textual representation of the decorated 
@@ -30,9 +23,9 @@ namespace Program
         {
             String csv = String.Empty;
 
-            if (person != null)
+            if (DecoratedComponent != null)
             {
-                csv = person.ToCSV();
+                csv = DecoratedComponent.ToCSV();
             }
 
             return csv;

@@ -54,9 +54,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Booking.cs" />
+    <Compile Include="BookingComponent.cs" />
+    <Compile Include="BookingDecorator.cs" />
     <Compile Include="Bookings.xaml.cs">
       <DependentUpon>Bookings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Breakfast.cs" />
     <Compile Include="CSVReader.cs" />
     <Compile Include="CSVWritable.cs" />
     <Compile Include="CSVWriter.cs" />
