@@ -1682,7 +1682,7 @@
           <property
             Id="cf7b558b-6fd0-4041-83af-0e033c451e98"
             name="person"
-            visibility="Private"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"

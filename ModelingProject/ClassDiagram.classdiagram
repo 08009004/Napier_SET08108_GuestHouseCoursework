@@ -577,10 +577,10 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="a2af8393-af48-48ff-b0ca-13a890edfe19" name="person" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a2af8393-af48-48ff-b0ca-13a890edfe19" name="person" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="cf7b558b-6fd0-4041-83af-0e033c451e98" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="560ccef6-8c63-4595-b1fb-fee0b1655a09" LastKnownName="PersonComponent" />
+              <referencedTypeMoniker Id="e196748f-78f9-42c3-b3c3-f1643d7a1f27" LastKnownName="PersonComponent" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -611,11 +611,6 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="560ccef6-8c63-4595-b1fb-fee0b1655a09" name="PersonComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonComponent">
-        <elementDefinition Id="4bcd1725-84a0-431f-a6e1-87a051b9a471" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="fed73c91-b843-4ab8-8a4a-0f332e9b893f" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
@@ -1141,6 +1136,11 @@
     <packageHasNamedElement>
       <referencedType Id="f7c477cb-ee24-4929-8991-e3fc29f2cc03" name="BookingFactory" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingFactory">
         <elementDefinition Id="6d4326c9-0228-4787-8724-7e76be7ed98b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e196748f-78f9-42c3-b3c3-f1643d7a1f27" name="PersonComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonComponent">
+        <elementDefinition Id="4bcd1725-84a0-431f-a6e1-87a051b9a471" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
