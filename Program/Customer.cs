@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    /*
+     * Represents a customer.
+     */
     class Customer : PersonDecorator
     {
         // Properties:

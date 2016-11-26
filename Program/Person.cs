@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    /*
+     * Represents individuals.
+     */
     class Person : PersonComponent
     {
         // Property:
