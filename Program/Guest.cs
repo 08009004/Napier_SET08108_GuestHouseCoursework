@@ -67,5 +67,13 @@ namespace Program
                                 + age
                                 + "\r\n";
         }
+
+        /*
+         * Returns true if the Guest is also a Customer, otherwise flase
+         */
+        public bool IsCustomer()
+        {
+            return base.IsCustomer();
+        }
     }
 }

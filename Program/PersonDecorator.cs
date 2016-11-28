@@ -37,5 +37,20 @@ namespace Program
 
             return csv;
         }
+
+        /*
+         * Returns true if the PersonComponent is a Customer.
+         */
+        public override bool IsCustomer()
+        {
+            bool isCustomer = false;
+
+            if (DecoratedComponent != null)
+            {
+                isCustomer = DecoratedComponent.IsCustomer();
+            }
+
+            return isCustomer;
+        }
     }
 }

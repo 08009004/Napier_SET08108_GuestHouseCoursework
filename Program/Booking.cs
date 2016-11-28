@@ -105,19 +105,54 @@ namespace Program
          */
         public override String ToCSV()
         {
-            StringBuilder sbGuests = new StringBuilder();
-            foreach (Guest g in guests) 
+            int custIndex = indexOfCustomer();
+
+            StringBuilder csvBooking = new StringBuilder("#BOOKING\r\n");
+            csvBooking.Append(bookingNb + ",");
+            csvBooking.Append(arrival.ToString().Substring(0, 10) + ",");
+            csvBooking.Append(departure.ToString().Substring(0, 10) + "\r\n");
+
+            if (custIndex >= 0)
             {
-                sbGuests.Append(g.ToCSV());
+                csvBooking.Append(guests.ElementAt(custIndex).ToCSV());
+            }
+            else
+            {
+                csvBooking.Append(cust.ToCSV());
             }
 
-            return "#BOOKING\r\n"
-                   + bookingNb + ","
-                   + cust.ToCSV() + ","
-                   + arrival + ","
-                   + departure + ","
-                   + sbGuests.ToString() + ","
-                   + "\r\n";
+            if (GetNbGuests() > 0)
+            {
+                foreach (Guest g in guests)
+                {
+                    if (guests.IndexOf(g) != custIndex)
+                    {
+                        csvBooking.Append(g.ToCSV());
+                    }
+                    
+                }
+            }
+
+            return csvBooking.ToString();
+        }
+
+        /*
+         * Returns the index of the element that is also a customer in 
+         * list of guests, or -1 if none is.
+         */
+        private int indexOfCustomer()
+        {
+            int i = -1;
+
+            foreach (Guest g in guests)
+            {
+                if (g.IsCustomer())
+                {
+                    i = guests.IndexOf(g);
+                }
+            }
+
+            return i;
         }
     }
 }

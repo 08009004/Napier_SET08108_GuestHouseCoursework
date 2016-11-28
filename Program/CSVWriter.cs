@@ -23,6 +23,11 @@ namespace Program
             System.IO.File.AppendAllText(personFile, obj.ToCSV());
         }
 
+        public static void Persist(BookingComponent obj)
+        {
+            System.IO.File.AppendAllText(bookingFile, obj.ToCSV());
+        }
+
         /*
          * Persists obj.ToCSV() to the CSV file filename.
          */

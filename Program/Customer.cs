@@ -67,5 +67,13 @@ namespace Program
                                 + address
                                 + "\r\n";
         }
+
+        /*
+         * Returns true.
+         */
+        public override bool IsCustomer()
+        {
+            return true;
+        }
     }
 }

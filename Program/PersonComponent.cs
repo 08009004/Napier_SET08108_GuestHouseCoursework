@@ -17,5 +17,13 @@ namespace Program
          * PersonComponent in order to persist it to a CSV file.
          */
         public abstract String ToCSV();
+
+        /*
+         * Returns false.
+         */
+        public virtual bool IsCustomer()
+        {
+            return false;
+        }
     }
 }
