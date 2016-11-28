@@ -38,7 +38,7 @@
       <associationMoniker Id="7bef51a5-fa6b-4337-b643-7d57666d548b" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="25.25, 14.772461163906568, 0.48484516143798828, 0.14800345897674561" shapeFieldName="Name" />
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="25.144449889659882, 14.772461163906568, 0.6959453821182251, 0.14800345897674561" shapeFieldName="Name" />
       </moveableDecoratorHostShapes>
       <nodes>
         <classShapeMoniker Id="7bdecde2-8836-4d5a-acc4-5c1800d430c2" />
@@ -70,20 +70,28 @@
       <associationMoniker Id="454e3c1e-ba00-4065-a0b2-2912dca47681" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.375, 22.9375, 0.45511424541473389, 0.14800345897674561" shapeFieldName="Name" />
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.625, 23, 0.45511424541473389, 0.14800345897674561" shapeFieldName="Name" />
       </moveableDecoratorHostShapes>
       <nodes>
         <classShapeMoniker Id="1de9f16e-6e44-4594-96c5-1c93f4df6859" />
         <classShapeMoniker Id="3132ca8d-3b2b-43af-ad13-e95667df9d4a" />
       </nodes>
     </associationConnector>
-    <classShape Id="fbd19043-9fe6-4b50-9116-e1b2dd46a70b" absoluteBounds="14.875, 1.75, 2, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="fbd19043-9fe6-4b50-9116-e1b2dd46a70b" absoluteBounds="4.125, 2.125, 3.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="669adf86-b237-4523-9f16-617147785733" LastKnownName="MainWindow" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="fa6a7ccf-c757-44c3-8b06-1b4da405c86d" absoluteBounds="14.89, 2.1400000000000006, 1.9700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="ba40e6b0-6984-4e86-925c-268fe0ba6b96" absoluteBounds="14.89, 2.3511718675494198, 1.9700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="fa6a7ccf-c757-44c3-8b06-1b4da405c86d" absoluteBounds="4.14, 2.515, 3.4699999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="ba40e6b0-6984-4e86-925c-268fe0ba6b96" absoluteBounds="4.14, 2.7261718675494193, 3.4699999999999998, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <dependencyConnector edgePoints="[(5.875 : 3.02734373509884); (5.875 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="4a4d29f5-52b1-4ca7-8559-891e12caaef7" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="fbd19043-9fe6-4b50-9116-e1b2dd46a70b" />
+        <classShapeMoniker Id="1de9f16e-6e44-4594-96c5-1c93f4df6859" />
+      </nodes>
+    </dependencyConnector>
     <classShape Id="0654fed7-b353-4934-bc28-d3b466cef2ff" absoluteBounds="36.125, 16.625, 3.25, 1.5429687152306251" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="2ee73d70-b2c3-408d-b98f-7479c2df2db4" LastKnownName="EveningMeal" />
       <nestedChildShapes>
@@ -195,7 +203,7 @@
       <associationMoniker Id="3c4c3170-cb29-49e4-a7ea-118cfa20d1ba" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="7.0625, 14, 0.45511424541473389, 0.14800345897674561" shapeFieldName="Name" />
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="11, 13.9375, 0.45511424541473389, 0.14800345897674561" shapeFieldName="Name" />
       </moveableDecoratorHostShapes>
       <nodes>
         <classShapeMoniker Id="1de9f16e-6e44-4594-96c5-1c93f4df6859" />
@@ -322,7 +330,7 @@
       <associationMoniker Id="90a0e998-c148-4120-be98-2ba8140f65ca" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="6.3125, 19.1875, 0.45511424541473389, 0.14800345897674561" shapeFieldName="Name" />
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="10.9375, 19.1875, 0.45511424541473389, 0.14800345897674561" shapeFieldName="Name" />
       </moveableDecoratorHostShapes>
       <nodes>
         <classShapeMoniker Id="1de9f16e-6e44-4594-96c5-1c93f4df6859" />

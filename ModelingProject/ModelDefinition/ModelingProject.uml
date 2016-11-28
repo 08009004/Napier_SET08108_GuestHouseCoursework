@@ -131,7 +131,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="concerns"
+            name="accomodates"
             isAbstract="false">
             <classMoniker
               Id="728be8c7-8b73-48cc-b8e9-77d2f5adb4a1"
@@ -1131,7 +1131,18 @@
         name="MainWindow"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="2c3ca09f-0458-4a2f-9029-12634e3da681"
+            name="communicates with">
+            <classMoniker
+              Id="66799a3d-1356-4cbf-bafb-05bd2f8bf045"
+              LastKnownName="ModelFacade"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <undefinedType

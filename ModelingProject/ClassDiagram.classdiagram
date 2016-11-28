@@ -11,7 +11,7 @@
           </generalization>
         </generalsInternal>
         <targetEnds>
-          <association Id="7bef51a5-fa6b-4337-b643-7d57666d548b" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="concerns" isAbstract="false">
+          <association Id="7bef51a5-fa6b-4337-b643-7d57666d548b" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="accomodates" isAbstract="false">
             <classMoniker Id="6778d513-0e61-451e-99dc-ef50851b0649" LastKnownName="Guest" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -479,6 +479,12 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="669adf86-b237-4523-9f16-617147785733" name="MainWindow" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="3a9623b4-6b65-4441-b0be-50739d8c5fdd" />
+        <suppliersInternal>
+          <dependency Id="4a4d29f5-52b1-4ca7-8559-891e12caaef7" name="communicates with">
+            <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
+            <elementDefinition Id="2c3ca09f-0458-4a2f-9029-12634e3da681" />
+          </dependency>
+        </suppliersInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
