@@ -177,7 +177,7 @@
         <OperationElementListCompartment Id="27c03e4d-5ea8-48d6-b0e8-bfe5374dd247" absoluteBounds="11.765, 13.796484357615311, 4.7200000000000006, 1.4824218278129895" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <dependencyConnector edgePoints="[(16.5 : 14.0814689580403); (16.875 : 14.0814689580403); (16.875 : 12.7041479538914); (18 : 12.7041479538914)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+    <dependencyConnector edgePoints="[(16.5 : 14.0814689580403); (17.2852918939705 : 14.0814689580403); (17.2852918939705 : 12.7041479538914); (18 : 12.7041479538914)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
       <dependencyMoniker Id="51d76328-6026-461e-8fbe-59abc0be3d06" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
