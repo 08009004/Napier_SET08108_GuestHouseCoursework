@@ -54,7 +54,7 @@ namespace Program
             
             foreach (Dictionary<string, string> d in csvGuests)
             {
-                customers.Add(PersonFactory.Instance.RestoreGuest(d));
+                guests.Add(PersonFactory.Instance.RestoreGuest(d));
             }
 
             foreach (PersonComponent p in customers)
