@@ -23,10 +23,11 @@ namespace Program
     class CSVReader
     {
         /*
-         * Reads from a CSV file and returns a list of strings, each 
-         * corresponding to a line from the file.
+         * Returns a list of Dictionary<string, string>, each of which is
+         * a representation of of an object as <attribute, value>.
+         * The dictonary keys follow the naming implemented in the *Field.cs
+         * enumerations.
          */
-        // resource: https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
         public static List<Dictionary<string, string>> ReadData(String filename)
         {
             List<String> csvInstances = aggregateInstances(readLines(filename));

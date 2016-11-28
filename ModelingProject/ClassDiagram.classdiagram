@@ -419,6 +419,74 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" name="DataPersistenceFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8" />
+        <ownedAttributesInternal>
+          <property Id="6b8f4c4e-666d-4de3-9c9c-fb2e1aa6959e" name="csvFile" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="030814fe-3ad6-4021-9935-82a73d72befb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="6b1040b6-f3a8-4960-9eeb-55a5ea1db151" name="Exists" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6ad45735-b250-4de8-9ea8-a9c7f13a6093" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6b642b1c-bc60-4171-84e0-080ff8317776" direction="Return" isUnique="false">
+                  <elementDefinition Id="f69e2723-db57-4e9f-aba7-1b598d49c7ad" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="64263d24-26d6-496d-be1f-126365588112" name="guestName" direction="In" isUnique="false">
+                  <elementDefinition Id="b923ecce-4ff9-40b5-befe-aa97110f0d67" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5d85e969-0c88-47e4-b652-2476a17fd816" name="guest" direction="In" isUnique="false">
+                  <elementDefinition Id="fcf97ef9-1c63-45a6-84de-55c0e2f85086" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8b8763bb-9b92-4b72-aa2c-b5c9926111bc" LastKnownName="out Guest" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="99978e37-b48d-4aaa-a404-378a9ffc3c5e" name="Exists" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a564f55-f888-46ad-893a-d0417dacc841" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5d0053fb-c1ec-4689-b6a3-05bb02ea1ac5" direction="Return" isUnique="false">
+                  <elementDefinition Id="f6b8965d-b528-4011-a7b0-af37f8594e0b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8c082403-26d8-4d63-b926-50e538f4f168" name="custRefNb" direction="In" isUnique="false">
+                  <elementDefinition Id="ed77ce82-1174-4841-90c3-3c7c81d9f1ce" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f438bd85-c4cc-4067-8837-307c2ba32638" name="customer" direction="In" isUnique="false">
+                  <elementDefinition Id="c5a912b4-e9fd-429b-88be-f45a9ed079b3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6549b872-83a8-499a-a722-12effbc70822" LastKnownName="out Customer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -1401,10 +1469,26 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="ca8ef004-4874-46b1-9929-e5da9003ce8d" name="customer" direction="In" isUnique="false">
-                  <elementDefinition Id="78eb0e41-47cd-4b7e-affe-bc1907e1171e" />
+                <parameter Id="ec50ac85-7e82-4f71-9914-eabe31745c74" name="customer" direction="In" isUnique="false">
+                  <elementDefinition Id="caebb029-064b-4b27-9651-50488f71708b" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="ec6c2375-9173-40bc-a33f-2a517bc9da5a" LastKnownName="Customer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="55881879-b2c6-4cdd-83f4-13b6de66439c" name="arrival" direction="In" isUnique="false">
+                  <elementDefinition Id="5bbf9157-f044-4ad2-b43b-d81fbde924cf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0082ae11-f2ac-4b9a-be49-6a00508a960f" name="departure" direction="In" isUnique="false">
+                  <elementDefinition Id="018cd414-186d-4d2a-95b8-4f43aa7b6ddf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1644,6 +1728,16 @@
         </ownedLiterals>
       </enumeration>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8b8763bb-9b92-4b72-aa2c-b5c9926111bc" name="out Guest" isAbstract="false" isLeaf="false" cachedFullName="out Guest">
+        <elementDefinition Id="8287cc9c-1d0e-4801-913a-4c08466811d4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6549b872-83a8-499a-a722-12effbc70822" name="out Customer" isAbstract="false" isLeaf="false" cachedFullName="out Customer">
+        <elementDefinition Id="98067152-4280-490b-a679-91b2dec8ca37" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="be28578b-2f00-4c96-af05-4f7c7418fac8" name="ModelingProject">
     <elementDefinition Id="270a8040-b6a2-4b2d-8b63-ec89a017e2b8" />

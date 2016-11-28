@@ -23,6 +23,7 @@ namespace Program
     {
         public MainWindow()
         {
+            /*
             PersonFactory personFactory = PersonFactory.Instance;
             Customer c1 = PersonFactory.Instance.GetNewCustomer("pierre ruiz", "my address");
             Customer c2 = PersonFactory.Instance.GetNewCustomer("lola", "her address");
@@ -35,6 +36,7 @@ namespace Program
             CSVWriter.Persist(c2);
 
             List<Dictionary<string, string>> csvPersons = CSVReader.ReadData(@"person.csv");
+
             List<Dictionary<string, string>> csvCustomers = new List<Dictionary<string, string>>();
             List<Dictionary<string, string>> csvGuests = new List<Dictionary<string, string>>();
 
@@ -51,7 +53,7 @@ namespace Program
             {
                 customers.Add(PersonFactory.Instance.RestoreCustomer(d));
             }
-            
+
             foreach (Dictionary<string, string> d in csvGuests)
             {
                 guests.Add(PersonFactory.Instance.RestoreGuest(d));
@@ -66,11 +68,33 @@ namespace Program
             {
                 MessageBox.Show("Guest: " + p.ToCSV());
             }
-
+            */
 
         
 // works:   List<Dictionary<string, string>> ld = CSVReader.ReadData("person.csv");
-          
+
+            DataPersistenceFacade dpf = new DataPersistenceFacade();
+            List<Dictionary<string, string>> pierre = new List<Dictionary<string, string>>();
+            String v;
+
+            if (dpf.Exists("pierre ruiz", out pierre ))
+            {
+                foreach (Dictionary<string, string> d in pierre)
+                {
+                    foreach (String k in d.Keys)
+                    {
+                        if (d.TryGetValue(k, out v))
+                        {
+                            MessageBox.Show("KEY: " + k + ", VALUE: " + v);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("none found");
+            }
+
             InitializeComponent();
 
         }

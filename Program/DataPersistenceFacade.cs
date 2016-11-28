@@ -7,11 +7,46 @@ using System.Threading.Tasks;
 namespace Program
 {
     /*
-     * Static utility class, facade for the Data Persistence implementation
+     * Utility class, facade for the Data Persistence implementation
      * details.
      */
-    static class DataPersistenceFacade
+    class DataPersistenceFacade
     {
+        // Property: the path to the csv file.
+        private String csvFilePath = @"holiday_data.csv";
+
+        /*
+         * Returns true if a guest with the name passed as a parameter
+         * was found in the persisted data, otherwise false.
+         * 
+         * When method returns true, guests will be a list of all dictionaries
+         * representing the instances where a guest with such a name was found.
+         */
+        public bool Exists(String guestName, 
+                           out List<Dictionary<string, string>> foundInstances)
+        // REFERENCE: 
+        // https://www.tutorialspoint.com/csharp/csharp_output_parameters.htm
+        {
+            String name;
+            List<Dictionary<string, string>> data 
+                                    = CSVReader.ReadData(csvFilePath);
+            List<Dictionary<string, string>> found
+                                    = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> d in data)
+            {
+                if (d.TryGetValue("NAME", out name) && name.Equals(guestName)) 
+                {
+                    found.Add(d);
+                }
+            }
+
+            foundInstances = found;
+
+            return foundInstances != null && foundInstances.Count > 0;
+        }
+
+
         /*
          * Writes the data concerning all instances of Person in the  
          * list passed as a parameter to the respective CSV file.
