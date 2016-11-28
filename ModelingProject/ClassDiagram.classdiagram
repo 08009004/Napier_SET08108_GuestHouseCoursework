@@ -417,7 +417,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" name="JSONFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" name="DataPersistenceFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8" />
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -458,7 +458,7 @@
             <elementDefinition Id="36352074-5c6f-48e6-9ae7-5ac325efdd42" />
           </association>
           <association Id="454e3c1e-ba00-4065-a0b2-2912dca47681" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="contains" isAbstract="false">
-            <classMoniker Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" LastKnownName="JSONFacade" />
+            <classMoniker Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" LastKnownName="DataPersistenceFacade" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="dc9b4029-0cca-43c9-957d-47be47670c45" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -1608,6 +1608,42 @@
         <elementDefinition Id="4bcd1725-84a0-431f-a6e1-87a051b9a471" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="d0a28272-c049-49d0-9681-29ca930e8ff6" name="PersonField" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9fbbbe72-2c98-4133-ae32-158ed4c95c14" />
+        <ownedLiterals>
+          <enumerationLiteral Id="8e71f048-2653-4d2f-b4ef-05e6e023d03a" name="NAME">
+            <elementDefinition Id="e6118167-9028-4b2f-9fa3-5e32b75efb5a" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="57d72a55-edbf-4c3d-b063-1ce16733659f" name="CustomerField" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1c82f3fb-21c1-4729-810b-f860e1bc2786" />
+        <ownedLiterals>
+          <enumerationLiteral Id="d8893f7a-5792-4c2d-9767-5c3f1edaa2d3" name="CUSTOMER_NUMBER">
+            <elementDefinition Id="8634c5b9-c6e7-45e2-ba3d-4486f303ca01" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e09d5139-c755-4857-b16c-abb822538acd" name="ADDRESS">
+            <elementDefinition Id="29eb8d62-8916-48c2-911c-37b198c3f08f" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="e5daccb3-3896-47a1-af8a-3192789fc1a6" name="GuestField" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="332bac0c-004b-49d3-9e0a-16dcff0e4439" />
+        <ownedLiterals>
+          <enumerationLiteral Id="66fbe1cb-dc72-47c0-8c02-69517793ef9d" name="AGE">
+            <elementDefinition Id="f0a6c024-3612-4b66-9a6f-4fde3c14b3e6" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="621e130d-ecdc-4f9d-ae99-71e55861a9a9" name="PASSPORT_NUMBER">
+            <elementDefinition Id="f7240a74-ad64-4482-8540-a44c85fea3dd" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="be28578b-2f00-4c96-af05-4f7c7418fac8" name="ModelingProject">
     <elementDefinition Id="270a8040-b6a2-4b2d-8b63-ec89a017e2b8" />

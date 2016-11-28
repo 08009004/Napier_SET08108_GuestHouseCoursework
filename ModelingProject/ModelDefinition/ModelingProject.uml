@@ -995,7 +995,7 @@
     <packageHasNamedElement>
       <class
         Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8"
-        name="JSONFacade"
+        name="DataPersistenceFacade"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -1094,7 +1094,7 @@
             isAbstract="false">
             <classMoniker
               Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8"
-              LastKnownName="JSONFacade"
+              LastKnownName="DataPersistenceFacade"
               LastKnownLocation="ModelingProject.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -3407,6 +3407,51 @@
       <undefinedType
         Id="fe1745c7-0877-4caa-a295-307f5650ff39"
         name="DietaryRequirement" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="9fbbbe72-2c98-4133-ae32-158ed4c95c14"
+        name="PersonField"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="e6118167-9028-4b2f-9fa3-5e32b75efb5a"
+            name="NAME" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="1c82f3fb-21c1-4729-810b-f860e1bc2786"
+        name="CustomerField"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="8634c5b9-c6e7-45e2-ba3d-4486f303ca01"
+            name="CUSTOMER_NUMBER" />
+          <enumerationLiteral
+            Id="29eb8d62-8916-48c2-911c-37b198c3f08f"
+            name="ADDRESS" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="332bac0c-004b-49d3-9e0a-16dcff0e4439"
+        name="GuestField"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="f0a6c024-3612-4b66-9a6f-4fde3c14b3e6"
+            name="AGE" />
+          <enumerationLiteral
+            Id="f7240a74-ad64-4482-8540-a44c85fea3dd"
+            name="PASSPORT_NUMBER" />
+        </ownedLiterals>
+      </enumeration>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
