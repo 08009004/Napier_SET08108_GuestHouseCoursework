@@ -63,7 +63,7 @@ namespace Program
         /*
          * Returns the number of guests included in this Booking.
          */
-        public int GetNbGuests()
+        public override int GetNbGuests()
         {
             return guests.Count;
         }
@@ -71,7 +71,7 @@ namespace Program
         /*
          * Returns the number of nights booked.
          */
-        public int GetNbNights()
+        public override int GetNbNights()
         {
             return (departure - arrival).Days;
         }
@@ -79,7 +79,7 @@ namespace Program
         /*
          * Returns the basic cost (extras excluded) of the booking.
          */
-        public double GetCost()
+        public override double GetCost()
         {
             double cost = 0;
             int nights = this.GetNbNights();
@@ -97,6 +97,27 @@ namespace Program
             }
 
             return cost;
+        }
+
+        /*
+         * Returns a textual representation of the Booking in order 
+         * to persist it to a CSV file.
+         */
+        public override String ToCSV()
+        {
+            StringBuilder sbGuests = new StringBuilder();
+            foreach (Guest g in guests) 
+            {
+                sbGuests.Append(g.ToCSV());
+            }
+
+            return "#BOOKING\r\n"
+                   + bookingNb + ","
+                   + cust.ToCSV() + ","
+                   + arrival + ","
+                   + departure + ","
+                   + sbGuests.ToString() + ","
+                   + "\r\n";
         }
     }
 }

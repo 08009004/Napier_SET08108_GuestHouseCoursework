@@ -12,7 +12,7 @@ namespace Program
     abstract class BookingDecorator : BookingComponent
     {
         // Property : the BookingDecorator component
-        public BookingComponent DecoratedComponent { get; set; }
+        protected BookingComponent DecoratedComponent { get; set; }
 
         /*
          * Returns the cost of the decorated BookingComponent

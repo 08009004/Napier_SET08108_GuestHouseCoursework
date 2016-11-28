@@ -2168,6 +2168,7 @@
           <property
             Id="cf7b558b-6fd0-4041-83af-0e033c451e98"
             name="DecoratedComponent"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2725,8 +2726,8 @@
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="83d293e5-ac8f-4485-8874-617e63dc57fe"
-                      LastKnownName="float"
+                      Id="ba7de8c3-c6f3-47a7-a388-f92c1dc4c5c5"
+                      LastKnownName="double"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2884,6 +2885,7 @@
           <property
             Id="ca3d4fbb-7ea9-4586-aea8-b455105360c9"
             name="DecoratedComponent"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"

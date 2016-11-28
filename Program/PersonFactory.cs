@@ -45,7 +45,7 @@ namespace Program
             Person p = new Person(name);
             Customer c = new Customer(address, this.nextCustNb);
             this.nextCustNb++;
-            c.SetComponent(p);
+            c.DecoratedComponent = p;
             return c;
         }
 
@@ -80,7 +80,7 @@ namespace Program
             }
 
             Customer c = new Customer(address, custRefNb);
-            c.SetComponent(new Person(name));
+            c.DecoratedComponent = new Person(name);
 
             return c;
         }
@@ -93,7 +93,7 @@ namespace Program
         {
             Person p = new Person(name);
             Guest g = new Guest(passportNb, age);
-            g.SetComponent(p);
+            g.DecoratedComponent = p;
             return g;
         }
 
@@ -104,7 +104,7 @@ namespace Program
         public Guest GetNewGuest(Customer customer, String passportNb, int age)
         {
             Guest g = new Guest(passportNb, age);
-            g.SetComponent(customer);
+            g.DecoratedComponent = customer;
             return g;
         }
 
@@ -139,7 +139,7 @@ namespace Program
             }
 
             Guest g = new Guest(passportNb, age);
-            g.SetComponent(new Person(name));
+            g.DecoratedComponent = new Person(name);
 
             return g;
         }

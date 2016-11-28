@@ -821,10 +821,10 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="a2af8393-af48-48ff-b0ca-13a890edfe19" name="DecoratedComponent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a2af8393-af48-48ff-b0ca-13a890edfe19" name="DecoratedComponent" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="cf7b558b-6fd0-4041-83af-0e033c451e98" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="2b488f45-152c-4b50-a763-9f3e040d1e1c" LastKnownName="PersonComponent" />
+              <referencedTypeMoniker Id="776c8aa2-4c6a-40f3-a4ca-42b7f792a1d9" LastKnownName="PersonComponent" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1150,7 +1150,7 @@
                 <parameter Id="381b7cff-1319-4362-a594-f5f92312af15" direction="Return" isUnique="false">
                   <elementDefinition Id="15164d24-0cfc-483d-ae86-535e059ca685" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                    <referencedTypeMoniker Id="4875d7db-aadb-4498-8818-8d65b77bb476" LastKnownName="double" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1246,10 +1246,10 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="2ca42687-ab9c-4c0f-bea1-afaccc3549d8" name="DecoratedComponent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="2ca42687-ab9c-4c0f-bea1-afaccc3549d8" name="DecoratedComponent" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ca3d4fbb-7ea9-4586-aea8-b455105360c9" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="90951694-2eff-4eb2-b980-edd8fc2a0097" LastKnownName="BookingComponent" />
+              <referencedTypeMoniker Id="b75bcd89-f0f7-40fe-be31-881195844dad" LastKnownName="BookingComponent" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1599,12 +1599,12 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="90951694-2eff-4eb2-b980-edd8fc2a0097" name="BookingComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingComponent">
+      <referencedType Id="b75bcd89-f0f7-40fe-be31-881195844dad" name="BookingComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingComponent">
         <elementDefinition Id="4beb07b7-3b41-4b8b-9800-62981cba1271" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="2b488f45-152c-4b50-a763-9f3e040d1e1c" name="PersonComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonComponent">
+      <referencedType Id="776c8aa2-4c6a-40f3-a4ca-42b7f792a1d9" name="PersonComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonComponent">
         <elementDefinition Id="4bcd1725-84a0-431f-a6e1-87a051b9a471" />
       </referencedType>
     </packageHasNamedElement>

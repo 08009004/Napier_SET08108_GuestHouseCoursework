@@ -13,7 +13,12 @@ namespace Program
     {
         // Property: the decorator component
         public PersonComponent DecoratedComponent { get; set; }
-
+            /*
+             * Ideally this property should be 'protected' hence visible only 
+             * from children classes Customer.cs and Guest.cs but VisualStudio
+             * genereates a compile time error if it is.
+             * Simon and I looked into it together and could not figure out why.
+             */
 
         /*
          * Returns a textual representation of the decorated 
