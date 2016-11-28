@@ -424,6 +424,56 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" name="ModelFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="66799a3d-1356-4cbf-bafb-05bd2f8bf045" />
+        <targetEnds>
+          <association Id="3c4c3170-cb29-49e4-a7ea-118cfa20d1ba" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="contains" isAbstract="false">
+            <classMoniker Id="8c536043-218a-4e80-ab8d-99526c7330e6" LastKnownName="PersonFactory" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="68a88567-23b6-45e8-bd6f-21ff8ccfe0c8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e7eff933-922d-4741-b027-f7276ccebaae" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="32afa060-a5c1-47fa-9eff-3e3e2e8f3bd6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="611526e4-74e1-4b7e-99d3-7d802987388e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c89b8412-9097-4c60-8c89-51731f6b3339" />
+          </association>
+          <association Id="90a0e998-c148-4120-be98-2ba8140f65ca" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="contains" isAbstract="false">
+            <classMoniker Id="34a34d49-88a6-414e-84f7-0e8c9242495d" LastKnownName="BookingFactory" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6322bb7e-735f-4d82-b119-92f3583bb05e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f6906799-f423-4e13-988c-318a6102b99b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cf650d1b-e558-4262-8f67-ba4b32083572" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1bc8e2c0-5240-4b1a-b1e8-c6caab058d88" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="36352074-5c6f-48e6-9ae7-5ac325efdd42" />
+          </association>
+          <association Id="454e3c1e-ba00-4065-a0b2-2912dca47681" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="contains" isAbstract="false">
+            <classMoniker Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" LastKnownName="JSONFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dc9b4029-0cca-43c9-957d-47be47670c45" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="35502223-510c-485c-8ab5-8a785f6c0c11" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="862cb3df-3893-4d86-b0e6-644957de7ed1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="19ee1f86-5fa0-4187-951e-964b059d6c45" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1a64b314-4460-4c9d-946f-4d3578198ff1" />
+          </association>
+        </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
