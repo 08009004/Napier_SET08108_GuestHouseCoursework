@@ -1215,6 +1215,24 @@
             <elementDefinition Id="fecb05e2-f483-4d04-89ad-56ffafffbc0c" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="1b069d8d-5b18-4063-b19c-a6a24c2ca002" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="booking" isAbstract="false">
+            <classMoniker Id="ef67800d-e897-4190-b094-cefeec4b674a" LastKnownName="BookingComponent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d496ea83-4b00-4be8-a8d7-65e91cc01e2f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5b9ae277-1fd1-4590-abce-169a9fd63828" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="681df1e7-91dc-4f51-9bc6-a5a681777bef" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="87d77de5-716c-4fce-9f6d-96f3e51815b5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a92eb171-255e-42a7-858a-0402db8b30e3" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="2ca42687-ab9c-4c0f-bea1-afaccc3549d8" name="DecoratedComponent" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="ca3d4fbb-7ea9-4586-aea8-b455105360c9" />

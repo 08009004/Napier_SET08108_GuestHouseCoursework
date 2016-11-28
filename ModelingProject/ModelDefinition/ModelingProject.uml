@@ -2797,6 +2797,46 @@
               LastKnownLocation="ModelingProject.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="a92eb171-255e-42a7-858a-0402db8b30e3"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="booking"
+            isAbstract="false">
+            <classMoniker
+              Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
+              LastKnownName="BookingComponent"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5b9ae277-1fd1-4590-abce-169a9fd63828"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="87d77de5-716c-4fce-9f6d-96f3e51815b5"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="ca3d4fbb-7ea9-4586-aea8-b455105360c9"
