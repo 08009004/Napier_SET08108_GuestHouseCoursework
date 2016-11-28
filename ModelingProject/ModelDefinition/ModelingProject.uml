@@ -1840,42 +1840,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="2b103d53-637f-4ba2-97b3-e0e16fa99a14"
-            name="Start"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="c708db4e-33b4-4648-8b26-366d8cbead47"
-                LastKnownName="DateTime"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="2dcf4a1b-e685-407b-946a-04812171cf57"
-            name="End"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="c708db4e-33b4-4648-8b26-366d8cbead47"
-                LastKnownName="DateTime"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="e70bc16b-8bdb-43d6-a2c4-f08d6621983d"
             name="end"
             visibility="Private"
@@ -1898,24 +1862,6 @@
             Id="b3eb2788-7d0d-46c1-9402-6e27d64525d8"
             name="driverName"
             visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="2ba2460b-ca48-406a-bd02-ce816bf083a2"
-                LastKnownName="string"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="1018b6db-cfc3-48fb-9de2-3c8b0c97af58"
-            name="DriverName"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1988,7 +1934,38 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="81e54cc2-a652-40e7-941f-78b230f22de2"
+                  name="driverName"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4a64816c-98c2-45f6-a940-405dcbe2ce45"
+                  name="start DateTime"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d23ce86-511d-4583-9bf0-b01e7f76035c"
+                  name="end DateTime"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

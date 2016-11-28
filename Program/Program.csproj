@@ -61,6 +61,7 @@
       <DependentUpon>Bookings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Breakfast.cs" />
+    <Compile Include="CarHire.cs" />
     <Compile Include="CSVReader.cs" />
     <Compile Include="CSVWritable.cs" />
     <Compile Include="CSVWriter.cs" />

@@ -763,18 +763,6 @@
               <referencedTypeMoniker Id="526fc5a2-bd6e-4aa2-b711-7af25210cbf9" LastKnownName="DateTime" />
             </type_NamedElement>
           </property>
-          <property Id="7c71f0d0-38a0-4bd6-bfe6-5728bb2eb431" name="Start" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="2b103d53-637f-4ba2-97b3-e0e16fa99a14" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="0c8ddc9a-c09b-4d6e-81f6-39cc72d7547a" LastKnownName="DateTime" />
-            </type_NamedElement>
-          </property>
-          <property Id="c22af1ee-4230-4f85-b1b0-55f6be49eaa1" name="End" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="2dcf4a1b-e685-407b-946a-04812171cf57" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
-            </type_NamedElement>
-          </property>
           <property Id="aa245095-bf7b-44d2-bdbf-dedf650161c7" name="end" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="e70bc16b-8bdb-43d6-a2c4-f08d6621983d" />
             <type_NamedElement>
@@ -783,12 +771,6 @@
           </property>
           <property Id="ec289abf-d5a1-487a-b676-11029992f397" name="driverName" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b3eb2788-7d0d-46c1-9402-6e27d64525d8" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="7772e6dd-35d2-4b7c-81d1-d9d7e736e17a" LastKnownName="string" />
-            </type_NamedElement>
-          </property>
-          <property Id="72e49447-5463-4fd3-b0e8-60f0784b2b07" name="DriverName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="1018b6db-cfc3-48fb-9de2-3c8b0c97af58" />
             <type_NamedElement>
               <referencedTypeMoniker Id="7772e6dd-35d2-4b7c-81d1-d9d7e736e17a" LastKnownName="string" />
             </type_NamedElement>
@@ -823,15 +805,30 @@
           </operation>
           <operation Id="5f74d39a-d5ca-4bec-bebb-2e6e18db7ba7" name="CarHire" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f077c3a0-2ee7-4c90-a5ed-032a7c65a1fb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="73816be3-6e26-4236-a308-32a48764f58b" name="driverName" direction="In" isUnique="false">
+                  <elementDefinition Id="81e54cc2-a652-40e7-941f-78b230f22de2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4b9e4bb4-c3f1-45da-ac8b-bd9677b5c218" name="start DateTime" direction="In" isUnique="false">
+                  <elementDefinition Id="4a64816c-98c2-45f6-a940-405dcbe2ce45" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="43a8d50a-5b39-43e0-883b-8da85010eec6" name="end DateTime" direction="In" isUnique="false">
+                  <elementDefinition Id="0d23ce86-511d-4583-9bf0-b01e7f76035c" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="0c8ddc9a-c09b-4d6e-81f6-39cc72d7547a" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
-        <elementDefinition Id="c708db4e-33b4-4648-8b26-366d8cbead47" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="526fc5a2-bd6e-4aa2-b711-7af25210cbf9" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
         <elementDefinition Id="c708db4e-33b4-4648-8b26-366d8cbead47" />
