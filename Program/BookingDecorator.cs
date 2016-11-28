@@ -12,7 +12,15 @@ namespace Program
     abstract class BookingDecorator : BookingComponent
     {
         // Property : the BookingDecorator component
-        protected BookingComponent DecoratedComponent { get; set; }
+        /*
+         * NOTE: Ideally this property should be 'protected' hence  
+         * visible only from children classes Customer.cs and Guest.cs  
+         * but VisualStudio genereates a compile time error if it is.
+         * 
+         * Simon and I looked into it together and could not figure out 
+         * why.
+         */
+        public BookingComponent DecoratedComponent { get; set; }
 
         /*
          * Returns the cost of the decorated BookingComponent
