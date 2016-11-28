@@ -42,6 +42,5 @@ namespace Program
                                 + dietRequirement
                                 + "\r\n";
         }
-    {
     }
 }
