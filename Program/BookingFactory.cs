@@ -73,13 +73,27 @@ namespace Program
 
         /*
          * Decorates a BookingComponent, wrapping it inside a CarHire 
-         * decorator. 
+         * decorator.
+         * 
+         * Throws ArgumentException if either  hire start or hire end
+         * date falls without the booking dates range.
          */
         public CarHire AddCarHire(BookingComponent booking, 
                                   String driverName, 
                                   DateTime start, 
                                   DateTime end)
         {
+            DateTime arrival;
+            DateTime departure;
+            booking.GetDates(out arrival, out departure);
+
+            if (start < arrival || end > departure)
+            {
+                throw new ArgumentException("CarHire start & end dates must"
+                                        + " be within the booking dates" 
+                                        + " range.");
+            }
+
             CarHire ch = new CarHire(driverName, start, end);
             ch.DecoratedComponent = booking;
             return ch;

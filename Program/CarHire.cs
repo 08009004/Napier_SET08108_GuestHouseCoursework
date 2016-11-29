@@ -46,7 +46,7 @@ namespace Program
          */
         public override double GetCost()
         {
-            return ((end - start).Days) * 50;
+            return base.GetCost() +((end - start).Days * 50);
         }
 
         /*

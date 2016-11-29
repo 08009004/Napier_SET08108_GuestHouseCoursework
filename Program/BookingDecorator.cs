@@ -23,6 +23,17 @@ namespace Program
         public BookingComponent DecoratedComponent { get; set; }
 
         /*
+         * Adds a guest to the decorated booking.
+         */
+        public override void AddGuest(Guest guest)
+        {
+            if (DecoratedComponent != null)
+            {
+                DecoratedComponent.AddGuest(guest);
+            }
+        }
+
+        /*
          * Returns the cost of the decorated BookingComponent
          * (or -1 if the root component is not a concrete Booking).
          */
@@ -36,6 +47,25 @@ namespace Program
             }
 
             return cost;
+        }
+
+        /*
+         * Returns the booking start and end dates, or 01/01/1970 for both 
+         * if an error occurs.
+         */
+        public override void GetDates(out DateTime arrival, 
+                                      out DateTime departure)
+        {
+            DateTime a = new DateTime(1970, 1, 1);
+            DateTime d = new DateTime(1970, 1, 1);
+
+            if (DecoratedComponent != null)
+            {
+                DecoratedComponent.GetDates(out a, out d);
+            }
+
+            arrival = a;
+            departure = d;
         }
 
         /*

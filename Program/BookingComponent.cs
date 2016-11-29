@@ -13,10 +13,20 @@ namespace Program
     abstract class BookingComponent
     {
         /*
+         * Must add a guest to a given BookingComponent.
+         */
+        public abstract void AddGuest(Guest guest);
+
+        /*
          * Must return the number of guests included in this 
          * BookingComponent.
          */
         public abstract int GetNbGuests();
+
+        /*
+         * Must return the Booking start and end dates.
+         */
+        public abstract void GetDates(out DateTime arrival, out DateTime departure);
 
         /*
          * Must return the number of nights booked.

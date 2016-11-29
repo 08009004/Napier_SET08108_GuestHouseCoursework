@@ -51,7 +51,7 @@ namespace Program
          * Throws ArgumentException if there is already 4 guests added to
          * the booking.
          */
-        public void AddGuest(Guest guest)
+        public override void AddGuest(Guest guest)
         {
             if (guests.Count >= 4)
             {
@@ -74,6 +74,16 @@ namespace Program
         public override int GetNbNights()
         {
             return (departure - arrival).Days;
+        }
+
+        /*
+         * Returns the booking start and end dates.
+         */
+        public override void GetDates(out DateTime arrival, 
+                                      out DateTime departure)
+        {
+            arrival = this.arrival;
+            departure = this.departure;
         }
 
         /*

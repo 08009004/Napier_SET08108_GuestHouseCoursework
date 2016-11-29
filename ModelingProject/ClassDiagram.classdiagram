@@ -47,7 +47,7 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="508f7268-76db-4163-b52d-eb2ff0e03b94" />
           </association>
-          <association Id="25676159-eca4-47c8-b6a8-80e55e2af5a3" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="made by" isAbstract="false">
+          <association Id="25676159-eca4-47c8-b6a8-80e55e2af5a3" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="was made by" isAbstract="false">
             <classMoniker Id="e7202ada-4acb-4b93-a20c-7f6eb6534d74" LastKnownName="Customer" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -245,6 +245,27 @@
                   <elementDefinition Id="865df484-506e-46da-819b-57a742c89dad" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="faae67fb-7835-4d77-b6a3-f3b2b8353b33" name="GetDates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="674258ca-e67a-4e6b-8135-3c6986fe2804" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1aa1aacf-274f-4632-9f49-952bd00d2dc0" name="arrival" direction="In" isUnique="false">
+                  <elementDefinition Id="85527080-681b-4422-8bf6-cad396bf8acb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9157319d-3e45-43fe-994d-d0897a4c6762" LastKnownName="out DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="370eb724-7f1b-4811-a768-940ba2ce7668" name="departure" direction="In" isUnique="false">
+                  <elementDefinition Id="635ec4f7-3c70-4a52-bd18-9b3b898e7528" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="feb1aa63-d430-4cd9-b6cb-94df2561cc3e" LastKnownName="out DateTime(" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1325,6 +1346,19 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="c6a01eee-69de-44cb-a732-6ab0fd08fc46" name="AddGuest" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3d632138-bb0a-4358-99b0-67693fad7524" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6a8b97f0-db40-4748-a705-5a9b97c9f6e8" name="guest" direction="In" isUnique="false">
+                  <elementDefinition Id="e2c0fa0f-7a1c-4ca5-9145-531ecee4e305" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c58b392a-2009-4143-a87a-92c844ec1861" LastKnownName="Guest" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1457,6 +1491,19 @@
                   <elementDefinition Id="6fce024f-c641-48a9-b044-5d038b31547d" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="abc4386c-c9a9-4818-b37b-bf675b9a136c" name="AddGuest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b169ce8c-bdc8-4a39-8b18-03eff1947baa" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="99ba5533-b9e8-47e7-9f5a-24a7bde0f0b3" name="guest" direction="In" isUnique="false">
+                  <elementDefinition Id="269320cf-bfcf-409e-bd5f-d622afff074f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c58b392a-2009-4143-a87a-92c844ec1861" LastKnownName="Guest" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1861,6 +1908,16 @@
     <packageHasNamedElement>
       <referencedType Id="6549b872-83a8-499a-a722-12effbc70822" name="out Customer" isAbstract="false" isLeaf="false" cachedFullName="out Customer">
         <elementDefinition Id="98067152-4280-490b-a679-91b2dec8ca37" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9157319d-3e45-43fe-994d-d0897a4c6762" name="out DateTime" isAbstract="false" isLeaf="false" cachedFullName="out DateTime">
+        <elementDefinition Id="5b68b2e1-37f7-459d-b9f2-9e03eeaedf22" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="feb1aa63-d430-4cd9-b6cb-94df2561cc3e" name="out DateTime(" isAbstract="false" isLeaf="false" cachedFullName="out DateTime(">
+        <elementDefinition Id="0890077c-5188-40cb-9a1b-e4a49e091e82" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

@@ -195,7 +195,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="made by"
+            name="was made by"
             isAbstract="false">
             <classMoniker
               Id="a214f3f1-afce-4ccb-b3ec-9caf8f3e2251"
@@ -636,6 +636,45 @@
                     <undefinedTypeMoniker
                       Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
                       LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="674258ca-e67a-4e6b-8135-3c6986fe2804"
+            name="GetDates"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="85527080-681b-4422-8bf6-cad396bf8acb"
+                  name="arrival"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="5b68b2e1-37f7-459d-b9f2-9e03eeaedf22"
+                      LastKnownName="out DateTime"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="635ec4f7-3c70-4a52-bd18-9b3b898e7528"
+                  name="departure"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0890077c-5188-40cb-9a1b-e4a49e091e82"
+                      LastKnownName="out DateTime("
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -3032,6 +3071,31 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="3d632138-bb0a-4358-99b0-67693fad7524"
+            name="AddGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e2c0fa0f-7a1c-4ca5-9145-531ecee4e305"
+                  name="guest"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="728be8c7-8b73-48cc-b8e9-77d2f5adb4a1"
+                      LastKnownName="Guest"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3268,6 +3332,31 @@
                     <classMoniker
                       Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
                       LastKnownName="BookingComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b169ce8c-bdc8-4a39-8b18-03eff1947baa"
+            name="AddGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="269320cf-bfcf-409e-bd5f-d622afff074f"
+                  name="guest"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="728be8c7-8b73-48cc-b8e9-77d2f5adb4a1"
+                      LastKnownName="Guest"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -3825,6 +3914,16 @@
       <undefinedType
         Id="98067152-4280-490b-a679-91b2dec8ca37"
         name="out Customer" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="5b68b2e1-37f7-459d-b9f2-9e03eeaedf22"
+        name="out DateTime" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0890077c-5188-40cb-9a1b-e4a49e091e82"
+        name="out DateTime(" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

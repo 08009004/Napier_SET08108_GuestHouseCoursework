@@ -24,45 +24,45 @@ namespace Program
         public MainWindow()
         {
             PersonFactory pf = PersonFactory.Instance;
+            BookingFactory bf = BookingFactory.Instance;
 
             // -------------------
 
-            Customer c1 = PersonFactory.Instance.GetNewCustomer("pierre", "someplace");
+            Customer c1 = pf.GetNewCustomer("pierre", "someplace");
 
-            Booking b1 = new Booking(56789,
-                                    c1, 
-                                    new DateTime(2016, 1, 18), 
-                                    new DateTime(2016, 1, 20));
-            b1.AddGuest(PersonFactory.Instance.GetNewGuest("caroline g", "080055GW", 35));
-            b1.AddGuest(PersonFactory.Instance.GetNewGuest(c1, "564HGFR", 31));
+            BookingComponent b1 = bf.GetNewBooking(c1, 
+                                          new DateTime(2016, 1, 18), 
+                                          new DateTime(2016, 1, 20));
 
-            Breakfast br = new Breakfast("1 vegetarian");
-            br.DecoratedComponent = b1;
+            b1.AddGuest(pf.GetNewGuest("caroline g", "080055GW", 35));
+            b1.AddGuest(pf.GetNewGuest(c1, "564HGFR", 31));
 
-            CSVWriter.Persist(br);
+            b1 = bf.AddBreakfast(b1, "1 vegetarian");
+
+            CSVWriter.Persist(b1);
 
             // -------------------
 
-            Customer c2 = PersonFactory.Instance.GetNewCustomer("sponge bob", "bikini bottom");
+            Customer c2 = pf.GetNewCustomer("sponge bob", "bikini bottom");
 
-            Booking b2 = new Booking(9587,
-                                    c2,
-                                    new DateTime(2016, 1, 19),
-                                    new DateTime(2016, 1, 27));
-            b2.AddGuest(PersonFactory.Instance.GetNewGuest("patrick starfish", "***b**", 12));
-            b2.AddGuest(PersonFactory.Instance.GetNewGuest("sandy squirrel", "TEXAS001", 13));
+            BookingComponent b2 = bf.GetNewBooking(c2,
+                                          new DateTime(2016, 1, 19),
+                                          new DateTime(2016, 1, 27));
 
-            EveningMeal em = new EveningMeal("crabbie patties");
-            em.DecoratedComponent = b2;
+            b2.AddGuest(pf.GetNewGuest("patrick starfish", "***b**", 12));
+            b2.AddGuest(pf.GetNewGuest("sandy squirrel", "TEXAS001", 13));
 
-            CSVWriter.Persist(em);
+            b2 = bf.AddEveningMeal(b2, "crabbie patties");
+            b2 = bf.AddCarHire(b2, "sandy", new DateTime(2016, 1, 20), new DateTime(2016, 1, 23));
+
+            CSVWriter.Persist(b2);
 
             // -------------------
 
             MessageBox.Show("b1 cost: £" + b1.GetCost()
-                            + "\r\n TOTAL: £" + br.GetCost());
+                            + "\r\n TOTAL: £" + b1.GetCost());
             MessageBox.Show("b2 cost: £" + b2.GetCost()
-                            + "\r\n TOTAL: £" + em.GetCost());
+                            + "\r\n TOTAL: £" + b2.GetCost());
 
             InitializeComponent();
 
