@@ -41,3 +41,6 @@ D:\tmp\Program\bin\Debug\Program.pdb
 D:\tmp\Program\obj\Debug\Program.exe
 D:\tmp\Program\obj\Debug\Program.pdb
 D:\tmp\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache
+D:\fff\Program\bin\Debug\Program.exe.config
+D:\fff\Program\obj\Debug\Program.exe
+D:\fff\Program\obj\Debug\Program.pdb
