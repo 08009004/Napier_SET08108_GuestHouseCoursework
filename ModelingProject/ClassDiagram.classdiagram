@@ -1059,7 +1059,7 @@
               <referencedTypeMoniker Id="62323385-5499-4c06-ac74-b2eeab8af7c9" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="74bca225-4333-42b3-a2bd-8958a0532bef" name="instance" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="74bca225-4333-42b3-a2bd-8958a0532bef" name="instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="6c7166b3-52f2-4762-b9aa-cf5c371ee3c2" />
             <type_NamedElement>
               <referencedTypeMoniker Id="9d0cdb08-0d6d-4083-9f09-6693e590a1ef" LastKnownName="PersonFactory" />
@@ -1149,7 +1149,7 @@
           <operation Id="e96d4153-e022-413f-aab0-62f443debc0e" name="PersonFactory" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="7a5a5cbe-148c-40d3-8d0b-94a1698b8c17" />
           </operation>
-          <operation Id="0995c052-c2ca-4703-ad49-ab29fd6912cf" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="0995c052-c2ca-4703-ad49-ab29fd6912cf" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="bb194ee0-7628-4271-9232-e86887b1dc3d" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -1498,7 +1498,7 @@
               <referencedTypeMoniker Id="b4a570f3-960e-46df-871a-ad4f22fa6f31" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="59e54c5e-8f4f-46b0-b76a-11277e4e5c1c" name="instance" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="59e54c5e-8f4f-46b0-b76a-11277e4e5c1c" name="instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="95759a70-aa84-4d85-8325-d57f1bab4fb7" />
             <type_NamedElement>
               <referencedTypeMoniker Id="141288e8-7c77-4e5f-92b0-6d1a77639e06" LastKnownName="BookingFactory" />
@@ -1619,7 +1619,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="934eaff1-54dd-4a4e-ae79-94ec399685fb" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="934eaff1-54dd-4a4e-ae79-94ec399685fb" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="7f04f5cc-7bf1-4a5c-9e85-2003a3e7b75c" />
             <ownedParameters>
               <operationHasOwnedParameters>
