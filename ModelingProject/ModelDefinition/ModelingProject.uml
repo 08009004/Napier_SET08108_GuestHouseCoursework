@@ -3473,7 +3473,7 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="e60e6794-1bd3-4657-9dbb-e5ac6d00a3fc"
+                  Id="f1527341-d460-4c7a-9645-34a631840be9"
                   name="booking"
                   direction="In"
                   isUnique="false">
@@ -3481,6 +3481,20 @@
                     <classMoniker
                       Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
                       LastKnownName="BookingComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="88ae5f69-7d45-4109-a09a-1e5d12ae8f7d"
+                  name="dietRequirements"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -3511,7 +3525,7 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="74a0d295-9e1d-4575-95a5-014520e61e27"
+                  Id="fba0e5b4-95ef-4d90-bbb5-6400ec6a9edb"
                   name="booking"
                   direction="In"
                   isUnique="false">
@@ -3519,6 +3533,20 @@
                     <classMoniker
                       Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
                       LastKnownName="BookingComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ec9fd1be-e46b-46ea-b7e0-a7fa270dccd2"
+                  name="dietRequirements"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -3549,7 +3577,7 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="3b16e5e1-e174-43f6-bf80-3ed4a1c8feb4"
+                  Id="f8ab5e44-18d2-4dec-b93d-332d87630660"
                   name="booking"
                   direction="In"
                   isUnique="false">
@@ -3557,6 +3585,48 @@
                     <classMoniker
                       Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
                       LastKnownName="BookingComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0a27e03e-d28e-4d55-96f2-77d1257becb1"
+                  name="driverName"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5da75c95-dcd1-4ab8-ab6d-05d7b3f63d91"
+                  name="start"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c708db4e-33b4-4648-8b26-366d8cbead47"
+                      LastKnownName="DateTime"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4ed085db-c512-44ec-9414-e0e5c7457243"
+                  name="end"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c708db4e-33b4-4648-8b26-366d8cbead47"
+                      LastKnownName="DateTime"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -3598,7 +3668,8 @@
             isQuery="false" />
           <operation
             Id="2785dd4c-1d67-4f27-8ef4-89a33458e105"
-            name="RestoreBooking"
+            name="restoreBooking"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3620,7 +3691,32 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="718538e2-93ef-40b6-9037-79b5d322bfb6"
+                  Id="65f40b0a-79a5-4793-8afb-5e7cac33f82a"
+                  name="Dictionary&lt;String"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="22d8561d-96ec-4e82-85e0-ad46bd9fed04"
+                  name="String&gt; attributes"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="01dcb003-ac1e-42ba-99c9-2ee85135eaa7"
+            name="RestoreBooking"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d66821d4-9056-4ebc-99c0-765a8c7d65ad"
                   name="bookingNb"
                   direction="In"
                   isUnique="false">
@@ -3628,6 +3724,19 @@
                     <undefinedTypeMoniker
                       Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
                       LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="76cf376f-1706-47e4-bcc7-9b7dc3e4ee33"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="eb9c2ffa-a03b-481e-93c9-59924dff777a"
+                      LastKnownName="Booking"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>

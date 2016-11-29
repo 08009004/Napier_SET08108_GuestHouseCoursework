@@ -1568,10 +1568,18 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="4d9a72cb-c96b-4c62-b7fb-d43f6a502b31" name="booking" direction="In" isUnique="false">
-                  <elementDefinition Id="e60e6794-1bd3-4657-9dbb-e5ac6d00a3fc" />
+                <parameter Id="476f2258-c9b9-4eed-a333-07b595ab1c3d" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="f1527341-d460-4c7a-9645-34a631840be9" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="688fa0d7-69d6-49ee-a6b3-82e8590da773" name="dietRequirements" direction="In" isUnique="false">
+                  <elementDefinition Id="88ae5f69-7d45-4109-a09a-1e5d12ae8f7d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1589,10 +1597,18 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="0eaed9ff-8f76-49e8-9c28-ae3a2b21e32e" name="booking" direction="In" isUnique="false">
-                  <elementDefinition Id="74a0d295-9e1d-4575-95a5-014520e61e27" />
+                <parameter Id="9fbef8f0-7c38-4ef5-bdd8-f19b07055346" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="fba0e5b4-95ef-4d90-bbb5-6400ec6a9edb" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6c87f81f-560f-43ee-a133-5ffe785cafd3" name="dietRequirements" direction="In" isUnique="false">
+                  <elementDefinition Id="ec9fd1be-e46b-46ea-b7e0-a7fa270dccd2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1610,10 +1626,34 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="b669d07e-3e27-4c49-97cf-8abc709fc6da" name="booking" direction="In" isUnique="false">
-                  <elementDefinition Id="3b16e5e1-e174-43f6-bf80-3ed4a1c8feb4" />
+                <parameter Id="ceae6053-1e77-4ac3-88f3-1821810eca51" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="f8ab5e44-18d2-4dec-b93d-332d87630660" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ffda8eb8-184d-474c-b9a8-9d9659f03891" name="driverName" direction="In" isUnique="false">
+                  <elementDefinition Id="0a27e03e-d28e-4d55-96f2-77d1257becb1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f00fd00-86f9-4f43-ad63-c4255f4ec553" name="start" direction="In" isUnique="false">
+                  <elementDefinition Id="5da75c95-dcd1-4ab8-ab6d-05d7b3f63d91" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e94d9dc1-9237-4181-878d-52e6567472f5" name="end" direction="In" isUnique="false">
+                  <elementDefinition Id="4ed085db-c512-44ec-9414-e0e5c7457243" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1635,7 +1675,7 @@
           <operation Id="1b902391-3b0c-48a1-9b05-0d33ec628345" name="BookingFactory" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="37495955-054b-4ac8-8cc8-90e3cde3cd9b" />
           </operation>
-          <operation Id="8c1c363c-4561-418f-9c3c-eccd33985daa" name="RestoreBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="8c1c363c-4561-418f-9c3c-eccd33985daa" name="restoreBooking" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2785dd4c-1d67-4f27-8ef4-89a33458e105" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -1647,10 +1687,33 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="6df9408e-0902-4011-b9d8-9b3d365cd312" name="bookingNb" direction="In" isUnique="false">
-                  <elementDefinition Id="718538e2-93ef-40b6-9037-79b5d322bfb6" />
+                <parameter Id="df202f93-b812-4330-b13a-ae795de9a2a2" name="Dictionary&lt;String" direction="In" isUnique="false">
+                  <elementDefinition Id="65f40b0a-79a5-4793-8afb-5e7cac33f82a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8ba15a30-85b5-4b88-8ea5-fb1abdb02900" name="String&gt; attributes" direction="In" isUnique="false">
+                  <elementDefinition Id="22d8561d-96ec-4e82-85e0-ad46bd9fed04" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="acdea05f-be07-4576-8919-767dd3365335" name="RestoreBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="01dcb003-ac1e-42ba-99c9-2ee85135eaa7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d28601f9-07de-4603-b247-4dc83b550815" name="bookingNb" direction="In" isUnique="false">
+                  <elementDefinition Id="d66821d4-9056-4ebc-99c0-765a8c7d65ad" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f19f552f-bc2b-4ca0-b88c-9de1a6df9321" direction="Return" isUnique="false">
+                  <elementDefinition Id="76cf376f-1706-47e4-bcc7-9b7dc3e4ee33" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9409f34c-cfab-4d42-a582-6ab234e7be91" LastKnownName="Booking" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
