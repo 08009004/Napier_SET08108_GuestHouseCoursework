@@ -3096,6 +3096,45 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="c0981186-83c6-464c-9274-612d54e09520"
+            name="GetDates"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="64e65f00-9d07-4248-83f4-192805f071a9"
+                  name="arrival"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="5b68b2e1-37f7-459d-b9f2-9e03eeaedf22"
+                      LastKnownName="out DateTime"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5c8f8889-2799-4ff4-bc8a-e814251d3c93"
+                  name="departure"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0890077c-5188-40cb-9a1b-e4a49e091e82"
+                      LastKnownName="out DateTime("
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3357,6 +3396,45 @@
                     <classMoniker
                       Id="728be8c7-8b73-48cc-b8e9-77d2f5adb4a1"
                       LastKnownName="Guest"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="65cb0129-8549-4ad4-a8f2-414c16e174e5"
+            name="GetDates"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="41bd97be-b824-4ba9-9442-99fa768f1c27"
+                  name="arrival"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="5b68b2e1-37f7-459d-b9f2-9e03eeaedf22"
+                      LastKnownName="out DateTime"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e8a77312-494d-4598-8ebd-53ea0d7b77c5"
+                  name="departure"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0890077c-5188-40cb-9a1b-e4a49e091e82"
+                      LastKnownName="out DateTime("
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>

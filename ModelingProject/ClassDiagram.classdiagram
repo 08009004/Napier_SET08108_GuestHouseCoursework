@@ -1359,6 +1359,27 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="a868828d-1050-4938-97be-dc82991070b9" name="GetDates" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0981186-83c6-464c-9274-612d54e09520" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c10570c5-0f68-4f0f-8413-e442cf277f33" name="arrival" direction="In" isUnique="false">
+                  <elementDefinition Id="64e65f00-9d07-4248-83f4-192805f071a9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9157319d-3e45-43fe-994d-d0897a4c6762" LastKnownName="out DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d69073ac-6e02-4dc1-8d74-dfe77bd70712" name="departure" direction="In" isUnique="false">
+                  <elementDefinition Id="5c8f8889-2799-4ff4-bc8a-e814251d3c93" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="feb1aa63-d430-4cd9-b6cb-94df2561cc3e" LastKnownName="out DateTime(" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1504,6 +1525,27 @@
                   <elementDefinition Id="269320cf-bfcf-409e-bd5f-d622afff074f" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="c58b392a-2009-4143-a87a-92c844ec1861" LastKnownName="Guest" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="61e8d3c7-2bc8-4c71-acbc-0651962ef74d" name="GetDates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="65cb0129-8549-4ad4-a8f2-414c16e174e5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="15d7916f-1388-4a98-bbe5-8e9a907303a9" name="arrival" direction="In" isUnique="false">
+                  <elementDefinition Id="41bd97be-b824-4ba9-9442-99fa768f1c27" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9157319d-3e45-43fe-994d-d0897a4c6762" LastKnownName="out DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="38be5287-c6fe-42cd-9e64-55fc57c15e6f" name="departure" direction="In" isUnique="false">
+                  <elementDefinition Id="e8a77312-494d-4598-8ebd-53ea0d7b77c5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="feb1aa63-d430-4cd9-b6cb-94df2561cc3e" LastKnownName="out DateTime(" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
