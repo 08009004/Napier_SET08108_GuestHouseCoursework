@@ -52,3 +52,8 @@ D:\fff\Program\obj\Debug\Program_MarkupCompile.cache
 D:\fff\Program\obj\Debug\Program.g.resources
 D:\fff\Program\obj\Debug\Program.Properties.Resources.resources
 D:\fff\Program\obj\Debug\Program.csproj.GenerateResource.Cache
+D:\fff\Program\bin\Debug\Program.exe.config
+D:\fff\Program\bin\Debug\Program.exe
+D:\fff\Program\bin\Debug\Program.pdb
+D:\fff\Program\obj\Debug\Program.exe
+D:\fff\Program\obj\Debug\Program.pdb
