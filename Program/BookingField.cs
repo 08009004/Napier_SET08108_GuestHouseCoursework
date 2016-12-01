@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class BookingField
-    {
-    }
+    /* 
+     * Enumeration of Booking.cs fields in the order they appear in 
+     * Booking.ToCSV() and the persisted file, excluding the fields
+     * defined in PersonField.cs, CustomerField.cs & GuestField.cs
+     */
+    enum BookingField { BOOKING_NUMBER, ARRIVAL, DEPARTURE  }
 }

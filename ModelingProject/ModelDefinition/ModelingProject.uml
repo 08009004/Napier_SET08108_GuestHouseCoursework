@@ -4003,6 +4003,70 @@
         Id="0890077c-5188-40cb-9a1b-e4a49e091e82"
         name="out DateTime(" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="ba0e140a-64e6-4640-8e81-d44da1c3ba8d"
+        name="BookingField"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="bf4ba15f-dc27-42e7-8cee-7978e706cefe"
+            name="BOOKING_NUMBER" />
+          <enumerationLiteral
+            Id="4d82d5e8-80dc-42fe-887d-74167cf9c194"
+            name="ARRIVAL" />
+          <enumerationLiteral
+            Id="9422beee-cc2e-427e-b6ae-cca9c1321e55"
+            name="DEPARTURE" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="90326246-7b65-4867-bb5f-a3a8ab58a179"
+        name="BreakfastField"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="ab507e3e-cd82-4806-ba23-a73872effccf"
+            name="DIET_REQUIREMENT" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="a2a294b7-a13e-4646-b00d-f60bd411e124"
+        name="EveningMealField"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="bb39c3c6-1057-468b-bc4c-a4e3ba6a6a14"
+            name="DIET_REQUIREMENT" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="2475bc63-3226-4332-8664-647f6d7e760e"
+        name="CarHireField"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="0c367b8e-0605-41bc-a401-e5d1501b9756"
+            name="DRIVER_NAME" />
+          <enumerationLiteral
+            Id="972caea0-f0ba-4ccc-8ada-dfed45748e84"
+            name="START" />
+          <enumerationLiteral
+            Id="1895b397-80f8-4d98-9dca-dc366a15f0f6"
+            name="END" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

@@ -58,11 +58,14 @@
     <Compile Include="BookingComponent.cs" />
     <Compile Include="BookingDecorator.cs" />
     <Compile Include="BookingFactory.cs" />
+    <Compile Include="BookingField.cs" />
     <Compile Include="Bookings.xaml.cs">
       <DependentUpon>Bookings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Breakfast.cs" />
+    <Compile Include="BreakfastField.cs" />
     <Compile Include="CarHire.cs" />
+    <Compile Include="CarHireField.cs" />
     <Compile Include="CSVReader.cs" />
     <Compile Include="CSVWritable.cs" />
     <Compile Include="CSVWriter.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="CustomerField.cs" />
     <Compile Include="DataPersistenceFacade.cs" />
     <Compile Include="EveningMeal.cs" />
+    <Compile Include="EveningMealField.cs" />
     <Compile Include="Guest.cs" />
     <Compile Include="GuestField.cs" />
     <Compile Include="NewBooking.xaml.cs">

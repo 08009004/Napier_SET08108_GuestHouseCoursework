@@ -1962,6 +1962,58 @@
         <elementDefinition Id="0890077c-5188-40cb-9a1b-e4a49e091e82" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="f8a5f00f-d5d8-4d7d-ad84-b24f74c7e298" name="BookingField" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ba0e140a-64e6-4640-8e81-d44da1c3ba8d" />
+        <ownedLiterals>
+          <enumerationLiteral Id="6d45f252-bba9-4192-8977-c783c20382f9" name="BOOKING_NUMBER">
+            <elementDefinition Id="bf4ba15f-dc27-42e7-8cee-7978e706cefe" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="7bc0bab5-c011-4f92-9c7a-e03d02fd37b2" name="ARRIVAL">
+            <elementDefinition Id="4d82d5e8-80dc-42fe-887d-74167cf9c194" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="d80db0e5-2151-4fc9-bca5-bab9274b04a9" name="DEPARTURE">
+            <elementDefinition Id="9422beee-cc2e-427e-b6ae-cca9c1321e55" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="ea242736-ad9a-469e-b224-9ba8142753f5" name="BreakfastField" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="90326246-7b65-4867-bb5f-a3a8ab58a179" />
+        <ownedLiterals>
+          <enumerationLiteral Id="f72af862-6e95-4726-a177-a2f5941b6c70" name="DIET_REQUIREMENT">
+            <elementDefinition Id="ab507e3e-cd82-4806-ba23-a73872effccf" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="608698db-db39-4992-b83c-44ce69719644" name="EveningMealField" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a2a294b7-a13e-4646-b00d-f60bd411e124" />
+        <ownedLiterals>
+          <enumerationLiteral Id="3fbc024e-fee6-49e8-91d3-1c67ada3e2ab" name="DIET_REQUIREMENT">
+            <elementDefinition Id="bb39c3c6-1057-468b-bc4c-a4e3ba6a6a14" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="e862c285-7a0d-4a77-a001-4be3789ae28f" name="CarHireField" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2475bc63-3226-4332-8664-647f6d7e760e" />
+        <ownedLiterals>
+          <enumerationLiteral Id="53162235-0270-4618-9135-35336c7f2bcc" name="DRIVER_NAME">
+            <elementDefinition Id="0c367b8e-0605-41bc-a401-e5d1501b9756" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="c6c9d255-06f5-428a-a8cd-6747284f19aa" name="START">
+            <elementDefinition Id="972caea0-f0ba-4ccc-8ada-dfed45748e84" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="d59a9c95-a197-4410-96bd-502ec95ddf15" name="END">
+            <elementDefinition Id="1895b397-80f8-4d98-9dca-dc366a15f0f6" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="be28578b-2f00-4c96-af05-4f7c7418fac8" name="ModelingProject">
     <elementDefinition Id="270a8040-b6a2-4b2d-8b63-ec89a017e2b8" />
