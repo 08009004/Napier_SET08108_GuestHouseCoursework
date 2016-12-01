@@ -66,11 +66,11 @@ namespace Program
             
             */
 
-            List<Dictionary<string, string>> ld = CSVReader.ReadData(@"booking.csv");
+            List<Dictionary<String, String>> ld = CSVReader.ReadBooking(@"booking.csv");
             String v;
-            int i =0;
+            int i = 0;
 
-            foreach (Dictionary<string, string> d in ld)
+            foreach (Dictionary<String, String> d in ld)
             {
                 i++;
                 foreach (String k in d.Keys)
@@ -78,10 +78,11 @@ namespace Program
                     if (d.TryGetValue(k, out v))
                     {
                         MessageBox.Show(i + "\r\n"
-                                        + "KEY: " + k 
+                                        + "KEY: " + k
                                         + "\r\n"
                                         + "VALUE: " + v);
                     }
+
                 }
             }
 

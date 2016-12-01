@@ -28,8 +28,8 @@ namespace Program
         // https://www.tutorialspoint.com/csharp/csharp_output_parameters.htm
         {
             String name;
-            List<Dictionary<string, string>> data 
-                                    = CSVReader.ReadData(csvFilePath);
+            List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
+                              //      = CSVReader.ReadBooking(csvFilePath);
             List<Dictionary<string, string>> found
                                     = new List<Dictionary<string, string>>();
 
