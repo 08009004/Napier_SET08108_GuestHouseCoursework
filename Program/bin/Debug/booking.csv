@@ -30,3 +30,35 @@ TEXAS001,13
 crabbie patties
 ##CAR_HIRE
 sandy,20/01/2016,23/01/2016
+#BOOKING
+1,18/01/2016,20/01/2016
+#PERSON
+pierre
+#CUSTOMER
+1,someplace
+#GUEST
+564HGFR,31
+#PERSON
+caroline g
+#GUEST
+080055GW,35
+#BREAKFAST
+1 vegetarian
+#BOOKING
+2,19/01/2016,27/01/2016
+#PERSON
+sponge bob
+#CUSTOMER
+2,bikini bottom
+#PERSON
+patrick starfish
+#GUEST
+***b**,12
+#PERSON
+sandy squirrel
+#GUEST
+TEXAS001,13
+#EVENING_MEAL
+crabbie patties
+##CAR_HIRE
+sandy,20/01/2016,23/01/2016

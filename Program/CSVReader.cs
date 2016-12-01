@@ -82,7 +82,7 @@ namespace Program
                     
                     i = i + 2;
                 } while (i < fileLines.Count
-                         && !fileLines.ElementAt(i).StartsWith("#PERSON"));
+                         && !fileLines.ElementAt(i).StartsWith("#BOOKING"));
 
                 csvInstances.Add(s.Substring(0, s.Count() - 1));
             }
@@ -121,6 +121,42 @@ namespace Program
             {
                 switch (seperatedInstance[i])
                 {
+                    case "#BOOKING":
+                        BookingField[] keysArr3 = (BookingField[])Enum.GetValues(typeof(BookingField));
+                        foreach (BookingField k in Enum.GetValues(typeof(BookingField)))
+                        {
+                            indexedInstance.Add(
+                                k.ToString(),
+                                seperatedInstance[i + Array.IndexOf(keysArr3, k) + 1]);
+                        }
+                        break;
+                    case "#BREAKFAST":
+                        BreakfastField[] keysArr4 = (BreakfastField[])Enum.GetValues(typeof(BreakfastField));
+                        foreach (BreakfastField k in Enum.GetValues(typeof(BreakfastField)))
+                        {
+                            indexedInstance.Add(
+                                k.ToString(),
+                                seperatedInstance[i + Array.IndexOf(keysArr4, k) + 1]);
+                        }
+                        break;
+                    case "#EVENING_MEAL":
+                        EveningMealField[] keysArr5 = (EveningMealField[])Enum.GetValues(typeof(EveningMealField));
+                        foreach (EveningMealField k in Enum.GetValues(typeof(EveningMealField)))
+                        {
+                            indexedInstance.Add(
+                                k.ToString(),
+                                seperatedInstance[i + Array.IndexOf(keysArr5, k) + 1]);
+                        }
+                        break;
+                    case "#CAR_HIRE":
+                        CarHireField[] keysArr6 = (CarHireField[])Enum.GetValues(typeof(CarHireField));
+                        foreach (CarHireField k in Enum.GetValues(typeof(CarHireField)))
+                        {
+                            indexedInstance.Add(
+                                k.ToString(),
+                                seperatedInstance[i + Array.IndexOf(keysArr6, k) + 1]);
+                        }
+                        break;
                     case "#PERSON":
                         PersonField[] keysArr0 = (PersonField[]) Enum.GetValues(typeof(PersonField));
                         foreach (PersonField k in keysArr0) 
@@ -148,7 +184,8 @@ namespace Program
                                 seperatedInstance[i + Array.IndexOf(keysArr2, k) + 1]);
                         }
                         break;
-                    default : break;
+                    default : 
+                        break;
                 }
             }
 
