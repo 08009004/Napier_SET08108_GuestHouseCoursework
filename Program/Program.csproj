@@ -67,7 +67,6 @@
     <Compile Include="CarHire.cs" />
     <Compile Include="CarHireField.cs" />
     <Compile Include="CSVReader.cs" />
-    <Compile Include="CSVWritable.cs" />
     <Compile Include="CSVWriter.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerField.cs" />
@@ -131,9 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

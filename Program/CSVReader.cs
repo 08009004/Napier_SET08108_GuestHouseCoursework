@@ -48,8 +48,11 @@ namespace Program
          * Throws ArgumentException if the number of lines in the file was not even,
          * as per the CSV formating done within classes.
          */
-        // resource: https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
         private static List<String> readLines(String filename)
+            /*
+             * RESOURCE:
+             * https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
+             */
         {
             List<String> csvLines = new List<String>();
             String line;
@@ -65,8 +68,9 @@ namespace Program
 
             if (csvLines.Count % 2 != 0)
             {
-                throw new ArgumentException("Invalid CSV file: should contain an"
-                                            + " even number of text lines");
+                throw new ArgumentException("Invalid CSV file: should contain"
+                                            + " an even number of text"
+                                            + " lines");
             }
 
             return csvLines;
@@ -80,80 +84,82 @@ namespace Program
         private static List<String[]> extractClasses(List<String> csvBooking) 
         {
             List<String[]> csvEntities = new List<String[]>();
-            String[] bookingComponent = null;
-            String[] personComponent = null;
-            int storeLength;
-            String[] values;
-            int i = 0;
+            String[] booking = null;
+            String[] person = null;
 
-            while (i < csvBooking.Count)
+            for (int i = 0; i < csvBooking.Count; i = i+2 )
             {
-                if (csvBooking.ElementAt(i).Equals("#BOOKING"))
+                switch (csvBooking.ElementAt(i))
                 {
-                    if (personComponent != null)
-                    {
-                        csvEntities.Add(personComponent);
-                        personComponent = null;
-                    }
-                    bookingComponent = new String[1];
-                    bookingComponent[0] = csvBooking.ElementAt(i);
-                    values = csvBooking.ElementAt(i + 1).Split(',');
-                    storeLength = bookingComponent.Length;
-                    Array.Resize<String>(ref bookingComponent, bookingComponent.Length + values.Length);
-                    Array.Copy(values, 0, bookingComponent, storeLength, values.Length);
+                    case "#BOOKING":
+                        if (person != null)
+                        {
+                            csvEntities.Add(person);
+                            person = null;
+                        }
+                        booking = new String[1] { csvBooking.ElementAt(i) };
+                        booking = append(booking, csvBooking.ElementAt(i + 1)
+                                                            .Split(','));
+                        break;
+                    case "#BREAKFAST":
+                    case "#EVENING_MEAL":
+                    case "#CAR_HIRE":
+                        Array.Resize<String>(ref booking, booking.Length + 1);
+                        booking[booking.Length - 1] = csvBooking.ElementAt(i);
+                        booking = append(booking, csvBooking.ElementAt(i + 1)
+                                                            .Split(','));
+                        break;
+                    case "#PERSON":
+                        if (person != null)
+                        {
+                            csvEntities.Add(person);
+                            person = null;
+                        }
+                        person = new String[1] { csvBooking.ElementAt(i) };
+                        person = append(person, csvBooking.ElementAt(i + 1)
+                                                           .Split(','));
+                        break;
+                    case "#CUSTOMER":
+                    case "#GUEST":
+                        Array.Resize<String>(ref person, person.Length + 1);
+                        person[person.Length - 1] = csvBooking.ElementAt(i);
+                        person = append(person, csvBooking.ElementAt(i + 1)
+                                                          .Split(','));
+                        break;
                 }
-                else if (csvBooking.ElementAt(i).Equals("#PERSON"))
-                {
-                    if (personComponent != null)
-                    {
-                        csvEntities.Add(personComponent);
-                        personComponent = null;
-                    }
-                    personComponent = new String[1];
-                    personComponent[0] = csvBooking.ElementAt(i);
-                    values = csvBooking.ElementAt(i + 1).Split(',');
-                    storeLength = personComponent.Length;
-                    Array.Resize<String>(ref personComponent, personComponent.Length + values.Length);
-                    Array.Copy(values, 0, personComponent, storeLength, values.Length);
-                }
-                else if (csvBooking.ElementAt(i).Equals("#CUSTOMER")
-                      || csvBooking.ElementAt(i).Equals("#GUEST"))
-                {
-                    Array.Resize<String>(ref personComponent, personComponent.Length + 1);
-                    personComponent[personComponent.Length - 1] = csvBooking.ElementAt(i);
-                    values = csvBooking.ElementAt(i + 1).Split(',');
-                    storeLength = personComponent.Length;
-                    Array.Resize<String>(ref personComponent, personComponent.Length + values.Length);
-                    Array.Copy(values, 0, personComponent, storeLength, values.Length);
-                }
-                else if (csvBooking.ElementAt(i).Equals("#BREAKFAST")
-                      || csvBooking.ElementAt(i).Equals("#EVENING_MEAL")
-                      || csvBooking.ElementAt(i).Equals("#CAR_HIRE")) 
-                {
-                    Array.Resize<String>(ref bookingComponent, bookingComponent.Length + 1);
-                    bookingComponent[bookingComponent.Length - 1] = csvBooking.ElementAt(i);
-                    values = csvBooking.ElementAt(i + 1).Split(',');
-                    storeLength = bookingComponent.Length;
-                    Array.Resize<String>(ref bookingComponent, bookingComponent.Length + values.Length);
-                    Array.Copy(values, 0, bookingComponent, storeLength, values.Length);
-                }
-
-                i = i + 2;
             }
 
-            csvEntities.Add(bookingComponent);
-            csvEntities.Add(personComponent);
+            csvEntities.Add(booking);
+            csvEntities.Add(person);
 
             return csvEntities;
         }
 
         /*
-         * Indexes a csv entity (String[]) into a dictionary<attribute, value> 
+         * Appends arr2 at the end of arr1.
          */
-        private static Dictionary<String, String> indexEntity(String[] entity)
+        private static String[] append(String[] arr1, String[] arr2)
+        /*
+         * RESOURCES:
+         * http://stackoverflow.com/questions/59217/merging-two-arrays-in-net
+         * https://msdn.microsoft.com/en-us/library/system.array.copy(v=vs.110).aspx
+         */
+        {
+            int appendFrom = arr1.Length;
+            Array.Resize<String>(ref arr1, arr1.Length + arr2.Length);
+            Array.Copy(arr2, 0, arr1, appendFrom, arr2.Length);
+            return arr1;
+        }
+
+        /*
+         * Indexes a csv entity (String[]) into a 
+         * dictionary<attribute, value> 
+         */
+        private static Dictionary<String, String> 
+                                                indexEntity(String[] entity)
         {
             List<String[]> dividedEntity = divideEntity(entity);
-            Dictionary<String, String> indexedEntity = new Dictionary<String, String>();
+            Dictionary<String, String> indexedEntity = null;
 
             foreach (String[] sArr in dividedEntity)
             {
@@ -163,31 +169,28 @@ namespace Program
                         indexedEntity = index<BookingField>(sArr);
                         break;
                     case "#BREAKFAST":
-                        indexedEntity = indexedEntity.Union(index<BreakfastField>(sArr))
-                                                     .ToDictionary(k => k.Key, v => v.Value);
-                        /*
-                         * REFERENCE:
-                         * http://stackoverflow.com/questions/59217/merging-two-arrays-in-net
-                         */
+                        indexedEntity = join(indexedEntity,
+                                             index<BreakfastField>(sArr));
                         break;
                     case "#EVENING_MEAL":
-                        indexedEntity = indexedEntity.Union(index<EveningMealField>(sArr))
-                                                     .ToDictionary(k => k.Key, v => v.Value);
+                        indexedEntity = join(indexedEntity, 
+                                             index<EveningMealField>(sArr));
                         break;
                     case "#CAR_HIRE":
-                        indexedEntity = indexedEntity.Union(index<CarHireField>(sArr))
-                                                     .ToDictionary(k => k.Key, v => v.Value);
+                        indexedEntity = join(indexedEntity, 
+                                             index<CarHireField>(sArr));
                         break;
+
                     case "#PERSON":
                         indexedEntity = index<PersonField>(sArr);
                         break;
                     case "#CUSTOMER":
-                        indexedEntity = indexedEntity.Union(index<CustomerField>(sArr))
-                                                     .ToDictionary(k => k.Key, v => v.Value);
+                        indexedEntity = join(indexedEntity, 
+                                             index<CustomerField>(sArr));
                         break;
                     case "#GUEST":
-                        indexedEntity = indexedEntity.Union(index<GuestField>(sArr))
-                                                     .ToDictionary(k => k.Key, v => v.Value);
+                        indexedEntity = join(indexedEntity, 
+                                             index<GuestField>(sArr));
                         break;
 
                     default:
@@ -196,10 +199,14 @@ namespace Program
                                            + " either #BOOKING or #PERSON");
                 }
             }
-
             return indexedEntity;
         }
 
+        /*
+         * Divides an entity (String[]) into a List<String[]>, each
+         * element of which represents a Component class (from a
+         * decorator pattern)
+         */
         private static List<String[]> divideEntity(String[] entity)
         {
             List<String[]> dividedEntity = new List<String[]>();
@@ -227,98 +234,38 @@ namespace Program
             return dividedEntity;
         }
 
-        private static Dictionary<String, String> index<T>(String[] entitySection)
+        /*
+         * Indexes part of an entity's attributes (= section) into a
+         * dictionary<attribute, value>
+         */
+        private static Dictionary<String, String> 
+                                            index<T>(String[] entitySection)
         {
-            Dictionary<String, String> indexedSection = new Dictionary<String, String>();
             T[] keysArr = (T[])Enum.GetValues(typeof(T));
-
+            Dictionary<String, String> indexedSection 
+                                          = new Dictionary<String, String>();
             foreach (T k in keysArr)
             {
-                indexedSection.Add(k.ToString(),
-                                   entitySection[Array.IndexOf(keysArr, k) + 1]);
+                indexedSection.Add(
+                            k.ToString(),
+                            entitySection[Array.IndexOf(keysArr, k) + 1]);
             }
 
             return indexedSection;
         }
 
         /*
-         * Indexes a csv BookingComponent instance (string) into a 
-         * Dictionary<attribute, value> representing the
-         * BookingComponent instance.
+         * Joins two Dictionary<String, String> (Union operation)
          */
-        private static Dictionary<String, Object> indexBooking(Dictionary<String, String> entities)
+        private static Dictionary<String, String> 
+            join(Dictionary<String, String> d1, Dictionary<String, String> d2)
+                /*
+                 * RESOURCE:
+                 * http://stackoverflow.com/questions/59217/merging-two-arrays-in-net
+                 */
         {
-            Dictionary<String, Object> indexedInstance 
-                                        = new Dictionary<String, Object>();
-            String entity;
-           // String[] seperatedInstance = csvInstance.Split(',');
-
-            foreach (String k in entities.Keys)
-            {
-                switch (k)
-                {
-                    case "#BOOKING":
-                        if (entities.TryGetValue(k, out entity))
-                        {
-                            indexedInstance = index<BookingField>(entity);
-                        }
-                        /*
-                         * RESOURCE:
-                         * http://stackoverflow.com/questions/10559367/combine-multiple-dictionaries-into-a-single-dictionary
-                         */
-                        break;
-                        /*
-                    case "#BREAKFAST":
-                        indexedInstance = index<BreakfastField>(csvInstance);
-                        break;
-                    case "#EVENING_MEAL":
-                        indexedInstance = index<EveningMealField>(csvInstance);
-                        break;
-                    case "#CAR_HIRE":
-                        indexedInstance = index<CarHireField>(csvInstance);
-                        break;
-                    case "#PERSON":
-                        indexedInstance = index<PersonField>(csvInstance);
-                        break;
-                    case "#CUSTOMER":
-                        indexedInstance = index<CustomerField>(csvInstance);
-                        break;
-                    case "#GUEST":
-                        indexedInstance = index<GuestField>(csvInstance);
-                        break;
-                         */
-                    default:
-                        break;
-                }
-            
-            }
-            
-
-            return indexedInstance;
-        }
-
-        private static Dictionary<String, Object> index<BookingField>(String csvEntity)
-        {
-            Dictionary<String, Object> indexedEntity
-                                        = new Dictionary<String, Object>();
-
-            String[] seperatedValues = csvEntity.Split(',');
-            BookingField[] keysArray = (BookingField[])Enum.GetValues(typeof(BookingField));
-
-            if (keysArray.Length != seperatedValues.Length)
-            {
-                throw new ArgumentException("invalid data");
-            }
-
-
-            for (int i = 0; i < keysArray.Length; i++ )
-            {
-                indexedEntity.Add(
-                    keysArray[i].ToString(),
-                    seperatedValues[i]);
-            }
-
-            return indexedEntity;
+            return d1.Union(d2)
+                     .ToDictionary(k => k.Key, v => v.Value);
         }
     }
 }
