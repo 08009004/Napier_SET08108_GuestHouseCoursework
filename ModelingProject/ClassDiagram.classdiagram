@@ -271,6 +271,19 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="c554e797-e93e-4180-bd4f-94a8b9a6ab79" name="GetBookingNb" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4e4ffda4-7608-4296-b59e-5be9b33151d2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9fe65916-b925-4562-b19b-f593e953a2a5" direction="Return" isUnique="false">
+                  <elementDefinition Id="372dd781-128a-4896-897d-80347798a6b7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1380,6 +1393,19 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="09c573a6-7ed2-4fc7-9028-fa44465c5a1a" name="GetBookingNb" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="88540eba-e326-4fa9-ad14-daf0d0b1ee23" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a509d3fd-5057-45cc-8e43-d88b2565fc4b" direction="Return" isUnique="false">
+                  <elementDefinition Id="de2abdd1-2136-4c1f-91e3-18c25fc258cb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1546,6 +1572,19 @@
                   <elementDefinition Id="e8a77312-494d-4598-8ebd-53ea0d7b77c5" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="feb1aa63-d430-4cd9-b6cb-94df2561cc3e" LastKnownName="out DateTime(" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fff45b0c-5889-43e2-a054-cd0498f9527d" name="GetBookingNb" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4db96b54-bae8-4581-8296-25628cfdde84" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="30601c92-7849-40d7-a69b-9aa21f52d27d" direction="Return" isUnique="false">
+                  <elementDefinition Id="1404cd26-1c92-4611-aaa9-c827ac7669be" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

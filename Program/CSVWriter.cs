@@ -14,7 +14,7 @@ namespace Program
      */
     static class CSVWriter
     {
-        
+        /*
         private static string personFile = @"person.csv";
         private static string bookingFile = @"booking.csv";
 
@@ -31,9 +31,20 @@ namespace Program
         /*
          * Persists obj.ToCSV() to the CSV file filename.
          */
+        /*
         public static void WriteData(String filename, PersonComponent obj)
         {
             System.IO.File.AppendAllText(filename, obj.ToCSV());
+        }
+         */
+
+        /*
+         * Persists a BookingComponent to data/{BOOKING_NUMBER}.csv
+         */
+        public static bool Persist(BookingComponent booking)
+        {
+            System.IO.File.AppendAllText(String.Format(@"data/{0}.csv",booking.GetBookingNb()), booking.ToCSV());
+            return false;
         }
     }
 }

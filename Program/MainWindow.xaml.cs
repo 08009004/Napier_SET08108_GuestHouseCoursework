@@ -27,7 +27,7 @@ namespace Program
             BookingFactory bf = BookingFactory.Instance;
 
             // -------------------
-            /*
+            
             Customer c1 = pf.GetNewCustomer("pierre", "someplace");
 
             BookingComponent b1 = bf.GetNewBooking(c1, 
@@ -64,9 +64,10 @@ namespace Program
             MessageBox.Show("b2 cost: £" + b2.GetCost()
                             + "\r\n TOTAL: £" + b2.GetCost());
             
-            */
+            
 
-            List<Dictionary<String, String>> ld = CSVReader.ReadBooking(@"booking.csv");
+            List<Dictionary<String, String>> ld = CSVReader.ReadBooking(@"data/1.csv");
+            ld.AddRange(CSVReader.ReadBooking(@"data/2.csv"));
             String v;
             int i = 0;
 

@@ -29,8 +29,7 @@ namespace Program
          */
         public static List<Dictionary<String, String>> ReadBooking(String filename)
         {
-            List<String> csvLines = readLines(filename);
-            List<String[]> extractedEntities = extractClasses(csvLines);
+            List<String[]> extractedEntities = extractClasses(readLines(filename));
             List<Dictionary<String, String>> indexedEntities = new List<Dictionary<String, String>>();
 
             foreach (String[] sArr in extractedEntities)
@@ -117,7 +116,7 @@ namespace Program
                         }
                         person = new String[1] { csvBooking.ElementAt(i) };
                         person = append(person, csvBooking.ElementAt(i + 1)
-                                                           .Split(','));
+                                                          .Split(','));
                         break;
                     case "#CUSTOMER":
                     case "#GUEST":
@@ -153,7 +152,7 @@ namespace Program
 
         /*
          * Indexes a csv entity (String[]) into a 
-         * dictionary<attribute, value> 
+         * dictionary<attribute, value>.
          */
         private static Dictionary<String, String> 
                                                 indexEntity(String[] entity)
@@ -205,7 +204,7 @@ namespace Program
         /*
          * Divides an entity (String[]) into a List<String[]>, each
          * element of which represents a Component class (from a
-         * decorator pattern)
+         * decorator pattern).
          */
         private static List<String[]> divideEntity(String[] entity)
         {
@@ -236,7 +235,7 @@ namespace Program
 
         /*
          * Indexes part of an entity's attributes (= section) into a
-         * dictionary<attribute, value>
+         * dictionary<attribute, value>.
          */
         private static Dictionary<String, String> 
                                             index<T>(String[] entitySection)
@@ -255,7 +254,7 @@ namespace Program
         }
 
         /*
-         * Joins two Dictionary<String, String> (Union operation)
+         * Joins two Dictionary<String, String> (Union operation).
          */
         private static Dictionary<String, String> 
             join(Dictionary<String, String> d1, Dictionary<String, String> d2)

@@ -61,6 +61,14 @@ namespace Program
         }
 
         /*
+         * Returns the booking number.
+         */
+        public override int GetBookingNb()
+        {
+            return this.bookingNb;
+        }
+
+        /*
          * Returns the number of guests included in this Booking.
          */
         public override int GetNbGuests()

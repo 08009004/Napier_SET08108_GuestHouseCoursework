@@ -34,6 +34,22 @@ namespace Program
         }
 
         /*
+         * Returns the booking number of the decorated BookingComponent
+         * (or -1 if the root component is not a concrete Booking).
+         */
+        public override int GetBookingNb()
+        {
+            int bookingNb = -1;
+
+            if (DecoratedComponent != null)
+            {
+                bookingNb = DecoratedComponent.GetBookingNb();
+            }
+
+            return bookingNb;
+        }
+
+        /*
          * Returns the cost of the decorated BookingComponent
          * (or -1 if the root component is not a concrete Booking).
          */

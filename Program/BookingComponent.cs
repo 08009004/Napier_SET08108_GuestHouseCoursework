@@ -18,6 +18,11 @@ namespace Program
         public abstract void AddGuest(Guest guest);
 
         /*
+         * Must return the Booking number.
+         */
+        public abstract int GetBookingNb();
+
+        /*
          * Must return the number of guests included in this 
          * BookingComponent.
          */
