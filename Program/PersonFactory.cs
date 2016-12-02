@@ -50,9 +50,9 @@ namespace Program
         }
 
         /*
-         * Instantiates a Customer from a dictonary storing attribute values,
-         * presumably recovered from persisted data, the keys are expected to 
-         * be named according to the PersonFields and CustomerFields enumerations.
+         * Instantiates a Customer from a dictonary<attribute, values>,
+         * presumably recovered from persisted data (the dictonary keys 
+         * should follow the naming implemented in the *Field.cs enumerations)
          * 
          * Thows Argument exceptions if there is a problem with the contents
          * of the dictionary passed as a parameter.
@@ -109,9 +109,9 @@ namespace Program
         }
 
         /*
-         * Instantiates a Guest from a dictonary storing attribute values,
-         * presumably recovered from persisted data, the keys are expected to 
-         * be named according to the PersonFields and GuestFields enumerations.
+         * Instantiates a Guest from a dictonary<attribute, values>,
+         * presumably recovered from persisted data (the dictonary keys 
+         * should follow the naming implemented in the *Field.cs enumerations)
          * 
          * Thows Argument exceptions if there is a problem with the contents
          * of the dictionary passed as a parameter.
