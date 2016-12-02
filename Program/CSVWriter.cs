@@ -23,7 +23,9 @@ namespace Program
          */
         public static bool Persist(BookingComponent booking)
         {
-            String filePath = (String.Format(@"{0}/{1}.csv", dataDirectory, booking.GetBookingNb()));
+            String filePath = (String.Format(@"{0}/{1}.csv", 
+                                             dataDirectory, 
+                                             booking.GetBookingNb()));
 
             if (!Directory.Exists(dataDirectory))
             {
