@@ -1948,19 +1948,24 @@
             <elementDefinition Id="01dcb003-ac1e-42ba-99c9-2ee85135eaa7" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="d28601f9-07de-4603-b247-4dc83b550815" name="bookingNb" direction="In" isUnique="false">
-                  <elementDefinition Id="d66821d4-9056-4ebc-99c0-765a8c7d65ad" />
+                <parameter Id="f19f552f-bc2b-4ca0-b88c-9de1a6df9321" direction="Return" isUnique="false">
+                  <elementDefinition Id="76cf376f-1706-47e4-bcc7-9b7dc3e4ee33" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                    <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="f19f552f-bc2b-4ca0-b88c-9de1a6df9321" direction="Return" isUnique="false">
-                  <elementDefinition Id="76cf376f-1706-47e4-bcc7-9b7dc3e4ee33" />
+                <parameter Id="706fdea6-54bd-479e-a288-ae37a4efde14" name="attributes" direction="In" isUnique="false">
+                  <elementDefinition Id="2ce832a3-3318-45d2-bd57-b8462822c04b" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="9409f34c-cfab-4d42-a582-6ab234e7be91" LastKnownName="Booking" />
+                    <referencedTypeMoniker Id="a9436835-fde5-40d2-bf96-7cb406989283" LastKnownName="List&lt;Dictionary&lt;String" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b28ea2cf-3c70-4036-b5b8-d270f66a92e6" name="String&gt;&gt;" direction="In" isUnique="false">
+                  <elementDefinition Id="43f96a6f-5a0d-455b-92a6-74497d8d90f1" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -2312,16 +2317,29 @@
                 <parameter Id="02bab132-b00e-45cd-8c76-5f403b1f61e0" direction="Return" isUnique="false">
                   <elementDefinition Id="dab908b0-8ded-4411-ab50-cd270c075bb3" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="27ec0af7-f718-47c6-a6ea-c862b6afdce7" LastKnownName="List&lt;Dictionary&lt;String, String&gt;&gt;" />
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="b9c806a9-9bcd-4474-93f9-981582d9f527" name="fileName" direction="In" isUnique="false">
-                  <elementDefinition Id="b51038c7-8c5c-4fd0-a87a-1b0cc4a3417b" />
+                <parameter Id="c9558cad-6420-4432-ae1a-cc119e2bf343" name="fileName" direction="In" isUnique="false">
+                  <elementDefinition Id="cadfdad8-0f4d-4a99-90b0-24eaf838d29a" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7b8a0aa4-647f-427c-b59f-ee5c2d7f7584" name="keyVals" direction="In" isUnique="false">
+                  <elementDefinition Id="866fc162-b8e0-4136-8ced-a5e183c84ace" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f7fea3ac-504d-479e-a44b-9e52a7fc0842" LastKnownName="out  List&lt;Dictionary&lt;String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a9640b55-c343-44f6-a2d9-11c64f966640" name="String&gt;&gt;" direction="In" isUnique="false">
+                  <elementDefinition Id="6a1af7fc-1c7b-46e7-98fd-166ad51a5185" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -2487,11 +2505,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="27ec0af7-f718-47c6-a6ea-c862b6afdce7" name="List&lt;Dictionary&lt;String, String&gt;&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Dictionary&lt;String, String&gt;&gt;">
-        <elementDefinition Id="aad0bad3-47d1-4843-a8a9-77aa0cb5d6eb" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="8806cba2-f0de-4bcd-9782-2db40f13356b" name="List&lt;String&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;String&gt;">
         <elementDefinition Id="f2e78df7-d809-48b3-94db-0a452b581a5c" />
       </referencedType>
@@ -2519,6 +2532,11 @@
     <packageHasNamedElement>
       <referencedType Id="f7fea3ac-504d-479e-a44b-9e52a7fc0842" name="out  List&lt;Dictionary&lt;String" isAbstract="false" isLeaf="false" cachedFullName="out  List&lt;Dictionary&lt;String">
         <elementDefinition Id="8501c57d-7933-430c-ac6e-fe14b21dc0bf" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a9436835-fde5-40d2-bf96-7cb406989283" name="List&lt;Dictionary&lt;String" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Dictionary&lt;String">
+        <elementDefinition Id="fa6090af-e724-46ec-b206-bc663686382f" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

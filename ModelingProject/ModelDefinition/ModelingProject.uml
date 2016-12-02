@@ -4217,30 +4217,37 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="d66821d4-9056-4ebc-99c0-765a8c7d65ad"
-                  name="bookingNb"
-                  direction="In"
+                  Id="76cf376f-1706-47e4-bcc7-9b7dc3e4ee33"
+                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
-                      LastKnownName="int"
+                    <classMoniker
+                      Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
+                      LastKnownName="BookingComponent"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="76cf376f-1706-47e4-bcc7-9b7dc3e4ee33"
-                  direction="Return"
+                  Id="2ce832a3-3318-45d2-bd57-b8462822c04b"
+                  name="attributes"
+                  direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <classMoniker
-                      Id="eb9c2ffa-a03b-481e-93c9-59924dff777a"
-                      LastKnownName="Booking"
+                    <undefinedTypeMoniker
+                      Id="fa6090af-e724-46ec-b206-bc663686382f"
+                      LastKnownName="List&lt;Dictionary&lt;String"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="43f96a6f-5a0d-455b-92a6-74497d8d90f1"
+                  name="String&gt;&gt;"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -4715,15 +4722,15 @@
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="aad0bad3-47d1-4843-a8a9-77aa0cb5d6eb"
-                      LastKnownName="List&lt;Dictionary&lt;String, String&gt;&gt;"
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b51038c7-8c5c-4fd0-a87a-1b0cc4a3417b"
+                  Id="cadfdad8-0f4d-4a99-90b0-24eaf838d29a"
                   name="fileName"
                   direction="In"
                   isUnique="false">
@@ -4734,6 +4741,27 @@
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="866fc162-b8e0-4136-8ced-a5e183c84ace"
+                  name="keyVals"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8501c57d-7933-430c-ac6e-fe14b21dc0bf"
+                      LastKnownName="out  List&lt;Dictionary&lt;String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6a1af7fc-1c7b-46e7-98fd-166ad51a5185"
+                  name="String&gt;&gt;"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -5050,6 +5078,11 @@
       <undefinedType
         Id="8501c57d-7933-430c-ac6e-fe14b21dc0bf"
         name="out  List&lt;Dictionary&lt;String" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fa6090af-e724-46ec-b206-bc663686382f"
+        name="List&lt;Dictionary&lt;String" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

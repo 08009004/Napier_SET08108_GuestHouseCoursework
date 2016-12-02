@@ -108,14 +108,18 @@ namespace Program
             return "#BOOKING_FACTORY\r\n" + nxtBookingNb + "\r\n";
         }
 
-        public void RestoreBooking(int bookingNb)
+        /*
+         * Instantiates a BookingComponent from a 
+         * List<Dictonary<attribute, values>>, presumably recovered from 
+         * persisted data (the dictonaries keys should follow the naming 
+         * implemented in the *Field.cs enumerations)
+         * 
+         * Thows Argument exception if there is a problem with the contents
+         * of the dictionary passed as a parameter.
+         */
+        public BookingComponent Restore(List<Dictionary<String, String>> booking)
         {
-
-        }
-
-        private void RestoreBooking(Dictionary<String, String> attributes)
-        {
-
+            return;
         }
     }
 }
