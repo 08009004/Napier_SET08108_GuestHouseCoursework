@@ -38,13 +38,18 @@ namespace Program
          * an entity of a given BookingComponent (the dictonary are named as 
          * defined in the *Field.cs enumerations).
          */
-        public List<Dictionary<String, String>> Read(int bookingNb)
+        public bool Read(int bookingNb,
+                         out List<Dictionary<String, String>> booking)
         {
             String filePath = (String.Format(@"{0}/{1}.csv", 
                                              dataDirectory,
                                              bookingNb));
 
-            return dataReader.ReadBooking(filePath);
+            List<Dictionary<String, String>> results;
+            bool outcome = dataReader.ReadBooking(filePath, out results);
+            
+            booking = results;
+            return outcome;
         }
 
     }

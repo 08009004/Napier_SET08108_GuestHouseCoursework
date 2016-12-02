@@ -1450,23 +1450,44 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="cf6a036b-8fc1-4bcf-a224-aaedd04fa9e7"
+                  Id="d23dca99-d2a8-41d4-bf84-acdf1b904280"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f9cfccfa-2987-4443-8e6a-b8eb6efe5cbc"
                   name="int bookingNb"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="d23dca99-d2a8-41d4-bf84-acdf1b904280"
-                  direction="Return"
+                  Id="b5614907-901c-4008-9bee-223977494e1d"
+                  name="booking"
+                  direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="aad0bad3-47d1-4843-a8a9-77aa0cb5d6eb"
-                      LastKnownName="List&lt;Dictionary&lt;String, String&gt;&gt;"
+                      Id="8501c57d-7933-430c-ac6e-fe14b21dc0bf"
+                      LastKnownName="out  List&lt;Dictionary&lt;String"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5fff9980-1b8e-4371-b424-c32793213ec5"
+                  name="String&gt;&gt;"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -1596,6 +1617,62 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="1c0acc5b-8afc-46ac-8087-5ebd6e23feb4"
+            name="PersonFactory"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="c2692cb2-229b-4340-b1ce-1de0ee842d42"
+                LastKnownName="PersonFactory"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b0ba61c9-718c-4728-85af-e71c7df3fa30"
+            name="BookingFactory"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="6d4326c9-0228-4787-8724-7e76be7ed98b"
+                LastKnownName="BookingFactory"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="777cf9ad-d860-4092-818f-81b06f36f42e"
+            name="DataFacade"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8"
+                LastKnownName="DataPersistenceFacade"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -4968,6 +5045,11 @@
       <undefinedType
         Id="96a789b5-bb07-4b69-a434-4fb0b6fb077a"
         name="Dictionary&lt;String, String&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8501c57d-7933-430c-ac6e-fe14b21dc0bf"
+        name="out  List&lt;Dictionary&lt;String" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

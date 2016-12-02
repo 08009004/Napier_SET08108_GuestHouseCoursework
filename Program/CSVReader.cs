@@ -43,23 +43,36 @@ namespace Program
         private CSVReader() { }
 
         /*
-         * Returns a Dictionary<string, string> representing a BookingComponent
-         * as <attribute, value> (the dictonary keys follow the naming 
-         * implemented in the *Field.cs enumerations).
+         * Outputs a List<Dictionary<String, String>>, each instance of which
+         * stores an entity of a BookingComponent as <attribute, value> (the 
+         * dictonary keys follow the naming implemented in the *Field.cs 
+         * enumerations).
+         * Returns true if data was recovered successfuly, otherwise false.
          */
-        public List<Dictionary<String, String>> ReadBooking(String filename)
+        public bool ReadBooking(String filename, 
+                                out List<Dictionary<String, String>> keysVals)
         {
-            List<String[]> extractedEntities 
-                                    = extractClasses(readLines(filename));
-            List<Dictionary<String, String>> indexedEntities 
-                                    = new List<Dictionary<String, String>>();
+            bool outcome = true;
+            List<String[]> extractedEntities;
+            List<Dictionary<String, String>> indexedEntities = null;
 
-            foreach (String[] sArr in extractedEntities)
+            try
             {
-                indexedEntities.Add(index(sArr));
+                extractedEntities = extractClasses(readLines(filename));
+                indexedEntities = new List<Dictionary<String, String>>();
+
+                foreach (String[] sArr in extractedEntities)
+                {
+                    indexedEntities.Add(index(sArr));
+                }
             }
-            
-            return indexedEntities;
+            catch
+            {
+                outcome = false;
+            }
+
+            keysVals = indexedEntities;
+            return outcome;
         }
 
         /*

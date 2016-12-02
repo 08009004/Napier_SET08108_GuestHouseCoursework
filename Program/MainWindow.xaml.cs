@@ -68,26 +68,55 @@ namespace Program
             */
 
             
-            List<Dictionary<String, String>> ld = dpf.Read(1);
-            ld.AddRange(dpf.Read(2));
-            String v;
-            int i = 0;
-
-            foreach (Dictionary<String, String> d in ld)
+            List<Dictionary<String, String>> ld1;
+            List<Dictionary<String, String>> ld2;
+            if (dpf.Read(1, out ld1) && dpf.Read(2, out ld2))
             {
-                i++;
-                foreach (String k in d.Keys)
+                String v;
+                int i = 0;
+                /*
+                foreach (Dictionary<String, String> d in ld1)
                 {
-                    if (d.TryGetValue(k, out v))
+                    i++;
+                    foreach (String k in d.Keys)
                     {
-                        MessageBox.Show(i + "\r\n"
-                                        + "KEY: " + k
-                                        + "\r\n"
-                                        + "VALUE: " + v);
-                    }
+                        if (d.TryGetValue(k, out v))
+                        {
+                            MessageBox.Show("list<dict> #1"
+                                            + " - dict nb: " + i + "\r\n"
+                                            + "KEY: " + k
+                                            + "\r\n"
+                                            + "VALUE: " + v);
+                        }
 
+                    }
+                }
+                 */
+
+                i = 0;
+
+                foreach (Dictionary<String, String> d in ld2)
+                {
+                    i++;
+                    foreach (String k in d.Keys)
+                    {
+                        if (d.TryGetValue(k, out v))
+                        {
+                            MessageBox.Show("list<dict> #2"
+                                            + " - dict nb: " + i + "\r\n"
+                                            + "KEY: " + k
+                                            + "\r\n"
+                                            + "VALUE: " + v);
+                        }
+
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("error reading files");
+            }
+            
 
             InitializeComponent();
 

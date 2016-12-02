@@ -643,16 +643,29 @@
             <elementDefinition Id="3ce4f1c9-37e1-4102-bbf7-06c0808d204a" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="2dabee45-cb01-4c9b-9067-e5ac10784f42" name="int bookingNb" direction="In" isUnique="false">
-                  <elementDefinition Id="cf6a036b-8fc1-4bcf-a224-aaedd04fa9e7" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="54e2a1ac-64f7-47c0-9b70-907fb647fab3" direction="Return" isUnique="false">
                   <elementDefinition Id="d23dca99-d2a8-41d4-bf84-acdf1b904280" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="27ec0af7-f718-47c6-a6ea-c862b6afdce7" LastKnownName="List&lt;Dictionary&lt;String, String&gt;&gt;" />
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ade8f460-8b54-4476-a196-69e977955e28" name="int bookingNb" direction="In" isUnique="false">
+                  <elementDefinition Id="f9cfccfa-2987-4443-8e6a-b8eb6efe5cbc" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bf404209-a9ee-4e30-ae2f-8d5cabb6bc61" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="b5614907-901c-4008-9bee-223977494e1d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f7fea3ac-504d-479e-a44b-9e52a7fc0842" LastKnownName="out  List&lt;Dictionary&lt;String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bcff59be-c26c-4dec-a14f-1d7e7e0240c0" name="String&gt;&gt;" direction="In" isUnique="false">
+                  <elementDefinition Id="5fff9980-1b8e-4371-b424-c32793213ec5" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -713,6 +726,26 @@
             <elementDefinition Id="1a64b314-4460-4c9d-946f-4d3578198ff1" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="81f39cb6-ebd7-40a2-bb99-1292dd887623" name="PersonFactory" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1c0acc5b-8afc-46ac-8087-5ebd6e23feb4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9d0cdb08-0d6d-4083-9f09-6693e590a1ef" LastKnownName="PersonFactory" />
+            </type_NamedElement>
+          </property>
+          <property Id="e2dec221-82c9-4ec4-b6e0-323300ee00be" name="BookingFactory" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b0ba61c9-718c-4728-85af-e71c7df3fa30" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f7c477cb-ee24-4929-8991-e3fc29f2cc03" LastKnownName="BookingFactory" />
+            </type_NamedElement>
+          </property>
+          <property Id="87aa7067-78a6-4151-b9ea-9c1d3425c986" name="DataFacade" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="777cf9ad-d860-4092-818f-81b06f36f42e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5f67769e-775d-4b24-90a1-9bc17b786cad" LastKnownName="DataPersistenceFacade" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -2476,6 +2509,16 @@
     <packageHasNamedElement>
       <referencedType Id="b3d01cee-4eac-4916-8c5b-3eace5e57513" name="Dictionary&lt;String, String&gt;" isAbstract="false" isLeaf="false" cachedFullName="Dictionary&lt;String, String&gt;">
         <elementDefinition Id="96a789b5-bb07-4b69-a434-4fb0b6fb077a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5f67769e-775d-4b24-90a1-9bc17b786cad" name="DataPersistenceFacade" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::DataPersistenceFacade">
+        <elementDefinition Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f7fea3ac-504d-479e-a44b-9e52a7fc0842" name="out  List&lt;Dictionary&lt;String" isAbstract="false" isLeaf="false" cachedFullName="out  List&lt;Dictionary&lt;String">
+        <elementDefinition Id="8501c57d-7933-430c-ac6e-fe14b21dc0bf" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
