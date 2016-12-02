@@ -54,7 +54,7 @@ namespace Program
 
             foreach (String[] sArr in extractedEntities)
             {
-                indexedEntities.Add(indexEntity(sArr));
+                indexedEntities.Add(index(sArr));
             }
             
             return indexedEntities;
@@ -174,10 +174,9 @@ namespace Program
          * Indexes a csv entity (String[]) into a 
          * dictionary<attribute, value>.
          */
-        private Dictionary<String, String> 
-                                                indexEntity(String[] entity)
+        private Dictionary<String, String> index(String[] entity)
         {
-            List<String[]> dividedEntity = divideEntity(entity);
+            List<String[]> dividedEntity = divide(entity);
             Dictionary<String, String> indexedEntity = null;
 
             foreach (String[] sArr in dividedEntity)
@@ -226,7 +225,7 @@ namespace Program
          * element of which represents a Component class (from a
          * decorator pattern).
          */
-        private List<String[]> divideEntity(String[] entity)
+        private List<String[]> divide(String[] entity)
         {
             List<String[]> dividedEntity = new List<String[]>();
             String[] section = new String[0];
@@ -257,8 +256,7 @@ namespace Program
          * Indexes part of an entity's attributes (= section) into a
          * dictionary<attribute, value>.
          */
-        private Dictionary<String, String> 
-                                            index<T>(String[] entitySection)
+        private Dictionary<String, String> index<T>(String[] entitySection)
         {
             T[] keysArr = (T[])Enum.GetValues(typeof(T));
             Dictionary<String, String> indexedSection 

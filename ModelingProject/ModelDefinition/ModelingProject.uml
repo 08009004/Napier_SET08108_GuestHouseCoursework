@@ -1166,7 +1166,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="contains"
+            name="encompasses"
             isAbstract="false">
             <classMoniker
               Id="0f7fdda9-578a-4bbc-9fad-11c76286cb71"
@@ -1204,7 +1204,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="contains"
+            name="encompasses"
             isAbstract="false">
             <classMoniker
               Id="d62bb77f-4c03-46f6-a89a-9580bd4128fc"
@@ -1487,7 +1487,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="contains"
+            name="encompasses"
             isAbstract="false">
             <classMoniker
               Id="c2692cb2-229b-4340-b1ce-1de0ee842d42"
@@ -1525,7 +1525,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="contains"
+            name="encompasses"
             isAbstract="false">
             <classMoniker
               Id="6d4326c9-0228-4787-8724-7e76be7ed98b"
@@ -1563,7 +1563,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="contains"
+            name="encompasses"
             isAbstract="false">
             <classMoniker
               Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8"
@@ -4583,6 +4583,359 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="8499938c-fc2d-4a34-b5b6-5dbaa2a8ec71"
+            name="readLines"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4f366a1f-3a04-4b71-990d-9a7a47241c8b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f2e78df7-d809-48b3-94db-0a452b581a5c"
+                      LastKnownName="List&lt;String&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="86ebce58-09ed-4e71-b9b3-8bf48234a5a0"
+                  name="csvFile"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e8e34b93-6c92-40e7-9393-96f987a56705"
+            name="ReadBooking"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dab908b0-8ded-4411-ab50-cd270c075bb3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="aad0bad3-47d1-4843-a8a9-77aa0cb5d6eb"
+                      LastKnownName="List&lt;Dictionary&lt;String, String&gt;&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b51038c7-8c5c-4fd0-a87a-1b0cc4a3417b"
+                  name="fileName"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0027e310-4abb-4d4f-9037-db0665542751"
+            name="extractClasses"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3e42afc1-16fb-426d-b06c-27340d2651dd"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0bbc5d4d-382f-4f53-aae7-fde297ce15aa"
+                      LastKnownName="List&lt;String[]&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7045e6a6-eaa0-4ee7-a359-ca5dd97a0174"
+                  name="csvBooking"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f2e78df7-d809-48b3-94db-0a452b581a5c"
+                      LastKnownName="List&lt;String&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a1de9500-2658-46db-81bd-7aa3e1269252"
+            name="append"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5cbae803-4b00-4451-af38-853fd55232d6"
+                  name="arr1"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="88999f32-ade8-43d8-b3ef-8e513d7858d8"
+                      LastKnownName="String[]"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1cd460a7-a858-4758-b898-12f350a8be55"
+                  name="arr2"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="88999f32-ade8-43d8-b3ef-8e513d7858d8"
+                      LastKnownName="String[]"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="036f95ae-44fa-4f8e-8f6b-cca294e9b16d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="88999f32-ade8-43d8-b3ef-8e513d7858d8"
+                      LastKnownName="String[]"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="695c566a-83be-4078-9d60-fa73ebd81ada"
+            name="index"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="72a04bf9-a634-46eb-a229-85b00b312e53"
+                  name="entity"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="88999f32-ade8-43d8-b3ef-8e513d7858d8"
+                      LastKnownName="String[]"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="af5c81be-317f-4511-ab31-cd4d30d39f02"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="96a789b5-bb07-4b69-a434-4fb0b6fb077a"
+                      LastKnownName="Dictionary&lt;String, String&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="89870fc4-9e41-4fbc-aef3-cd5468a283e7"
+            name="divide"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="490cc101-88eb-40cd-9657-5077bee70100"
+                  name="entity"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="88999f32-ade8-43d8-b3ef-8e513d7858d8"
+                      LastKnownName="String[]"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="629b0a31-50d6-4ded-9a2b-a1b575a78c17"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0bbc5d4d-382f-4f53-aae7-fde297ce15aa"
+                      LastKnownName="List&lt;String[]&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="34a2057f-13aa-4404-8a5e-d6ee2bff663a"
+            name="index&lt;T&gt;"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1f6cc530-ea50-466b-a47c-357d3bc1c3d7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="96a789b5-bb07-4b69-a434-4fb0b6fb077a"
+                      LastKnownName="Dictionary&lt;String, String&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e6243573-36bf-4820-8a09-82bc518c6a79"
+                  name="entitySection"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="88999f32-ade8-43d8-b3ef-8e513d7858d8"
+                      LastKnownName="String[]"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6b1df884-e236-4373-aba8-10e447e7ed3d"
+            name="join"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="432515eb-f3f1-4ceb-9f3c-8b0e24d69e49"
+                  name="d1"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="82a4f1e0-575b-43b1-aad4-94b5791799fc"
+                      LastKnownName="Dictionary&lt;String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dd51eabd-9820-4321-9997-6c719e00ffab"
+                  name="String&gt;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0c89767f-a77a-4a31-8862-f892a0af1c0d"
+                  name="d2"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="82a4f1e0-575b-43b1-aad4-94b5791799fc"
+                      LastKnownName="Dictionary&lt;String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="71b21c1f-d151-4e83-8174-fa11f73de725"
+                  name="String&gt;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a75f1eed-1e77-4da2-8785-bd995e8ee6bc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="96a789b5-bb07-4b69-a434-4fb0b6fb077a"
+                      LastKnownName="Dictionary&lt;String, String&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -4590,6 +4943,31 @@
       <undefinedType
         Id="aad0bad3-47d1-4843-a8a9-77aa0cb5d6eb"
         name="List&lt;Dictionary&lt;String, String&gt;&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fb4d8576-b8e1-44bf-b8fe-7f0da27d259e"
+        name="List,String&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f2e78df7-d809-48b3-94db-0a452b581a5c"
+        name="List&lt;String&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0bbc5d4d-382f-4f53-aae7-fde297ce15aa"
+        name="List&lt;String[]&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="88999f32-ade8-43d8-b3ef-8e513d7858d8"
+        name="String[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="96a789b5-bb07-4b69-a434-4fb0b6fb077a"
+        name="Dictionary&lt;String, String&gt;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
