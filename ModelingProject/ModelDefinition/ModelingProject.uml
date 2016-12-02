@@ -177,7 +177,7 @@
                     <literalString
                       Id="d012fd91-1859-4195-b05e-a222ca5e7656"
                       name="Lower"
-                      value="1" />
+                      value="0" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
@@ -3819,6 +3819,46 @@
               LastKnownLocation="ModelingProject.uml" />
           </dependency>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="be2757cc-a0c0-47ba-b485-0140c7d65cf5"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="points to"
+            isAbstract="false">
+            <classMoniker
+              Id="c2692cb2-229b-4340-b1ce-1de0ee842d42"
+              LastKnownName="PersonFactory"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5f549b36-9888-4913-92dd-ac7b36465cd6"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c720795c-0578-4953-b486-45facefcbbfe"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="0219eeeb-895e-4d5e-8b51-13deb0ac77c6"
@@ -3855,6 +3895,25 @@
               <undefinedTypeMoniker
                 Id="a8ce80ed-56ba-4fb8-8e01-80a5f5ddf2e9"
                 LastKnownName="BookingFactory"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="90d2ef83-3a8d-42ab-999d-a45fdefd0784"
+            name="personFactory"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="c2692cb2-229b-4340-b1ce-1de0ee842d42"
+                LastKnownName="PersonFactory"
                 LastKnownLocation="ModelingProject.uml" />
             </type_NamedElement>
           </property>

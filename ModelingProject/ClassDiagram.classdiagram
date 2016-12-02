@@ -32,7 +32,7 @@
               <associationHasOwnedEnds>
                 <memberEnd Id="57f5c701-5518-4a46-9832-f3a3ca2d86d8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
-                    <literalString Id="b8df47f3-88ee-4b49-b4f3-7e382d9a5a68" name="Lower" value="1">
+                    <literalString Id="b8df47f3-88ee-4b49-b4f3-7e382d9a5a68" name="Lower" value="0">
                       <elementDefinition Id="d012fd91-1859-4195-b05e-a222ca5e7656" />
                     </literalString>
                   </lowerValueInternal>
@@ -1737,6 +1737,24 @@
             <elementDefinition Id="f9439e00-9035-4975-8595-b94ab98cfbbc" />
           </dependency>
         </suppliersInternal>
+        <targetEnds>
+          <association Id="68308e2c-c771-4174-b1bd-a6ed50a533be" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
+            <classMoniker Id="8c536043-218a-4e80-ab8d-99526c7330e6" LastKnownName="PersonFactory" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="846fc857-6d28-4e36-a7d8-c1a9f054053e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5f549b36-9888-4913-92dd-ac7b36465cd6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b5c94ab6-350b-4750-80f4-7fb98a68fbee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c720795c-0578-4953-b486-45facefcbbfe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="be2757cc-a0c0-47ba-b485-0140c7d65cf5" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="dfbb80e6-0d6d-4789-9f6d-a8d7f32191c2" name="nextBookingNb" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0219eeeb-895e-4d5e-8b51-13deb0ac77c6" />
@@ -1748,6 +1766,12 @@
             <elementDefinition Id="95759a70-aa84-4d85-8325-d57f1bab4fb7" />
             <type_NamedElement>
               <referencedTypeMoniker Id="141288e8-7c77-4e5f-92b0-6d1a77639e06" LastKnownName="BookingFactory" />
+            </type_NamedElement>
+          </property>
+          <property Id="8dfddabd-7aa6-4c07-a617-f2ed3672a2c0" name="personFactory" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="90d2ef83-3a8d-42ab-999d-a45fdefd0784" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9d0cdb08-0d6d-4083-9f09-6693e590a1ef" LastKnownName="PersonFactory" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
