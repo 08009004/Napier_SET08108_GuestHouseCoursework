@@ -505,11 +505,35 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" name="DataPersistenceFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8" />
+        <targetEnds>
+          <association Id="ff2f704e-fef3-41d2-8b1d-88bb305259f9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="contains" isAbstract="false">
+            <classMoniker Id="e94bd816-f4b2-428d-9884-52f997198139" LastKnownName="CSVWriter" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ac454f46-12af-4d72-89ab-b97005a82cef" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cfcf2552-b3d3-4588-8a3e-60e8063b1450" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="097f1e3a-8d84-4ea1-a68d-4f30a561f648" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9ead922b-17ee-4007-b92a-a33b78a6ee58" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="714c1c84-5234-4ed2-836a-2b56672b4ffa" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="6b8f4c4e-666d-4de3-9c9c-fb2e1aa6959e" name="dataDirectory" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="030814fe-3ad6-4021-9935-82a73d72befb" />
             <type_NamedElement>
               <referencedTypeMoniker Id="9d11c4b0-eee7-4625-805e-faaac236bedd" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="827f6324-0f7a-4fa7-b213-fce8396a8fb0" name="csvWriter" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0b7a81eb-8496-4467-89de-9f931591a451" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e1d4f7d1-c86d-4329-a869-76bf4ea90255" LastKnownName="CSVWriter" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -2084,6 +2108,12 @@
               <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
             </type_NamedElement>
           </property>
+          <property Id="6c8b1cf1-80e5-4780-a9a6-27bcbd193c44" name="instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="068dfcd4-63b2-441e-92a1-bb6ee6f67d0f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e1d4f7d1-c86d-4329-a869-76bf4ea90255" LastKnownName="CSVWriter" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="6e3fb8a8-0277-434c-b7dc-a14dddd99f6a" name="Persist" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -2115,6 +2145,22 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="d15a6181-4656-4f1c-86bc-d537a4be4965" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ba5c2b56-845e-4256-96dd-feaa3b570fe1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e41da4b1-e020-4811-bc7e-1ab74ffe762a" direction="Return" isUnique="false">
+                  <elementDefinition Id="f40f08f9-a34c-4f61-9f13-50b951701a82" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e1d4f7d1-c86d-4329-a869-76bf4ea90255" LastKnownName="CSVWriter" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e4f6cf64-b8e7-446d-b700-fd999165b1f7" name="CSVWriter" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="585637ce-bf80-4ae0-870f-2d7fdce7b4db" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -2126,6 +2172,11 @@
     <packageHasNamedElement>
       <referencedType Id="9d11c4b0-eee7-4625-805e-faaac236bedd" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e1d4f7d1-c86d-4329-a869-76bf4ea90255" name="CSVWriter" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::CSVWriter">
+        <elementDefinition Id="0f7fdda9-578a-4bbc-9fad-11c76286cb71" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

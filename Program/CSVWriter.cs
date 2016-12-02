@@ -10,15 +10,35 @@ using System.IO;
 namespace Program
 {
     /*
-     * Static utility class, persists process objects data to CSV files.
+     * Singleton utility class, persists bookings data to CSV files.
      */
-    static class CSVWriter
+    class CSVWriter
     {
+        // Properties: 
+        private static CSVWriter instance;
+        public static CSVWriter Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new CSVWriter();
+                }
+                return instance;
+            }
+        }
+
+        /*
+         * Private constructor, to prevent class instantiation from
+         * external classes (singleton class).
+         */
+        private CSVWriter() { }
+
         /*
          * Persists the BookingComponent to given filePath, returns true if 
          * data was persisted successfuly or false if not.
          */
-        public static bool Persist(BookingComponent booking, String filePath)
+        public bool Persist(BookingComponent booking, String filePath)
         {
             String dataDirName = Path.GetDirectoryName(filePath);
 

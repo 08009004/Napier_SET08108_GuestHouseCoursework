@@ -12,12 +12,15 @@ namespace Program
      */
     class DataPersistenceFacade
     {
-        // Property: the data persistence directory.
+        // Properties: 
+        // the data persistence directory.
         private String dataDirectory = @"data";
+        // the data writer instance:
+        private CSVWriter dataWriter = CSVWriter.Instance;
 
         /*
          * Persists the BookingComponent to {dataDirectory}/{bookingNb}.csv; 
-         * returns trus if data was persisted successfuly or false if not.
+         * returns true if data was persisted successfuly or false if not.
          */
         public bool Persist(BookingComponent booking)
         {
@@ -25,7 +28,7 @@ namespace Program
                                              dataDirectory, 
                                              booking.GetBookingNb()));
 
-            return CSVWriter.Persist(booking, filePath);
+            return dataWriter.Persist(booking, filePath);
         }
 
     }
