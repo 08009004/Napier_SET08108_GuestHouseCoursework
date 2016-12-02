@@ -14,36 +14,20 @@ namespace Program
      */
     static class CSVWriter
     {
-        /*
-        private static string personFile = @"person.csv";
-        private static string bookingFile = @"booking.csv";
-
-        public static void Persist(PersonComponent obj)
-        {
-            System.IO.File.AppendAllText(personFile, obj.ToCSV());
-        }
-
-        public static void Persist(BookingComponent obj)
-        {
-            System.IO.File.AppendAllText(bookingFile, obj.ToCSV());
-        }
+        // Property: the data persistence directory.
+        private static String dataDirectory = @"data";
 
         /*
-         * Persists obj.ToCSV() to the CSV file filename.
-         */
-        /*
-        public static void WriteData(String filename, PersonComponent obj)
-        {
-            System.IO.File.AppendAllText(filename, obj.ToCSV());
-        }
-         */
-
-        /*
-         * Persists a BookingComponent to data/{BOOKING_NUMBER}.csv
+         * Persists a BookingComponent to 
+         * {dataDirectory}/{BOOKING_NUMBER}.csv
          */
         public static bool Persist(BookingComponent booking)
         {
-            System.IO.File.AppendAllText(String.Format(@"data/{0}.csv",booking.GetBookingNb()), booking.ToCSV());
+            if (!Directory.Exists(dataDirectory))
+            {
+                Directory.CreateDirectory(dataDirectory);
+            }
+            System.IO.File.AppendAllText(String.Format(@"{0}/{1}.csv", dataDirectory, booking.GetBookingNb()), booking.ToCSV());
             return false;
         }
     }
