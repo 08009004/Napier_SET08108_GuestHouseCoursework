@@ -14,6 +14,7 @@ namespace Program
     {
         //Properties:
         private int nxtBookingNb;
+        private PersonFactory personFactory = PersonFactory.Instance;
         private static BookingFactory instance;
         public static BookingFactory Instance
         {
@@ -119,7 +120,55 @@ namespace Program
          */
         public BookingComponent Restore(List<Dictionary<String, String>> booking)
         {
-            return;
+            Dictionary<String, String> bookingData = null;
+            Dictionary<String, String> customerData = null;
+            List<Dictionary<String, String>> guestsData = null;
+            List<PersonComponent> guests = new List<PersonComponent>();
+            Customer c = null;
+            String csvArrival;
+            String csvDeparture;
+            BookingComponent result = null;
+
+            foreach (Dictionary<String, String> d in booking)
+            {
+                if (d.ContainsKey(BookingField.BOOKING_NUMBER.ToString()))
+                {
+                    bookingData = d;
+                }
+                else if (d.ContainsKey(CustomerField.CUSTOMER_NUMBER.ToString()))
+                {
+                    customerData = d;
+                }
+                else
+                {
+                    guestsData.Add(d);
+                }
+            }
+
+            if (customerData != null)
+            {
+                c = personFactory.RestoreCustomer(customerData);
+            }
+
+            if (bookingData != null 
+             && c != null
+             && bookingData.TryGetValue(BookingField.ARRIVAL.ToString(), out csvArrival)
+             && bookingData.TryGetValue(BookingField.DEPARTURE.ToString(), out csvDeparture))
+            {
+                result = GetNewBooking(c, 
+                                       Convert.ToDateTime(csvArrival), 
+                                       Convert.ToDateTime(csvDeparture));
+            }
+
+            if (guestsData != null)
+            {
+                foreach (Dictionary<String, String> d in guestsData)
+                {
+                    result.AddGuest(personFactory.RestoreGuest(d));
+                }
+            }
+
+            return result;
         }
     }
 }
