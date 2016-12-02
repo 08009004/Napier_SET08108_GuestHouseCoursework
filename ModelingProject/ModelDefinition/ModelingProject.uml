@@ -1162,7 +1162,7 @@
         <ownedAttributesInternal>
           <property
             Id="030814fe-3ad6-4021-9935-82a73d72befb"
-            name="csvFile"
+            name="dataDirectory"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -1279,6 +1279,44 @@
                     <undefinedTypeMoniker
                       Id="98067152-4280-490b-a679-91b2dec8ca37"
                       LastKnownName="out Customer"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7b8c48f9-ff4f-4a0e-9b76-cb4638a83be8"
+            name="Persist"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="60b02231-9525-47ce-9f5d-acadaf996263"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0205a446-7e0a-466b-bb65-f48aceb15d50"
+                      LastKnownName="boolean"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="34debcc1-a9ee-4f82-8dca-5ddb8d21083a"
+                  name="booking"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
+                      LastKnownName="BookingComponent"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -4179,7 +4217,20 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="4e58424e-9792-46d6-b52c-e17691bd86f1"
+                  Id="f38efacd-32ce-4624-b685-5b42a7de71aa"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0205a446-7e0a-466b-bb65-f48aceb15d50"
+                      LastKnownName="boolean"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="401d518a-49fb-416c-a054-ec6ca377c0e8"
                   name="booking"
                   direction="In"
                   isUnique="false">
@@ -4193,7 +4244,83 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="f38efacd-32ce-4624-b685-5b42a7de71aa"
+                  Id="f597e733-b8d5-4860-9c1f-431a9d0bca0f"
+                  name="fileName"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0205a446-7e0a-466b-bb65-f48aceb15d50"
+        name="boolean" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ed266499-246f-4333-9821-b67dd38059f6"
+        name="CSVWriter1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="651fb7e3-430f-4cbe-a89c-cbe7a02c7523"
+            name="dataDirectory"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8144b1be-8b07-49d9-b933-222a8abd492a"
+            name="Persist"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cdb8be79-ae71-41a4-a1d7-b49349427863"
+                  name="booking"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
+                      LastKnownName="BookingComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fadd45da-7718-42a4-b1c1-aa86bd037e55"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
@@ -4208,11 +4335,6 @@
           </operation>
         </ownedOperationsInternal>
       </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <undefinedType
-        Id="0205a446-7e0a-466b-bb65-f48aceb15d50"
-        name="boolean" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

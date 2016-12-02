@@ -25,6 +25,7 @@ namespace Program
         {
             PersonFactory pf = PersonFactory.Instance;
             BookingFactory bf = BookingFactory.Instance;
+            DataPersistenceFacade dpf = new DataPersistenceFacade();
 
             // -------------------
             
@@ -39,7 +40,7 @@ namespace Program
 
             b1 = bf.AddBreakfast(b1, "1 vegetarian");
 
-            CSVWriter.Persist(b1);
+            dpf.Persist(b1);
 
             // -------------------
 
@@ -55,17 +56,18 @@ namespace Program
             b2 = bf.AddEveningMeal(b2, "crabbie patties");
             b2 = bf.AddCarHire(b2, "sandy", new DateTime(2016, 1, 20), new DateTime(2016, 1, 23));
 
-            CSVWriter.Persist(b2);
+            dpf.Persist(b2);
 
             // -------------------
-
+            /*
             MessageBox.Show("b1 cost: £" + b1.GetCost()
                             + "\r\n TOTAL: £" + b1.GetCost());
             MessageBox.Show("b2 cost: £" + b2.GetCost()
                             + "\r\n TOTAL: £" + b2.GetCost());
             
-            
+            */
 
+            /*
             List<Dictionary<String, String>> ld = CSVReader.ReadBooking(@"data/1.csv");
             ld.AddRange(CSVReader.ReadBooking(@"data/2.csv"));
             String v;
@@ -86,6 +88,7 @@ namespace Program
 
                 }
             }
+             */
 
             InitializeComponent();
 

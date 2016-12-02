@@ -14,22 +14,17 @@ namespace Program
      */
     static class CSVWriter
     {
-        // Property: the data persistence directory.
-        private static String dataDirectory = @"data";
-
         /*
-         * Persists a BookingComponent to {dataDirectory}/{BOOKING_NUMBER}.csv 
-         * Returns true if data was persisted successfuly or false if not.
+         * Persists the BookingComponent to given filePath, returns true if 
+         * data was persisted successfuly or false if not.
          */
-        public static bool Persist(BookingComponent booking)
+        public static bool Persist(BookingComponent booking, String filePath)
         {
-            String filePath = (String.Format(@"{0}/{1}.csv", 
-                                             dataDirectory, 
-                                             booking.GetBookingNb()));
+            String dataDirName = Path.GetDirectoryName(filePath);
 
-            if (!Directory.Exists(dataDirectory))
+            if (!Directory.Exists(dataDirName))
             {
-                Directory.CreateDirectory(dataDirectory);
+                Directory.CreateDirectory(dataDirName);
             }
 
             if (File.Exists(filePath))
