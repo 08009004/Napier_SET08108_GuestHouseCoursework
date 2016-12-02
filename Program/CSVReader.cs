@@ -49,8 +49,10 @@ namespace Program
          */
         public List<Dictionary<String, String>> ReadBooking(String filename)
         {
-            List<String[]> extractedEntities = extractClasses(readLines(filename));
-            List<Dictionary<String, String>> indexedEntities = new List<Dictionary<String, String>>();
+            List<String[]> extractedEntities 
+                                    = extractClasses(readLines(filename));
+            List<Dictionary<String, String>> indexedEntities 
+                                    = new List<Dictionary<String, String>>();
 
             foreach (String[] sArr in extractedEntities)
             {
@@ -64,8 +66,8 @@ namespace Program
          * Reads from a CSV file and returns a list of strings, each 
          * corresponding to a line from the file.
          * 
-         * Throws ArgumentException if the number of lines in the file was not even,
-         * as per the CSV formating done within classes.
+         * Throws ArgumentException if the number of lines in the file was not 
+         * even, as per the CSV formating done within classes.
          */
         private List<String> readLines(String filename)
             /*

@@ -1166,7 +1166,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="encompasses"
+            name="points to"
             isAbstract="false">
             <classMoniker
               Id="0f7fdda9-578a-4bbc-9fad-11c76286cb71"
@@ -1204,7 +1204,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="encompasses"
+            name="points to"
             isAbstract="false">
             <classMoniker
               Id="d62bb77f-4c03-46f6-a89a-9580bd4128fc"
@@ -1487,7 +1487,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="encompasses"
+            name="points to"
             isAbstract="false">
             <classMoniker
               Id="c2692cb2-229b-4340-b1ce-1de0ee842d42"
@@ -1525,7 +1525,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="encompasses"
+            name="points to"
             isAbstract="false">
             <classMoniker
               Id="6d4326c9-0228-4787-8724-7e76be7ed98b"
@@ -1563,7 +1563,7 @@
             sourceEndRoleName=""
             targetEndRoleName=""
             isLeaf="false"
-            name="encompasses"
+            name="points to"
             isAbstract="false">
             <classMoniker
               Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8"

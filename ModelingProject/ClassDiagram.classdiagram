@@ -506,7 +506,7 @@
       <class Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" name="DataPersistenceFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8" />
         <targetEnds>
-          <association Id="ff2f704e-fef3-41d2-8b1d-88bb305259f9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="encompasses" isAbstract="false">
+          <association Id="ff2f704e-fef3-41d2-8b1d-88bb305259f9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="e94bd816-f4b2-428d-9884-52f997198139" LastKnownName="CSVWriter" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -522,7 +522,7 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="714c1c84-5234-4ed2-836a-2b56672b4ffa" />
           </association>
-          <association Id="8f7c0728-2792-4a8a-86a7-e02ffae7a434" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="encompasses" isAbstract="false">
+          <association Id="8f7c0728-2792-4a8a-86a7-e02ffae7a434" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="fba97d41-1f83-4592-a807-be0554e88998" LastKnownName="CSVReader" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -664,7 +664,7 @@
       <class Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" name="ModelFacade" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="66799a3d-1356-4cbf-bafb-05bd2f8bf045" />
         <targetEnds>
-          <association Id="3c4c3170-cb29-49e4-a7ea-118cfa20d1ba" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="encompasses" isAbstract="false">
+          <association Id="3c4c3170-cb29-49e4-a7ea-118cfa20d1ba" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="8c536043-218a-4e80-ab8d-99526c7330e6" LastKnownName="PersonFactory" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -680,7 +680,7 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="c89b8412-9097-4c60-8c89-51731f6b3339" />
           </association>
-          <association Id="90a0e998-c148-4120-be98-2ba8140f65ca" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="encompasses" isAbstract="false">
+          <association Id="90a0e998-c148-4120-be98-2ba8140f65ca" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="34a34d49-88a6-414e-84f7-0e8c9242495d" LastKnownName="BookingFactory" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -696,7 +696,7 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="36352074-5c6f-48e6-9ae7-5ac325efdd42" />
           </association>
-          <association Id="454e3c1e-ba00-4065-a0b2-2912dca47681" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="encompasses" isAbstract="false">
+          <association Id="454e3c1e-ba00-4065-a0b2-2912dca47681" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="6f286e79-4691-4556-83bf-a6e7f1aefcda" LastKnownName="DataPersistenceFacade" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
