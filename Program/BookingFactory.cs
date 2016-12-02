@@ -49,6 +49,18 @@ namespace Program
         }
 
         /*
+         * Generates a new booking instance on the basis of the data 
+         * passed as parameters.
+         */
+        private Booking GetNewBooking(int bookingNb,
+                                      Customer cust,
+                                      DateTime arrival,
+                                      DateTime departure)
+        {
+            return new Booking(bookingNb, cust, arrival, departure);
+        }
+
+        /*
          * Decorates a BookingComponent, wrapping it inside a Breakfast 
          * decorator.
          */
@@ -118,57 +130,146 @@ namespace Program
          * Thows Argument exception if there is a problem with the contents
          * of the dictionary passed as a parameter.
          */
-        public BookingComponent Restore(List<Dictionary<String, String>> booking)
+        public BookingComponent Restore(
+                                    List<Dictionary<String, String>> booking)
         {
-            Dictionary<String, String> bookingData = null;
-            Dictionary<String, String> customerData = null;
-            List<Dictionary<String, String>> guestsData = null;
-            List<PersonComponent> guests = new List<PersonComponent>();
-            Customer c = null;
+            BookingComponent result = null; 
+
+            Dictionary<String, String> bData;
+            Dictionary<String, String> cData;
+            List<Dictionary<String, String>> guestsData;
+            extract(booking, out bData, out cData, out guestsData);
+
+            String bookingNb;
             String csvArrival;
             String csvDeparture;
-            BookingComponent result = null;
+
+            if (bData != null
+             && cData != null
+             && bData.TryGetValue(BookingField.BOOKING_NUMBER.ToString(), 
+                                  out bookingNb)
+             && bData.TryGetValue(BookingField.ARRIVAL.ToString(),
+                                  out csvArrival)
+             && bData.TryGetValue(BookingField.DEPARTURE.ToString(), 
+                                  out csvDeparture))
+            {
+                result = GetNewBooking(Int32.Parse(bookingNb),
+                                       personFactory.RestoreCustomer(cData),
+                                       Convert.ToDateTime(csvArrival), 
+                                       Convert.ToDateTime(csvDeparture));
+            }
+
+            result = addGuestsData(result, guestsData);
+            result = addExtrasData(result, bData);
+            return result;
+        }
+
+        /*
+         * Extracts the BookingComponent data, the Customer data and the
+         * Guests data from contents of a dictonary<attribute, values>, 
+         * presumably recovered from persisteddata (the dictonary keys 
+         * should follow the naming implemented in the *Field.cs 
+         * enumerations)
+         */
+        private void extract(
+                        List<Dictionary<String, String>> booking,
+                        out Dictionary<String, String> bookingData,
+                        out Dictionary<String, String> customerData,
+                        out List<Dictionary<String, String>> guestsData) 
+        {
+            Dictionary<String, String> bd = null;
+            Dictionary<String, String> cd = null;
+            List<Dictionary<String, String>> gd 
+                                    = new List<Dictionary<String, String>>();
 
             foreach (Dictionary<String, String> d in booking)
             {
                 if (d.ContainsKey(BookingField.BOOKING_NUMBER.ToString()))
                 {
-                    bookingData = d;
+                    bd = d;
                 }
-                else if (d.ContainsKey(CustomerField.CUSTOMER_NUMBER.ToString()))
+                else 
+                if (d.ContainsKey(CustomerField.CUSTOMER_NUMBER.ToString()))
                 {
-                    customerData = d;
+                    cd = d;
                 }
                 else
                 {
-                    guestsData.Add(d);
+                    gd.Add(d);
                 }
             }
+            bookingData = bd;
+            customerData = cd;
+            guestsData = gd;
+        }
 
-            if (customerData != null)
+        /*
+         * Adds Guests to a BookingComponent according to data contents of a 
+         * dictonary<attribute, values>, presumably recovered from persisted 
+         * data (the dictonary keys should follow the naming implemented in 
+         * the *Field.cs enumerations)
+         */
+        private BookingComponent addGuestsData(
+                                    BookingComponent b, 
+                                    List<Dictionary<String, String>> gData) 
+        {
+            if (gData != null)
             {
-                c = personFactory.RestoreCustomer(customerData);
-            }
-
-            if (bookingData != null 
-             && c != null
-             && bookingData.TryGetValue(BookingField.ARRIVAL.ToString(), out csvArrival)
-             && bookingData.TryGetValue(BookingField.DEPARTURE.ToString(), out csvDeparture))
-            {
-                result = GetNewBooking(c, 
-                                       Convert.ToDateTime(csvArrival), 
-                                       Convert.ToDateTime(csvDeparture));
-            }
-
-            if (guestsData != null)
-            {
-                foreach (Dictionary<String, String> d in guestsData)
+                foreach (Dictionary<String, String> d in gData)
                 {
-                    result.AddGuest(personFactory.RestoreGuest(d));
+                    b.AddGuest(personFactory.RestoreGuest(d));
                 }
             }
+            return b;
+        }
 
-            return result;
+        /*
+         * Decorates a BookingComponent according to data contents of a 
+         * dictonary<attribute, values>, presumably recovered from persisted 
+         * data (the dictonary keys should follow the naming implemented in 
+         * the *Field.cs enumerations)
+         */
+        private BookingComponent addExtrasData(
+                                    BookingComponent b,
+                                    Dictionary<String, String> bData)
+        {
+            if (b != null
+             && bData != null) 
+            {
+                String s1;
+                String s2;
+                String s3;
+
+                if (bData.TryGetValue(
+                                BreakfastField.DIET_REQUIREMENT_BREAKFAST
+                                              .ToString(),
+                                out s1))
+                {
+                    b = AddBreakfast(b, s1);
+                }
+
+                if (bData.TryGetValue(
+                                EveningMealField.DIET_REQUIREMENT_EVENING
+                                                .ToString(),
+                                out s1))
+                {
+                    b = AddEveningMeal(b, s1);
+                }
+
+                if (bData.TryGetValue(CarHireField.DRIVER_NAME.ToString(),
+                                      out s1)
+                 && bData.TryGetValue(CarHireField.START.ToString(),
+                                      out s2)
+                 && bData.TryGetValue(CarHireField.END.ToString(),
+                                      out s3))
+                {
+                    b = AddCarHire(b, 
+                                   s1, 
+                                   Convert.ToDateTime(s2), 
+                                   Convert.ToDateTime(s3));
+                }
+            }
+            return b;
         }
     }
 }
