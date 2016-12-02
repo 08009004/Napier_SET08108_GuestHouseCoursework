@@ -382,5 +382,12 @@
         <LiteralElementListCompartment Id="90a232e7-8394-4759-9182-3a4c8d3848e8" absoluteBounds="2.0149999999999997, 26.515, 1.4700000000000002, 0.68164060264825821" name="LiteralsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </enumerationShape>
+    <classShape Id="c5048802-8c0f-412d-8ec5-f1b4605f1f4a" absoluteBounds="8.5, 25.5, 3.25, 1.2226562251647337" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="e94bd816-f4b2-428d-9884-52f997198139" LastKnownName="CSVWriter" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="6cbcd9ee-0d83-417b-98a9-90885afb83a3" absoluteBounds="8.515, 25.89, 3.2199999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="535bd2d5-36fe-41b2-b19b-1f283940f371" absoluteBounds="8.515, 26.261328112582365, 3.2199999999999998, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

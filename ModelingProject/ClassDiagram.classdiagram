@@ -2053,6 +2053,47 @@
         </ownedLiterals>
       </enumeration>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e94bd816-f4b2-428d-9884-52f997198139" name="CSVWriter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0f7fdda9-578a-4bbc-9fad-11c76286cb71" />
+        <ownedAttributesInternal>
+          <property Id="97e9c1f5-817b-46a4-8682-e960088aa485" name="dataDirectory" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="25c72928-56da-499d-b0a7-3a5a8758650f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="6e3fb8a8-0277-434c-b7dc-a14dddd99f6a" name="Persist" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="53951f03-2154-49f7-9f65-ebeca706a8ab" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4ea54188-1527-44c7-a9e0-7394c7cbfa4d" name="booking" direction="In" isUnique="false">
+                  <elementDefinition Id="4e58424e-9792-46d6-b52c-e17691bd86f1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2b1195fa-6a1b-4ceb-96ac-7dcf9061b435" direction="Return" isUnique="false">
+                  <elementDefinition Id="f38efacd-32ce-4624-b685-5b42a7de71aa" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3db5b3c2-2d19-4f02-9c10-8d02cbc8ef9a" LastKnownName="boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="3db5b3c2-2d19-4f02-9c10-8d02cbc8ef9a" name="boolean" isAbstract="false" isLeaf="false" cachedFullName="boolean">
+        <elementDefinition Id="0205a446-7e0a-466b-bb65-f48aceb15d50" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="be28578b-2f00-4c96-af05-4f7c7418fac8" name="ModelingProject">
     <elementDefinition Id="270a8040-b6a2-4b2d-8b63-ec89a017e2b8" />
