@@ -1198,6 +1198,44 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="0b4a2f33-5d52-47f6-b1ed-0b0b8bad9955"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            name="contains"
+            isAbstract="false">
+            <classMoniker
+              Id="d62bb77f-4c03-46f6-a89a-9580bd4128fc"
+              LastKnownName="CSVReader"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7842c501-5ad4-4c04-a200-0254ab37222c"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="21bfdb41-c29e-45fd-8892-4ff7fb307922"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -1221,7 +1259,7 @@
           </property>
           <property
             Id="0b7a81eb-8496-4467-89de-9f931591a451"
-            name="csvWriter"
+            name="dataWriter"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -1235,6 +1273,25 @@
               <classMoniker
                 Id="0f7fdda9-578a-4bbc-9fad-11c76286cb71"
                 LastKnownName="CSVWriter"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="695afd0f-8cd9-42bc-b4c1-00d8f6c19744"
+            name="dataReader"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="2ce1841a-f1c8-4069-8ad3-9f784b89cccc"
+                LastKnownName="CSVReader"
                 LastKnownLocation="ModelingProject.uml" />
             </type_NamedElement>
           </property>
@@ -1360,15 +1417,15 @@
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="0205a446-7e0a-466b-bb65-f48aceb15d50"
-                      LastKnownName="boolean"
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="34debcc1-a9ee-4f82-8dca-5ddb8d21083a"
+                  Id="7cb83526-5f74-405c-a557-21170d2e5ec6"
                   name="booking"
                   direction="In"
                   isUnique="false">
@@ -1376,6 +1433,37 @@
                     <classMoniker
                       Id="4beb07b7-3b41-4b8b-9800-62981cba1271"
                       LastKnownName="BookingComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3ce4f1c9-37e1-4102-bbf7-06c0808d204a"
+            name="Read"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf6a036b-8fc1-4bcf-a224-aaedd04fa9e7"
+                  name="int bookingNb"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d23dca99-d2a8-41d4-bf84-acdf1b904280"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="aad0bad3-47d1-4843-a8a9-77aa0cb5d6eb"
+                      LastKnownName="List&lt;Dictionary&lt;String, String&gt;&gt;"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -4245,25 +4333,6 @@
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
-            Id="25c72928-56da-499d-b0a7-3a5a8758650f"
-            name="dataDirectory"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="068dfcd4-63b2-441e-92a1-bb6ee6f67d0f"
             name="instance"
             visibility="Private"
@@ -4446,6 +4515,81 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="2ce1841a-f1c8-4069-8ad3-9f784b89cccc"
+        name="CSVReader" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d62bb77f-4c03-46f6-a89a-9580bd4128fc"
+        name="CSVReader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="ef1cb07b-d880-41fb-96b5-2d755b739d6a"
+            name="instance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="d62bb77f-4c03-46f6-a89a-9580bd4128fc"
+                LastKnownName="CSVReader"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7df0658c-8d08-4bde-98c9-92c53f3dbe18"
+            name="Instance"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="826f56ce-3ee5-40b9-82b1-0ca643471962"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d62bb77f-4c03-46f6-a89a-9580bd4128fc"
+                      LastKnownName="CSVReader"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bda30185-f81b-4a1c-ad2f-28559cf0d1a7"
+            name="CSVReader"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="aad0bad3-47d1-4843-a8a9-77aa0cb5d6eb"
+        name="List&lt;Dictionary&lt;String, String&gt;&gt;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

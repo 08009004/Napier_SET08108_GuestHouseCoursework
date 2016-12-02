@@ -17,6 +17,8 @@ namespace Program
         private String dataDirectory = @"data";
         // the data writer instance:
         private CSVWriter dataWriter = CSVWriter.Instance;
+        // the data reader instance:
+        private CSVReader dataReader = CSVReader.Instance;
 
         /*
          * Persists the BookingComponent to {dataDirectory}/{bookingNb}.csv; 
@@ -29,6 +31,20 @@ namespace Program
                                              booking.GetBookingNb()));
 
             return dataWriter.Persist(booking, filePath);
+        }
+
+        /*
+         * Returns a List<Dictionary<attribute, value>>, each representing
+         * an entity of a given BookingComponent (the dictonary are named as 
+         * defined in the *Field.cs enumerations).
+         */
+        public List<Dictionary<String, String>> Read(int bookingNb)
+        {
+            String filePath = (String.Format(@"{0}/{1}.csv", 
+                                             dataDirectory,
+                                             bookingNb));
+
+            return dataReader.ReadBooking(filePath);
         }
 
     }

@@ -67,9 +67,9 @@ namespace Program
             
             */
 
-            /*
-            List<Dictionary<String, String>> ld = CSVReader.ReadBooking(@"data/1.csv");
-            ld.AddRange(CSVReader.ReadBooking(@"data/2.csv"));
+            
+            List<Dictionary<String, String>> ld = dpf.Read(1);
+            ld.AddRange(dpf.Read(2));
             String v;
             int i = 0;
 
@@ -88,7 +88,6 @@ namespace Program
 
                 }
             }
-             */
 
             InitializeComponent();
 

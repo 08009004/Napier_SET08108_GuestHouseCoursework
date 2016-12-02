@@ -17,17 +17,37 @@ using System.IO;
  */
 namespace Program
 {
-    /* 
-     * Static utility class, reads system objects data from CSV files.
+    /*
+     * Singleton utility class, reads bookings data from CSV files.
      */
     class CSVReader
     {
+        // Properties: 
+        private static CSVReader instance;
+        public static CSVReader Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new CSVReader();
+                }
+                return instance;
+            }
+        }
+
+        /*
+         * Private constructor, to prevent class instantiation from
+         * external classes (singleton class).
+         */
+        private CSVReader() { }
+
         /*
          * Returns a Dictionary<string, string> representing a BookingComponent
          * as <attribute, value> (the dictonary keys follow the naming 
          * implemented in the *Field.cs enumerations).
          */
-        public static List<Dictionary<String, String>> ReadBooking(String filename)
+        public List<Dictionary<String, String>> ReadBooking(String filename)
         {
             List<String[]> extractedEntities = extractClasses(readLines(filename));
             List<Dictionary<String, String>> indexedEntities = new List<Dictionary<String, String>>();
@@ -47,7 +67,7 @@ namespace Program
          * Throws ArgumentException if the number of lines in the file was not even,
          * as per the CSV formating done within classes.
          */
-        private static List<String> readLines(String filename)
+        private List<String> readLines(String filename)
             /*
              * RESOURCE:
              * https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
@@ -80,7 +100,7 @@ namespace Program
          * each representing the data for a different class of that
          * BookingComponent.
          */
-        private static List<String[]> extractClasses(List<String> csvBooking) 
+        private List<String[]> extractClasses(List<String> csvBooking) 
         {
             List<String[]> csvEntities = new List<String[]>();
             String[] booking = null;
@@ -137,7 +157,7 @@ namespace Program
         /*
          * Appends arr2 at the end of arr1.
          */
-        private static String[] append(String[] arr1, String[] arr2)
+        private String[] append(String[] arr1, String[] arr2)
         /*
          * RESOURCES:
          * http://stackoverflow.com/questions/59217/merging-two-arrays-in-net
@@ -154,7 +174,7 @@ namespace Program
          * Indexes a csv entity (String[]) into a 
          * dictionary<attribute, value>.
          */
-        private static Dictionary<String, String> 
+        private Dictionary<String, String> 
                                                 indexEntity(String[] entity)
         {
             List<String[]> dividedEntity = divideEntity(entity);
@@ -206,7 +226,7 @@ namespace Program
          * element of which represents a Component class (from a
          * decorator pattern).
          */
-        private static List<String[]> divideEntity(String[] entity)
+        private List<String[]> divideEntity(String[] entity)
         {
             List<String[]> dividedEntity = new List<String[]>();
             String[] section = new String[0];
@@ -237,7 +257,7 @@ namespace Program
          * Indexes part of an entity's attributes (= section) into a
          * dictionary<attribute, value>.
          */
-        private static Dictionary<String, String> 
+        private Dictionary<String, String> 
                                             index<T>(String[] entitySection)
         {
             T[] keysArr = (T[])Enum.GetValues(typeof(T));
@@ -256,7 +276,7 @@ namespace Program
         /*
          * Joins two Dictionary<String, String> (Union operation).
          */
-        private static Dictionary<String, String> 
+        private Dictionary<String, String> 
             join(Dictionary<String, String> d1, Dictionary<String, String> d2)
                 /*
                  * RESOURCE:
