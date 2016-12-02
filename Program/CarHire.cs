@@ -55,7 +55,7 @@ namespace Program
          */
         public override String ToCSV()
         {
-            StringBuilder csvCarHire = new StringBuilder("##CAR_HIRE\r\n");
+            StringBuilder csvCarHire = new StringBuilder("#CAR_HIRE\r\n");
 
             csvCarHire.Append(driverName + ",");
             csvCarHire.Append(start.ToString().Substring(0, 10) + ",");
