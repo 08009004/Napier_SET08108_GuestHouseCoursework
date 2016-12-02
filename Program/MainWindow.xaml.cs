@@ -68,55 +68,27 @@ namespace Program
             */
 
             
-            List<Dictionary<String, String>> ld1;
-            List<Dictionary<String, String>> ld2;
-            if (dpf.Read(1, out ld1) && dpf.Read(2, out ld2))
+            List<Dictionary<String, String>> ld;
+
+            if (dpf.Read(1, out ld))
             {
-                String v;
-                int i = 0;
-                /*
-                foreach (Dictionary<String, String> d in ld1)
-                {
-                    i++;
-                    foreach (String k in d.Keys)
-                    {
-                        if (d.TryGetValue(k, out v))
-                        {
-                            MessageBox.Show("list<dict> #1"
-                                            + " - dict nb: " + i + "\r\n"
-                                            + "KEY: " + k
-                                            + "\r\n"
-                                            + "VALUE: " + v);
-                        }
-
-                    }
-                }
-                 */
-
-                i = 0;
-
-                foreach (Dictionary<String, String> d in ld2)
-                {
-                    i++;
-                    foreach (String k in d.Keys)
-                    {
-                        if (d.TryGetValue(k, out v))
-                        {
-                            MessageBox.Show("list<dict> #2"
-                                            + " - dict nb: " + i + "\r\n"
-                                            + "KEY: " + k
-                                            + "\r\n"
-                                            + "VALUE: " + v);
-                        }
-
-                    }
-                }
+                BookingComponent b = bf.Restore(ld);
+                MessageBox.Show(b.ToCSV());
             }
             else
             {
-                MessageBox.Show("error reading files");
+                MessageBox.Show("error reading 1.csv");
             }
-            
+
+            if (dpf.Read(2, out ld))
+            {
+                BookingComponent b = bf.Restore(ld);
+                MessageBox.Show(b.ToCSV());
+            }
+            else
+            {
+                MessageBox.Show("error reading 2.csv");
+            }
 
             InitializeComponent();
 
