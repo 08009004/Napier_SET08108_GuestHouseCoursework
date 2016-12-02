@@ -10,5 +10,5 @@ namespace Program
      * Enumeration of EveningMeal.cs fields in the order they appear in 
      * EveningMeal.ToCSV() and the persisted file.
      */
-    enum EveningMealField { DIET_REQUIREMENT }
+    enum EveningMealField { DIET_REQUIREMENT_EVENING }
 }

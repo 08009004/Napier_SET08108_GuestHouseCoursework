@@ -2144,7 +2144,7 @@
       <enumeration Id="ea242736-ad9a-469e-b224-9ba8142753f5" name="BreakfastField" isAbstract="false" isLeaf="false">
         <elementDefinition Id="90326246-7b65-4867-bb5f-a3a8ab58a179" />
         <ownedLiterals>
-          <enumerationLiteral Id="f72af862-6e95-4726-a177-a2f5941b6c70" name="DIET_REQUIREMENT">
+          <enumerationLiteral Id="f72af862-6e95-4726-a177-a2f5941b6c70" name="DIET_REQUIREMENT_BREAKFAST">
             <elementDefinition Id="ab507e3e-cd82-4806-ba23-a73872effccf" />
           </enumerationLiteral>
         </ownedLiterals>
@@ -2154,7 +2154,7 @@
       <enumeration Id="608698db-db39-4992-b83c-44ce69719644" name="EveningMealField" isAbstract="false" isLeaf="false">
         <elementDefinition Id="a2a294b7-a13e-4646-b00d-f60bd411e124" />
         <ownedLiterals>
-          <enumerationLiteral Id="3fbc024e-fee6-49e8-91d3-1c67ada3e2ab" name="DIET_REQUIREMENT">
+          <enumerationLiteral Id="3fbc024e-fee6-49e8-91d3-1c67ada3e2ab" name="DIET_REQUIREMENT_EVENING">
             <elementDefinition Id="bb39c3c6-1057-468b-bc4c-a4e3ba6a6a14" />
           </enumerationLiteral>
         </ownedLiterals>

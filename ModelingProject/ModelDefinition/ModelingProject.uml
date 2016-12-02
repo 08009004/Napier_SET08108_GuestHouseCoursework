@@ -4372,7 +4372,7 @@
         <ownedLiterals>
           <enumerationLiteral
             Id="ab507e3e-cd82-4806-ba23-a73872effccf"
-            name="DIET_REQUIREMENT" />
+            name="DIET_REQUIREMENT_BREAKFAST" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -4385,7 +4385,7 @@
         <ownedLiterals>
           <enumerationLiteral
             Id="bb39c3c6-1057-468b-bc4c-a4e3ba6a6a14"
-            name="DIET_REQUIREMENT" />
+            name="DIET_REQUIREMENT_EVENING" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
