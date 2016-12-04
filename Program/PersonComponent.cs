@@ -10,7 +10,7 @@ namespace Program
     * Abstract component class used to make sure that 
     * components and decorators share the same specification
     */
-    abstract class PersonComponent
+    public abstract class PersonComponent
     {
         /*
          * Must return the PersonComponent's name.

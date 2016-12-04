@@ -34,7 +34,6 @@ namespace Program
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         /*
@@ -75,6 +74,8 @@ namespace Program
             {
                 clearDisplay();
 
+                txtBookingRef.Text = currentBooking.GetBookingNb().ToString();
+
                 PersonComponent c = currentBooking.GetCustomer();
                 txtCustNumber.Text = c.CustomerNb.ToString();
                 txtCustName.Text = c.Name;
@@ -96,16 +97,27 @@ namespace Program
             }
         }
 
+        private void btnClearWindow_Click(object sender, RoutedEventArgs e)
+        {
+            clearDisplay();
+        }
+
         /*
          * Empties all boxes displayed in the MainWindow.
          */
         private void clearDisplay()
         {
+            txtBookingRef.Text = String.Empty;
             txtCustNumber.Text = String.Empty;
             txtCustName.Text = String.Empty;
             txtArrival.Text = String.Empty;
             txtDeparture.Text = String.Empty;
             lstGuests.Items.Clear();
+        }
+
+        private void btnNewBooking_Click(object sender, RoutedEventArgs e)
+        {
+            new NewBooking(dpf, currentBooking).Show();
         }
 
     }

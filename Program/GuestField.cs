@@ -10,5 +10,5 @@ namespace Program
      * Enumeration of Guest.cs fields in the order they appear in 
      * Guest.ToCSV and the persisted file.
      */
-    enum GuestField { PASSPORT_NUMBER, AGE }
+    public enum GuestField { PASSPORT_NUMBER, AGE }
 }

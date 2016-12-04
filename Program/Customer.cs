@@ -9,7 +9,7 @@ namespace Program
     /*
      * Represents a customer.
      */
-    class Customer : PersonDecorator
+    public class Customer : PersonDecorator
     {
         // Properties:
         private String address;

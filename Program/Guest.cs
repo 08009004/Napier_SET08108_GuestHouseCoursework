@@ -9,7 +9,7 @@ namespace Program
     /*
      * Represents a guest.
      */
-    class Guest : PersonDecorator
+    public class Guest : PersonDecorator
     {
         // Properties:
         private String passportNb;

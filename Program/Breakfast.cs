@@ -9,7 +9,7 @@ namespace Program
     /*
      * Represents a breakfast extra.
      */
-    class Breakfast : BookingDecorator
+    public class Breakfast : BookingDecorator
     {
         // Property:
         private String dietRequirement;

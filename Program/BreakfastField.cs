@@ -10,5 +10,5 @@ namespace Program
      * Enumeration of Breafast.cs fields in the order they appear in 
      * Breakfast.ToCSV() and the persisted file.
      */
-    enum BreakfastField { DIET_REQUIREMENT_BREAKFAST }
+    public enum BreakfastField { DIET_REQUIREMENT_BREAKFAST }
 }

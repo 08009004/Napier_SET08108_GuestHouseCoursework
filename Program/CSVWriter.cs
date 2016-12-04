@@ -12,7 +12,7 @@ namespace Program
     /*
      * Singleton utility class, persists bookings data to CSV files.
      */
-    class CSVWriter
+    public class CSVWriter
     {
         // Properties: 
         private static CSVWriter instance;

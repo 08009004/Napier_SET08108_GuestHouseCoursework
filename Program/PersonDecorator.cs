@@ -9,7 +9,7 @@ namespace Program
     /* Abstract class defining the minimum implementation of 
      * a concrete PersonDecorator.
      */
-    abstract class PersonDecorator : PersonComponent
+    public abstract class PersonDecorator : PersonComponent
     {
         // Properties:
         // the decorator component

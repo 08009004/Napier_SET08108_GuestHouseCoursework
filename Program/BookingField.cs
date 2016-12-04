@@ -11,5 +11,5 @@ namespace Program
      * Booking.ToCSV() and the persisted file, excluding the fields
      * defined in PersonField.cs, CustomerField.cs & GuestField.cs
      */
-    enum BookingField { BOOKING_NUMBER, ARRIVAL, DEPARTURE  }
+    public enum BookingField { BOOKING_NUMBER, ARRIVAL, DEPARTURE  }
 }

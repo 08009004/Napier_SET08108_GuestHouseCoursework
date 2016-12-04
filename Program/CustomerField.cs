@@ -10,5 +10,5 @@ namespace Program
      * Enumeration of Customer.cs fields in the order they appear in 
      * Customer.ToCSV and the persisted file.
      */
-    enum CustomerField { CUSTOMER_NUMBER, ADDRESS }
+    public enum CustomerField { CUSTOMER_NUMBER, ADDRESS }
 }

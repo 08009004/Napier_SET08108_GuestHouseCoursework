@@ -9,7 +9,7 @@ namespace Program
     /*
      * Represents an evening meals extra.
      */
-    class EveningMeal : BookingDecorator
+    public class EveningMeal : BookingDecorator
     {
         // Property:
         private String dietRequirement;

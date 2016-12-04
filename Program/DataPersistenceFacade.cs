@@ -13,7 +13,7 @@ namespace Program
      * Utility class, facade for the Data Persistence implementation
      * details.
      */
-    class DataPersistenceFacade
+    public class DataPersistenceFacade
     {
         // Properties: 
         // the data persistence directory.

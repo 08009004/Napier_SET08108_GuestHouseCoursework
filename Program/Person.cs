@@ -9,7 +9,7 @@ namespace Program
     /*
      * Represents individuals.
      */
-    class Person : PersonComponent
+    public class Person : PersonComponent
     {
         // Property:
         private String name;

@@ -19,9 +19,56 @@ namespace Program
     /// </summary>
     public partial class NewBooking : Window
     {
-        public NewBooking()
+        private PersonFactory pf = PersonFactory.Instance;
+        private DataPersistenceFacade dpf;
+        private BookingComponent currentBooking;
+
+        public NewBooking(DataPersistenceFacade dpf, BookingComponent currentBooking)
         {
+            this.dpf = dpf;
+            this.currentBooking = currentBooking;
             InitializeComponent();
+        }
+
+        private void btnLoadCust_Click(object sender, RoutedEventArgs e)
+        {
+            int customerNb;
+            PersonComponent customer;
+
+
+            if (!Int32.TryParse(txtCustNumber.Text, out customerNb))
+            {
+                MessageBox.Show("Please enter a valid booking number.");
+            }
+            else
+            {
+                Dictionary<String, String> customerData;
+                if (!dpf.Read(customerNb, out customerData))
+                {
+                    MessageBox.Show("Can't find customer number "
+                                    + txtCustNumber.Text + ".\r\n"
+                                    + "Please enter a valid"
+                                    + " customer number.");
+                }
+                else
+                {
+                    customer = pf.RestoreCustomer(customerData);
+                    displayCustomer(customer);
+                }
+            }
+        }
+
+        private void displayCustomer(PersonComponent customer) 
+        {
+            clearCustomer();
+            txtCustName.Text = customer.Name;
+            txtCustNumber.Text = customer.CustomerNb.ToString();
+        }
+
+        private void clearCustomer()
+        {
+            txtCustNumber.Text = String.Empty;
+            txtCustName.Text = String.Empty;
         }
     }
 }

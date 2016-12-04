@@ -90,3 +90,19 @@ D:\work\Program\obj\Debug\Program.Properties.Resources.resources
 D:\work\Program\obj\Debug\Program.csproj.GenerateResource.Cache
 D:\work\Program\obj\Debug\Program.exe
 D:\work\Program\obj\Debug\Program.pdb
+D:\New folder\Program\obj\Debug\Bookings.baml
+D:\New folder\Program\obj\Debug\MainWindow.baml
+D:\New folder\Program\obj\Debug\NewBooking.baml
+D:\New folder\Program\obj\Debug\Bookings.g.cs
+D:\New folder\Program\obj\Debug\MainWindow.g.cs
+D:\New folder\Program\obj\Debug\NewBooking.g.cs
+D:\New folder\Program\obj\Debug\App.g.cs
+D:\New folder\Program\obj\Debug\Program_MarkupCompile.cache
+D:\New folder\Program\obj\Debug\Program.g.resources
+D:\New folder\Program\obj\Debug\Program.Properties.Resources.resources
+D:\New folder\Program\obj\Debug\Program.csproj.GenerateResource.Cache
+D:\New folder\Program\bin\Debug\Program.exe.config
+D:\New folder\Program\bin\Debug\Program.exe
+D:\New folder\Program\bin\Debug\Program.pdb
+D:\New folder\Program\obj\Debug\Program.exe
+D:\New folder\Program\obj\Debug\Program.pdb

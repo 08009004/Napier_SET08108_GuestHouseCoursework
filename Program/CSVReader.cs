@@ -20,7 +20,7 @@ namespace Program
     /*
      * Singleton utility class, reads bookings data from CSV files.
      */
-    class CSVReader
+    public class CSVReader
     {
         // Properties: 
         private static CSVReader instance;

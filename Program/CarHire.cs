@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class CarHire : BookingDecorator
+    public class CarHire : BookingDecorator
     {
         // Properties:
         private String driverName;

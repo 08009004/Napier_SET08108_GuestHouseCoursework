@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    class Booking : BookingComponent
+    public class Booking : BookingComponent
     {
         private int bookingNb;
         private PersonComponent cust;

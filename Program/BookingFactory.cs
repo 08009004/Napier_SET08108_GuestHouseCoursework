@@ -10,7 +10,7 @@ namespace Program
      * Singleton utility class, instantiates and decorates
      * BookingComponents.
      */
-    class BookingFactory
+    public class BookingFactory
     {
         //Properties:
         private int nxtBookingNb;

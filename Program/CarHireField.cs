@@ -10,5 +10,5 @@ namespace Program
      * Enumeration of CarHire.cs fields in the order they appear in 
      * CarHire.ToCSV() and the persisted file.
      */
-    enum CarHireField { DRIVER_NAME, START, END }
+    public enum CarHireField { DRIVER_NAME, START, END }
 }

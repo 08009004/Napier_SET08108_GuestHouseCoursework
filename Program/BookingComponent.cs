@@ -10,7 +10,7 @@ namespace Program
      * Abstract component class used to make sure that 
      * components and decorators share the same specification
      */
-    abstract class BookingComponent
+    public abstract class BookingComponent
     {
         /*
          * Must add a guest to a given BookingComponent.

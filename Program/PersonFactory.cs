@@ -10,7 +10,7 @@ namespace Program
      * Singleton utility class, instantiates and decorates
      * PersonComponents.
      */
-    class PersonFactory
+    public class PersonFactory
     {
         //Properties:
         private int nextCustNb;
