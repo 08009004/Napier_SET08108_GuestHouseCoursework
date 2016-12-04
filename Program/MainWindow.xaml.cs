@@ -64,8 +64,6 @@ namespace Program
                             + "\r\n TOTAL: £" + b1.GetCost());
             MessageBox.Show("b2 cost: £" + b2.GetCost()
                             + "\r\n TOTAL: £" + b2.GetCost());
-            
-            */
 
             
             List<Dictionary<String, String>> ld;
@@ -88,6 +86,29 @@ namespace Program
             else
             {
                 MessageBox.Show("error reading 2.csv");
+            }
+             */
+
+            Dictionary<String, String> cData;
+
+            if (dpf.Read(1, out cData))
+            {
+                PersonComponent c = pf.RestoreCustomer(cData);
+                MessageBox.Show(c.ToCSV());
+            }
+            else
+            {
+                MessageBox.Show("error reading customerNb 1");
+            }
+
+            if (dpf.Read(5, out cData))
+            {
+                PersonComponent c = pf.RestoreCustomer(cData);
+                MessageBox.Show(c.ToCSV());
+            }
+            else
+            {
+                MessageBox.Show("error reading customerNb 5");
             }
 
             InitializeComponent();

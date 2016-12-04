@@ -213,12 +213,9 @@ namespace Program
                                     BookingComponent b, 
                                     List<Dictionary<String, String>> gData) 
         {
-            if (gData != null)
+            foreach (Dictionary<String, String> d in gData)
             {
-                foreach (Dictionary<String, String> d in gData)
-                {
                     b.AddGuest(personFactory.RestoreGuest(d));
-                }
             }
             return b;
         }

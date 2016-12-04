@@ -1491,6 +1491,65 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="ce239252-447f-4318-857a-08a594aff8d8"
+            name="Read"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1ebe89a8-859b-4feb-afa8-36d7020161b6"
+                  name="customerNb"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b46610d8-bb27-45a1-9217-8bdd904236fd"
+                  name="customer"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="009039b2-b166-49ef-a750-18b539720e3e"
+                      LastKnownName="out Dictionary&lt;String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="618ad236-10b1-48e2-9f02-72878ffcef89"
+                  name="String&gt;"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e4a3d24d-9395-4461-a27e-49ae453506cb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
