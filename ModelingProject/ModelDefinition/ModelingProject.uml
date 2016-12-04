@@ -705,6 +705,54 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="78ab7051-261c-4477-91f1-679a71a274f5"
+            name="GetCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="094615c6-cd51-4711-8a93-7aae7f283c02"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2b513676-1aee-48f7-a4ca-809cbfe8c5c9"
+            name="GetGuests"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2c4a6593-2d8d-4c3b-a8ec-c2182c5fdcf2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7810bbea-6a62-4cef-9f98-13bf02a43c60"
+                      LastKnownName="List&lt;PersonComponent&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3462,6 +3510,54 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="c1786fd5-d87d-44ae-843b-a2de8ddfea56"
+            name="GetCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b4e24c22-7408-4e6a-8f23-a0daae41672b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="21f99dd2-0f05-485e-953d-2934b3bd6f09"
+            name="GetGuests"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e294dea8-f854-4b09-a8f5-b52a77dfc275"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7810bbea-6a62-4cef-9f98-13bf02a43c60"
+                      LastKnownName="List&lt;PersonComponent&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3786,6 +3882,54 @@
                     <undefinedTypeMoniker
                       Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
                       LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="83e95d95-f382-47d4-9d8b-8f7afd2ae6ba"
+            name="GetCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="41d91403-5914-413f-852f-9f38841f0f2b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="89fa3ed6-6741-4165-b55b-86e8ce50fc48"
+            name="GetGuests"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6cbc6ac1-77b9-4f7f-bd14-2bb2f396d760"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7810bbea-6a62-4cef-9f98-13bf02a43c60"
+                      LastKnownName="List&lt;PersonComponent&gt;"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -5325,6 +5469,11 @@
       <undefinedType
         Id="2b6786de-d07e-4d27-b443-d267a734fdad"
         name="List&lt;int&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7810bbea-6a62-4cef-9f98-13bf02a43c60"
+        name="List&lt;PersonComponent&gt;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

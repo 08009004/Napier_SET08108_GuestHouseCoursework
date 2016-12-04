@@ -23,6 +23,16 @@ namespace Program
         public abstract int GetBookingNb();
 
         /*
+         * Must return the Booking's cutomer.
+         */
+        public abstract PersonComponent GetCustomer();
+
+        /*
+         * Must return the Booking's list of guests.
+         */
+        public abstract List<PersonComponent> GetGuests();
+
+        /*
          * Must return the number of guests included in this 
          * BookingComponent.
          */

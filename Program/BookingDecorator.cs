@@ -34,7 +34,7 @@ namespace Program
         }
 
         /*
-         * Returns the booking number of the decorated BookingComponent
+         * Returns the decorated BookingComponent's list of booking number
          * (or -1 if the root component is not a concrete Booking).
          */
         public override int GetBookingNb()
@@ -47,6 +47,38 @@ namespace Program
             }
 
             return bookingNb;
+        }
+
+        /*
+         * Returns the decorated BookingComponent's customer 
+         * (or null if the root component is not a concrete Booking).
+         */
+        public override PersonComponent GetCustomer()
+        {
+            PersonComponent customer = null;
+
+            if (DecoratedComponent != null)
+            {
+                customer = DecoratedComponent.GetCustomer();
+            }
+
+            return customer;
+        }
+
+        /*
+         * Returns the decorated BookingComponent's list of guests  
+         * (or null if the root component is not a concrete Booking).
+         */
+        public override List<PersonComponent> GetGuests()
+        {
+            List<PersonComponent> guests = null;
+
+            if (DecoratedComponent != null)
+            {
+                guests = DecoratedComponent.GetGuests();
+            }
+
+            return guests;
         }
 
         /*

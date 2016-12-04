@@ -12,7 +12,7 @@ namespace Program
         private Customer cust;
         private DateTime arrival;
         private DateTime departure;
-        private List<Guest> guests = new List<Guest>();
+        private List<PersonComponent> guests = new List<PersonComponent>();
 
         /*
          * Constructor.
@@ -66,6 +66,22 @@ namespace Program
         public override int GetBookingNb()
         {
             return this.bookingNb;
+        }
+
+        /*
+         * Returns the booking's customer.
+         */
+        public override PersonComponent GetCustomer()
+        {
+            return this.cust;
+        }
+
+        /*
+         * Returns the booking's list of guests.
+         */
+        public override List<PersonComponent> GetGuests()
+        {
+            return this.guests;
         }
 
         /*
