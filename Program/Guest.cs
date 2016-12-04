@@ -71,9 +71,17 @@ namespace Program
         /*
          * Returns true if the Guest is also a Customer, otherwise flase
          */
-        public bool IsCustomer()
+        public override bool IsCustomer()
         {
             return base.IsCustomer();
+        }
+
+        /*
+         * Returns true.
+         */
+        public override bool IsGuest()
+        {
+            return true;
         }
     }
 }

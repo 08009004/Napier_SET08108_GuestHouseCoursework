@@ -41,7 +41,7 @@ namespace Program
          * Generates a new booking instance on the basis of the data 
          * passed as parameters.
          */
-        public Booking GetNewBooking(Customer cust, 
+        public Booking GetNewBooking(PersonComponent cust, 
                                      DateTime arrival, 
                                      DateTime departure)
         {
@@ -53,7 +53,7 @@ namespace Program
          * passed as parameters.
          */
         private Booking GetNewBooking(int bookingNb,
-                                      Customer cust,
+                                      PersonComponent cust,
                                       DateTime arrival,
                                       DateTime departure)
         {

@@ -539,6 +539,32 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="edff63a1-73aa-4716-a160-0b8f0063c5bc" name="IsGuest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c496f874-d6a6-4432-8d50-0fc302eca6b6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="937e8757-2b12-4ffd-92a8-a16c5272c087" direction="Return" isUnique="false">
+                  <elementDefinition Id="3210a90e-ea44-41ae-a34f-8d38ebf0d0b5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e013815a-5021-4021-bbb0-481c49377cd6" name="CustomerNb" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a45c2d24-d7c8-4e87-9666-61c46a1a228a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2f4f0ccc-2095-4575-9ca9-0c3595435940" direction="Return" isUnique="false">
+                  <elementDefinition Id="30cef4ae-9751-48d1-beaf-392bf3c5a934" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>

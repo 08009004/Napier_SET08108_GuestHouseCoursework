@@ -22,7 +22,7 @@ namespace Program
              * why.
              */
         public PersonComponent DecoratedComponent { get; set; }
-        // the PersonDecorator's Name (is null if the root component is not 
+        // the PersonDecorator's name (is null if the root component is not 
         // a concrete Person)
         public override string Name
         {
@@ -36,6 +36,23 @@ namespace Program
                 }
 
                 return name; 
+            }
+        }
+
+        // the PersonDecorator's customer number (-1 if the root 
+        // component is not a concrete Person)
+        public override int CustomerNb
+        {
+            get
+            {
+                int custNb = -1;
+
+                if (DecoratedComponent != null)
+                {
+                    custNb = DecoratedComponent.CustomerNb;
+                }
+
+                return custNb;
             }
         }
 
@@ -56,7 +73,7 @@ namespace Program
         }
 
         /*
-         * Returns true if the PersonComponent is a Customer.
+         * Returns true if the PersonComponent is a Customer, otherwise false.
          */
         public override bool IsCustomer()
         {
@@ -68,6 +85,21 @@ namespace Program
             }
 
             return isCustomer;
+        }
+
+        /*
+         * Returns true if the PersonComponent is a Guest, otherwise false.
+         */
+        public override bool IsGuest()
+        {
+            bool isGuest = false;
+
+            if (DecoratedComponent != null)
+            {
+                isGuest = DecoratedComponent.IsGuest();
+            }
+
+            return isGuest;
         }
     }
 }

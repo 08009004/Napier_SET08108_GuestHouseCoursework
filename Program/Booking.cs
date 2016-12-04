@@ -9,7 +9,7 @@ namespace Program
     class Booking : BookingComponent
     {
         private int bookingNb;
-        private Customer cust;
+        private PersonComponent cust;
         private DateTime arrival;
         private DateTime departure;
         private List<PersonComponent> guests = new List<PersonComponent>();
@@ -18,14 +18,20 @@ namespace Program
          * Constructor.
          * 
          * throws ArgumentException if bookingNb is not strictly greater 
-         * than 0; or if departure day is not strictly later than arrival
-         * day
+         * than 0, if departure day is not strictly later than arrival
+         * day, or if customer is not decorated as a customer.
          */
         public Booking(int bookingNb, 
-                       Customer customer, 
+                       PersonComponent customer, 
                        DateTime arrival, 
                        DateTime departure)
         {
+            if (customer.CustomerNb <= 0)
+            {
+                throw new ArgumentException("Booking.cust must be"
+                                            + "  decorated as a Customer");
+            }
+
             if (bookingNb <= 0)
             {
                 throw new ArgumentException("Booking.bookingNb must be"

@@ -57,12 +57,15 @@ namespace Program
          * Thows Argument exceptions if there is a problem with the contents
          * of the dictionary passed as a parameter.
          */
-        public Customer RestoreCustomer(Dictionary<String, String> attributes)
+        public PersonDecorator RestoreCustomer(Dictionary<String, String> attributes)
         {
             String name;
             String address;
             String custRef;
             int custRefNb;
+            String passportNb;
+            String ageString;
+            int age;
 
             if (!attributes.TryGetValue("NAME", out name)
              || !attributes.TryGetValue("ADDRESS", out address)
@@ -79,17 +82,38 @@ namespace Program
                                             + custRef + "] to type Int32.");
             }
 
-            Customer c = new Customer(address, custRefNb);
+            PersonDecorator c = new Customer(address, custRefNb);
             c.DecoratedComponent = new Person(name);
+            PersonDecorator g;
 
-            return c;
+            if (attributes.TryGetValue("PASSPORT_NUMBER", out passportNb)
+             && attributes.TryGetValue("AGE", out ageString))
+            {
+                if (!Int32.TryParse(ageString, out age))
+                {
+                    throw new ArgumentException("impossible to parse "
+                                                + "[key: AGE, " 
+                                                + " value: "+ ageString 
+                                                + "] to type Int32.");
+                }
+                g = new Guest(passportNb, age);
+                g.DecoratedComponent = c;
+            }
+            else
+            {
+                g = c;
+            }
+
+            return g;
         }
 
         /*
          * Generates a new guest instance on the basis of the data 
          * passed as parameters.
          */
-        public Guest GetNewGuest(String name, String passportNb, int age)
+        public PersonComponent GetNewGuest(String name, 
+                                           String passportNb, 
+                                           int age)
         {
             Person p = new Person(name);
             Guest g = new Guest(passportNb, age);

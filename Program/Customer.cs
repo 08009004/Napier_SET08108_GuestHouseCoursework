@@ -22,7 +22,7 @@ namespace Program
         }
 
         private int customerNb;
-        public int CustomerNb
+        public override int CustomerNb
         {
             get
             {
@@ -74,6 +74,14 @@ namespace Program
         public override bool IsCustomer()
         {
             return true;
+        }
+
+        /*
+         * Returns true if the Customer is also a Guest, otherwise flase
+         */
+        public override bool IsGuest()
+        {
+            return base.IsGuest();
         }
     }
 }

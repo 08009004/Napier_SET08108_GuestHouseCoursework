@@ -75,10 +75,14 @@ namespace Program
             {
                 clearDisplay();
 
-                Customer c = (Customer)currentBooking.GetCustomer();
+                PersonComponent c = currentBooking.GetCustomer();
                 txtCustNumber.Text = c.CustomerNb.ToString();
                 txtCustName.Text = c.Name;
 
+                if (c.IsGuest())
+                {
+                    lstGuests.Items.Add(c.Name);
+                }
                 foreach (PersonComponent g in currentBooking.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
