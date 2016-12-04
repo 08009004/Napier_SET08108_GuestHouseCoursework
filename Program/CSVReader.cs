@@ -52,7 +52,7 @@ namespace Program
         public bool ReadBooking(String filename, 
                                 out List<Dictionary<String, String>> keysVals)
         {
-            bool outcome = true;
+            bool wasSuccessful = true;
             List<String[]> extractedEntities;
             List<Dictionary<String, String>> indexedEntities = null;
 
@@ -68,11 +68,11 @@ namespace Program
             }
             catch
             {
-                outcome = false;
+                wasSuccessful = false;
             }
 
             keysVals = indexedEntities;
-            return outcome;
+            return wasSuccessful;
         }
 
         /*

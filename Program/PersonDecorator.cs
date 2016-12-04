@@ -11,7 +11,8 @@ namespace Program
      */
     abstract class PersonDecorator : PersonComponent
     {
-        // Property: the decorator component
+        // Properties:
+        // the decorator component
             /*
              * NOTE: Ideally this property should be 'protected' hence  
              * visible only from children classes Customer.cs and Guest.cs  
@@ -21,6 +22,22 @@ namespace Program
              * why.
              */
         public PersonComponent DecoratedComponent { get; set; }
+        // the PersonDecorator's Name (is null if the root component is not 
+        // a concrete Person)
+        public override string Name
+        {
+            get 
+            {
+                String name = null;
+
+                if (DecoratedComponent != null)
+                {
+                    name = DecoratedComponent.Name;
+                }
+
+                return name; 
+            }
+        }
 
         /*
          * Returns a textual representation of the decorated 

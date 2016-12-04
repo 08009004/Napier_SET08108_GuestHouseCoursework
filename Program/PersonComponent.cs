@@ -13,6 +13,11 @@ namespace Program
     abstract class PersonComponent
     {
         /*
+         * Must return the Personcomponent's name.
+         */
+        public abstract String Name { get; }
+
+        /*
          * Must return a textual representation of the  
          * PersonComponent in order to persist it to a CSV file.
          */

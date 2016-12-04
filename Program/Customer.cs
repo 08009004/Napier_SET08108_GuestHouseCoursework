@@ -21,12 +21,12 @@ namespace Program
             }
         }
 
-        private int customerRefNb;
-        public int CustomerRefNb
+        private int customerNb;
+        public int CustomerNb
         {
             get
             {
-                return this.customerRefNb;
+                return this.customerNb;
             }
         }
 
@@ -51,7 +51,7 @@ namespace Program
             }
 
             this.address = address;
-            this.customerRefNb = customerRefNb;
+            this.customerNb = customerRefNb;
         }
 
         /*
@@ -62,7 +62,7 @@ namespace Program
         public override String ToCSV()
         {
             return base.ToCSV() + "#CUSTOMER\r\n"
-                                + customerRefNb
+                                + customerNb
                                 + ","
                                 + address
                                 + "\r\n";
