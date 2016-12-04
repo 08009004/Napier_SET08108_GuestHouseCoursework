@@ -1298,110 +1298,6 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="6ad45735-b250-4de8-9ea8-a9c7f13a6093"
-            name="Exists"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="f69e2723-db57-4e9f-aba7-1b598d49c7ad"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
-                      LastKnownName="bool"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="b923ecce-4ff9-40b5-befe-aa97110f0d67"
-                  name="guestName"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="fcf97ef9-1c63-45a6-84de-55c0e2f85086"
-                  name="guest"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="8287cc9c-1d0e-4801-913a-4c08466811d4"
-                      LastKnownName="out Guest"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="9a564f55-f888-46ad-893a-d0417dacc841"
-            name="Exists"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="f6b8965d-b528-4011-a7b0-af37f8594e0b"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
-                      LastKnownName="bool"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ed77ce82-1174-4841-90c3-3c7c81d9f1ce"
-                  name="custRefNb"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="c5a912b4-e9fd-429b-88be-f45a9ed079b3"
-                  name="customer"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="98067152-4280-490b-a679-91b2dec8ca37"
-                      LastKnownName="out Customer"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="7b8c48f9-ff4f-4a0e-9b76-cb4638a83be8"
             name="Persist"
             isLeaf="false"
@@ -1582,6 +1478,30 @@
                     <undefinedTypeMoniker
                       Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
                       LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="13892a9b-6a5e-4e28-8b55-ae61447ae191"
+            name="GetAllBookingNbs"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dae04ce5-4ec8-4c9e-a419-a54ff5e840ef"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2b6786de-d07e-4d27-b443-d267a734fdad"
+                      LastKnownName="List&lt;int&gt;"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>

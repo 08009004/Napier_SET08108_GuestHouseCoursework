@@ -88,8 +88,9 @@ namespace Program
             {
                 MessageBox.Show("error reading 2.csv");
             }
-
              */
+
+            /*
             Dictionary<String, String> cData;
 
             if (dpf.Read(1, out cData))
@@ -111,6 +112,7 @@ namespace Program
             {
                 MessageBox.Show("error reading customerNb 5");
             }
+             */
             
             /*
             List<int> bookingNbs = dpf.GetAllBookingNbs(1);
@@ -119,6 +121,14 @@ namespace Program
                 MessageBox.Show(nb.ToString());
             }
              */
+
+            
+            List<int> bookingNbs = dpf.GetAllBookingNbs();
+            foreach (int nb in bookingNbs) 
+            {
+                MessageBox.Show(nb.ToString());
+            }
+         
 
             InitializeComponent();
 

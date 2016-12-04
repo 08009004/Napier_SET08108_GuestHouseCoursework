@@ -57,6 +57,37 @@ namespace Program
         }
 
         /*
+         * Returns a list of all booking numbers ever persisted.
+         */
+        public List<int> GetAllBookingNbs()
+        {
+            String[] filePaths = Directory.GetFiles(dataDirectory);
+            List<int> bookingNbs = new List<int>();
+
+            foreach (String fp in filePaths)
+            {
+                bookingNbs.Add(extractRefNb(fp));
+            }
+
+            return bookingNbs;
+        }
+
+        /*
+         * Returns the booking number from given persisted booking file name.
+         */
+        private int extractRefNb(String bookingFileName)
+        {
+            int start = bookingFileName.LastIndexOf("\\") + 1;
+            int end = bookingFileName.IndexOf(".") - start;
+            int bookingNb = -1;
+            if (end > 0)
+            {
+                bookingNb = Int32.Parse(bookingFileName.Substring(start, end));
+            }
+            return bookingNb;
+        }
+
+        /*
          * Returns a list of booking numbers, all of which were made by
          * a given customer.
          */
@@ -66,12 +97,10 @@ namespace Program
             String[] bookingFiles = Directory.GetFiles(dataDirectory);
             List<Dictionary<String, String>> bookingData;
             String value;
-            int start;
-            int end;
 
-            foreach (String fileName in bookingFiles)
+            foreach (String fPath in bookingFiles)
             {
-                if (dataReader.ReadBooking(fileName, out bookingData))
+                if (dataReader.ReadBooking(fPath, out bookingData))
                 {
                     foreach (Dictionary<String, String> d in bookingData)
                     {
@@ -80,13 +109,7 @@ namespace Program
                                           out value)
                          && Int32.Parse(value) == customerNb)
                         {
-                            start = fileName.LastIndexOf("\\") + 1;
-                            end = fileName.IndexOf(".") - start;
-                            if (end > 0)
-                            {
-                                bookingNbs.Add(Int32.Parse(
-                                            fileName.Substring(start, end)));
-                            }
+                            bookingNbs.Add(extractRefNb(fPath));
                         }
                     }
                 }
