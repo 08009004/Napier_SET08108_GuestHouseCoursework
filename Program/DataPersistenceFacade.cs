@@ -57,45 +57,6 @@ namespace Program
         }
 
         /*
-         * Returns a Dictionary<attribute, value>, representing a Customer.cs 
-         * instance (the dictonary keys are named as defined in the *Field.cs 
-         * enumerations);
-         * returns true if data was read successfuly otherwise false.
-         */
-        public bool Read(int customerNb,
-                         out Dictionary<String, String> customerData)
-        {
-            Dictionary<String, String> result = null;
-            List<Dictionary<String, String>> bookingData; 
-            String[] bookings = Directory.GetFiles(dataDirectory);
-            bool wasSuccessful = false;
-            int i = 0;
-            String value;
-
-            while (!wasSuccessful && i < bookings.Length)
-            {
-                if (dataReader.ReadBooking(bookings[i], out bookingData))
-                {
-                    foreach (Dictionary<String, String> d in bookingData)
-                    {
-                        if (d.TryGetValue(CustomerField.CUSTOMER_NUMBER
-                                                       .ToString(), 
-                                          out value)
-                         && Int32.Parse(value) == customerNb)
-                        {
-                            result = d;
-                            wasSuccessful = true;
-                        }
-                    }
-                }
-                i++;
-            }
-
-            customerData = result;
-            return wasSuccessful;
-        }
-
-        /*
          * Returns a list of booking numbers, all of which were made by
          * a given customer.
          */
@@ -132,6 +93,45 @@ namespace Program
             }
 
             return bookingNbs;
+        }
+
+        /*
+         * Returns a Dictionary<attribute, value>, representing a Customer.cs 
+         * instance (the dictonary keys are named as defined in the *Field.cs 
+         * enumerations);
+         * returns true if data was read successfuly otherwise false.
+         */
+        public bool Read(int customerNb,
+                         out Dictionary<String, String> customerData)
+        {
+            Dictionary<String, String> result = null;
+            List<int> bookings = GetAllBookingNbs(customerNb);
+            bool wasSuccessful = false;
+
+            if (bookings != null && bookings.Count > 0)
+            {
+                int bookingNb = bookings.ElementAt(0);
+                List<Dictionary<String, String>> bookingData;
+                String value;
+
+                if (this.Read(bookingNb, out bookingData))
+                {
+                    foreach (Dictionary<String, String> d in bookingData)
+                    {
+                        if (d.TryGetValue(CustomerField.CUSTOMER_NUMBER
+                                                       .ToString(),
+                                          out value)
+                         && Int32.Parse(value) == customerNb)
+                        {
+                            result = d;
+                            wasSuccessful = true;
+                        }
+                    }
+                }
+            }
+            
+            customerData = result;
+            return wasSuccessful;
         }
     }
 }
