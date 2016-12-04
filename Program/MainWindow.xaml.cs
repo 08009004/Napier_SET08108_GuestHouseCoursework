@@ -44,9 +44,10 @@ namespace Program
 
             // -------------------
 
-            Customer c2 = pf.GetNewCustomer("sponge bob", "bikini bottom");
+       //     Customer c2 = pf.GetNewCustomer("sponge bob", "bikini bottom");
 
-            BookingComponent b2 = bf.GetNewBooking(c2,
+      //      BookingComponent b2 = bf.GetNewBooking(c2,
+            BookingComponent b2 = bf.GetNewBooking(c1,
                                           new DateTime(2016, 1, 19),
                                           new DateTime(2016, 1, 27));
 
@@ -111,7 +112,7 @@ namespace Program
             }
              */
 
-            List<int> bookingNbs = dpf.FindAllBookings(1);
+            List<int> bookingNbs = dpf.GetAllBookingNbs(1);
             foreach (int nb in bookingNbs) 
             {
                 MessageBox.Show(nb.ToString());

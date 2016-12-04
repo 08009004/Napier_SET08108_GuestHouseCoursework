@@ -1552,27 +1552,13 @@
           </operation>
           <operation
             Id="0eed128e-757b-496c-a76c-9b56a9516866"
-            name="FindAllBookings"
+            name="GetAllBookingNbs"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6d278481-70c9-4892-88ff-17ed85cee223"
-                  name="customerNb"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
-                      LastKnownName="int"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
                   Id="bd5d4fc3-f812-4b49-9c27-1d31c7912bda"
@@ -1582,6 +1568,20 @@
                     <undefinedTypeMoniker
                       Id="2b6786de-d07e-4d27-b443-d267a734fdad"
                       LastKnownName="List&lt;int&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fe85fd8b-c4bd-432a-8f1f-4648ae3eb1e4"
+                  name="customerNb"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
+                      LastKnownName="int"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>

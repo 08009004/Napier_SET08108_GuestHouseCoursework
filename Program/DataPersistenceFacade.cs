@@ -96,17 +96,17 @@ namespace Program
         }
 
         /*
-         * Returns a list of booking numbers, all of which were madee by
+         * Returns a list of booking numbers, all of which were made by
          * a given customer.
          */
-        public List<int> FindAllBookings(int customerNb)
+        public List<int> GetAllBookingNbs(int customerNb)
         {
             List<int> bookingNbs = new List<int>();
             String[] bookingFiles = Directory.GetFiles(dataDirectory);
             List<Dictionary<String, String>> bookingData;
             String value;
-            int startIndex;
-            int endIndex;
+            int start;
+            int end;
 
             foreach (String fileName in bookingFiles)
             {
@@ -119,12 +119,12 @@ namespace Program
                                           out value)
                          && Int32.Parse(value) == customerNb)
                         {
-                            startIndex = fileName.LastIndexOf("\\");
-                            endIndex = fileName.IndexOf(".");
-                            if (endIndex > 0)
+                            start = fileName.LastIndexOf("\\") + 1;
+                            end = fileName.IndexOf(".") - start;
+                            if (end > 0)
                             {
                                 bookingNbs.Add(Int32.Parse(
-                                            fileName.Substring(0, fileName.IndexOf("."))));
+                                            fileName.Substring(start, end)));
                             }
                         }
                     }

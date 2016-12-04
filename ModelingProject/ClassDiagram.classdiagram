@@ -704,22 +704,22 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="55e1b503-7ac0-40c4-b6e5-a2e2bb452527" name="FindAllBookings" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="55e1b503-7ac0-40c4-b6e5-a2e2bb452527" name="GetAllBookingNbs" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0eed128e-757b-496c-a76c-9b56a9516866" />
             <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="c467b6b7-4352-4bc1-b8fa-e00bf35c48e6" name="customerNb" direction="In" isUnique="false">
-                  <elementDefinition Id="6d278481-70c9-4892-88ff-17ed85cee223" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="59a53efb-3347-4aa2-8955-2938ef119ef0" direction="Return" isUnique="false">
                   <elementDefinition Id="bd5d4fc3-f812-4b49-9c27-1d31c7912bda" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="f7184c8c-3b3e-4260-a6ff-2b8960400338" LastKnownName="List&lt;int&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="030d7740-5a39-48bc-bece-91101c9a99dc" name="customerNb" direction="In" isUnique="false">
+                  <elementDefinition Id="fe85fd8b-c4bd-432a-8f1f-4648ae3eb1e4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
