@@ -66,7 +66,7 @@ namespace Program
                          out Dictionary<String, String> customerData)
         {
             Dictionary<String, String> result = null;
-            List<Dictionary<String, String>> booking; 
+            List<Dictionary<String, String>> bookingData; 
             String[] bookings = Directory.GetFiles(dataDirectory);
             bool wasSuccessful = false;
             int i = 0;
@@ -74,9 +74,9 @@ namespace Program
 
             while (!wasSuccessful && i < bookings.Length)
             {
-                if (dataReader.ReadBooking(bookings[i], out booking))
+                if (dataReader.ReadBooking(bookings[i], out bookingData))
                 {
-                    foreach (Dictionary<String, String> d in booking)
+                    foreach (Dictionary<String, String> d in bookingData)
                     {
                         if (d.TryGetValue(CustomerField.CUSTOMER_NUMBER
                                                        .ToString(), 
@@ -95,5 +95,43 @@ namespace Program
             return wasSuccessful;
         }
 
+        /*
+         * Returns a list of booking numbers, all of which were madee by
+         * a given customer.
+         */
+        public List<int> FindAllBookings(int customerNb)
+        {
+            List<int> bookingNbs = new List<int>();
+            String[] bookingFiles = Directory.GetFiles(dataDirectory);
+            List<Dictionary<String, String>> bookingData;
+            String value;
+            int startIndex;
+            int endIndex;
+
+            foreach (String fileName in bookingFiles)
+            {
+                if (dataReader.ReadBooking(fileName, out bookingData))
+                {
+                    foreach (Dictionary<String, String> d in bookingData)
+                    {
+                        if (d.TryGetValue(CustomerField.CUSTOMER_NUMBER
+                                                       .ToString(),
+                                          out value)
+                         && Int32.Parse(value) == customerNb)
+                        {
+                            startIndex = fileName.LastIndexOf("\\");
+                            endIndex = fileName.IndexOf(".");
+                            if (endIndex > 0)
+                            {
+                                bookingNbs.Add(Int32.Parse(
+                                            fileName.Substring(0, fileName.IndexOf("."))));
+                            }
+                        }
+                    }
+                }
+            }
+
+            return bookingNbs;
+        }
     }
 }
