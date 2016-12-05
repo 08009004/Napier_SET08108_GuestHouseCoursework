@@ -125,7 +125,9 @@ namespace Program
          * Generates a new guest instance on the basis of the data 
          * passed as parameters.
          */
-        public Guest GetNewGuest(Customer customer, String passportNb, int age)
+        public Guest GetNewGuest(PersonComponent customer, 
+                                 String passportNb, 
+                                 int age)
         {
             Guest g = new Guest(passportNb, age);
             g.DecoratedComponent = customer;

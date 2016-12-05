@@ -220,27 +220,63 @@ namespace Program
         }
 
         /*
-         * Routine triggered upon clicking the 'Add Guest' button.
+         * Routine executed upon clicking the 'Add Guest' button.
          */
         private void btnAddGuest_Click(object sender, RoutedEventArgs e)
         {
-            if (currentBooking == null)
-            {
-                MessageBox.Show("Please save the booking before adding"
-                                + " guests.");
-            }
-            else if (currentBooking.GetGuests().Count >= 4)
-            {
-                MessageBox.Show("This booking is already full, the"
-                                + " maximum number of guests per booking"
-                                + " is 4.");
-            }
-            else
+            if (canAddGuest())
             {
                 new NewGuest(currentBooking.GetGuests()).ShowDialog();
             }
 
             refreshDisplay();
+        }
+
+        /*
+         * Routine executed upon clicking the 'Add to guests' button.
+         */
+        private void btnAddToGuest_Click(object sender, RoutedEventArgs e)
+        {
+            bool isCustAGuest = false;
+
+            foreach (PersonComponent g in currentBooking.GetGuests())
+            {
+                if (g.CustomerNb > 0)
+                {
+                    isCustAGuest = true;
+                    MessageBox.Show("The customer is already in the list"
+                                    + " of guests.");
+                }
+            }
+
+            if (canAddGuest() && !isCustAGuest)
+            {
+                new NewGuest(currentBooking.GetGuests(), 
+                             currentCustomer).ShowDialog();
+            }
+
+            refreshDisplay();
+        }
+
+        private bool canAddGuest()
+        {
+            bool canAddGuest = true;
+
+            if (currentBooking == null)
+            {
+                canAddGuest = false;
+                MessageBox.Show("Please save the booking before adding"
+                                + " guests.");
+            }
+            else if (currentBooking.GetGuests().Count >= 4)
+            {
+                canAddGuest = false;
+                MessageBox.Show("This booking is already full, the"
+                                + " maximum number of guests per booking"
+                                + " is 4.");
+            }
+            
+            return canAddGuest;
         }
     }
 }

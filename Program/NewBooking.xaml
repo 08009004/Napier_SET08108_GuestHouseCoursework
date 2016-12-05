@@ -20,15 +20,15 @@
         <Label x:Name="lblGuest" Content="List of guests:" HorizontalAlignment="Left" Margin="156,166,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="New Booking" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.56,6.227" Margin="23,298,0,0"/>
-        <Button x:Name="btnNewCust" Content="Create" HorizontalAlignment="Left" Margin="161,129,0,0" VerticalAlignment="Top" Width="75" Click="btnNewCust_Click"/>
-        <Button x:Name="btnLoadCust" Content="Load" HorizontalAlignment="Left" Margin="244,129,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
+        <Button x:Name="btnNewCust" Content="Create" HorizontalAlignment="Left" Margin="160,129,0,0" VerticalAlignment="Top" Width="75" Click="btnNewCust_Click"/>
+        <Button x:Name="btnLoadCust" Content="Load" HorizontalAlignment="Left" Margin="241,129,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
         <Button x:Name="btnAddGuest" Content="Add" HorizontalAlignment="Left" Margin="212,294,0,0" VerticalAlignment="Top" Width="75" Click="btnAddGuest_Click"/>
         <Button x:Name="btnDeleteGuest" Content="Delete" HorizontalAlignment="Left" Margin="292,294,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="lblCustAddress" Content="Address:" HorizontalAlignment="Left" Margin="172,93,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCustAddress" HorizontalAlignment="Left" Height="23" Margin="282,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="dtpArrival" HorizontalAlignment="Left" Margin="32,77,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dtpDeparture" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnCustAddAsGuest" Content="Add to guests" HorizontalAlignment="Left" Margin="326,129,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnAddToGuest" Content="Add to guests" HorizontalAlignment="Left" Margin="323,129,0,0" VerticalAlignment="Top" Width="79" Click="btnAddToGuest_Click"/>
 
     </Grid>
 </Window>
