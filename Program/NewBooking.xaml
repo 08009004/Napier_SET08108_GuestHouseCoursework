@@ -24,7 +24,7 @@
         <Label Content="New Booking" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.56,6.227" Margin="15,250,0,0"/>
         <Button x:Name="btnNewCust" Content="New" HorizontalAlignment="Left" Margin="209,112,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnLoadCust" Content="Load Existing" HorizontalAlignment="Left" Margin="292,112,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
+        <Button x:Name="btnLoadCust" Content="Load" HorizontalAlignment="Left" Margin="292,112,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
         <Button x:Name="btnAddGuest" Content="Add" HorizontalAlignment="Left" Margin="212,284,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnDeleteGuest" Content="Delete" HorizontalAlignment="Left" Margin="292,284,0,0" VerticalAlignment="Top" Width="75"/>
 
