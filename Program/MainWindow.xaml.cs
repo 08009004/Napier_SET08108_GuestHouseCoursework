@@ -59,7 +59,7 @@ namespace Program
                 else 
                 {
                     currentBooking = bf.Restore(bookingData);
-                    displayCurrentBooking();
+                    refreshDisplay();
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace Program
         /*
          * Displays the fields of currentBooking in the window.
          */
-        private void displayCurrentBooking()
+        private void refreshDisplay()
         {
             if (currentBooking == null)
             {
@@ -121,13 +121,14 @@ namespace Program
             txtDeparture.Text = String.Empty;
             lstGuests.Items.Clear();
         }
-
+        
         /*
          * Executed upon clicking the 'Create/Amend' button.
          */
         private void btnNewBooking_Click(object sender, RoutedEventArgs e)
         {
             new NewBooking(dpf, currentBooking).ShowDialog();
+            refreshDisplay();
         }
 
     }
