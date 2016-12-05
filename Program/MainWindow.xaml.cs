@@ -105,6 +105,7 @@ namespace Program
          */
         private void btnClearWindow_Click(object sender, RoutedEventArgs e)
         {
+            this.currentBooking = null;
             clearDisplay();
         }
 

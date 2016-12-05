@@ -44,7 +44,7 @@ namespace Program
                 lblBookingRef.Content += currentBooking.GetBookingNb().ToString();
 
                 this.currentCustomer = currentBooking.GetCustomer();
-                displayCustomer(this.currentCustomer);
+                refreshDisplay();
             }
         }
 
@@ -132,7 +132,7 @@ namespace Program
             clearCustDisplay();
             txtCustNumber.Text = customer.CustomerNb.ToString();
             txtCustName.Text = customer.Name;
-            txtCustAddress.Text = ((Customer)customer).Address;
+            txtCustAddress.Text = ((Customer)customer).Address; // CRASHES IF CUSTOMER IS ALSO A GUEST
         }
 
         /*
@@ -168,7 +168,7 @@ namespace Program
          */
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (validateValues())
+            if (areAllValuesValid())
             {
                 currentBooking = BookingFactory.Instance.GetNewBooking(
                                         currentCustomer, 
@@ -190,7 +190,7 @@ namespace Program
          * booking, otherwise false.
          * Displays error message windows.
          */
-        private bool validateValues()
+        private bool areAllValuesValid()
         {
             bool areValidValues = true;
             
@@ -227,9 +227,8 @@ namespace Program
             if (canAddGuest())
             {
                 new NewGuest(currentBooking.GetGuests()).ShowDialog();
+                refreshDisplay();
             }
-
-            refreshDisplay();
         }
 
         /*
@@ -239,13 +238,16 @@ namespace Program
         {
             bool isCustAGuest = false;
 
-            foreach (PersonComponent g in currentBooking.GetGuests())
+            if (currentBooking != null)
             {
-                if (g.CustomerNb > 0)
+                foreach (PersonComponent g in currentBooking.GetGuests())
                 {
-                    isCustAGuest = true;
-                    MessageBox.Show("The customer is already in the list"
-                                    + " of guests.");
+                    if (g.CustomerNb > 0)
+                    {
+                        isCustAGuest = true;
+                        MessageBox.Show("The customer is already in the list"
+                                        + " of guests.");
+                    }
                 }
             }
 
@@ -253,11 +255,16 @@ namespace Program
             {
                 new NewGuest(currentBooking.GetGuests(), 
                              currentCustomer).ShowDialog();
-            }
 
-            refreshDisplay();
+                refreshDisplay();
+            }
         }
 
+        /*
+         * True if it is possible to add a guest to the booking,
+         * otherwise false.
+         * Displays error message windows.
+         */
         private bool canAddGuest()
         {
             bool canAddGuest = true;
@@ -277,6 +284,32 @@ namespace Program
             }
             
             return canAddGuest;
+        }
+
+        /*
+         * Routine executed upon clicking the 'Delete' button.
+         */
+        private void btnDeleteGuest_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstGuests.SelectedIndex < 0 || lstGuests.SelectedIndex > 3)
+            {
+                MessageBox.Show("Please select the guest"
+                                + " that you want to delete.");
+            }
+            else
+            {
+                currentBooking.GetGuests().RemoveAt(lstGuests.SelectedIndex);
+                refreshDisplay();
+            }
+            
+        }
+
+        /*
+         * Routine executed upon clicking the 'Close' button.
+         */
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
