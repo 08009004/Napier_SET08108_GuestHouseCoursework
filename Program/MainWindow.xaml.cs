@@ -34,6 +34,7 @@ namespace Program
         public MainWindow()
         {
             InitializeComponent();
+            clearDisplay();
         }
 
         /*
@@ -69,20 +70,22 @@ namespace Program
          */
         private void refreshDisplay()
         {
-            if (currentBooking == null)
-            {
-                MessageBox.Show("Please load or create a booking.");
-            }
-            else
+            if (currentBooking != null)
             {
                 clearDisplay();
 
                 txtBookingRef.Text = currentBooking.GetBookingNb().ToString();
 
+                lblCustomer.Visibility = Visibility.Visible;
                 PersonComponent c = currentBooking.GetCustomer();
-                txtCustNumber.Text = c.CustomerNb.ToString();
-                txtCustName.Text = c.Name;
+                lblCustNumber.Content = "Number: "
+                                        + c.CustomerNb.ToString();
+                lblCustNumber.Visibility = Visibility.Visible;
+                lblCustName.Content = "Name: " + c.Name;
+                lblCustName.Visibility = Visibility.Visible;
 
+                lblGuest.Visibility = Visibility.Visible;
+                lstGuests.Visibility = Visibility.Visible;
                 if (c.IsGuest())
                 {
                     lstGuests.Items.Add(c.Name);
@@ -94,9 +97,15 @@ namespace Program
 
                 DateTime arrival;
                 DateTime departure;
+                lblArrival.Visibility = Visibility.Visible;
+                lblDeparture.Visibility = Visibility.Visible;
                 currentBooking.GetDates(out arrival, out departure);
-                txtArrival.Text = arrival.ToString().Substring(0, 10);
-                txtDeparture.Text = departure.ToString().Substring(0, 10);
+                lblArrivalDate.Content = arrival.ToString()
+                                                .Substring(0, 10);
+                lblArrivalDate.Visibility = Visibility.Visible;
+                lblDepartureDate.Content = departure.ToString()
+                                                    .Substring(0, 10);
+                lblDepartureDate.Visibility = Visibility.Visible;
             }
         }
 
@@ -115,11 +124,18 @@ namespace Program
         private void clearDisplay()
         {
             txtBookingRef.Text = String.Empty;
-            txtCustNumber.Text = String.Empty;
-            txtCustName.Text = String.Empty;
-            txtArrival.Text = String.Empty;
-            txtDeparture.Text = String.Empty;
+            lblArrival.Visibility = Visibility.Hidden;
+            lblDeparture.Visibility = Visibility.Hidden;
+            lblArrivalDate.Visibility = Visibility.Hidden;
+            lblDepartureDate.Visibility = Visibility.Hidden;
+
+            lblCustomer.Visibility = Visibility.Hidden;
+            lblCustNumber.Visibility = Visibility.Hidden;
+            lblCustName.Visibility = Visibility.Hidden;
+
+            lblGuest.Visibility = Visibility.Hidden;
             lstGuests.Items.Clear();
+            lstGuests.Visibility = Visibility.Hidden;
         }
         
         /*
