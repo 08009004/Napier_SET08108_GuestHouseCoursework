@@ -14,9 +14,12 @@ using System.Windows.Shapes;
 
 namespace Program
 {
-    /// <summary>
-    /// Interaction logic for NewGuest.xaml
-    /// </summary>
+    /*
+     * Interaction logic for NewGuest.xaml
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-05
+     */
     public partial class NewGuest : Window
     {
         // Property: points to the list of guests for current booking.
@@ -45,13 +48,15 @@ namespace Program
                                                   txtPassportNb.Text,
                                                   Int32.Parse(txtAge.Text));
                 this.guests.Add(guest);
-                MessageBox.Show("Guest added successfuly");
                 this.Close();
             }
-
-            
         }
 
+        /*
+         * True if all the window fields are valid to create a guest, 
+         * otherwise false.
+         * Displays error message windows.
+         */
         private bool validateValues()
         {
             bool areValidValues = true;
