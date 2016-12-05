@@ -13,7 +13,7 @@ namespace Program
     {
         // Properties:
         private String address;
-        public String Address
+        public override String Address
         {
             get
             {

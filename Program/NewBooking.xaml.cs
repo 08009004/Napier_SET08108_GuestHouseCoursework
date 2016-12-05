@@ -83,15 +83,18 @@ namespace Program
 
                 lblBookingRef.Content += currentBooking.GetBookingNb().ToString();
                 lblBookingRef.Visibility = Visibility.Visible;
-                
-                txtCustNumber.Text = currentBooking.GetCustomer().CustomerNb.ToString();
-                txtCustName.Text = currentBooking.GetCustomer().Name;
-                txtCustAddress.Text = ((Customer) currentBooking.GetCustomer()).Address;
 
                 foreach (PersonComponent g in currentBooking.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
                 }
+            }
+
+            if (currentCustomer != null)
+            {
+                txtCustNumber.Text = currentCustomer.CustomerNb.ToString();
+                txtCustName.Text = currentCustomer.Name;
+                txtCustAddress.Text = currentCustomer.Address;
             }
         }
 
@@ -119,22 +122,11 @@ namespace Program
                 else
                 {
                     currentCustomer = pf.RestoreCustomer(customerData);
-                    displayCustomer(currentCustomer);
+                    refreshDisplay();
                 }
             }
         }
-
-        /*
-         * Displays customer data in the window fields.
-         */
-        private void displayCustomer(PersonComponent customer) 
-        {
-            clearCustDisplay();
-            txtCustNumber.Text = customer.CustomerNb.ToString();
-            txtCustName.Text = customer.Name;
-            txtCustAddress.Text = ((Customer)customer).Address; // CRASHES IF CUSTOMER IS ALSO A GUEST
-        }
-
+        
         /*
          * Clears all fields in the window.
          */
@@ -159,7 +151,7 @@ namespace Program
             {
                 currentCustomer = pf.GetNewCustomer(txtCustName.Text,
                                                 txtCustAddress.Text);
-                displayCustomer(currentCustomer);
+                refreshDisplay();
             }
         }
 

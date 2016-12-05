@@ -39,6 +39,23 @@ namespace Program
             }
         }
 
+        // the PersonDecorator's Address (is null if the root component  
+        // is not a concrete Person)
+        public override string Address
+        {
+            get
+            {
+                String address = null;
+
+                if (DecoratedComponent != null)
+                {
+                    address = DecoratedComponent.Address;
+                }
+
+                return address;
+            }
+        }
+
         // the PersonDecorator's customer number (-1 if the root 
         // component is not a concrete Person)
         public override int CustomerNb

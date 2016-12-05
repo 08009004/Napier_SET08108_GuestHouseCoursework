@@ -18,6 +18,18 @@ namespace Program
         public abstract String Name { get; }
 
         /*
+         * Returns the PersonComponent's address (null if the 
+         * PersonComponent is not a customer).
+         */
+        public virtual String Address
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /*
          * Returns the PersonComponent's customer number (-1 if the 
          * PersonComponent is not a customer).
          */
