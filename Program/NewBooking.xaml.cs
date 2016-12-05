@@ -38,7 +38,7 @@ namespace Program
 
             if (!Int32.TryParse(txtCustNumber.Text, out customerNb))
             {
-                MessageBox.Show("Please enter a valid booking number.");
+                MessageBox.Show("Please enter a valid customer number.");
             }
             else
             {
