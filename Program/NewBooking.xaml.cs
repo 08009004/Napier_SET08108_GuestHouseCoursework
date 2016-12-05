@@ -49,6 +49,53 @@ namespace Program
         }
 
         /*
+         * Clears all fields displayed in the window.
+         */
+        private void clearDisplay()
+        {
+            lblBookingRef.Content = "Booking number:\r\n";
+            lblBookingRef.Visibility = Visibility.Hidden;
+
+            dtpArrival.SelectedDate = null;
+            dtpDeparture.SelectedDate = null;
+
+            txtCustNumber.Text = String.Empty;
+            txtCustName.Text = String.Empty;
+            txtCustAddress.Text = String.Empty;
+
+            lstGuests.Items.Clear();
+        }
+
+        /*
+         * Refreshes window display according to current objects states.
+         */
+        private void refreshDisplay()
+        {
+            clearDisplay();
+
+            if (currentBooking != null)
+            {
+                DateTime arrival;
+                DateTime departure;
+                currentBooking.GetDates(out arrival, out departure);
+                dtpArrival.SelectedDate = arrival;
+                dtpDeparture.SelectedDate = departure;
+
+                lblBookingRef.Content += currentBooking.GetBookingNb().ToString();
+                lblBookingRef.Visibility = Visibility.Visible;
+                
+                txtCustNumber.Text = currentBooking.GetCustomer().CustomerNb.ToString();
+                txtCustName.Text = currentBooking.GetCustomer().Name;
+                txtCustAddress.Text = ((Customer) currentBooking.GetCustomer()).Address;
+
+                foreach (PersonComponent g in currentBooking.GetGuests())
+                {
+                    lstGuests.Items.Add(g.Name);
+                }
+            }
+        }
+
+        /*
          * Loads & displays the customer referenced by txtCustNumber.Text
          */
         private void btnLoadCust_Click(object sender, RoutedEventArgs e)
@@ -193,11 +240,7 @@ namespace Program
                 new NewGuest(currentBooking.GetGuests()).ShowDialog();
             }
 
-            lstGuests.Items.Clear();
-            foreach (PersonComponent g in currentBooking.GetGuests())
-            {
-                lstGuests.Items.Add(g.Name);
-            }
+            refreshDisplay();
         }
     }
 }
