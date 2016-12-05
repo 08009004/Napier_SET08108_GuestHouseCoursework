@@ -126,7 +126,7 @@ namespace Program
          */
         private void btnNewBooking_Click(object sender, RoutedEventArgs e)
         {
-            new NewBooking(dpf, currentBooking).Show();
+            new NewBooking(dpf, currentBooking).ShowDialog();
         }
 
     }

@@ -107,3 +107,4 @@ D:\tmp\Program\obj\Debug\Program.Properties.Resources.resources
 D:\tmp\Program\obj\Debug\Program.csproj.GenerateResource.Cache
 D:\tmp\Program\obj\Debug\Program.exe
 D:\tmp\Program\obj\Debug\Program.pdb
+D:\tmp\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache
