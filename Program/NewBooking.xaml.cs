@@ -190,12 +190,13 @@ namespace Program
             }
             else
             {
-                new NewGuest(currentBooking.GetGuests()).Show();
-                lstGuests.Items.Clear();
-                foreach (PersonComponent g in currentBooking.GetGuests())
-                {
-                    lstGuests.Items.Add(g.Name);
-                }
+                new NewGuest(currentBooking.GetGuests()).ShowDialog();
+            }
+
+            lstGuests.Items.Clear();
+            foreach (PersonComponent g in currentBooking.GetGuests())
+            {
+                lstGuests.Items.Add(g.Name);
             }
         }
     }
