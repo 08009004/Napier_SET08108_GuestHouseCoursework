@@ -3,30 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="NewBooking" Height="366" Width="425">
     <Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="170" Margin="151,156,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="159" Margin="151,167,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
 
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="129" Margin="151,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="145" Margin="151,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
 
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.56,6.227" Margin="15,223,0,0"/>
-        <TextBox x:Name="txtBookingRef" HorizontalAlignment="Left" Height="23" Margin="10,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblBookingRef" Content="Booking Number" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.56,6.227" Margin="23,272,0,0" Click="btnSave_Click"/>
+        <Label x:Name="lblBookingRef" Content="Booking Number:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblCustomer" Content="Customer:" HorizontalAlignment="Left" Margin="156,17,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="lblCustName" Content="Name: " HorizontalAlignment="Left" Margin="171,68,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCustName" Content="Name: " HorizontalAlignment="Left" Margin="172,65,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblCustNumber" Content="Customer Number:" HorizontalAlignment="Left" Margin="171,37,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCustNumber" HorizontalAlignment="Left" Height="23" Margin="282,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtCustName" HorizontalAlignment="Left" Height="23" Margin="282,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblArrival" Content="Arrival Date:" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblDeparture" Content="Departure Date:" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtArrival" HorizontalAlignment="Left" Height="23" Margin="10,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDeparture" HorizontalAlignment="Left" Height="23" Margin="10,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ListBox x:Name="lstGuests" HorizontalAlignment="Left" Height="90" Margin="172,182,0,0" VerticalAlignment="Top" Width="222"/>
-        <Label x:Name="lblGuest" Content="List of guests:" HorizontalAlignment="Left" Margin="156,156,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="New Booking" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.56,6.227" Margin="15,250,0,0"/>
-        <Button x:Name="btnNewCust" Content="New" HorizontalAlignment="Left" Margin="209,112,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnLoadCust" Content="Load" HorizontalAlignment="Left" Margin="292,112,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
-        <Button x:Name="btnAddGuest" Content="Add" HorizontalAlignment="Left" Margin="212,284,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnDeleteGuest" Content="Delete" HorizontalAlignment="Left" Margin="292,284,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="txtCustName" HorizontalAlignment="Left" Height="23" Margin="282,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblArrival" Content="Arrival:" HorizontalAlignment="Left" Margin="14,51,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDeparture" Content="Departure:" HorizontalAlignment="Left" Margin="14,103,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lstGuests" HorizontalAlignment="Left" Height="90" Margin="172,193,0,0" VerticalAlignment="Top" Width="222"/>
+        <Label x:Name="lblGuest" Content="List of guests:" HorizontalAlignment="Left" Margin="156,167,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="New Booking" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.56,6.227" Margin="23,299,0,0"/>
+        <Button x:Name="btnNewCust" Content="Create" HorizontalAlignment="Left" Margin="209,129,0,0" VerticalAlignment="Top" Width="75" Click="btnNewCust_Click"/>
+        <Button x:Name="btnLoadCust" Content="Load" HorizontalAlignment="Left" Margin="292,129,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
+        <Button x:Name="btnAddGuest" Content="Add" HorizontalAlignment="Left" Margin="212,295,0,0" VerticalAlignment="Top" Width="75" Click="btnAddGuest_Click"/>
+        <Button x:Name="btnDeleteGuest" Content="Delete" HorizontalAlignment="Left" Margin="292,295,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblCustAddress" Content="Address:" HorizontalAlignment="Left" Margin="172,93,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCustAddress" HorizontalAlignment="Left" Height="23" Margin="282,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="dtpArrival" HorizontalAlignment="Left" Margin="32,77,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dtpDeparture" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

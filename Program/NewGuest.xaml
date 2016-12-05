@@ -1,0 +1,16 @@
+﻿<Window x:Class="Program.NewGuest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewGuest" Height="206" Width="295">
+    <Grid>
+        <Label x:Name="lblName" Content="Name:" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPassportNb" Content="Passport number:" HorizontalAlignment="Left" Margin="27,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="27,94,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="135,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPassportNb" HorizontalAlignment="Left" Height="23" Margin="135,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="135,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblHeader" Content="New guest details:" HorizontalAlignment="Left" Margin="4,4,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnAddGuest" Content="Add Guest" HorizontalAlignment="Left" Margin="180,136,0,0" VerticalAlignment="Top" Width="75" Click="btnAddGuest_Click"/>
+
+    </Grid>
+</Window>

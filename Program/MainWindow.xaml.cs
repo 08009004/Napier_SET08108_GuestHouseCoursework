@@ -64,6 +64,9 @@ namespace Program
             }
         }
 
+        /*
+         * Displays the fields of currentBooking in the window.
+         */
         private void displayCurrentBooking()
         {
             if (currentBooking == null)
@@ -97,6 +100,9 @@ namespace Program
             }
         }
 
+        /*
+         * Executed upon clicking the 'Clear' button.
+         */
         private void btnClearWindow_Click(object sender, RoutedEventArgs e)
         {
             clearDisplay();
@@ -115,6 +121,9 @@ namespace Program
             lstGuests.Items.Clear();
         }
 
+        /*
+         * Executed upon clicking the 'Create/Amend' button.
+         */
         private void btnNewBooking_Click(object sender, RoutedEventArgs e)
         {
             new NewBooking(dpf, currentBooking).Show();

@@ -78,6 +78,9 @@
     <Compile Include="NewBooking.xaml.cs">
       <DependentUpon>NewBooking.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewGuest.xaml.cs">
+      <DependentUpon>NewGuest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="PersonComponent.cs" />
     <Compile Include="PersonDecorator.cs" />
@@ -99,6 +102,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewBooking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewGuest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
