@@ -832,7 +832,7 @@
           </property>
           <property
             Id="6f7f94a7-8469-4d40-872d-f4b5da954420"
-            name="CustomerRef"
+            name="CustomerNb"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2819,7 +2819,7 @@
         <ownedAttributesInternal>
           <property
             Id="cf7b558b-6fd0-4041-83af-0e033c451e98"
-            name="DecoratedComponent"
+            name="decoratedComponent"
             visibility="Protected"
             isLeaf="false"
             isStatic="false"
@@ -2978,6 +2978,55 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="15489213-d183-4608-a9d1-ff800deb759c"
+            name="SetComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5308deb7-3621-4914-ad6c-b96e81176b6d"
+                  name="person"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="70a7dcec-59c9-4c0d-be37-9257cd5d2122"
+            name="IsGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="43f447ba-325e-44be-9f27-3157f9d22b0f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>

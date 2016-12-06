@@ -21,24 +21,18 @@ namespace Program
          * Returns the PersonComponent's address (null if the 
          * PersonComponent is not a customer).
          */
-        public virtual String Address
+        public virtual String GetAddress()
         {
-            get
-            {
-                return null;
-            }
+            return null;
         }
 
         /*
          * Returns the PersonComponent's customer number (-1 if the 
          * PersonComponent is not a customer).
          */
-        public virtual int CustomerNb 
+        public virtual int GetCustNb() 
         {
-            get
-            {
-                return -1;
-            }
+            return -1;
         }
 
         /*

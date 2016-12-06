@@ -40,12 +40,12 @@ namespace Program
          * Generates a new customer instance on the basis of the data 
          * passed as parameters.
          */
-        public Customer GetNewCustomer(String name, String address)
+        public PersonComponent GetNewCustomer(String name, String address)
         {
-            Person p = new Person(name);
-            Customer c = new Customer(address, this.nextCustNb);
+            PersonComponent p = new Person(name);
+            PersonDecorator c = new Customer(address, this.nextCustNb);
             this.nextCustNb++;
-            c.DecoratedComponent = p;
+            c.SetComponent(p);
             return c;
         }
 
@@ -83,7 +83,7 @@ namespace Program
             }
 
             PersonDecorator c = new Customer(address, custRefNb);
-            c.DecoratedComponent = new Person(name);
+            c.SetComponent(new Person(name));
             PersonDecorator g;
 
             if (attributes.TryGetValue("PASSPORT_NUMBER", out passportNb)
@@ -97,7 +97,7 @@ namespace Program
                                                 + "] to type Int32.");
                 }
                 g = new Guest(passportNb, age);
-                g.DecoratedComponent = c;
+                g.SetComponent(c);
             }
             else
             {
@@ -117,7 +117,7 @@ namespace Program
         {
             Person p = new Person(name);
             Guest g = new Guest(passportNb, age);
-            g.DecoratedComponent = p;
+            g.SetComponent(p);
             return g;
         }
 
@@ -130,7 +130,7 @@ namespace Program
                                  int age)
         {
             Guest g = new Guest(passportNb, age);
-            g.DecoratedComponent = customer;
+            g.SetComponent(customer);
             return g;
         }
 
@@ -165,7 +165,7 @@ namespace Program
             }
 
             Guest g = new Guest(passportNb, age);
-            g.DecoratedComponent = new Person(name);
+            g.SetComponent(new Person(name));
 
             return g;
         }

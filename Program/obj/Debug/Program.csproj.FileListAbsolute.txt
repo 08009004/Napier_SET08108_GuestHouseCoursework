@@ -89,25 +89,6 @@ D:\New folder\Program\bin\Debug\Program.exe
 D:\New folder\Program\bin\Debug\Program.pdb
 D:\New folder\Program\obj\Debug\Program.exe
 D:\New folder\Program\obj\Debug\Program.pdb
-D:\tmp\Program\bin\Debug\Program.exe.config
-D:\tmp\Program\bin\Debug\Program.exe
-D:\tmp\Program\bin\Debug\Program.pdb
-D:\tmp\Program\obj\Debug\Bookings.baml
-D:\tmp\Program\obj\Debug\MainWindow.baml
-D:\tmp\Program\obj\Debug\NewBooking.baml
-D:\tmp\Program\obj\Debug\NewGuest.baml
-D:\tmp\Program\obj\Debug\Bookings.g.cs
-D:\tmp\Program\obj\Debug\MainWindow.g.cs
-D:\tmp\Program\obj\Debug\NewBooking.g.cs
-D:\tmp\Program\obj\Debug\NewGuest.g.cs
-D:\tmp\Program\obj\Debug\App.g.cs
-D:\tmp\Program\obj\Debug\Program_MarkupCompile.cache
-D:\tmp\Program\obj\Debug\Program.g.resources
-D:\tmp\Program\obj\Debug\Program.Properties.Resources.resources
-D:\tmp\Program\obj\Debug\Program.csproj.GenerateResource.Cache
-D:\tmp\Program\obj\Debug\Program.exe
-D:\tmp\Program\obj\Debug\Program.pdb
-D:\tmp\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache
 D:\htr\Program\bin\Debug\Program.exe.config
 D:\htr\Program\obj\Debug\Program.exe
 D:\htr\Program\obj\Debug\Program.pdb
@@ -127,3 +108,21 @@ D:\htr\Program\obj\Debug\Program_MarkupCompile.cache
 D:\htr\Program\obj\Debug\Program.g.resources
 D:\htr\Program\obj\Debug\Program.Properties.Resources.resources
 D:\htr\Program\obj\Debug\Program.csproj.GenerateResource.Cache
+D:\tmp\Program\obj\Debug\Bookings.baml
+D:\tmp\Program\obj\Debug\MainWindow.baml
+D:\tmp\Program\obj\Debug\NewBooking.baml
+D:\tmp\Program\obj\Debug\NewGuest.baml
+D:\tmp\Program\obj\Debug\Bookings.g.cs
+D:\tmp\Program\obj\Debug\MainWindow.g.cs
+D:\tmp\Program\obj\Debug\NewBooking.g.cs
+D:\tmp\Program\obj\Debug\NewGuest.g.cs
+D:\tmp\Program\obj\Debug\App.g.cs
+D:\tmp\Program\obj\Debug\Program_MarkupCompile.cache
+D:\tmp\Program\obj\Debug\Program.g.resources
+D:\tmp\Program\obj\Debug\Program.Properties.Resources.resources
+D:\tmp\Program\obj\Debug\Program.csproj.GenerateResource.Cache
+D:\tmp\Program\bin\Debug\Program.exe.config
+D:\tmp\Program\bin\Debug\Program.exe
+D:\tmp\Program\bin\Debug\Program.pdb
+D:\tmp\Program\obj\Debug\Program.exe
+D:\tmp\Program\obj\Debug\Program.pdb

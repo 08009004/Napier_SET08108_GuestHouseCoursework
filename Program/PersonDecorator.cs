@@ -13,15 +13,12 @@ namespace Program
     {
         // Properties:
         // the decorator component
-            /*
-             * NOTE: Ideally this property should be 'protected' hence  
-             * visible only from children classes Customer.cs and Guest.cs  
-             * but VisualStudio genereates a compile time error if it is.
-             * 
-             * Simon and I looked into it together and could not figure out 
-             * why.
-             */
-        public PersonComponent DecoratedComponent { get; set; }
+        protected PersonComponent decoratedComponent;
+        public void SetComponent(PersonComponent p)
+        {
+            decoratedComponent = p;
+        }
+
         // the PersonDecorator's name (is null if the root component is not 
         // a concrete Person)
         public override string Name
@@ -30,9 +27,9 @@ namespace Program
             {
                 String name = null;
 
-                if (DecoratedComponent != null)
+                if (decoratedComponent != null)
                 {
-                    name = DecoratedComponent.Name;
+                    name = decoratedComponent.Name;
                 }
 
                 return name; 
@@ -41,36 +38,31 @@ namespace Program
 
         // the PersonDecorator's Address (is null if the root component  
         // is not a concrete Person)
-        public override string Address
+        public override string GetAddress()
         {
-            get
+            String address = null;
+
+            if (decoratedComponent != null)
+                // && decoratedComponent.GetType() != typeof(Person))
             {
-                String address = null;
-
-                if (DecoratedComponent != null)
-                {
-                    address = DecoratedComponent.Address;
-                }
-
-                return address;
+                address = decoratedComponent.GetAddress();
             }
+
+            return address;
         }
 
         // the PersonDecorator's customer number (-1 if the root 
         // component is not a concrete Person)
-        public override int CustomerNb
+        public override int GetCustNb()
         {
-            get
+            int custNb = -1;
+
+            if (decoratedComponent != null)
             {
-                int custNb = -1;
-
-                if (DecoratedComponent != null)
-                {
-                    custNb = DecoratedComponent.CustomerNb;
-                }
-
-                return custNb;
+                custNb = decoratedComponent.GetCustNb();
             }
+
+            return custNb;
         }
 
         /*
@@ -81,9 +73,9 @@ namespace Program
         {
             String csv = String.Empty;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                csv = DecoratedComponent.ToCSV();
+                csv = decoratedComponent.ToCSV();
             }
 
             return csv;
@@ -96,9 +88,9 @@ namespace Program
         {
             bool isCustomer = false;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                isCustomer = DecoratedComponent.IsCustomer();
+                isCustomer = decoratedComponent.IsCustomer();
             }
 
             return isCustomer;
@@ -111,9 +103,9 @@ namespace Program
         {
             bool isGuest = false;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                isGuest = DecoratedComponent.IsGuest();
+                isGuest = decoratedComponent.IsGuest();
             }
 
             return isGuest;

@@ -13,21 +13,15 @@ namespace Program
     {
         // Properties:
         private String address;
-        public override String Address
+        public override String GetAddress()
         {
-            get
-            {
-                return this.address;
-            }
+            return this.address;
         }
 
         private int customerNb;
-        public override int CustomerNb
+        public override int GetCustNb()
         {
-            get
-            {
-                return this.customerNb;
-            }
+            return this.customerNb;
         }
 
         /*

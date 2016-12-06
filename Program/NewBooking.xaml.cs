@@ -19,31 +19,29 @@ namespace Program
     /// </summary>
     public partial class NewBooking : Window
     {
-        private PersonFactory pf = PersonFactory.Instance;
-        private DataPersistenceFacade dpf;
-        private BookingComponent currentBooking;
-        private PersonComponent currentCustomer;
+        private ModelFacade mFacade;
 
         /*
          * The window constructor.
          */
-        public NewBooking(DataPersistenceFacade dpf, BookingComponent currentBooking)
+        public NewBooking(ModelFacade modelFacade)
         {
-            this.dpf = dpf;
-            this.currentBooking = currentBooking;
+            //this.dpf = dpf;
+            //this.currentBooking = currentBooking;
+            this.mFacade = modelFacade;
 
             InitializeComponent();
             lblBookingRef.Content += "\r\n";
 
-            if (currentBooking == null)
+            if (mFacade.CurrentBook == null)
             {
                 lblBookingRef.Visibility = Visibility.Hidden;
             }
             else
             {
-                lblBookingRef.Content += currentBooking.GetBookingNb().ToString();
+                lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
 
-                this.currentCustomer = currentBooking.GetCustomer();
+                this.mFacade.CurrentCust = mFacade.CurrentBook.GetCustomer();
                 refreshDisplay();
             }
         }
@@ -73,28 +71,28 @@ namespace Program
         {
             clearDisplay();
 
-            if (currentBooking != null)
+            if (mFacade.CurrentBook != null)
             {
                 DateTime arrival;
                 DateTime departure;
-                currentBooking.GetDates(out arrival, out departure);
+                mFacade.CurrentBook.GetDates(out arrival, out departure);
                 dtpArrival.SelectedDate = arrival;
                 dtpDeparture.SelectedDate = departure;
 
-                lblBookingRef.Content += currentBooking.GetBookingNb().ToString();
+                lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
                 lblBookingRef.Visibility = Visibility.Visible;
 
-                foreach (PersonComponent g in currentBooking.GetGuests())
+                foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
                 }
             }
 
-            if (currentCustomer != null)
+            if (mFacade.CurrentCust != null)
             {
-                txtCustNumber.Text = currentCustomer.CustomerNb.ToString();
-                txtCustName.Text = currentCustomer.Name;
-                txtCustAddress.Text = currentCustomer.Address;
+                txtCustNumber.Text = mFacade.CurrentCust.GetCustNb().ToString();
+                txtCustName.Text = mFacade.CurrentCust.Name;
+                txtCustAddress.Text = mFacade.CurrentCust.GetAddress();
             }
         }
 
@@ -112,7 +110,7 @@ namespace Program
             else
             {
                 Dictionary<String, String> customerData;
-                if (!dpf.Read(customerNb, out customerData))
+                if (!mFacade.DPFacade.Read(customerNb, out customerData))
                 {
                     MessageBox.Show("Can't find customer number "
                                     + txtCustNumber.Text + ".\r\n"
@@ -121,7 +119,7 @@ namespace Program
                 }
                 else
                 {
-                    currentCustomer = pf.RestoreCustomer(customerData);
+                    mFacade.CurrentCust = mFacade.PFact.RestoreCustomer(customerData);
                     refreshDisplay();
                 }
             }
@@ -149,7 +147,7 @@ namespace Program
             }
             else
             {
-                currentCustomer = pf.GetNewCustomer(txtCustName.Text,
+                mFacade.CurrentCust = mFacade.PFact.GetNewCustomer(txtCustName.Text,
                                                 txtCustAddress.Text);
                 refreshDisplay();
             }
@@ -162,8 +160,8 @@ namespace Program
         {
             if (areAllValuesValid())
             {
-                currentBooking = BookingFactory.Instance.GetNewBooking(
-                                        currentCustomer, 
+                mFacade.CurrentBook = BookingFactory.Instance.GetNewBooking(
+                                        mFacade.CurrentCust, 
                                         (DateTime) dtpArrival.SelectedDate,
                                         (DateTime) dtpDeparture.SelectedDate);
 
@@ -171,7 +169,7 @@ namespace Program
 
                 if (lblBookingRef.Visibility == Visibility.Hidden)
                 {
-                    lblBookingRef.Content += currentBooking.GetBookingNb().ToString();
+                    lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
                     lblBookingRef.Visibility = Visibility.Visible;
                 }
             }
@@ -185,8 +183,8 @@ namespace Program
         private bool areAllValuesValid()
         {
             bool areValidValues = true;
-            
-            if (currentCustomer == null)
+
+            if (mFacade.CurrentCust == null)
             {
                 areValidValues = false;
                 MessageBox.Show("Please create or load a customer for"
@@ -218,7 +216,7 @@ namespace Program
         {
             if (canAddGuest())
             {
-                new NewGuest(currentBooking.GetGuests()).ShowDialog();
+                new NewGuest(mFacade.CurrentBook.GetGuests()).ShowDialog();
                 refreshDisplay();
             }
         }
@@ -230,11 +228,11 @@ namespace Program
         {
             bool isCustAGuest = false;
 
-            if (currentBooking != null)
+            if (mFacade.CurrentBook != null)
             {
-                foreach (PersonComponent g in currentBooking.GetGuests())
+                foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
                 {
-                    if (g.CustomerNb > 0)
+                    if (g.GetCustNb() > 0)
                     {
                         isCustAGuest = true;
                         MessageBox.Show("The customer is already in the list"
@@ -245,8 +243,8 @@ namespace Program
 
             if (canAddGuest() && !isCustAGuest)
             {
-                new NewGuest(currentBooking.GetGuests(), 
-                             currentCustomer).ShowDialog();
+                new NewGuest(mFacade.CurrentBook.GetGuests(),
+                             mFacade.CurrentCust).ShowDialog();
 
                 refreshDisplay();
             }
@@ -261,13 +259,13 @@ namespace Program
         {
             bool canAddGuest = true;
 
-            if (currentBooking == null)
+            if (mFacade.CurrentBook == null)
             {
                 canAddGuest = false;
                 MessageBox.Show("Please save the booking before adding"
                                 + " guests.");
             }
-            else if (currentBooking.GetGuests().Count >= 4)
+            else if (mFacade.CurrentBook.GetGuests().Count >= 4)
             {
                 canAddGuest = false;
                 MessageBox.Show("This booking is already full, the"
@@ -290,7 +288,7 @@ namespace Program
             }
             else
             {
-                currentBooking.GetGuests().RemoveAt(lstGuests.SelectedIndex);
+                mFacade.CurrentBook.GetGuests().RemoveAt(lstGuests.SelectedIndex);
                 refreshDisplay();
             }
             

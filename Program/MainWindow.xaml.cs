@@ -22,17 +22,13 @@ namespace Program
     public partial class MainWindow : Window
     {
         // Properties
-        // reference to the PersonFactory instance:
-        private PersonFactory pf = PersonFactory.Instance;
-        // reference to the BookingFactory instance:
-        private BookingFactory bf = BookingFactory.Instance;
-        // reference to a DataPersistenceFacade instance:
-        private DataPersistenceFacade dpf = new DataPersistenceFacade();
-        // reference to the current booking:
-        private BookingComponent currentBooking;
+        // points to a ModelFacade instance:
+        private ModelFacade mFacade;
+        public ModelFacade MFacade { get { return this.mFacade; } }
 
         public MainWindow()
         {
+            this.mFacade = new ModelFacade();
             InitializeComponent();
             clearDisplay();
         }
@@ -43,26 +39,20 @@ namespace Program
         private void btnLoadBooking_Click(object sender, RoutedEventArgs e)
         {
             int bookingNb;
+            
             if (!Int32.TryParse(txtBookingRef.Text, out bookingNb))
             {
                 MessageBox.Show("Please enter a valid booking number.");
             }
-            else 
+            else if (!mFacade.RestoreBooking(bookingNb))
             {
-                List<Dictionary<String, String>> bookingData;
-                if (!dpf.Read(bookingNb, out bookingData)) 
-                {
-                    MessageBox.Show("Can't find booking number "
-                                    + txtBookingRef.Text + ".\r\n"
-                                    + "Please enter a valid"
-                                    + " booking number.");
-                }
-                else 
-                {
-                    currentBooking = bf.Restore(bookingData);
-                    refreshDisplay();
-                }
+                MessageBox.Show("Can't find booking number "
+                                + txtBookingRef.Text + ".\r\n"
+                                + "Please enter a valid"
+                                + " booking number.");
             }
+
+            refreshDisplay();
         }
 
         /*
@@ -70,42 +60,45 @@ namespace Program
          */
         private void refreshDisplay()
         {
-            if (currentBooking != null)
+            if (mFacade.CurrentBook != null)
             {
                 clearDisplay();
 
-                txtBookingRef.Text = currentBooking.GetBookingNb().ToString();
+                // display current booking fields:
+                BookingComponent b = mFacade.CurrentBook;
+
+                txtBookingRef.Text = b.GetBookingNb().ToString();
+
+                DateTime start;
+                DateTime end;
+                lblArrival.Visibility = Visibility.Visible;
+                lblDeparture.Visibility = Visibility.Visible;
+                b.GetDates(out start, out end);
+                lblArrivalDate.Content = start.ToString().Substring(0, 10);
+                lblArrivalDate.Visibility = Visibility.Visible;
+                lblDepartureDate.Content = end.ToString().Substring(0, 10);
+                lblDepartureDate.Visibility = Visibility.Visible;
+
+                // display current customer fields:
+                PersonComponent c = mFacade.CurrentCust;
 
                 lblCustomer.Visibility = Visibility.Visible;
-                PersonComponent c = currentBooking.GetCustomer();
-                lblCustNumber.Content = "Number: "
-                                        + c.CustomerNb.ToString();
+                lblCustNumber.Content = "Number: " + c.GetCustNb().ToString();
                 lblCustNumber.Visibility = Visibility.Visible;
                 lblCustName.Content = "Name: " + c.Name;
                 lblCustName.Visibility = Visibility.Visible;
 
+                // display current booking gests:
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
                 if (c.IsGuest())
                 {
                     lstGuests.Items.Add(c.Name);
                 }
-                foreach (PersonComponent g in currentBooking.GetGuests())
+                foreach (PersonComponent g in b.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
                 }
-
-                DateTime arrival;
-                DateTime departure;
-                lblArrival.Visibility = Visibility.Visible;
-                lblDeparture.Visibility = Visibility.Visible;
-                currentBooking.GetDates(out arrival, out departure);
-                lblArrivalDate.Content = arrival.ToString()
-                                                .Substring(0, 10);
-                lblArrivalDate.Visibility = Visibility.Visible;
-                lblDepartureDate.Content = departure.ToString()
-                                                    .Substring(0, 10);
-                lblDepartureDate.Visibility = Visibility.Visible;
             }
         }
 
@@ -114,7 +107,7 @@ namespace Program
          */
         private void btnClearWindow_Click(object sender, RoutedEventArgs e)
         {
-            this.currentBooking = null;
+            this.mFacade.CurrentBook = null;
             clearDisplay();
         }
 
@@ -143,7 +136,7 @@ namespace Program
          */
         private void btnNewBooking_Click(object sender, RoutedEventArgs e)
         {
-            new NewBooking(dpf, currentBooking).ShowDialog();
+            new NewBooking(this.mFacade).ShowDialog();
             refreshDisplay();
         }
 

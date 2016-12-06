@@ -341,7 +341,7 @@
               <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
             </type_NamedElement>
           </property>
-          <property Id="91ae32b9-1d89-4b4a-a2da-eab8aeafd365" name="CustomerRef" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="91ae32b9-1d89-4b4a-a2da-eab8aeafd365" name="CustomerNb" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="6f7f94a7-8469-4d40-872d-f4b5da954420" />
           </property>
         </ownedAttributesInternal>
@@ -1166,10 +1166,10 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="a2af8393-af48-48ff-b0ca-13a890edfe19" name="DecoratedComponent" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a2af8393-af48-48ff-b0ca-13a890edfe19" name="decoratedComponent" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="cf7b558b-6fd0-4041-83af-0e033c451e98" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="776c8aa2-4c6a-40f3-a4ca-42b7f792a1d9" LastKnownName="PersonComponent" />
+              <referencedTypeMoniker Id="8500d76f-9e12-45b5-9022-bacf34c56126" LastKnownName="PersonComponent" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1247,6 +1247,32 @@
                   <elementDefinition Id="bc5a1c87-289a-478e-846c-acd9457e517d" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1f1243d7-21cc-42f6-8f0a-e97bea5e13d5" name="SetComponent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="15489213-d183-4608-a9d1-ff800deb759c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6472c146-1fb3-49a6-8c4d-d385ada21f10" name="person" direction="In" isUnique="false">
+                  <elementDefinition Id="5308deb7-3621-4914-ad6c-b96e81176b6d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8d10dd8-7e30-43a4-ae4f-94c3274d0a61" LastKnownName="PersonComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4eaa8d56-1835-4d69-bb7b-26b86d135f69" name="IsGuest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="70a7dcec-59c9-4c0d-be37-9257cd5d2122" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3bc200e3-cfb5-4ed5-a5b7-efe3272603b4" direction="Return" isUnique="false">
+                  <elementDefinition Id="43f447ba-325e-44be-9f27-3157f9d22b0f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2309,11 +2335,6 @@
         <elementDefinition Id="4beb07b7-3b41-4b8b-9800-62981cba1271" />
       </referencedType>
     </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="776c8aa2-4c6a-40f3-a4ca-42b7f792a1d9" name="PersonComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonComponent">
-        <elementDefinition Id="4bcd1725-84a0-431f-a6e1-87a051b9a471" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
       <enumeration Id="d0a28272-c049-49d0-9681-29ca930e8ff6" name="PersonField" isAbstract="false" isLeaf="false">
         <elementDefinition Id="9fbbbe72-2c98-4133-ae32-158ed4c95c14" />
@@ -2793,6 +2814,11 @@
     <packageHasNamedElement>
       <referencedType Id="64250c2f-ddd6-4fa9-ad20-d48d19275efc" name="List&lt;PersonComponent&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;PersonComponent&gt;">
         <elementDefinition Id="7810bbea-6a62-4cef-9f98-13bf02a43c60" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8500d76f-9e12-45b5-9022-bacf34c56126" name="PersonComponent" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonComponent">
+        <elementDefinition Id="4bcd1725-84a0-431f-a6e1-87a051b9a471" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

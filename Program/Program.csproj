@@ -75,6 +75,7 @@
     <Compile Include="EveningMealField.cs" />
     <Compile Include="Guest.cs" />
     <Compile Include="GuestField.cs" />
+    <Compile Include="ModelFacade.cs" />
     <Compile Include="NewBooking.xaml.cs">
       <DependentUpon>NewBooking.xaml</DependentUpon>
     </Compile>

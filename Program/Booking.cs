@@ -26,7 +26,7 @@ namespace Program
                        DateTime arrival, 
                        DateTime departure)
         {
-            if (customer.CustomerNb <= 0)
+            if (customer.GetCustNb() <= 0)
             {
                 throw new ArgumentException("Booking.cust must be"
                                             + "  decorated as a Customer");
