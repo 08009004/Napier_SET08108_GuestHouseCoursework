@@ -58,6 +58,7 @@
     <Compile Include="BookingComponent.cs" />
     <Compile Include="BookingDecorator.cs" />
     <Compile Include="BookingFactory.cs" />
+    <Compile Include="BookingFactoryField.cs" />
     <Compile Include="BookingField.cs" />
     <Compile Include="Bookings.xaml.cs">
       <DependentUpon>Bookings.xaml</DependentUpon>
@@ -86,6 +87,7 @@
     <Compile Include="PersonComponent.cs" />
     <Compile Include="PersonDecorator.cs" />
     <Compile Include="PersonFactory.cs" />
+    <Compile Include="PersonFactoryField.cs" />
     <Page Include="Bookings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

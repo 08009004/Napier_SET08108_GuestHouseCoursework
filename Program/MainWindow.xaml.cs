@@ -164,5 +164,14 @@ namespace Program
             refreshDisplay();
         }
 
+        /*
+         * Executed upon clicking the 'Save & Exit' button.
+         */
+        private void btnExitProgram_Click(object sender, RoutedEventArgs e)
+        {
+            mFacade.PersistSystemState();
+            this.Close();
+        }
+
     }
 }

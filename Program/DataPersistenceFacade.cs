@@ -19,8 +19,10 @@ namespace Program
     public class DataPersistenceFacade
     {
         // Properties: 
-        // the data persistence directory.
-        private String dataDirectory = @"data";
+        // the bookings data persistence directory.
+        private String dataDirectory = @"bookings";
+        // the system data persistence directory.
+        private String systemDirectory = @"system";
         // the data writer instance:
         private CSVWriter dataWriter = CSVWriter.Instance;
         // the data reader instance:
@@ -158,6 +160,37 @@ namespace Program
             
             customerData = result;
             return wasSuccessful;
+        }
+
+        /*
+         * Restores system state from file.
+         */
+        public bool PersistSystemState()
+        {
+            String personFactoryPath = (String.Format(@"{0}/{1}.csv",
+                                             systemDirectory,
+                                             "person-factory"));
+
+            String bookingFactoryPath = (String.Format(@"{0}/{1}.csv",
+                                             systemDirectory,
+                                             "booking-factory"));
+
+            return dataWriter.Persist(PersonFactory.Instance, 
+                                      personFactoryPath)
+                && dataWriter.Persist(BookingFactory.Instance, 
+                                      bookingFactoryPath);
+        }
+
+        /*
+         * Returns a Dictionary<attribute, value>, representing the last
+         * system state saved (the dictonary keys are named as defined in the 
+         * SystemField.cs enumeration);
+         * returns true if data was read successfuly otherwise false.
+         */
+        public bool ReadSystemSavedState() //out Dictionary<String, String> system)
+        {
+            
+            return false;
         }
     }
 }

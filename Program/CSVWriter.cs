@@ -66,5 +66,66 @@ namespace Program
 
             return true;
         }
+
+        /*
+         * Persists the PersonFactory to given filePath, returns true if 
+         * data was persisted successfuly or false if not.
+         */
+        public bool Persist(PersonFactory pf, String filePath)
+        {
+            String dataDirName = Path.GetDirectoryName(filePath);
+
+            if (!Directory.Exists(dataDirName))
+            {
+                Directory.CreateDirectory(dataDirName);
+            }
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            try
+            {
+                System.IO.File.AppendAllText(filePath, pf.ToCSV());
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /*
+         * Persists the PersonFactory to given filePath, returns true if 
+         * data was persisted successfuly or false if not.
+         */
+        public bool Persist(BookingFactory bf, String filePath)
+        {
+            String dataDirName = Path.GetDirectoryName(filePath);
+
+            if (!Directory.Exists(dataDirName))
+            {
+                Directory.CreateDirectory(dataDirName);
+            }
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            try
+            {
+                System.IO.File.AppendAllText(filePath, bf.ToCSV());
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

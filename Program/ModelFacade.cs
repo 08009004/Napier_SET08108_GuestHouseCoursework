@@ -47,7 +47,7 @@ namespace Program
         }
 
         /*
-         * 
+         * Recovers last system state persisted to file.
          */
         public bool RestoreSystemSavedState()
         {
@@ -55,11 +55,11 @@ namespace Program
         }
 
         /*
-         * 
+         * Restores system state from file.
          */
         public bool PersistSystemState()
         {
-            return false;
+            return dpFacade.PersistSystemState();
         }
 
         /*
