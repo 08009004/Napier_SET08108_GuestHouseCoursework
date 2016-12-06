@@ -57,8 +57,8 @@ namespace Program
             String[] tmp1;
             String[] tmp2;
 
-         //   try
-         //   {
+            try
+            {
                 foreach (String file in Directory.GetFiles(sysDirectory))
                 {
                     sysFilesLines.AddRange(readLines(file));
@@ -79,11 +79,11 @@ namespace Program
                         data = join(data, index<BookingFactoryField>(tmp1));
                     }
                 }
-          //  }
-          //  catch
-         //   {
-         //       wasSuccessful = false;
-         //   }
+            }
+            catch
+            {
+                wasSuccessful = false;
+            }
             
 
             sysData = data;
