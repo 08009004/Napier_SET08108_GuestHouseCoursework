@@ -14,7 +14,7 @@
         <ListBox x:Name="lstGuests" HorizontalAlignment="Left" Height="100" Margin="268,151,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblGuests" Content="Guests:" HorizontalAlignment="Left" Margin="164,151,0,0" VerticalAlignment="Top" Width="64"/>
         <Button x:Name="btnLoad" Content="Load Booking" HorizontalAlignment="Left" Margin="102,281,0,0" VerticalAlignment="Top" Width="104"/>
-        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="222,281,0,0" VerticalAlignment="Top" Width="104"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="222,281,0,0" VerticalAlignment="Top" Width="104" Click="btnClose_Click"/>
 
     </Grid>
 </Window>

@@ -107,6 +107,7 @@ namespace Program
             {
                 bookingFiles = Directory.GetFiles(dataDirectory);
             }
+
             foreach (String fPath in bookingFiles)
             {
                 if (dataReader.ReadBooking(fPath, out bookingData))

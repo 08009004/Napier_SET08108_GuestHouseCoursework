@@ -19,9 +19,17 @@ namespace Program
     /// </summary>
     public partial class Bookings : Window
     {
-        public Bookings()
+        private ModelFacade mFacade;
+
+        public Bookings(ModelFacade mFacade)
         {
+            this.mFacade = mFacade;
             InitializeComponent();
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

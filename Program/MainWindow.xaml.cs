@@ -40,13 +40,22 @@ namespace Program
          */
         private void btnLoadBooking_Click(object sender, RoutedEventArgs e)
         {
-            int bookingNb;
-            
-            if (!Int32.TryParse(txtBookingRef.Text, out bookingNb))
+            int bookingNb = -1;
+
+            if (String.IsNullOrWhiteSpace(txtBookingRef.Text))
+            {
+                new Bookings(mFacade).ShowDialog();
+                if (mFacade != null && mFacade.CurrentBook != null)
+                {
+                    bookingNb = mFacade.CurrentBook.GetBookingNb();
+                }
+            }
+            else if (!Int32.TryParse(txtBookingRef.Text, out bookingNb))
             {
                 MessageBox.Show("Please enter a valid booking number.");
             }
-            else if (!mFacade.RestoreBooking(bookingNb))
+            
+            if (!mFacade.RestoreBooking(bookingNb))
             {
                 MessageBox.Show("Can't find booking number "
                                 + txtBookingRef.Text + ".\r\n"
