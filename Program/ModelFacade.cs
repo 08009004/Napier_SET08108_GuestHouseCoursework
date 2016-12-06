@@ -96,6 +96,13 @@ namespace Program
         {
             CurrentCust = pFact.GetNewCustomer(name, address);
         }
-            
+
+        /*
+         * Instanciates a new booking for the current customer.
+         */
+        public void CreateBooking(DateTime arrival, DateTime departure)
+        {
+            CurrentBook = bFact.GetNewBooking(CurrentCust, arrival, departure);
+        }
     }
 }

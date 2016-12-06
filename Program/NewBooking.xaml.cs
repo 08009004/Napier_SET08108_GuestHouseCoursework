@@ -94,8 +94,6 @@ namespace Program
 
                 lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
                 lblBookingRef.Visibility = Visibility.Visible;
-
-                
             }
         }
 
@@ -124,10 +122,12 @@ namespace Program
 
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
+                /*
                 if (c.IsGuest())
                 {
                     lstGuests.Items.Add(c.Name);
                 }
+                 */
                 foreach (PersonComponent g in b.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
@@ -154,7 +154,7 @@ namespace Program
                                 + " booking number.");
             }
 
-            refreshDisplay();
+            refreshCustomerDisplay();
         }
 
         /*
@@ -173,13 +173,9 @@ namespace Program
             else
             {
                 mFacade.CreateCustomer(txtCustName.Text, txtCustAddress.Text);
-                refreshDisplay();
+                refreshCustomerDisplay();
             }
         }
-
-
-        // RESUME BELOW -----------------------------------------------------
-
 
         /*
          * Routine triggered upon clicking the 'Save' button.
@@ -188,18 +184,9 @@ namespace Program
         {
             if (areAllValuesValid())
             {
-                mFacade.CurrentBook = BookingFactory.Instance.GetNewBooking(
-                                        mFacade.CurrentCust, 
-                                        (DateTime) dtpArrival.SelectedDate,
-                                        (DateTime) dtpDeparture.SelectedDate);
-
-                MessageBox.Show("Booking saved.");
-
-                if (lblBookingRef.Visibility == Visibility.Hidden)
-                {
-                    lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
-                    lblBookingRef.Visibility = Visibility.Visible;
-                }
+                mFacade.CreateBooking((DateTime) dtpArrival.SelectedDate,
+                                      (DateTime) dtpDeparture.SelectedDate);
+                refreshDisplay();
             }
         }
 
