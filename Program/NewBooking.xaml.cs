@@ -94,6 +94,8 @@ namespace Program
 
                 lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
                 lblBookingRef.Visibility = Visibility.Visible;
+
+                
             }
         }
 
@@ -135,9 +137,27 @@ namespace Program
          */
         private void btnLoadCust_Click(object sender, RoutedEventArgs e)
         {
-            foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
+            int customerNb;
+
+            if (!Int32.TryParse(txtCustNumber.Text, out customerNb))
             {
-                lstGuests.Items.Add(g.Name);
+                MessageBox.Show("Please enter a valid customer number.");
+            }
+            else
+            {
+                Dictionary<String, String> customerData;
+                if (!mFacade.DPFacade.Read(customerNb, out customerData))
+                {
+                    MessageBox.Show("Can't find customer number "
+                                    + txtCustNumber.Text + ".\r\n"
+                                    + "Please enter a valid"
+                                    + " customer number.");
+                }
+                else
+                {
+                    mFacade.CurrentCust = mFacade.PFact.RestoreCustomer(customerData);
+                    refreshDisplay();
+                }
             }
         }
         
