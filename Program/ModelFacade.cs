@@ -47,8 +47,8 @@ namespace Program
         }
 
         /*
-         * Loads the booking matching given booking number from persisted data
-         * into the system.
+         * Loads the booking matching given booking number into the system
+         * (from persisted data).
          * Returns true if the booking was found & loaded successfully,
          * otherwise false.
          */
@@ -67,5 +67,35 @@ namespace Program
             }
             return wasRestored;
         }
+
+        /*
+         * Loads the customer matching given customer number into the system
+         * (from persisted data).
+         * Returns true if the customer was found & loaded successfully,
+         * otherwise false.
+         */
+        public bool RestoreCustomer(int customerNb)
+        {
+            bool wasRestored = true;
+            Dictionary<String, String> customerData;
+            if (!dpFacade.Read(customerNb, out customerData))
+            {
+                wasRestored = false;
+            }
+            else
+            {
+                CurrentCust = pFact.RestoreCustomer(customerData);
+            }
+            return wasRestored;
+        }
+
+        /*
+         * Instanciates a new customer.
+         */
+        public void CreateCustomer(String name, String address) 
+        {
+            CurrentCust = pFact.GetNewCustomer(name, address);
+        }
+            
     }
 }

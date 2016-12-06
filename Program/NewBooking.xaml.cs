@@ -146,31 +146,15 @@ namespace Program
             {
                 MessageBox.Show("Please enter a valid customer number.");
             }
-            else
+            else if (!mFacade.RestoreCustomer(customerNb))
             {
-                Dictionary<String, String> customerData;
-                if (!mFacade.DPFacade.Read(customerNb, out customerData))
-                {
-                    MessageBox.Show("Can't find customer number "
-                                    + txtCustNumber.Text + ".\r\n"
-                                    + "Please enter a valid"
-                                    + " customer number.");
-                }
-                else
-                {
-                    mFacade.CurrentCust = mFacade.PFact.RestoreCustomer(customerData);
-                    refreshDisplay();
-                }
+                MessageBox.Show("Can't find customer number "
+                                + txtCustNumber.Text + ".\r\n"
+                                + "Please enter a valid"
+                                + " booking number.");
             }
-        }
-        
-        /*
-         * Clears all fields in the window.
-         */
-        private void clearCustDisplay()
-        {
-            txtCustNumber.Text = String.Empty;
-            txtCustName.Text = String.Empty;
+
+            refreshDisplay();
         }
 
         /*
@@ -178,16 +162,17 @@ namespace Program
          */
         private void btnNewCust_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtCustName.Text)
-             || String.IsNullOrWhiteSpace(txtCustAddress.Text))
+            if (String.IsNullOrWhiteSpace(txtCustName.Text))
             {
-                MessageBox.Show("Please enter the customer's name"
-                                + " and address.");
+                MessageBox.Show("Please enter a valid customer name");
+            }
+            else if (String.IsNullOrWhiteSpace(txtCustAddress.Text)) 
+            {
+                MessageBox.Show("Please enter a valid customer address");
             }
             else
             {
-                mFacade.CurrentCust = mFacade.PFact.GetNewCustomer(txtCustName.Text,
-                                                txtCustAddress.Text);
+                mFacade.CreateCustomer(txtCustName.Text, txtCustAddress.Text);
                 refreshDisplay();
             }
         }
