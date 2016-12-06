@@ -187,10 +187,9 @@ namespace Program
          * SystemField.cs enumeration);
          * returns true if data was read successfuly otherwise false.
          */
-        public bool ReadSystemSavedState() //out Dictionary<String, String> system)
+        public bool ReadSystemState(out Dictionary<String, String> sysData)
         {
-            
-            return false;
+            return dataReader.ReadSystemState(systemDirectory, out sysData);
         }
     }
 }

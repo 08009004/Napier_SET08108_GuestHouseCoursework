@@ -43,6 +43,54 @@ namespace Program
         private CSVReader() { }
 
         /*
+         * Outputs a Dictionary<String, String> data of the last system state
+         * persisted (the dictonary keys naming follows the naming implemented 
+         * in the *Field.cs enumerations).
+         * Returns true if data was recovered successfuly, otherwise false.
+         */
+        public bool ReadSystemState(String sysDirectory,
+                                    out Dictionary<String, String> sysData)
+        {
+            bool wasSuccessful = true;
+            List<String> sysFilesLines = new List<String>();
+            Dictionary<String, String> data = new Dictionary<string,string>();
+            String[] tmp1;
+            String[] tmp2;
+
+         //   try
+         //   {
+                foreach (String file in Directory.GetFiles(sysDirectory))
+                {
+                    sysFilesLines.AddRange(readLines(file));
+                }
+
+                for (int i = 0; i < sysFilesLines.Count; i += 2)
+                {
+                    tmp1 = new String[2];
+                    tmp2 = sysFilesLines.ElementAt(i + 1).Split(',');
+                    tmp1[1] = tmp2[0];
+
+                    if (sysFilesLines.ElementAt(i).Equals("#PERSON_FACTORY"))
+                    {
+                        data = join(data, index<PersonFactoryField>(tmp1));
+                    }
+                    else if (sysFilesLines.ElementAt(i).Equals("#BOOKING_FACTORY"))
+                    {
+                        data = join(data, index<BookingFactoryField>(tmp1));
+                    }
+                }
+          //  }
+          //  catch
+         //   {
+         //       wasSuccessful = false;
+         //   }
+            
+
+            sysData = data;
+            return wasSuccessful;
+        }
+
+        /*
          * Outputs a List<Dictionary<String, String>>, each instance of which
          * stores an entity of a BookingComponent as <attribute, value> (the 
          * dictonary keys follow the naming implemented in the *Field.cs 

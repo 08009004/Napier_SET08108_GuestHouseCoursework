@@ -40,10 +40,18 @@ namespace Program
          * Constructor.
          */
         public ModelFacade()
+
         {
             bFact = BookingFactory.Instance;
             pFact = PersonFactory.Instance;
             dpFacade = new DataPersistenceFacade();
+
+            Dictionary<String, String> sysData;
+            if (dpFacade.ReadSystemState(out sysData)) 
+            {
+                bFact.Restore(sysData);
+                pFact.Restore(sysData);
+            }
         }
 
         /*

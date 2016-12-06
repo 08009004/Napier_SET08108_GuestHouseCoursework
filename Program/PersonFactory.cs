@@ -40,6 +40,21 @@ namespace Program
         }
 
         /*
+         * Restores the factory state according to sysData values.
+         * Returns true if restore was successful, otherwise false.
+         */
+        public bool Restore(Dictionary<String, String> sysData)
+        {
+            String nxtBookNbString;
+            bool outcome;
+            outcome = sysData.TryGetValue(
+                            BookingFactoryField.NEXT_BOOKING_NB.ToString(), 
+                            out nxtBookNbString);
+            outcome = Int32.TryParse(nxtBookNbString, out this.nextCustNb);
+            return outcome;
+        }
+
+        /*
          * Generates a new customer instance on the basis of the data 
          * passed as parameters.
          */
