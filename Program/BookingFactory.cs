@@ -9,6 +9,9 @@ namespace Program
     /*
      * Singleton utility class, instantiates and decorates
      * BookingComponents.
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
      */
     public class BookingFactory
     {

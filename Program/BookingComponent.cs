@@ -9,6 +9,9 @@ namespace Program
     /*
      * Abstract component class used to make sure that 
      * components and decorators share the same specification
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
      */
     public abstract class BookingComponent
     {

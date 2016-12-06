@@ -12,6 +12,9 @@ namespace Program
     /*
      * Utility class, facade for the Data Persistence implementation
      * details.
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
      */
     public class DataPersistenceFacade
     {

@@ -10,7 +10,10 @@ using System.IO;
 namespace Program
 {
     /*
-     * Singleton utility class, persists bookings data to CSV files.
+     * Singleton utility class, persists booking data to CSV files.
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
      */
     public class CSVWriter
     {

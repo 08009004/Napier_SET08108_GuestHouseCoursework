@@ -14,9 +14,12 @@ using System.Windows.Shapes;
 
 namespace Program
 {
-    /// <summary>
-    /// Interaction logic for NewBooking.xaml
-    /// </summary>
+    /*
+     * Interaction logic for NewBooking.xaml
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
+     */
     public partial class NewBooking : Window
     {
         private ModelFacade mFacade;

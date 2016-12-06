@@ -8,6 +8,9 @@ namespace Program
 {
     /*
      * Represents a customer.
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
      */
     public class Customer : PersonDecorator
     {

@@ -12,13 +12,13 @@ using System.IO;
 // NOTE FOR STARTUP:
 // http://stackoverflow.com/questions/6301529/open-a-text-file-with-wpf
 
-/*
- * Static utility class, recovers objects data from CSV files.
- */
 namespace Program
 {
     /*
      * Singleton utility class, reads bookings data from CSV files.
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
      */
     public class CSVReader
     {

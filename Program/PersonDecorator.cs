@@ -8,6 +8,9 @@ namespace Program
 {
     /* Abstract class defining the minimum implementation of 
      * a concrete PersonDecorator.
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
      */
     public abstract class PersonDecorator : PersonComponent
     {

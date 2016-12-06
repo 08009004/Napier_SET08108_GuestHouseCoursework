@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Program
 {
+    /*
+     * Represents a booking.
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-06
+     */
     public class Booking : BookingComponent
     {
         private int bookingNb;
