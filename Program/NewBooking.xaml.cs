@@ -117,18 +117,21 @@ namespace Program
          */
         private void refreshGuestsDisplay()
         {
-            BookingComponent b = mFacade.CurrentBook;
-            PersonComponent c = mFacade.CurrentCust;
+            if (mFacade.CurrentBook != null)
+            {
+                BookingComponent b = mFacade.CurrentBook;
+                PersonComponent c = mFacade.CurrentCust;
 
-            lblGuest.Visibility = Visibility.Visible;
-            lstGuests.Visibility = Visibility.Visible;
-            if (c.IsGuest())
-            {
-                lstGuests.Items.Add(c.Name);
-            }
-            foreach (PersonComponent g in b.GetGuests())
-            {
-                lstGuests.Items.Add(g.Name);
+                lblGuest.Visibility = Visibility.Visible;
+                lstGuests.Visibility = Visibility.Visible;
+                if (c.IsGuest())
+                {
+                    lstGuests.Items.Add(c.Name);
+                }
+                foreach (PersonComponent g in b.GetGuests())
+                {
+                    lstGuests.Items.Add(g.Name);
+                }
             }
         }
 
