@@ -63,8 +63,16 @@ namespace Program
          * Throws ArgumentException if there is already 4 guests added to
          * the booking.
          */
-        public override void AddGuest(Guest guest)
+        public override void AddGuest(PersonComponent guest)
         {
+            //  Arcane compile error - need to solve
+            /*
+            if (!guest.isGuest())
+            {
+                throw new ArgumentException("this PersonComponent is not a guest");
+            }
+             */
+             
             if (guests.Count >= 4)
             {
                 throw new ArgumentException("this booking already has 4 guests");

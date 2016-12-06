@@ -28,7 +28,7 @@ namespace Program
         /*
          * Adds a guest to the decorated booking.
          */
-        public override void AddGuest(Guest guest)
+        public override void AddGuest(PersonComponent guest)
         {
             if (DecoratedComponent != null)
             {

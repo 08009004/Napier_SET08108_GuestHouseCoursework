@@ -122,12 +122,7 @@ namespace Program
 
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
-                /*
-                if (c.IsGuest())
-                {
-                    lstGuests.Items.Add(c.Name);
-                }
-                 */
+                
                 foreach (PersonComponent g in b.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
@@ -153,7 +148,7 @@ namespace Program
                                 + "Please enter a valid"
                                 + " booking number.");
             }
-
+            
             refreshCustomerDisplay();
         }
 
@@ -184,8 +179,12 @@ namespace Program
         {
             if (areAllValuesValid())
             {
-                mFacade.CreateBooking((DateTime) dtpArrival.SelectedDate,
-                                      (DateTime) dtpDeparture.SelectedDate);
+                if (mFacade.CurrentBook == null) 
+                {
+                    mFacade.CreateBooking((DateTime)dtpArrival.SelectedDate,
+                                          (DateTime) dtpDeparture.SelectedDate);
+                }
+                //mFacade.PersistCurrentBooking();
                 refreshDisplay();
             }
         }
@@ -206,15 +205,19 @@ namespace Program
                                 + " the booking before saving.");
             }
 
-            if (dtpArrival.SelectedDate == null
-             || dtpDeparture.SelectedDate == null)
+            if (dtpArrival.SelectedDate == null)
             {
                 areValidValues = false;
-                MessageBox.Show("Please select arrival and depature dates"
-                                + " for the booking before saving.");
+                MessageBox.Show("Please select a valid arrival date"
+                                + " before saving the booking.");
             }
-
-            if (dtpDeparture.SelectedDate <= dtpArrival.SelectedDate)
+            else if (dtpDeparture.SelectedDate == null)
+            {
+                areValidValues = false;
+                MessageBox.Show("Please select a valid departure date"
+                                + " before saving the booking.");
+            }
+            else if (dtpDeparture.SelectedDate <= dtpArrival.SelectedDate)
             {
                 areValidValues = false;
                 MessageBox.Show("Departure date must be strictly"
@@ -231,7 +234,7 @@ namespace Program
         {
             if (canAddGuest())
             {
-                new NewGuest(mFacade.CurrentBook.GetGuests()).ShowDialog();
+                new NewGuest(mFacade, false).ShowDialog();
                 refreshDisplay();
             }
         }
@@ -239,28 +242,11 @@ namespace Program
         /*
          * Routine executed upon clicking the 'Add to guests' button.
          */
-        private void btnAddToGuest_Click(object sender, RoutedEventArgs e)
+        private void btnAddCustToGuests_Click(object sender, RoutedEventArgs e)
         {
-            bool isCustAGuest = false;
-
-            if (mFacade.CurrentBook != null)
+            if (canAddGuest() && !isCustInGuests())
             {
-                foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
-                {
-                    if (g.GetCustNb() > 0)
-                    {
-                        isCustAGuest = true;
-                        MessageBox.Show("The customer is already in the list"
-                                        + " of guests.");
-                    }
-                }
-            }
-
-            if (canAddGuest() && !isCustAGuest)
-            {
-                new NewGuest(mFacade.CurrentBook.GetGuests(),
-                             mFacade.CurrentCust).ShowDialog();
-
+                new NewGuest(mFacade, true).ShowDialog();
                 refreshDisplay();
             }
         }
@@ -292,6 +278,31 @@ namespace Program
         }
 
         /*
+         * Scans the list of guests to check if there already is a customer
+         * in it.
+         */
+        private bool isCustInGuests()
+        {
+            bool isCustInGuests = false;
+
+            if (mFacade.CurrentBook != null)
+            {
+                foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
+                {
+                    isCustInGuests = isCustInGuests || g.IsCustomer();
+                }
+            }
+
+            if (isCustInGuests)
+            {
+                MessageBox.Show("There is already a customer in the list"
+                                + " of guests.");
+            }
+
+            return isCustInGuests;
+        }
+
+        /*
          * Routine executed upon clicking the 'Delete' button.
          */
         private void btnDeleteGuest_Click(object sender, RoutedEventArgs e)
@@ -303,10 +314,9 @@ namespace Program
             }
             else
             {
-                mFacade.CurrentBook.GetGuests().RemoveAt(lstGuests.SelectedIndex);
+                mFacade.DeleteGuest(lstGuests.SelectedIndex);
                 refreshDisplay();
             }
-            
         }
 
         /*

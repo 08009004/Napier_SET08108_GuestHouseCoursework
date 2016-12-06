@@ -47,6 +47,22 @@ namespace Program
         }
 
         /*
+         * 
+         */
+        public bool RestoreSystemSavedState()
+        {
+            return false;
+        }
+
+        /*
+         * 
+         */
+        public bool PersistSystemState()
+        {
+            return false;
+        }
+
+        /*
          * Loads the booking matching given booking number into the system
          * (from persisted data).
          * Returns true if the booking was found & loaded successfully,
@@ -85,6 +101,18 @@ namespace Program
             else
             {
                 CurrentCust = pFact.RestoreCustomer(customerData);
+                /*
+                if (CurrentBook != null)
+                {
+                    foreach (PersonComponent g in CurrentBook.GetGuests())
+                    {
+                        if (g.IsCustomer())
+                        {
+                            CurrentBook.GetGuests().Remove(g);
+                        }
+                    }
+                }
+                 */
             }
             return wasRestored;
         }
@@ -103,6 +131,42 @@ namespace Program
         public void CreateBooking(DateTime arrival, DateTime departure)
         {
             CurrentBook = bFact.GetNewBooking(CurrentCust, arrival, departure);
+        }
+
+        /*
+         * Persists the current booking of the system.
+         * Returns true if the booking was saved successfully, otherwise false.
+         */
+        public bool PersistCurrentBooking()
+        {
+            return dpFacade.Persist(CurrentBook);
+        }
+
+        /*
+         * Adds a new person to current booking's list of guests.
+         */
+        public void AddGuest(String name, String passportNb, int age)
+        {
+            CurrentBook.AddGuest(pFact.GetNewGuest(name, passportNb, age));
+        }
+
+        /*
+         * Adds current customer to current booking's list of guests.
+         */
+        public void AddCustomerToGuests(String passportNb, int age)
+        {
+            CurrentBook.AddGuest(pFact.GetNewGuest(CurrentCust, 
+                                                   passportNb, 
+                                                   age));
+        }
+
+        /*
+         * Deletes the guest at given index in list of guests for the
+         * current booking.
+         */
+        public void DeleteGuest(int index)
+        {
+            CurrentBook.GetGuests().RemoveAt(index);
         }
     }
 }

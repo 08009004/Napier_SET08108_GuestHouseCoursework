@@ -128,9 +128,10 @@ namespace Program
          * Generates a new guest instance on the basis of the data 
          * passed as parameters.
          */
-        public Guest GetNewGuest(PersonComponent customer, 
-                                 String passportNb, 
-                                 int age)
+        public PersonComponent GetNewGuest(
+                                    PersonComponent customer, 
+                                    String passportNb, 
+                                    int age)
         {
             Guest g = new Guest(passportNb, age);
             g.SetComponent(customer);
@@ -145,7 +146,7 @@ namespace Program
          * Thows Argument exceptions if there is a problem with the contents
          * of the dictionary passed as a parameter.
          */
-        public Guest RestoreGuest(Dictionary<String, String> attributes)
+        public PersonComponent RestoreGuest(Dictionary<String, String> attributes)
         {
             String name;
             String passportNb;

@@ -29,7 +29,7 @@
         <TextBox x:Name="txtCustAddress" HorizontalAlignment="Left" Height="23" Margin="334,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="dtpArrival" HorizontalAlignment="Left" Margin="40,109,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dtpDeparture" HorizontalAlignment="Left" Margin="40,164,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAddToGuest" Content="Add to guests" HorizontalAlignment="Left" Margin="375,127,0,0" VerticalAlignment="Top" Width="79" Click="btnAddToGuest_Click"/>
+        <Button x:Name="btnAddCustToGuests" Content="Add to guests" HorizontalAlignment="Left" Margin="375,127,0,0" VerticalAlignment="Top" Width="79" Click="btnAddCustToGuests_Click"/>
         <Button x:Name="btnAddBreakfast" Content="Add breakfast" HorizontalAlignment="Left" Margin="212,333,0,0" VerticalAlignment="Top" Width="107"/>
         <Label x:Name="lblExtras" Content="Extras:" HorizontalAlignment="Left" Margin="208,302,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="btnAddEveningMeal" Content="Add evening meal" Margin="212,360,0,0" VerticalAlignment="Top" Width="107" Height="22" HorizontalAlignment="Left"/>

@@ -108,6 +108,7 @@ D:\htr\Program\obj\Debug\Program_MarkupCompile.cache
 D:\htr\Program\obj\Debug\Program.g.resources
 D:\htr\Program\obj\Debug\Program.Properties.Resources.resources
 D:\htr\Program\obj\Debug\Program.csproj.GenerateResource.Cache
+D:\tmp\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache
 D:\tmp\Program\obj\Debug\Bookings.baml
 D:\tmp\Program\obj\Debug\MainWindow.baml
 D:\tmp\Program\obj\Debug\NewBooking.baml
@@ -126,4 +127,3 @@ D:\tmp\Program\bin\Debug\Program.exe
 D:\tmp\Program\bin\Debug\Program.pdb
 D:\tmp\Program\obj\Debug\Program.exe
 D:\tmp\Program\obj\Debug\Program.pdb
-D:\tmp\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache

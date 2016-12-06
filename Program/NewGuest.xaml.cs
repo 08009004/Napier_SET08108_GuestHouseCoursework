@@ -18,36 +18,30 @@ namespace Program
      * Interaction logic for NewGuest.xaml
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
-     * last modified: 2016-12-05
+     * last modified: 2016-12-06
      */
     public partial class NewGuest : Window
     {
-        // Properties: 
-        // points to the list of guests for current booking.
-        List<PersonComponent> guests;
-        // points to the customer for current booking.
-        PersonComponent customer;
+        // Property: 
+        // reference to calling window's ModelFacade instance:
+        private ModelFacade mFacade;
+        // true if the new guest to create is the booking's customer.
+        private bool isCustomer;
 
         /*
          * Constructor 1.
          */
-        public NewGuest(List<PersonComponent> guests)
+        public NewGuest(ModelFacade mFacade, bool isCustomer)
         {
-            this.guests = guests;
+            this.mFacade = mFacade;
+            this.isCustomer = isCustomer;
             InitializeComponent();
-        }
 
-        /*
-         * Constructor 2.
-         */
-        public NewGuest(List<PersonComponent> guests, 
-                        PersonComponent customer)
-        {
-            this.guests = guests;
-            this.customer = customer;
-            InitializeComponent();
-            lblName.Visibility = Visibility.Hidden;
-            txtName.Visibility = Visibility.Hidden;
+            if (isCustomer)
+            {
+                lblName.Visibility = Visibility.Hidden;
+                txtName.Visibility = Visibility.Hidden;
+            }
         }
 
         /*
@@ -55,30 +49,20 @@ namespace Program
          */
         private void btnAddGuest_Click(object sender, RoutedEventArgs e)
         {
-            PersonComponent g = null;
-
-            if (validateValues())
+            if (areAllValuesValid())
             {
-                // Instantiates a new guest
-                if (this.customer == null)
+                if (!this.isCustomer)
                 {
-                    g = PersonFactory.Instance
-                                     .GetNewGuest(txtName.Text,
-                                                  txtPassportNb.Text,
-                                                  Int32.Parse(txtAge.Text));
-                    this.guests.Add(g);
-                    this.Close();
+                    mFacade.AddGuest(txtName.Text,
+                                     txtPassportNb.Text,
+                                     Int32.Parse(txtAge.Text));
                 }
-                // Or adds the current customer to the list of guests
                 else
                 {
-                    g = PersonFactory.Instance
-                                     .GetNewGuest(this.customer,
-                                                  txtPassportNb.Text,
-                                                  Int32.Parse(txtAge.Text));
-                    this.guests.Add(g);
-                    this.Close();
+                    mFacade.AddCustomerToGuests(txtPassportNb.Text,
+                                                Int32.Parse(txtAge.Text));
                 }
+                this.Close();
             }
         }
 
@@ -87,7 +71,7 @@ namespace Program
          * otherwise false.
          * Displays error message windows.
          */
-        private bool validateValues()
+        private bool areAllValuesValid()
         {
             bool areValidValues = true;
             int tmp;
@@ -104,7 +88,7 @@ namespace Program
                 areValidValues = false;
             }
             
-            if (customer == null
+            if (mFacade.CurrentCust == null
              && String.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Please fill in the guest's name");

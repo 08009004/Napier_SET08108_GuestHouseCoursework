@@ -18,7 +18,7 @@ namespace Program
         /*
          * Must add a guest to a given BookingComponent.
          */
-        public abstract void AddGuest(Guest guest);
+        public abstract void AddGuest(PersonComponent guest);
 
         /*
          * Must return the Booking number.
