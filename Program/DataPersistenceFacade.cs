@@ -99,10 +99,14 @@ namespace Program
         public List<int> GetAllBookingNbs(int customerNb)
         {
             List<int> bookingNbs = new List<int>();
-            String[] bookingFiles = Directory.GetFiles(dataDirectory);
+            String[] bookingFiles = new String[0];
             List<Dictionary<String, String>> bookingData;
             String value;
 
+            if (Directory.Exists(dataDirectory))
+            {
+                bookingFiles = Directory.GetFiles(dataDirectory);
+            }
             foreach (String fPath in bookingFiles)
             {
                 if (dataReader.ReadBooking(fPath, out bookingData))
