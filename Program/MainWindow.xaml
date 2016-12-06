@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="218" Width="458">
     <Grid Height="205" VerticalAlignment="Top">
-        <Button x:Name="btnNewBooking" Content="Create/Amend booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.56,6.227" Margin="344,69,0,0" Click="btnNewBooking_Click" Height="22"/>
+        <Button x:Name="btnCreateAmend" Content="Create/Amend booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.56,6.227" Margin="344,69,0,0" Click="btnCreateAmend_Click" Height="22"/>
         <Button x:Name="btnLoadBooking" Content="Load booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="160,69,0,0" Click="btnLoadBooking_Click"/>
         <TextBox x:Name="txtBookingRef" HorizontalAlignment="Left" Height="23" Margin="10,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblBookingRef" Content="Booking Number" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblHeader" Content="Holiday Reservation System" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,10,0,0" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblHeader" Content="Holiday Reservation System" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="115,10,0,0" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="lblCustomer" Content="Customer:" HorizontalAlignment="Left" Margin="160,96,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblCustName" Content="Name: " HorizontalAlignment="Left" Margin="160,132,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblCustNumber" Content="Customer Number:" HorizontalAlignment="Left" Margin="160,114,0,0" VerticalAlignment="Top"/>
@@ -15,7 +15,7 @@
         <Label x:Name="lblDeparture" Content="Departure Date:" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.798,1.577"/>
         <ListBox x:Name="lstGuests" HorizontalAlignment="Left" Height="42" Margin="309,131,0,0" VerticalAlignment="Top" Width="122"/>
         <Label x:Name="lblGuest" Content="List of guests:" HorizontalAlignment="Left" Margin="309,100,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnClearWindow" Content="Close booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.56,6.227" Margin="252,69,0,0" Click="btnClearWindow_Click"/>
+        <Button x:Name="btnCloseBooking" Content="Close booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.56,6.227" Margin="252,69,0,0" Click="btnCloseBooking_Click"/>
         <Label x:Name="lblArrivalDate" Content="Label" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="85"/>
         <Label x:Name="lblDepartureDate" Content="Label" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Width="75"/>
 

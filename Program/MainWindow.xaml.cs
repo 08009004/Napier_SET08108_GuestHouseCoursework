@@ -105,7 +105,7 @@ namespace Program
         /*
          * Executed upon clicking the 'Clear' button.
          */
-        private void btnClearWindow_Click(object sender, RoutedEventArgs e)
+        private void btnCloseBooking_Click(object sender, RoutedEventArgs e)
         {
             this.mFacade.CurrentBook = null;
             clearDisplay();
@@ -134,7 +134,7 @@ namespace Program
         /*
          * Executed upon clicking the 'Create/Amend' button.
          */
-        private void btnNewBooking_Click(object sender, RoutedEventArgs e)
+        private void btnCreateAmend_Click(object sender, RoutedEventArgs e)
         {
             new NewBooking(this.mFacade).ShowDialog();
             refreshDisplay();
