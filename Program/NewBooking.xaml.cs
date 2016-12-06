@@ -177,6 +177,10 @@ namespace Program
             }
         }
 
+
+        // RESUME BELOW -----------------------------------------------------
+
+
         /*
          * Routine triggered upon clicking the 'Save' button.
          */
