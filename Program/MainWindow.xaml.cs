@@ -24,7 +24,6 @@ namespace Program
         // Properties
         // points to a ModelFacade instance:
         private ModelFacade mFacade;
-        public ModelFacade MFacade { get { return this.mFacade; } }
 
         public MainWindow()
         {
@@ -56,49 +55,70 @@ namespace Program
         }
 
         /*
-         * Displays the fields of currentBooking in the window.
+         * Refreshes all fields displayed in the window.
          */
         private void refreshDisplay()
         {
             if (mFacade.CurrentBook != null)
             {
                 clearDisplay();
+                refreshBookingDisplay();
+                refreshCustomerDisplay();
+                refreshGuestsDisplay();
+            }
+        }
 
-                // display current booking fields:
-                BookingComponent b = mFacade.CurrentBook;
+        /*
+         * Refreshes the booking fields displayed in the window.
+         */
+        private void refreshBookingDisplay()
+        {
+            BookingComponent b = mFacade.CurrentBook;
+            DateTime start;
+            DateTime end;
 
-                txtBookingRef.Text = b.GetBookingNb().ToString();
+            txtBookingRef.Text = b.GetBookingNb().ToString();
+            
+            lblArrival.Visibility = Visibility.Visible;
+            lblDeparture.Visibility = Visibility.Visible;
+            b.GetDates(out start, out end);
+            lblArrivalDate.Content = start.ToString().Substring(0, 10);
+            lblArrivalDate.Visibility = Visibility.Visible;
+            lblDepartureDate.Content = end.ToString().Substring(0, 10);
+            lblDepartureDate.Visibility = Visibility.Visible;
+        }
 
-                DateTime start;
-                DateTime end;
-                lblArrival.Visibility = Visibility.Visible;
-                lblDeparture.Visibility = Visibility.Visible;
-                b.GetDates(out start, out end);
-                lblArrivalDate.Content = start.ToString().Substring(0, 10);
-                lblArrivalDate.Visibility = Visibility.Visible;
-                lblDepartureDate.Content = end.ToString().Substring(0, 10);
-                lblDepartureDate.Visibility = Visibility.Visible;
+        /*
+         * Refreshes the customer fields displayed in the window.
+         */
+        private void refreshCustomerDisplay()
+        {
+            PersonComponent c = mFacade.CurrentCust;
 
-                // display current customer fields:
-                PersonComponent c = mFacade.CurrentCust;
+            lblCustomer.Visibility = Visibility.Visible;
+            lblCustNumber.Content = "Number: " + c.GetCustNb().ToString();
+            lblCustNumber.Visibility = Visibility.Visible;
+            lblCustName.Content = "Name: " + c.Name;
+            lblCustName.Visibility = Visibility.Visible;
+        }
 
-                lblCustomer.Visibility = Visibility.Visible;
-                lblCustNumber.Content = "Number: " + c.GetCustNb().ToString();
-                lblCustNumber.Visibility = Visibility.Visible;
-                lblCustName.Content = "Name: " + c.Name;
-                lblCustName.Visibility = Visibility.Visible;
+        /*
+         * Refreshes the guests fields displayed in the window.
+         */
+        private void refreshGuestsDisplay()
+        {
+            BookingComponent b = mFacade.CurrentBook;
+            PersonComponent c = mFacade.CurrentCust;
 
-                // display current booking gests:
-                lblGuest.Visibility = Visibility.Visible;
-                lstGuests.Visibility = Visibility.Visible;
-                if (c.IsGuest())
-                {
-                    lstGuests.Items.Add(c.Name);
-                }
-                foreach (PersonComponent g in b.GetGuests())
-                {
-                    lstGuests.Items.Add(g.Name);
-                }
+            lblGuest.Visibility = Visibility.Visible;
+            lstGuests.Visibility = Visibility.Visible;
+            if (c.IsGuest())
+            {
+                lstGuests.Items.Add(c.Name);
+            }
+            foreach (PersonComponent g in b.GetGuests())
+            {
+                lstGuests.Items.Add(g.Name);
             }
         }
 
