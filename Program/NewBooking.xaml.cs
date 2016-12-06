@@ -22,6 +22,8 @@ namespace Program
      */
     public partial class NewBooking : Window
     {
+        //Property:
+        // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
 
         /*
@@ -29,12 +31,10 @@ namespace Program
          */
         public NewBooking(ModelFacade modelFacade)
         {
-            //this.dpf = dpf;
-            //this.currentBooking = currentBooking;
             this.mFacade = modelFacade;
 
             InitializeComponent();
-            lblBookingRef.Content += "\r\n";
+            lblBookingRef.Content = "Booking number\r\n";
 
             if (mFacade.CurrentBook == null)
             {
@@ -43,8 +43,6 @@ namespace Program
             else
             {
                 lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
-
-                this.mFacade.CurrentCust = mFacade.CurrentBook.GetCustomer();
                 refreshDisplay();
             }
         }
@@ -68,12 +66,24 @@ namespace Program
         }
 
         /*
-         * Refreshes window display according to current objects states.
+         * Refreshes all fields displayed in the window according to  
+         * current system objects states.
          */
         private void refreshDisplay()
         {
             clearDisplay();
 
+            refreshBookingDisplay();
+            refreshCustomerDisplay();
+            refreshGuestsDisplay();
+            
+        }
+
+        /*
+         * Refreshes the booking fields displayed in the window.
+         */
+        private void refreshBookingDisplay()
+        {
             if (mFacade.CurrentBook != null)
             {
                 DateTime arrival;
@@ -84,13 +94,14 @@ namespace Program
 
                 lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
                 lblBookingRef.Visibility = Visibility.Visible;
-
-                foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
-                {
-                    lstGuests.Items.Add(g.Name);
-                }
             }
+        }
 
+        /*
+         * Refreshes the customer fields displayed in the window.
+         */
+        private void refreshCustomerDisplay()
+        {
             if (mFacade.CurrentCust != null)
             {
                 txtCustNumber.Text = mFacade.CurrentCust.GetCustNb().ToString();
@@ -100,31 +111,33 @@ namespace Program
         }
 
         /*
+         * Refreshes the guests fields displayed in the window.
+         */
+        private void refreshGuestsDisplay()
+        {
+            BookingComponent b = mFacade.CurrentBook;
+            PersonComponent c = mFacade.CurrentCust;
+
+            lblGuest.Visibility = Visibility.Visible;
+            lstGuests.Visibility = Visibility.Visible;
+            if (c.IsGuest())
+            {
+                lstGuests.Items.Add(c.Name);
+            }
+            foreach (PersonComponent g in b.GetGuests())
+            {
+                lstGuests.Items.Add(g.Name);
+            }
+        }
+
+        /*
          * Loads & displays the customer referenced by txtCustNumber.Text
          */
         private void btnLoadCust_Click(object sender, RoutedEventArgs e)
         {
-            int customerNb;
-
-            if (!Int32.TryParse(txtCustNumber.Text, out customerNb))
+            foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
             {
-                MessageBox.Show("Please enter a valid customer number.");
-            }
-            else
-            {
-                Dictionary<String, String> customerData;
-                if (!mFacade.DPFacade.Read(customerNb, out customerData))
-                {
-                    MessageBox.Show("Can't find customer number "
-                                    + txtCustNumber.Text + ".\r\n"
-                                    + "Please enter a valid"
-                                    + " customer number.");
-                }
-                else
-                {
-                    mFacade.CurrentCust = mFacade.PFact.RestoreCustomer(customerData);
-                    refreshDisplay();
-                }
+                lstGuests.Items.Add(g.Name);
             }
         }
         

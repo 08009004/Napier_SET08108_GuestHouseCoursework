@@ -25,7 +25,7 @@ namespace Program
     public partial class MainWindow : Window
     {
         // Properties
-        // points to a ModelFacade instance:
+        // reference to a ModelFacade instance:
         private ModelFacade mFacade;
 
         public MainWindow()
@@ -58,7 +58,8 @@ namespace Program
         }
 
         /*
-         * Refreshes all fields displayed in the window.
+         * Refreshes all fields displayed in the window according to 
+         * current system objects states.
          */
         private void refreshDisplay()
         {
