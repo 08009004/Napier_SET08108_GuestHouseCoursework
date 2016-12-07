@@ -56,6 +56,13 @@ namespace Program
          */
         public abstract double GetCost();
 
+        /* 
+         * Must return a reference to the BookingDecorator's decorated 
+         * component, or the to the BookingDecorator itself if it is 
+         * not decorated.
+         */
+        public abstract BookingComponent Undecorate();
+
         /*
          * Must return a textual representation of the  
          * BookingComponent in order to persist it to a CSV file.
