@@ -174,7 +174,7 @@ namespace Program
         /*
          * Executed upon clicking the 'Create/Amend' button.
          */
-        private void btnCreateAmend_Click(object sender, RoutedEventArgs e)
+        private void btnNewEdit_Click(object sender, RoutedEventArgs e)
         {
             new WindowCreateEdit(this.mFacade).ShowDialog();
             refreshDisplay();

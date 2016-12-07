@@ -9,7 +9,7 @@
 
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="110" Margin="9,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="171"/>
 
-        <Button x:Name="btnCreateAmend" Content="Create/Amend booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.56,6.227" Margin="239,40,0,0" Click="btnCreateAmend_Click" Height="22"/>
+        <Button x:Name="btnNewEdit" Content="New / Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" RenderTransformOrigin="1.56,6.227" Margin="239,40,0,0" Click="btnNewEdit_Click" Height="22"/>
         <Button x:Name="btnLoadBooking" Content="Load booking" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="55,40,0,0" Click="btnLoadBooking_Click"/>
         <Label x:Name="lblBooking" Content="Booking:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblHeader" Content="Holiday Reservation System" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,4,0,0" FontWeight="Bold" FontSize="16"/>
