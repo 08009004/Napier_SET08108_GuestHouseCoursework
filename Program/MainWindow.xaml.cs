@@ -30,6 +30,8 @@ namespace Program
 
         public MainWindow()
         {
+            /*
+            ModelFacade mf = new ModelFacade();
             PersonFactory pf = PersonFactory.Instance;
             BookingFactory bf = BookingFactory.Instance;
             BookingComponent b = bf.GetNewBooking(pf.GetNewCustomer("custName", "custAddress"), 
@@ -40,13 +42,19 @@ namespace Program
             b = bf.AddCarHire(b, "driverName", new DateTime(1998,05,12), new DateTime(1998,05,15));
             b = bf.AddEveningMeal(b, "Brekfast_Diet");
 
-            b.Undecorate(bf.AddBreakfast(b, "Brekfast_Diet"));
+            mf.CurrentBook = b;
+
+            //b.Undecorate(bf.AddBreakfast(b, "Brekfast_Diet"));
+            foreach (String s in mf.getCurrentExtras())
+            {
+                MessageBox.Show(s);
+            }
 
             InitializeComponent();
-
-      //      this.mFacade = new ModelFacade();
-     //       InitializeComponent();
-     //       clearDisplay();
+            */
+            this.mFacade = new ModelFacade();
+            InitializeComponent();
+            clearDisplay();
         }
 
         /*

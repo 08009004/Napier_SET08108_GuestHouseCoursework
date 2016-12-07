@@ -244,5 +244,30 @@ namespace Program
         {
             return dpFacade.GetAllBookingNbs(customer.GetCustNb());
         }
+
+        /*
+         * Returns a list of all the CurrentBooking's decorators
+         * (= extra)
+         */
+        public List<String> getCurrentExtras()
+        {
+            List<String> extras = new List<String>();
+            foreach (BookingDecorator bd in CurrentBook.GetDecorators())
+            {
+                if (bd.GetType() == typeof(EveningMeal))
+                {
+                    extras.Add("Evening meal");
+                }
+                else if (bd.GetType() == typeof(Breakfast))
+                {
+                    extras.Add("Breakfast");
+                }
+                else if (bd.GetType() == typeof(CarHire))
+                {
+                    extras.Add("CarHire");
+                }
+            }
+            return  extras;
+        }
     }
 }

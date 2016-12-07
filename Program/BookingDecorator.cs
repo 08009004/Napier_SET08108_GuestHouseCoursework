@@ -101,27 +101,39 @@ namespace Program
 
             BookingComponent result = decorator;
             BookingComponent component = this;
-            List<BookingComponent> references = new List<BookingComponent>();
+            List<BookingDecorator> references = GetDecorators();
 
-            // save all the references that must be kept:
+            // redecorate the BookingComponent:
+            result = component;
+            MessageBox.Show("result =\r\n\r\n" + result.ToCSV());
+
+            foreach (BookingDecorator bComp in references)
+            {
+                MessageBox.Show("reference =\r\n\r\n" + bComp.ToCSV());
+                bComp.DecoratedComponent = result;
+                result = bComp;
+            }
+
+            MessageBox.Show("result =\r\n\r\n" + result.ToCSV());
+            return result;
+        }
+
+        /*
+         * Returns references to all the BookingDecorator instances in the
+         * decoration stack.
+         */
+        public override List<BookingDecorator> GetDecorators()
+        {
+            BookingComponent component = this;
+            List<BookingDecorator> references = new List<BookingDecorator>();
+
             while (component.isDecorator())
             {
-                MessageBox.Show("component =\r\n\r\n" + component.ToCSV());
-                if (component != decorator)
-                {
-                    references.Add(component);
-                }
-
+                references.Add((BookingDecorator)component);
                 component = ((BookingDecorator)component).DecoratedComponent;
             }
 
-            // redecorate the BookingComponent:
-            foreach (BookingComponent bComp in references)
-            {
-                MessageBox.Show("reference =\r\n\r\n" + component.ToCSV());
-            }
-
-            return result;
+            return references;
         }
 
         /*
