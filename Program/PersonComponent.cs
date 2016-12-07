@@ -56,6 +56,15 @@ namespace Program
             return -1;
         }
 
+        /* 
+         * Returns a reference to the Personcomponent itself if it is 
+         * only decorated once.
+         */
+        public virtual PersonComponent Undecorate()
+        {
+            return this;
+        }
+
         /*
          * Must return a textual representation of the  
          * PersonComponent in order to persist it to a CSV file.

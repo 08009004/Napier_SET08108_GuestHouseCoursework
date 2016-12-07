@@ -56,7 +56,8 @@ namespace Program
             return address;
         }
 
-        /* Returns the PersonDecorator's customer number (-1 if the root 
+        /* 
+         * Returns the PersonDecorator's customer number (-1 if the root 
          * component is not a concrete Person)
          */
         public override int GetCustNb()
@@ -88,7 +89,8 @@ namespace Program
             return passportNb;
         }
 
-        /* Returns the PersonDecorator's age (-1 if the root 
+        /* 
+         * Returns the PersonDecorator's age (-1 if the root 
          * component is not a concrete Person)
          */
         public override int GetAge()
@@ -101,6 +103,21 @@ namespace Program
             }
 
             return age;
+        }
+
+        /* 
+         * Returns a reference to the PersonDecorator's decorated component, 
+         * or the to the PersonDecorator itself if it is not decorated.
+         */
+        public override PersonComponent Undecorate()
+        {
+            PersonComponent p = this;
+
+            if (decoratedComponent != null)
+            {
+                p = decoratedComponent;
+            }
+            return p;
         }
 
 

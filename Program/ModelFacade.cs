@@ -207,7 +207,7 @@ namespace Program
         {
             CurrentBook.GetGuests().RemoveAt(index);
             CurrentBook.GetGuests().Insert(index,
-                                           pFact.GetNewGuest(CurrentCust,
+                                           pFact.GetNewGuest(CurrentCust.Undecorate(),
                                                              passportNb,
                                                              age));
         }
@@ -215,9 +215,16 @@ namespace Program
         /*
          * Deletes the guest at given index in list of guests for the
          * current booking.
+         * Undecorates that guest if if it is also a 
+         * customer and updates CurrentCustomer with the correct
+         * memory reference.
          */
         public void DeleteGuest(int index)
         {
+            if (CurrentBook.GetGuests().ElementAt(index).IsCustomer())
+            {
+                CurrentCust = CurrentCust.Undecorate();
+            }
             CurrentBook.GetGuests().RemoveAt(index);
         }
 
