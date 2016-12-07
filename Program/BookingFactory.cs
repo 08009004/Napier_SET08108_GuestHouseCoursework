@@ -188,6 +188,11 @@ namespace Program
                                        personFactory.RestoreCustomer(cData),
                                        Convert.ToDateTime(csvArrival), 
                                        Convert.ToDateTime(csvDeparture));
+
+                if (result.GetCustomer().IsGuest())
+                {
+                    result.AddGuest(result.GetCustomer());
+                }
             }
 
             result = addGuestsData(result, guestsData);
