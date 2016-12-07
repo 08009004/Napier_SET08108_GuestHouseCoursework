@@ -39,8 +39,10 @@ namespace Program
             }
         }
 
-        // the PersonDecorator's Address (is null if the root component  
-        // is not a concrete Person)
+        /*
+         * Returns the PersonDecorator's Address (is null if the root 
+         * component is not a concrete Person)
+         */
         public override string GetAddress()
         {
             String address = null;
@@ -54,8 +56,9 @@ namespace Program
             return address;
         }
 
-        // the PersonDecorator's customer number (-1 if the root 
-        // component is not a concrete Person)
+        /* Returns the PersonDecorator's customer number (-1 if the root 
+         * component is not a concrete Person)
+         */
         public override int GetCustNb()
         {
             int custNb = -1;
@@ -67,6 +70,39 @@ namespace Program
 
             return custNb;
         }
+
+        /*
+         * Returns the PersonDecorator's passport number (is null if the root 
+         * component is not a concrete Person)
+         */
+        public override string GetPassportNb()
+        {
+            String passportNb = null;
+
+            if (decoratedComponent != null)
+            // && decoratedComponent.GetType() != typeof(Person))
+            {
+                passportNb = decoratedComponent.GetAddress();
+            }
+
+            return passportNb;
+        }
+
+        /* Returns the PersonDecorator's age (-1 if the root 
+         * component is not a concrete Person)
+         */
+        public override int GetAge()
+        {
+            int age = -1;
+
+            if (decoratedComponent != null)
+            {
+                age = decoratedComponent.GetCustNb();
+            }
+
+            return age;
+        }
+
 
         /*
          * Returns a textual representation of the decorated 

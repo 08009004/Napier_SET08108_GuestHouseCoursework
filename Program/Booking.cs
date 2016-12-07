@@ -140,7 +140,7 @@ namespace Program
 
             foreach (Guest g in guests)
             {
-                if (g.Age < 18)
+                if (g.GetAge() < 18)
                 {
                     cost += 30 * nights;
                 }

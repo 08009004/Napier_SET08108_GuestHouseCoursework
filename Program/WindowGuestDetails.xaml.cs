@@ -65,8 +65,12 @@ namespace Program
             txtPassportNb.Text = mFacade.CurrentBook
                                         .GetGuests()
                                         .ElementAt(guestIndex)
-                                        .Name;
-            txtAge.Text = 0.ToString();
+                                        .GetPassportNb();
+            txtAge.Text = mFacade.CurrentBook
+                                 .GetGuests()
+                                 .ElementAt(guestIndex)
+                                 .GetAge()
+                                 .ToString();
 
             if (isCustomer)
             {
@@ -92,27 +96,41 @@ namespace Program
             {
                 if (this.guestIndex >= 0)
                 {
-                    if (this.isCustomer)
+                    PersonComponent g;
+                    if (!this.isCustomer) // edit current guest
                     {
-                        // edit current customer's guest properties
+                        mFacade.EditGuest(guestIndex,
+                                          txtName.Text,
+                                          txtPassportNb.Text,
+                                          Int32.Parse(txtAge.Text));
+                        
                     }
-                    else
+                    else // edit current customer's guest properties
                     {
-                        // edit current guest
+                        g = mFacade.PFact.GetNewGuest(
+                                                mFacade.CurrentCust,
+                                                txtPassportNb.Text,
+                                                Int32.Parse(txtAge.Text));
+                        mFacade.CurrentBook
+                               .GetGuests()
+                               .RemoveAt(this.guestIndex);
+                        mFacade.CurrentBook
+                               .GetGuests()
+                               .Insert(this.guestIndex, g);
                     }
                 }
                 else
                 {
-                    if (this.isCustomer)
-                    {
-                        mFacade.AddCustomerToGuests(txtPassportNb.Text,
-                                                Int32.Parse(txtAge.Text));
-                    }
-                    else
+                    if (!this.isCustomer) // create and add new guest
                     {
                         mFacade.AddGuest(txtName.Text,
-                                     txtPassportNb.Text,
-                                     Int32.Parse(txtAge.Text));
+                                         txtPassportNb.Text,
+                                         Int32.Parse(txtAge.Text));
+                    }
+                    else // decorate current customer as guest and add to list
+                    {
+                        mFacade.AddCustomerToGuests(txtPassportNb.Text,
+                                                    Int32.Parse(txtAge.Text));
                     }
                 }
                 this.Close();

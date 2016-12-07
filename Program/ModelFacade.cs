@@ -169,6 +169,38 @@ namespace Program
         }
 
         /*
+         * Updates details of guest at given index in current booking's
+         * list of guests.
+         */
+        public void EditGuest(int index, 
+                               String name, 
+                               String passportNb, 
+                               int age)
+        {
+            CurrentBook.GetGuests().RemoveAt(index);
+            CurrentBook.GetGuests().Insert(index, 
+                                           pFact.GetNewGuest(name,
+                                                             passportNb,
+                                                             age));
+        }
+
+        /*
+         * Updates guest details of current customer at given index in current 
+         * booking's list of guests.
+         */
+        public void EditGuest(int index,
+                               PersonComponent customer,
+                               String passportNb,
+                               int age)
+        {
+            CurrentBook.GetGuests().RemoveAt(index);
+            CurrentBook.GetGuests().Insert(index,
+                                           pFact.GetNewGuest(customer,
+                                                             passportNb,
+                                                             age));
+        }
+
+        /*
          * Deletes the guest at given index in list of guests for the
          * current booking.
          */

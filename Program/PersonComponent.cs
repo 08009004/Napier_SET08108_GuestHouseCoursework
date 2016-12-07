@@ -39,6 +39,24 @@ namespace Program
         }
 
         /*
+         * Returns the PersonComponent's passport number (null if the 
+         * PersonComponent is not a customer).
+         */
+        public virtual String GetPassportNb()
+        {
+            return null;
+        }
+
+        /*
+         * Returns the PersonComponent's age (-1 if the 
+         * PersonComponent is not a customer).
+         */
+        public virtual int GetAge()
+        {
+            return -1;
+        }
+
+        /*
          * Must return a textual representation of the  
          * PersonComponent in order to persist it to a CSV file.
          */

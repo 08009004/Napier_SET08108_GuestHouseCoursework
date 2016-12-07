@@ -16,21 +16,15 @@ namespace Program
     {
         // Properties:
         private String passportNb;
-        public String PassportNb
+        public override String GetPassportNb()
         {
-            get
-            {
-                return this.passportNb;
-            }
+            return this.passportNb;
         }
 
         private int age;
-        public int Age
+        public override int GetAge()
         {
-            get
-            {
-                return this.age;
-            }
+            return this.age;
         }
 
         /*
