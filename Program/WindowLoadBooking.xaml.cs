@@ -101,14 +101,6 @@ namespace Program
         }
 
         /*
-         * Closes the window.
-         */
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        /*
          * loads selected booking into the system when double clicking on it.
          */
         private void lstBookings_MouseDoubleClick(object sender, 
@@ -117,12 +109,20 @@ namespace Program
             List<int> l = (List<int>) lstBookings.ItemsSource;
             int i = lstBookings.SelectedIndex;
 
-            if (!mFacade.RestoreBooking(l.ElementAt(i))) 
+            if (i < 0 || !mFacade.RestoreBooking(l.ElementAt(i))) 
             {
                 MessageBox.Show("Please double click on a booking from the"
                             + " list to load it into the system.");
             }
             refreshBookDetailDisplay();
+        }
+
+        /*
+         * Closes the window.
+         */
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
