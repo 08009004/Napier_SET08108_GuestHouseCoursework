@@ -174,7 +174,9 @@ namespace Program
         }
 
         /*
-         * Routine triggered upon clicking the 'Save' button.
+         * Checks if the booking can be saved or updated on the basis of
+         * window field values, and acts accordingly (closes the window, 
+         * except if the booking was a new one).
          */
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -184,14 +186,16 @@ namespace Program
                 {
                     mFacade.CreateBooking((DateTime)dtpArrival.SelectedDate,
                                           (DateTime)dtpDeparture.SelectedDate);
+                    mFacade.PersistCurrentBooking();
+                    refreshDisplay();
                 }
                 else
                 {
                     mFacade.UpdateBooking((DateTime)dtpArrival.SelectedDate,
                                           (DateTime)dtpDeparture.SelectedDate);
+                    mFacade.PersistCurrentBooking();
+                    this.Close();
                 }
-                mFacade.PersistCurrentBooking();
-                refreshDisplay();
             }
         }
 
@@ -312,7 +316,8 @@ namespace Program
         /*
          * Opens a WindowGuestDetail to edit selected guest details.
          */
-        private void lstGuests_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void lstGuests_MouseDoubleClick(object sender, 
+                                                MouseButtonEventArgs e)
         {
             List<int> l = (List<int>) lstGuests.ItemsSource;
             int i = lstGuests.SelectedIndex;
