@@ -114,6 +114,7 @@ namespace Program
                 MessageBox.Show("Please double click on a booking from the"
                             + " list to load it into the system.");
             }
+
             refreshBookDetailDisplay();
         }
 

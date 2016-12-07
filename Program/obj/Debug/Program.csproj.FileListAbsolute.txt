@@ -127,3 +127,5 @@ D:\tmp\Program\obj\Debug\Program.exe
 D:\tmp\Program\obj\Debug\Program.pdb
 D:\tmp\Program\obj\Debug\WindowLoadBooking.baml
 D:\tmp\Program\obj\Debug\WindowLoadBooking.g.cs
+D:\tmp\Program\obj\Debug\WindowCreateEdit.baml
+D:\tmp\Program\obj\Debug\WindowCreateEdit.g.cs

@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 namespace Program
 {
     /*
-     * Interaction logic for NewBooking.xaml
+     * Interaction logic for WindowCreateEdit.xaml
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
-     * last modified: 2016-12-06
+     * last modified: 2016-12-07
      */
-    public partial class NewBooking : Window
+    public partial class WindowCreateEdit : Window
     {
         //Property:
         // reference to calling window's ModelFacade instance:
@@ -29,7 +29,7 @@ namespace Program
         /*
          * The window constructor.
          */
-        public NewBooking(ModelFacade modelFacade)
+        public WindowCreateEdit(ModelFacade modelFacade)
         {
             this.mFacade = modelFacade;
 
@@ -76,7 +76,7 @@ namespace Program
             refreshBookingDisplay();
             refreshCustomerDisplay();
             refreshGuestsDisplay();
-            
+
         }
 
         /*
@@ -122,7 +122,7 @@ namespace Program
 
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
-                
+
                 foreach (PersonComponent g in b.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
@@ -148,7 +148,7 @@ namespace Program
                                 + "Please enter a valid"
                                 + " booking number.");
             }
-            
+
             refreshCustomerDisplay();
         }
 
@@ -161,7 +161,7 @@ namespace Program
             {
                 MessageBox.Show("Please enter a valid customer name");
             }
-            else if (String.IsNullOrWhiteSpace(txtCustAddress.Text)) 
+            else if (String.IsNullOrWhiteSpace(txtCustAddress.Text))
             {
                 MessageBox.Show("Please enter a valid customer address");
             }
@@ -179,10 +179,10 @@ namespace Program
         {
             if (areAllValuesValid())
             {
-                if (mFacade.CurrentBook == null) 
+                if (mFacade.CurrentBook == null)
                 {
                     mFacade.CreateBooking((DateTime)dtpArrival.SelectedDate,
-                                          (DateTime) dtpDeparture.SelectedDate);
+                                          (DateTime)dtpDeparture.SelectedDate);
                 }
                 mFacade.PersistCurrentBooking();
                 refreshDisplay();
@@ -273,7 +273,7 @@ namespace Program
                                 + " maximum number of guests per booking"
                                 + " is 4.");
             }
-            
+
             return canAddGuest;
         }
 
@@ -322,7 +322,7 @@ namespace Program
         /*
          * Routine executed upon clicking the 'Close' button.
          */
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void btnDiscard_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

@@ -174,7 +174,7 @@ namespace Program
          */
         private void btnCreateAmend_Click(object sender, RoutedEventArgs e)
         {
-            new NewBooking(this.mFacade).ShowDialog();
+            new WindowCreateEdit(this.mFacade).ShowDialog();
             refreshDisplay();
         }
 
