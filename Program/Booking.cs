@@ -14,11 +14,40 @@ namespace Program
      */
     public class Booking : BookingComponent
     {
+        // PROPERTIES:
+
+        // the booking reference number.
         private int bookingNb;
+        public override int GetBookingNb()
+        {
+            return this.bookingNb;
+        }
+
+        // the booking's customer.
         private PersonComponent cust;
+        public override PersonComponent GetCustomer()
+        {
+            return this.cust;
+        }
+
+        // the booking start and end dates.
         private DateTime arrival;
         private DateTime departure;
+        public override void GetDates(out DateTime arrival,
+                                      out DateTime departure)
+        {
+            arrival = this.arrival;
+            departure = this.departure;
+        }
+
+        //the booking's list of guests.
         private List<PersonComponent> guests = new List<PersonComponent>();
+        public override List<PersonComponent> GetGuests()
+        {
+            return this.guests;
+        }
+
+        // METHODS:
 
         /*
          * Constructor.
@@ -81,30 +110,6 @@ namespace Program
         }
 
         /*
-         * Returns the booking number.
-         */
-        public override int GetBookingNb()
-        {
-            return this.bookingNb;
-        }
-
-        /*
-         * Returns the booking's customer.
-         */
-        public override PersonComponent GetCustomer()
-        {
-            return this.cust;
-        }
-
-        /*
-         * Returns the booking's list of guests.
-         */
-        public override List<PersonComponent> GetGuests()
-        {
-            return this.guests;
-        }
-
-        /*
          * Returns the number of guests included in this Booking.
          */
         public override int GetNbGuests()
@@ -118,16 +123,6 @@ namespace Program
         public override int GetNbNights()
         {
             return (departure - arrival).Days;
-        }
-
-        /*
-         * Returns the booking start and end dates.
-         */
-        public override void GetDates(out DateTime arrival, 
-                                      out DateTime departure)
-        {
-            arrival = this.arrival;
-            departure = this.departure;
         }
 
         /*
