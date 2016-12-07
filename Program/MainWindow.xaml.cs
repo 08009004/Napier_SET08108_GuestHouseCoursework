@@ -40,16 +40,9 @@ namespace Program
          */
         private void btnLoadBooking_Click(object sender, RoutedEventArgs e)
         {
-            int bookingNb = -1;
-
-            if (String.IsNullOrWhiteSpace(txtBookingRef.Text))
-            {
-                new Bookings(mFacade).ShowDialog();
-                if (mFacade != null && mFacade.CurrentBook != null)
-                {
-                    bookingNb = mFacade.CurrentBook.GetBookingNb();
-                }
-            }
+            new Bookings(mFacade).ShowDialog();
+            
+            /*
             else if (!Int32.TryParse(txtBookingRef.Text, out bookingNb))
             {
                 MessageBox.Show("Please enter a valid booking number.");
@@ -62,6 +55,7 @@ namespace Program
                                 + "Please enter a valid"
                                 + " booking number.");
             }
+             */
 
             refreshDisplay();
         }
@@ -89,16 +83,21 @@ namespace Program
             BookingComponent b = mFacade.CurrentBook;
             DateTime start;
             DateTime end;
-
-            txtBookingRef.Text = b.GetBookingNb().ToString();
-            
-            lblArrival.Visibility = Visibility.Visible;
-            lblDeparture.Visibility = Visibility.Visible;
             b.GetDates(out start, out end);
-            lblArrivalDate.Content = start.ToString().Substring(0, 10);
-            lblArrivalDate.Visibility = Visibility.Visible;
-            lblDepartureDate.Content = end.ToString().Substring(0, 10);
-            lblDepartureDate.Visibility = Visibility.Visible;
+
+            // update labels content:
+            lblBookingNbValue.Content = b.GetBookingNb().ToString();
+            lblArrivalValue.Content = start.ToString().Substring(0, 10);
+            lblDepartureValue.Content = end.ToString().Substring(0, 10);
+            
+            // make labels visible:
+            lblBooking.Visibility = Visibility.Visible;
+            lblBookingNb.Visibility = Visibility.Visible;
+            lblBookingNbValue.Visibility = Visibility.Visible;
+            lblArrival.Visibility = Visibility.Visible;
+            lblArrivalValue.Visibility = Visibility.Visible;
+            lblDeparture.Visibility = Visibility.Visible;
+            lblDepartureValue.Visibility = Visibility.Visible;
         }
 
         /*
@@ -108,11 +107,16 @@ namespace Program
         {
             PersonComponent c = mFacade.CurrentCust;
 
+            // update labels content:
+            lblCustomerNameValue.Content = c.Name;
+            lblCustomerNbValue.Content = c.GetCustNb().ToString();
+
+            // make labels visible:
             lblCustomer.Visibility = Visibility.Visible;
-            lblCustNumber.Content = "Number: " + c.GetCustNb().ToString();
-            lblCustNumber.Visibility = Visibility.Visible;
-            lblCustName.Content = "Name: " + c.Name;
-            lblCustName.Visibility = Visibility.Visible;
+            lblCustomerNb.Visibility = Visibility.Visible;
+            lblCustomerNbValue.Visibility = Visibility.Visible;
+            lblCustomerName.Visibility = Visibility.Visible;
+            lblCustomerNameValue.Visibility = Visibility.Visible;
         }
 
         /*
@@ -123,8 +127,7 @@ namespace Program
             BookingComponent b = mFacade.CurrentBook;
             PersonComponent c = mFacade.CurrentCust;
 
-            lblGuest.Visibility = Visibility.Visible;
-            lstGuests.Visibility = Visibility.Visible;
+            // update listbox content:
             if (c.IsGuest())
             {
                 lstGuests.Items.Add(c.Name);
@@ -133,6 +136,10 @@ namespace Program
             {
                 lstGuests.Items.Add(g.Name);
             }
+
+            // make label & list box visible:
+            lblGuests.Visibility = Visibility.Visible;
+            lstGuests.Visibility = Visibility.Visible;
         }
 
         /*
@@ -149,19 +156,24 @@ namespace Program
          */
         private void clearDisplay()
         {
-            txtBookingRef.Text = String.Empty;
-            lblArrival.Visibility = Visibility.Hidden;
-            lblDeparture.Visibility = Visibility.Hidden;
-            lblArrivalDate.Visibility = Visibility.Hidden;
-            lblDepartureDate.Visibility = Visibility.Hidden;
+            // hide booking data display:
+            //lblBooking.Visibility = Visibility.Hidden;
+            //lblBookingNb.Visibility = Visibility.Hidden;
+            lblBookingNbValue.Visibility = Visibility.Hidden;
+            //lblArrival.Visibility = Visibility.Hidden;
+            lblArrivalValue.Visibility = Visibility.Hidden;
+            //lblDeparture.Visibility = Visibility.Hidden;
+            lblDepartureValue.Visibility = Visibility.Hidden;
 
-            lblCustomer.Visibility = Visibility.Hidden;
-            lblCustNumber.Visibility = Visibility.Hidden;
-            lblCustName.Visibility = Visibility.Hidden;
+            // hide customer data display:
+            //lblCustomer.Visibility = Visibility.Hidden;
+            //lblCustomerNb.Visibility = Visibility.Hidden;
+            lblCustomerNbValue.Visibility = Visibility.Hidden;
+            //lblCustomerName.Visibility = Visibility.Hidden;
+            lblCustomerNameValue.Visibility = Visibility.Hidden;
 
-            lblGuest.Visibility = Visibility.Hidden;
+            // hide guests data display:
             lstGuests.Items.Clear();
-            lstGuests.Visibility = Visibility.Hidden;
         }
         
         /*
