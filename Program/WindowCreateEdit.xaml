@@ -18,26 +18,25 @@
         <TextBox x:Name="txtCustName" HorizontalAlignment="Left" Height="23" Margin="334,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblArrival" Content="Arrival:" HorizontalAlignment="Left" Margin="12,83,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblDeparture" Content="Departure:" HorizontalAlignment="Left" Margin="12,138,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstGuests" HorizontalAlignment="Left" Height="54" Margin="224,190,0,0" VerticalAlignment="Top" Width="222"/>
+        <ListBox x:Name="lstGuests" HorizontalAlignment="Left" Height="54" Margin="224,190,0,0" VerticalAlignment="Top" Width="222" MouseDoubleClick="lstGuests_MouseDoubleClick"/>
         <Label x:Name="lblGuest" Content="List of guests:" HorizontalAlignment="Left" Margin="208,164,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblHeader" Content="Create/Amend booking" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Button x:Name="btnDiscard" Content="Discard changes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.56,6.227" Margin="36,371,0,-22" Click="btnDiscard_Click"/>
-        <Button x:Name="btnNewCust" Content="Create" HorizontalAlignment="Left" Margin="212,127,0,0" VerticalAlignment="Top" Width="75" Click="btnNewCust_Click"/>
-        <Button x:Name="btnLoadCust" Content="Load" HorizontalAlignment="Left" Margin="293,127,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
-        <Button x:Name="btnAddGuest" Content="Add" HorizontalAlignment="Left" Margin="237,255,0,0" VerticalAlignment="Top" Width="63" Click="btnAddGuest_Click"/>
-        <Button x:Name="btnDeleteGuest" Content="Delete" HorizontalAlignment="Left" Margin="373,255,0,0" VerticalAlignment="Top" Width="63" Click="btnDeleteGuest_Click"/>
+        <Button x:Name="btnNewCust" Content="Create" HorizontalAlignment="Left" Margin="210,127,0,0" VerticalAlignment="Top" Width="75" Click="btnNewCust_Click"/>
+        <Button x:Name="btnLoadCust" Content="Load" HorizontalAlignment="Left" Margin="291,127,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,2.136" Click="btnLoadCust_Click"/>
+        <Button x:Name="btnNewGuest" Content="Add" HorizontalAlignment="Left" Margin="254,255,0,0" VerticalAlignment="Top" Width="75" Click="btnNewGuest_Click"/>
+        <Button x:Name="btnDeleteGuest" Content="Delete" HorizontalAlignment="Left" Margin="335,255,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteGuest_Click"/>
         <Label x:Name="lblCustAddress" Content="Address:" HorizontalAlignment="Left" Margin="224,91,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCustAddress" HorizontalAlignment="Left" Height="23" Margin="334,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="dtpArrival" HorizontalAlignment="Left" Margin="40,109,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dtpDeparture" HorizontalAlignment="Left" Margin="40,164,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAddCustToGuests" Content="Add to guests" HorizontalAlignment="Left" Margin="375,127,0,0" VerticalAlignment="Top" Width="79" Click="btnAddCustToGuests_Click"/>
+        <Button x:Name="btnAddCustToGuests" Content="Add to guests" HorizontalAlignment="Left" Margin="373,127,0,0" VerticalAlignment="Top" Width="79" Click="btnAddCustToGuests_Click"/>
         <Button x:Name="btnAddBreakfast" Content="Add breakfast" HorizontalAlignment="Left" Margin="212,324,0,0" VerticalAlignment="Top" Width="107"/>
         <Label x:Name="lblExtras" Content="Extras:" HorizontalAlignment="Left" Margin="208,293,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="btnAddEveningMeal" Content="Add evening meal" Margin="212,351,0,0" VerticalAlignment="Top" Width="107" Height="22" HorizontalAlignment="Left"/>
         <Button x:Name="btnAddCarHire" Content="Add car hire" HorizontalAlignment="Left" Margin="212,378,0,0" VerticalAlignment="Top" Width="107"/>
         <ListBox HorizontalAlignment="Left" Height="117" Margin="346,310,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="lblExtraDelete" Content="Delete selected" HorizontalAlignment="Left" Margin="212,405,0,0" VerticalAlignment="Top" Width="107"/>
-        <Button x:Name="btnEditGuest" Content="Edit" HorizontalAlignment="Left" Margin="305,255,0,0" VerticalAlignment="Top" Width="63" Click="btnEditGuest_Click"/>
 
     </Grid>
 </Window>

@@ -123,6 +123,7 @@ namespace Program
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
 
+                lstGuests.Items.Clear();
                 foreach (PersonComponent g in b.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
@@ -231,7 +232,7 @@ namespace Program
          * Opens an empty WindowGuestDetail window to input new guest details (if
          * there is still less than 4 guests booked).
          */
-        private void btnAddGuest_Click(object sender, RoutedEventArgs e)
+        private void btnNewGuest_Click(object sender, RoutedEventArgs e)
         {
             if (canAddGuest())
             {
@@ -248,7 +249,7 @@ namespace Program
             if (canAddGuest() && !isCustInGuests())
             {
                 new WindowGuestDetails(mFacade, true).ShowDialog();
-                refreshDisplay();
+                refreshGuestsDisplay();
             }
         }
 
@@ -306,7 +307,7 @@ namespace Program
         /*
          * Opens a WindowGuestDetail to edit selected guest details.
          */
-        private void btnEditGuest_Click(object sender, RoutedEventArgs e)
+        private void lstGuests_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             List<int> l = (List<int>) lstGuests.ItemsSource;
             int i = lstGuests.SelectedIndex;
@@ -336,7 +337,7 @@ namespace Program
             else
             {
                 mFacade.DeleteGuest(lstGuests.SelectedIndex);
-                refreshDisplay();
+                refreshGuestsDisplay();
             }
         }
 
@@ -347,7 +348,5 @@ namespace Program
         {
             this.Close();
         }
-
-        
     }
 }
