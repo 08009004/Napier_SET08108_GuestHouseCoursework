@@ -59,23 +59,36 @@ namespace Program
          * Generates a new booking instance on the basis of the data 
          * passed as parameters.
          */
-        public Booking GetNewBooking(PersonComponent cust, 
-                                     DateTime arrival, 
-                                     DateTime departure)
+        public BookingComponent GetNewBooking(PersonComponent customer, 
+                                              DateTime arrival, 
+                                              DateTime departure)
         {
-            return new Booking(this.nxtBookingNb++, cust, arrival, departure);
+            return new Booking(
+                            this.nxtBookingNb++, customer, arrival, departure);
+        }
+
+        /*
+         * Returns a reference to the updated booking instance.
+         */
+        public BookingComponent UpdateBooking(int bookingNb, 
+                                              PersonComponent newCustomer, 
+                                              DateTime newArrival,
+                                              DateTime newDeparture)
+        {
+            return new Booking(
+                            bookingNb, newCustomer, newArrival, newDeparture);
         }
 
         /*
          * Generates a new booking instance on the basis of the data 
          * passed as parameters.
          */
-        private Booking GetNewBooking(int bookingNb,
-                                      PersonComponent cust,
-                                      DateTime arrival,
-                                      DateTime departure)
+        private BookingComponent getNewBooking(int bookingNb,
+                                               PersonComponent customer,
+                                               DateTime arrival,
+                                               DateTime departure)
         {
-            return new Booking(bookingNb, cust, arrival, departure);
+            return new Booking(bookingNb, customer, arrival, departure);
         }
 
         /*
@@ -171,7 +184,7 @@ namespace Program
              && bData.TryGetValue(BookingField.DEPARTURE.ToString(), 
                                   out csvDeparture))
             {
-                result = GetNewBooking(Int32.Parse(bookingNb),
+                result = getNewBooking(Int32.Parse(bookingNb),
                                        personFactory.RestoreCustomer(cData),
                                        Convert.ToDateTime(csvArrival), 
                                        Convert.ToDateTime(csvDeparture));

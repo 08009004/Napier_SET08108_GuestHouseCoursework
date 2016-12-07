@@ -149,8 +149,6 @@ namespace Program
          */
         private void updateGuest()
         {
-            PersonComponent g;
-
             if (!this.isCustomer) // edit current guest
             {
                 mFacade.EditGuest(guestIndex,

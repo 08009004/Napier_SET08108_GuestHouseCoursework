@@ -142,6 +142,19 @@ namespace Program
         }
 
         /*
+         * 
+         */
+        public void UpdateBooking(DateTime arrival, DateTime departure)
+        {
+            List<PersonComponent> saved = CurrentBook.GetGuests();
+            CurrentBook = bFact.UpdateBooking(CurrentBook.GetBookingNb(), CurrentCust, arrival, departure);
+            foreach (PersonComponent g in saved)
+            {
+                CurrentBook.AddGuest(g);
+            }
+        }
+
+        /*
          * Persists the current booking of the system.
          * Returns true if the booking was saved successfully, otherwise false.
          */
@@ -188,14 +201,13 @@ namespace Program
          * Updates guest details of current customer at given index in current 
          * booking's list of guests.
          */
-        public void EditGuest(int index,
-                               PersonComponent customer,
-                               String passportNb,
-                               int age)
+        public void EditCustomerGuestDetails(int index, 
+                                             String passportNb,
+                                             int age)
         {
             CurrentBook.GetGuests().RemoveAt(index);
             CurrentBook.GetGuests().Insert(index,
-                                           pFact.GetNewGuest(customer,
+                                           pFact.GetNewGuest(CurrentCust,
                                                              passportNb,
                                                              age));
         }

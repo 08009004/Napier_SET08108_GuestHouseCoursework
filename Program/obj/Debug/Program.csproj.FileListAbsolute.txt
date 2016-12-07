@@ -130,11 +130,8 @@ D:\tmp\Program\obj\Debug\WindowCreateEdit.g.cs
 D:\tmp\Program\obj\Debug\WindowGuestDetails.baml
 D:\tmp\Program\obj\Debug\WindowGuestDetails.g.cs
 D:\jyfd\Program\bin\Debug\Program.exe.config
-D:\jyfd\Program\obj\Debug\Program.exe
-D:\jyfd\Program\obj\Debug\Program.pdb
 D:\jyfd\Program\bin\Debug\Program.exe
 D:\jyfd\Program\bin\Debug\Program.pdb
-D:\jyfd\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache
 D:\jyfd\Program\obj\Debug\MainWindow.baml
 D:\jyfd\Program\obj\Debug\NewGuest.baml
 D:\jyfd\Program\obj\Debug\WindowCreateEdit.baml
@@ -150,3 +147,5 @@ D:\jyfd\Program\obj\Debug\Program_MarkupCompile.cache
 D:\jyfd\Program\obj\Debug\Program.g.resources
 D:\jyfd\Program\obj\Debug\Program.Properties.Resources.resources
 D:\jyfd\Program\obj\Debug\Program.csproj.GenerateResource.Cache
+D:\jyfd\Program\obj\Debug\Program.exe
+D:\jyfd\Program\obj\Debug\Program.pdb

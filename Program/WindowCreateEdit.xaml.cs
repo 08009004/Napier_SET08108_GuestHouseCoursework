@@ -185,6 +185,11 @@ namespace Program
                     mFacade.CreateBooking((DateTime)dtpArrival.SelectedDate,
                                           (DateTime)dtpDeparture.SelectedDate);
                 }
+                else
+                {
+                    mFacade.UpdateBooking((DateTime)dtpArrival.SelectedDate,
+                                          (DateTime)dtpDeparture.SelectedDate);
+                }
                 mFacade.PersistCurrentBooking();
                 refreshDisplay();
             }

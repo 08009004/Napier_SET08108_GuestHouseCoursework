@@ -86,7 +86,10 @@ namespace Program
         private void clearDisplay()
         {
             clearBookingDetails();
-            lstBookings.Items.Clear();
+            if (lstBookings.Items != null)
+            {
+                lstBookings.Items.Clear();
+            }
             lstGuests.Items.Clear();
         }
         /*
