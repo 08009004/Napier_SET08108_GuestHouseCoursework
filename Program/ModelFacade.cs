@@ -176,5 +176,22 @@ namespace Program
         {
             CurrentBook.GetGuests().RemoveAt(index);
         }
+
+        /*
+         * Returns a list of all the booking numbers in the system.
+         */
+        public List<int> GetAllBookingNbs()
+        {
+            return dpFacade.GetAllBookingNbs();
+        }
+
+        /*
+         * Returns a list of all the booking numbers of bookings made 
+         * by a given customer.
+         */
+        public List<int> GetAllBookingNbs(PersonComponent customer)
+        {
+            return dpFacade.GetAllBookingNbs(customer.GetCustNb());
+        }
     }
 }

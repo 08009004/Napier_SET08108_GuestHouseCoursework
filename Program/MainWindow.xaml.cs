@@ -157,19 +157,12 @@ namespace Program
         private void clearDisplay()
         {
             // hide booking data display:
-            //lblBooking.Visibility = Visibility.Hidden;
-            //lblBookingNb.Visibility = Visibility.Hidden;
             lblBookingNbValue.Visibility = Visibility.Hidden;
-            //lblArrival.Visibility = Visibility.Hidden;
             lblArrivalValue.Visibility = Visibility.Hidden;
-            //lblDeparture.Visibility = Visibility.Hidden;
             lblDepartureValue.Visibility = Visibility.Hidden;
 
             // hide customer data display:
-            //lblCustomer.Visibility = Visibility.Hidden;
-            //lblCustomerNb.Visibility = Visibility.Hidden;
             lblCustomerNbValue.Visibility = Visibility.Hidden;
-            //lblCustomerName.Visibility = Visibility.Hidden;
             lblCustomerNameValue.Visibility = Visibility.Hidden;
 
             // hide guests data display:
