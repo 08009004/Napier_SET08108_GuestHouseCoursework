@@ -149,6 +149,15 @@ namespace Program
         }
 
         /*
+         * Returns a reference to the Booking itself it is not decorated
+         * at all.
+         */
+        public override BookingComponent Undecorate()
+        {
+            return this;
+        }
+
+        /*
          * Returns a textual representation of the Booking in order 
          * to persist it to a CSV file.
          */
