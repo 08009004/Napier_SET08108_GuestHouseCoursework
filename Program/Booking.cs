@@ -152,7 +152,7 @@ namespace Program
          * Returns a reference to the Booking itself it is not decorated
          * at all.
          */
-        public override BookingComponent Undecorate()
+        public override BookingComponent Undecorate(BookingComponent decorator)
         {
             return this;
         }

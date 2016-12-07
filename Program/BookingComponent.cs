@@ -57,11 +57,23 @@ namespace Program
         public abstract double GetCost();
 
         /* 
-         * Must return a reference to the BookingDecorator's decorated 
-         * component, or the to the BookingDecorator itself if it is 
-         * not decorated.
+         * Must return a new BookingComponent, decorated with all the
+         * same BookingDecorators except the one passed as a parameter, 
+         * or the to the Booking itself if it is not decorated.
          */
-        public abstract BookingComponent Undecorate();
+        public virtual BookingComponent Undecorate(BookingComponent decorator)
+        {
+            return this;
+        }
+
+        /*
+         * Returns true if the BookingDecorator wraps another 
+         * BookingDecorator, otherwise false.
+         */
+        public virtual bool isDecorator()
+        {
+            return false;
+        }
 
         /*
          * Must return a textual representation of the  

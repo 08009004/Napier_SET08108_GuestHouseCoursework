@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// temp
+using System.Windows;
+
 namespace Program
 {
     /* Abstract class defining the minimum implementation of 
@@ -82,6 +85,52 @@ namespace Program
             }
 
             return guests;
+        }
+
+        /* 
+         * Returns a new BookingComponent, decorated with all the
+         * same BookingDecorators except the one passed as a parameter, 
+         * or the to the Booking itself if it is not decorated.
+         */
+        public override BookingComponent Undecorate(BookingComponent decorator)
+        {
+       //     if (this == decorator) return DecoratedComponent;
+                /* Short circuit method if the decorator to remove is the
+                 * last one added.
+                 */
+
+            BookingComponent result = decorator;
+            BookingComponent component = this;
+            List<BookingComponent> references = new List<BookingComponent>();
+
+            // save all the references that must be kept:
+            while (component.isDecorator())
+            {
+                MessageBox.Show("component =\r\n\r\n" + component.ToCSV());
+                if (component != decorator)
+                {
+                    references.Add(component);
+                }
+
+                component = ((BookingDecorator)component).DecoratedComponent;
+            }
+
+            // redecorate the BookingComponent:
+            foreach (BookingComponent bComp in references)
+            {
+                MessageBox.Show("reference =\r\n\r\n" + component.ToCSV());
+            }
+
+            return result;
+        }
+
+        /*
+         * Returns true if the BookingDecorator wraps another 
+         * BookingDecorator, otherwise false.
+         */
+        public override bool isDecorator()
+        {
+            return this.DecoratedComponent != null;
         }
 
         /*

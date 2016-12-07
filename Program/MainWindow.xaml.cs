@@ -30,9 +30,23 @@ namespace Program
 
         public MainWindow()
         {
-            this.mFacade = new ModelFacade();
+            PersonFactory pf = PersonFactory.Instance;
+            BookingFactory bf = BookingFactory.Instance;
+            BookingComponent b = bf.GetNewBooking(pf.GetNewCustomer("custName", "custAddress"), 
+                                                  new DateTime(1998,04,30), 
+                                                  new DateTime(2007,11,05));
+
+            b = bf.AddBreakfast(b, "Brekfast_Diet");
+            b = bf.AddCarHire(b, "driverName", new DateTime(1998,05,12), new DateTime(1998,05,15));
+            b = bf.AddEveningMeal(b, "Brekfast_Diet");
+
+            b.Undecorate(bf.AddBreakfast(b, "Brekfast_Diet"));
+
             InitializeComponent();
-            clearDisplay();
+
+      //      this.mFacade = new ModelFacade();
+     //       InitializeComponent();
+     //       clearDisplay();
         }
 
         /*
