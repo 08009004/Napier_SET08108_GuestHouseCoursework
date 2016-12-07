@@ -41,22 +41,6 @@ namespace Program
         private void btnLoadBooking_Click(object sender, RoutedEventArgs e)
         {
             new WindowLoadBooking(mFacade).ShowDialog();
-            
-            /*
-            else if (!Int32.TryParse(txtBookingRef.Text, out bookingNb))
-            {
-                MessageBox.Show("Please enter a valid booking number.");
-            }
-            
-            if (!mFacade.RestoreBooking(bookingNb))
-            {
-                MessageBox.Show("Can't find booking number "
-                                + txtBookingRef.Text + ".\r\n"
-                                + "Please enter a valid"
-                                + " booking number.");
-            }
-             */
-
             refreshDisplay();
         }
 
@@ -128,10 +112,6 @@ namespace Program
             PersonComponent c = mFacade.CurrentCust;
 
             // update listbox content:
-            if (c.IsGuest())
-            {
-                lstGuests.Items.Add(c.Name);
-            }
             foreach (PersonComponent g in b.GetGuests())
             {
                 lstGuests.Items.Add(g.Name);
