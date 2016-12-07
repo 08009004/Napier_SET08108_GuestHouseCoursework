@@ -251,22 +251,29 @@ namespace Program
          */
         public List<String> getCurrentExtras()
         {
+
+            List<BookingDecorator> references;
+            CurrentBook.Unwrap(out references);
             List<String> extras = new List<String>();
-            foreach (BookingDecorator bd in CurrentBook.GetDecorators())
+            if (references != null)
             {
-                if (bd.GetType() == typeof(EveningMeal))
+                foreach (BookingDecorator bd in references)
                 {
-                    extras.Add("Evening meal");
-                }
-                else if (bd.GetType() == typeof(Breakfast))
-                {
-                    extras.Add("Breakfast");
-                }
-                else if (bd.GetType() == typeof(CarHire))
-                {
-                    extras.Add("CarHire");
+                    if (bd.GetType() == typeof(EveningMeal))
+                    {
+                        extras.Add("Evening meal");
+                    }
+                    else if (bd.GetType() == typeof(Breakfast))
+                    {
+                        extras.Add("Breakfast");
+                    }
+                    else if (bd.GetType() == typeof(CarHire))
+                    {
+                        extras.Add("CarHire");
+                    }
                 }
             }
+            
             return  extras;
         }
     }

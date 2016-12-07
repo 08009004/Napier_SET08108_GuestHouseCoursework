@@ -87,53 +87,24 @@ namespace Program
             return guests;
         }
 
-        /* 
-         * Returns a new BookingComponent, decorated with all the
-         * same BookingDecorators except the one passed as a parameter, 
-         * or the to the Booking itself if it is not decorated.
-         */
-        public override BookingComponent Undecorate(BookingComponent decorator)
-        {
-       //     if (this == decorator) return DecoratedComponent;
-                /* Short circuit method if the decorator to remove is the
-                 * last one added.
-                 */
-
-            BookingComponent result = decorator;
-            BookingComponent component = this;
-            List<BookingDecorator> references = GetDecorators();
-
-            // redecorate the BookingComponent:
-            result = component;
-            MessageBox.Show("result =\r\n\r\n" + result.ToCSV());
-
-            foreach (BookingDecorator bComp in references)
-            {
-                MessageBox.Show("reference =\r\n\r\n" + bComp.ToCSV());
-                bComp.DecoratedComponent = result;
-                result = bComp;
-            }
-
-            MessageBox.Show("result =\r\n\r\n" + result.ToCSV());
-            return result;
-        }
-
         /*
-         * Returns references to all the BookingDecorator instances in the
-         * decoration stack.
+         * Returns the root BookingComponent of the decoration stack; 
+         * references outputs a list of pointers to all the BookingDecorator 
+         * instances in the decoration stack.
          */
-        public override List<BookingDecorator> GetDecorators()
+        public override BookingComponent Unwrap(out List<BookingDecorator> references)
         {
             BookingComponent component = this;
-            List<BookingDecorator> references = new List<BookingDecorator>();
+            List<BookingDecorator> decorators = new List<BookingDecorator>();
 
             while (component.isDecorator())
             {
-                references.Add((BookingDecorator)component);
+                decorators.Add((BookingDecorator)component);
                 component = ((BookingDecorator)component).DecoratedComponent;
             }
 
-            return references;
+            references = decorators;
+            return component;
         }
 
         /*
@@ -144,6 +115,37 @@ namespace Program
         {
             return this.DecoratedComponent != null;
         }
+
+        /*
+         * Returns a reference to a BookingComponent identical in content to
+         * caller instance, except unwraped from the BookingDecorator passed 
+         * as a parameter.
+         */
+        /* 
+         * Returns a new BookingComponent, decorated with all the
+         * same BookingDecorators except the one passed as a parameter, 
+         * or the to the Booking itself if it is not decorated.
+         */
+        /*
+        public override BookingComponent Undecorate(BookingDecorator reference)
+        {
+            //if (this == decorator) return DecoratedComponent;
+                /* Short circuit method if the decorator to remove is the
+                 * last one added.
+                 */
+        /*
+            BookingComponent result = base.Undecorate();
+            List<BookingDecorator> references = this.Unwrap();
+            foreach (BookingDecorator decorator in this.Unwrap())
+            {
+                if (decorator != reference)
+                {
+                    decorator.DecoratedComponent = result;
+                    result = decorator;
+                }
+            }
+        }
+         */
 
         /*
          * Returns the cost of the decorated BookingComponent

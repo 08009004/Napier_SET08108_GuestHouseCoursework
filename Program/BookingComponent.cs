@@ -57,19 +57,12 @@ namespace Program
         public abstract double GetCost();
 
         /* 
-         * Returns the Booking itself (if it is not decorated).
+         * Returns the BookingComponent itself; and references is null.
          */
-        public virtual BookingComponent Undecorate(BookingComponent decorator)
+        public virtual BookingComponent Unwrap(out List<BookingDecorator> references)
         {
+            references = null;
             return this;
-        }
-
-        /* 
-         * Returns null (if the BookingComponent is not decorated).
-         */
-        public virtual List<BookingDecorator> GetDecorators()
-        {
-            return null;
         }
 
         /*
@@ -79,6 +72,14 @@ namespace Program
         public virtual bool isDecorator()
         {
             return false;
+        }
+
+        /* 
+         * Returns the BookingComponent itself.
+         */
+        public virtual BookingComponent Undecorate(BookingDecorator reference)
+        {
+            return this;
         }
 
         /*
