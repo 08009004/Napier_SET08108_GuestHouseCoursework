@@ -74,9 +74,6 @@
     <Compile Include="Guest.cs" />
     <Compile Include="GuestField.cs" />
     <Compile Include="ModelFacade.cs" />
-    <Compile Include="NewGuest.xaml.cs">
-      <DependentUpon>NewGuest.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="PersonComponent.cs" />
     <Compile Include="PersonDecorator.cs" />
@@ -103,10 +100,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NewGuest.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="WindowCreateEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
