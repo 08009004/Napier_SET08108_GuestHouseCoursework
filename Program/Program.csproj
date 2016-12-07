@@ -85,6 +85,9 @@
     <Compile Include="WindowCreateEdit.xaml.cs">
       <DependentUpon>WindowCreateEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowGuestDetails.xaml.cs">
+      <DependentUpon>WindowGuestDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowLoadBooking.xaml.cs">
       <DependentUpon>WindowLoadBooking.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowCreateEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowGuestDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

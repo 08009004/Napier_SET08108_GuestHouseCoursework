@@ -228,13 +228,14 @@ namespace Program
         }
 
         /*
-         * Routine executed upon clicking the 'Add Guest' button.
+         * Opens an empty WindowGuestDetail window to input new guest details (if
+         * there is still less than 4 guests booked).
          */
         private void btnAddGuest_Click(object sender, RoutedEventArgs e)
         {
             if (canAddGuest())
             {
-                new NewGuest(mFacade, false).ShowDialog();
+                new WindowGuestDetails(mFacade, false).ShowDialog();
                 refreshDisplay();
             }
         }
@@ -246,7 +247,7 @@ namespace Program
         {
             if (canAddGuest() && !isCustInGuests())
             {
-                new NewGuest(mFacade, true).ShowDialog();
+                new WindowGuestDetails(mFacade, true).ShowDialog();
                 refreshDisplay();
             }
         }
@@ -264,7 +265,7 @@ namespace Program
             {
                 canAddGuest = false;
                 MessageBox.Show("Please save the booking before adding"
-                                + " guests.");
+                                + " the guests.");
             }
             else if (mFacade.CurrentBook.GetGuests().Count >= 4)
             {
@@ -303,7 +304,27 @@ namespace Program
         }
 
         /*
-         * Routine executed upon clicking the 'Delete' button.
+         * Opens a WindowGuestDetail to edit selected guest details.
+         */
+        private void btnEditGuest_Click(object sender, RoutedEventArgs e)
+        {
+            List<int> l = (List<int>) lstGuests.ItemsSource;
+            int i = lstGuests.SelectedIndex;
+
+            if (i < 0) 
+            {
+                MessageBox.Show("Please /*double click on a booking*/ from the"
+                            + " list to load it into the system.");
+            }
+            else 
+            {
+                new WindowGuestDetails(mFacade, false, i).ShowDialog();
+                refreshGuestsDisplay();
+            }
+        }
+
+        /*
+         * Deletes selected guest from the booking.
          */
         private void btnDeleteGuest_Click(object sender, RoutedEventArgs e)
         {
@@ -326,5 +347,7 @@ namespace Program
         {
             this.Close();
         }
+
+        
     }
 }
