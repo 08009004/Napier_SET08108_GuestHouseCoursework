@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 namespace Program
 {
     /*
-     * Interaction logic for Bookings.xaml
+     * Interaction logic for WindowLoadBooking.xaml
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
-     * last modified: 2016-12-06
+     * last modified: 2016-12-07
      */
-    public partial class Bookings : Window
+    public partial class WindowLoadBooking : Window
     {
         // Property:
         // points to a ModelFacade instance.
@@ -29,7 +29,7 @@ namespace Program
         /*
          * Constructor.
          */
-        public Bookings(ModelFacade mFacade)
+        public WindowLoadBooking(ModelFacade mFacade)
         {
             this.mFacade = mFacade;
             InitializeComponent();

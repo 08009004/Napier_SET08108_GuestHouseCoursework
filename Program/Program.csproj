@@ -60,9 +60,6 @@
     <Compile Include="BookingFactory.cs" />
     <Compile Include="BookingFactoryField.cs" />
     <Compile Include="BookingField.cs" />
-    <Compile Include="Bookings.xaml.cs">
-      <DependentUpon>Bookings.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Breakfast.cs" />
     <Compile Include="BreakfastField.cs" />
     <Compile Include="CarHire.cs" />
@@ -88,10 +85,9 @@
     <Compile Include="PersonDecorator.cs" />
     <Compile Include="PersonFactory.cs" />
     <Compile Include="PersonFactoryField.cs" />
-    <Page Include="Bookings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="WindowLoadBooking.xaml.cs">
+      <DependentUpon>WindowLoadBooking.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -109,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewGuest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowLoadBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

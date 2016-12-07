@@ -20,7 +20,7 @@ namespace Program
      * Interaction logic for MainWindow.xaml
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
-     * last modified: 2016-12-06
+     * last modified: 2016-12-07
      */
     public partial class MainWindow : Window
     {
@@ -40,7 +40,7 @@ namespace Program
          */
         private void btnLoadBooking_Click(object sender, RoutedEventArgs e)
         {
-            new Bookings(mFacade).ShowDialog();
+            new WindowLoadBooking(mFacade).ShowDialog();
             
             /*
             else if (!Int32.TryParse(txtBookingRef.Text, out bookingNb))
