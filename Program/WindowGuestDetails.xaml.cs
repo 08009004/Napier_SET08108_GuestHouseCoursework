@@ -22,7 +22,7 @@ namespace Program
      */
     public partial class WindowGuestDetails : Window
     {
-        // Property: 
+        // Properties: 
         // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
         // true if the new guest to create is the booking's customer.
@@ -88,7 +88,7 @@ namespace Program
         }
 
         /*
-         * Executed upon clicking 'Add guest' button.
+         * Saves the new guest or guest detail changes.
          */
         private void btnSaveGuest_Click(object sender, RoutedEventArgs e)
         {
@@ -96,58 +96,13 @@ namespace Program
             {
                 if (this.guestIndex >= 0)
                 {
-                    PersonComponent g;
-                    if (!this.isCustomer) // edit current guest
-                    {
-                        mFacade.EditGuest(guestIndex,
-                                          txtName.Text,
-                                          txtPassportNb.Text,
-                                          Int32.Parse(txtAge.Text));
-                        
-                    }
-                    else // edit current customer's guest properties
-                    {
-                        g = mFacade.PFact.GetNewGuest(
-                                                mFacade.CurrentCust,
-                                                txtPassportNb.Text,
-                                                Int32.Parse(txtAge.Text));
-                        mFacade.CurrentBook
-                               .GetGuests()
-                               .RemoveAt(this.guestIndex);
-                        mFacade.CurrentBook
-                               .GetGuests()
-                               .Insert(this.guestIndex, g);
-                    }
+                    updateGuest();
                 }
                 else
                 {
-                    if (!this.isCustomer) // create and add new guest
-                    {
-                        mFacade.AddGuest(txtName.Text,
-                                         txtPassportNb.Text,
-                                         Int32.Parse(txtAge.Text));
-                    }
-                    else // decorate current customer as guest and add to list
-                    {
-                        mFacade.AddCustomerToGuests(txtPassportNb.Text,
-                                                    Int32.Parse(txtAge.Text));
-                    }
+                    createGuest();
                 }
                 this.Close();
-                /*
-                if (!this.isCustomer)
-                {
-                    mFacade.AddGuest(txtName.Text,
-                                     txtPassportNb.Text,
-                                     Int32.Parse(txtAge.Text));
-                }
-                else
-                {
-                    mFacade.AddCustomerToGuests(txtPassportNb.Text,
-                                                Int32.Parse(txtAge.Text));
-                }
-                this.Close();
-                 */
             }
         }
 
@@ -187,6 +142,55 @@ namespace Program
             }
 
             return areValidValues;
+        }
+
+        /*
+         * Updates guest details according to window TextBoxes contents.
+         */
+        private void updateGuest()
+        {
+            PersonComponent g;
+
+            if (!this.isCustomer) // edit current guest
+            {
+                mFacade.EditGuest(guestIndex,
+                                  txtName.Text,
+                                  txtPassportNb.Text,
+                                  Int32.Parse(txtAge.Text));
+
+            }
+            else // edit current customer's guest properties
+            {
+                g = mFacade.PFact.GetNewGuest(
+                                        mFacade.CurrentCust,
+                                        txtPassportNb.Text,
+                                        Int32.Parse(txtAge.Text));
+                mFacade.CurrentBook
+                       .GetGuests()
+                       .RemoveAt(this.guestIndex);
+                mFacade.CurrentBook
+                       .GetGuests()
+                       .Insert(this.guestIndex, g);
+            }
+        }
+
+        /*
+         * Creates new guest or decorates current customer according to window 
+         * TextBoxes contents.
+         */
+        private void createGuest()
+        {
+            if (!this.isCustomer) // create and add new guest
+            {
+                mFacade.AddGuest(txtName.Text,
+                                 txtPassportNb.Text,
+                                 Int32.Parse(txtAge.Text));
+            }
+            else // decorate current customer as guest and add to list
+            {
+                mFacade.AddCustomerToGuests(txtPassportNb.Text,
+                                            Int32.Parse(txtAge.Text));
+            }
         }
     }
 }
