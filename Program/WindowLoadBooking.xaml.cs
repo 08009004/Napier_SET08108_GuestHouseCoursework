@@ -43,7 +43,6 @@ namespace Program
         private void refreshDisplay()
         {
             clearDisplay();
-
             lstBookings.ItemsSource = mFacade.GetAllBookingNbs();
         }
 
@@ -77,7 +76,7 @@ namespace Program
             }
             else
             {
-                clearBookingDetails();
+                refreshDisplay();
             }
         }
 
@@ -86,7 +85,7 @@ namespace Program
          */
         private void clearDisplay()
         {
-            //lblBooking.Visibility = Visibility.Hidden;
+            clearBookingDetails();
             lstBookings.Items.Clear();
             lstGuests.Items.Clear();
         }
@@ -112,10 +111,17 @@ namespace Program
         /*
          * loads selected booking into the system when double clicking on it.
          */
-        private void lstBookings_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void lstBookings_MouseDoubleClick(object sender, 
+                                                  MouseButtonEventArgs e)
         {
             List<int> l = (List<int>) lstBookings.ItemsSource;
-            mFacade.RestoreBooking(l.ElementAt(lstBookings.SelectedIndex));
+            int i = lstBookings.SelectedIndex;
+
+            if (!mFacade.RestoreBooking(l.ElementAt(i))) 
+            {
+                MessageBox.Show("Please double click on a booking from the"
+                            + " list to load it into the system.");
+            }
             refreshBookDetailDisplay();
         }
     }
