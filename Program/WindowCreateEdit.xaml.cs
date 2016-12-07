@@ -63,6 +63,7 @@ namespace Program
             txtCustAddress.Text = String.Empty;
 
             lstGuests.Items.Clear();
+            lstExtras.Items.Clear();
         }
 
         /*
@@ -76,7 +77,7 @@ namespace Program
             refreshBookingDisplay();
             refreshCustomerDisplay();
             refreshGuestsDisplay();
-
+            refreshExtrasDisplay();
         }
 
         /*
@@ -127,6 +128,21 @@ namespace Program
                 foreach (PersonComponent g in b.GetGuests())
                 {
                     lstGuests.Items.Add(g.Name);
+                }
+            }
+        }
+
+        /*
+         * Refreshes the extras fields displayed in the window.
+         */
+        private void refreshExtrasDisplay()
+        {
+            if (mFacade.CurrentBook != null)
+            {
+                lstExtras.Items.Clear();
+                foreach (String s in mFacade.getCurrentExtras())
+                {
+                    lstExtras.Items.Add(s);
                 }
             }
         }
