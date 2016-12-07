@@ -117,26 +117,21 @@ namespace Program
         }
 
         /*
-         * Returns a reference to a BookingComponent identical in content to
-         * caller instance, except unwraped from the BookingDecorator passed 
-         * as a parameter.
+         * Returns a reference to a new BookingComponent identical in content 
+         * to calling instance, except unwraped from the BookingDecorator 
+         * passed as a parameter (or the to the Booking itself if it is not 
+         * decorated at all).
          */
-        /* 
-         * Returns a new BookingComponent, decorated with all the
-         * same BookingDecorators except the one passed as a parameter, 
-         * or the to the Booking itself if it is not decorated.
-         */
-        /*
         public override BookingComponent Undecorate(BookingDecorator reference)
         {
             //if (this == decorator) return DecoratedComponent;
                 /* Short circuit method if the decorator to remove is the
                  * last one added.
                  */
-        /*
-            BookingComponent result = base.Undecorate();
-            List<BookingDecorator> references = this.Unwrap();
-            foreach (BookingDecorator decorator in this.Unwrap())
+            List<BookingDecorator> references;
+            BookingComponent result = this.Unwrap(out references);
+            
+            foreach (BookingDecorator decorator in references)
             {
                 if (decorator != reference)
                 {
@@ -144,8 +139,9 @@ namespace Program
                     result = decorator;
                 }
             }
+
+            return result;
         }
-         */
 
         /*
          * Returns the cost of the decorated BookingComponent

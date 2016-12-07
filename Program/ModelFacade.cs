@@ -246,8 +246,8 @@ namespace Program
         }
 
         /*
-         * Returns a list of all the CurrentBooking's decorators
-         * (= extra)
+         * Returns a list of textual representations of each of the 
+         * CurrentBooking's decorators (= extra).
          */
         public List<String> getCurrentExtras()
         {
@@ -273,8 +273,21 @@ namespace Program
                     }
                 }
             }
-            
             return  extras;
+        }
+
+        /*
+         * Removes the selected extra from the booking.
+         */
+        public void removeExtra(int index) 
+        {
+            List<BookingDecorator> references;
+            CurrentBook.Unwrap(out references);
+            //CurrentBook = CurrentBook.Unwrap(out references);
+            if (references != null)
+            {
+                CurrentBook = CurrentBook.Undecorate(references.ElementAt(index));
+            }
         }
     }
 }

@@ -374,5 +374,19 @@ namespace Program
         {
             this.Close();
         }
+
+        private void btnExtraDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstExtras.SelectedIndex >= 0)
+            {
+                mFacade.removeExtra(lstExtras.SelectedIndex);
+                refreshExtrasDisplay();
+            }
+            else
+            {
+                MessageBox.Show("Please select the extra that you want to"
+                                + " delete from the booking");
+            }
+        }
     }
 }
