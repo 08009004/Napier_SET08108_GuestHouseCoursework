@@ -161,16 +161,9 @@ namespace Program
             }
             else // edit current customer's guest properties
             {
-                g = mFacade.PFact.GetNewGuest(
-                                        mFacade.CurrentCust,
-                                        txtPassportNb.Text,
-                                        Int32.Parse(txtAge.Text));
-                mFacade.CurrentBook
-                       .GetGuests()
-                       .RemoveAt(this.guestIndex);
-                mFacade.CurrentBook
-                       .GetGuests()
-                       .Insert(this.guestIndex, g);
+                mFacade.EditCustomerGuestDetails(guestIndex,
+                                                 txtPassportNb.Text,
+                                                 Int32.Parse(txtAge.Text));
             }
         }
 
