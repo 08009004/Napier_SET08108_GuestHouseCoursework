@@ -108,10 +108,7 @@ D:\htr\Program\obj\Debug\Program_MarkupCompile.cache
 D:\htr\Program\obj\Debug\Program.g.resources
 D:\htr\Program\obj\Debug\Program.Properties.Resources.resources
 D:\htr\Program\obj\Debug\Program.csproj.GenerateResource.Cache
-<<<<<<< HEAD
 D:\tmp\Program\obj\Debug\WindowLoadBooking.g.cs
-=======
->>>>>>> origin/master
 D:\tmp\Program\bin\Debug\Program.exe.config
 D:\tmp\Program\bin\Debug\Program.exe
 D:\tmp\Program\bin\Debug\Program.pdb
