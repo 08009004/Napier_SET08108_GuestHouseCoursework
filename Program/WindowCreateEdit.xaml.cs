@@ -18,7 +18,7 @@ namespace Program
      * Interaction logic for WindowCreateEdit.xaml
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
-     * last modified: 2016-12-07
+     * last modified: 2016-12-08
      */
     public partial class WindowCreateEdit : Window
     {

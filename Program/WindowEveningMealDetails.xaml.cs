@@ -14,13 +14,27 @@ using System.Windows.Shapes;
 
 namespace Program
 {
-    /// <summary>
-    /// Interaction logic for WindowEveningMealDetails.xaml
-    /// </summary>
+    /*
+     * Interaction logic for WindowEveningMealDetails.xaml
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-08
+     */
     public partial class WindowEveningMealDetails : Window
     {
-        public WindowEveningMealDetails()
+        //PROPERTIES:
+
+        // reference to calling window's ModelFacade instance:
+        private ModelFacade mFacade;
+
+        // METHODS:
+
+        /*
+         * Constructor.
+         */
+        public WindowEveningMealDetails(ModelFacade mFacade)
         {
+            this.mFacade = mFacade;
             InitializeComponent();
         }
     }

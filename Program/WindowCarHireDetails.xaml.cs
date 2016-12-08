@@ -14,13 +14,27 @@ using System.Windows.Shapes;
 
 namespace Program
 {
-    /// <summary>
-    /// Interaction logic for WindowCarHireDetails.xaml
-    /// </summary>
+    /*
+     * Interaction logic for WindowCarHireDetails.xaml
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-08
+     */
     public partial class WindowCarHireDetails : Window
     {
-        public WindowCarHireDetails()
+        //PROPERTIES:
+
+        // reference to calling window's ModelFacade instance:
+        private ModelFacade mFacade;
+
+        // METHODS:
+
+        /*
+         * Constructor.
+         */
+        public WindowCarHireDetails(ModelFacade mFacade)
         {
+            this.mFacade = mFacade;
             InitializeComponent();
         }
     }
