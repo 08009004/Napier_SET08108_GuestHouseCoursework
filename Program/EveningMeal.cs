@@ -30,6 +30,8 @@ namespace Program
          */
         public override float GetCost()
         {
+            int nbGuests = base.DecoratedComponent.GetNbGuests();
+            int nbNights = base.DecoratedComponent.GetNbNights();
             return 15 * base.DecoratedComponent.GetNbGuests()
                       * base.DecoratedComponent.GetNbNights();
         }
