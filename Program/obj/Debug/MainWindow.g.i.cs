@@ -191,6 +191,14 @@ namespace Program {
         #line default
         #line hidden
         
+        
+        #line 40 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnInvoice;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -301,6 +309,15 @@ namespace Program {
             return;
             case 19:
             this.lblCustomerNameValue = ((System.Windows.Controls.Label)(target));
+            return;
+            case 20:
+            this.btnInvoice = ((System.Windows.Controls.Button)(target));
+            
+            #line 40 "..\..\MainWindow.xaml"
+            this.btnInvoice.Click += new System.Windows.RoutedEventHandler(this.btnInvoice_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;
