@@ -93,7 +93,7 @@ namespace Program
                 MessageBox.Show("Please enter a driver name for the"
                                 + "car hire.");
             }
-            else if (dtpStart == null)
+            else if (dtpStart.SelectedDate == null)
             {
                 areValidValues = false;
                 MessageBox.Show("Please select a start date for the"
@@ -108,14 +108,14 @@ namespace Program
                                 + "Please select a start date between"
                                 + " booking arrival and departure dates.");
             }
-            else if (dtpEnd == null)
+            else if (dtpEnd.SelectedDate == null)
             {
                 areValidValues = false;
                 MessageBox.Show("Please select an end date for the"
                                 + "car hire.");
             }
-            else if (dtpEnd.SelectedDate < arrival
-                  || dtpEnd.SelectedDate >= departure)
+            else if (dtpEnd.SelectedDate <= arrival
+                  || dtpEnd.SelectedDate > departure)
             {
                 areValidValues = false;
                 MessageBox.Show("The selected car hire end date is outwith "
