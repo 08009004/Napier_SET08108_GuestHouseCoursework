@@ -124,7 +124,7 @@ namespace Program
          */
         public override BookingComponent Undecorate(BookingDecorator reference)
         {
-            //if (this == decorator) return DecoratedComponent;
+            if (this == reference) return DecoratedComponent;
                 /* Short circuit method if the decorator to remove is the
                  * last one added.
                  */

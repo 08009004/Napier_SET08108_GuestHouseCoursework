@@ -35,7 +35,7 @@
         <Label x:Name="lblExtras" Content="Extras:" HorizontalAlignment="Left" Margin="208,293,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="btnAddEveningMeal" Content="Add evening meal" Margin="212,351,0,0" VerticalAlignment="Top" Width="107" Height="22" HorizontalAlignment="Left" Click="btnAddEveningMeal_Click"/>
         <Button x:Name="btnAddCarHire" Content="Add car hire" HorizontalAlignment="Left" Margin="212,378,0,0" VerticalAlignment="Top" Width="107" Click="btnAddCarHire_Click"/>
-        <ListBox x:Name="lstExtras" HorizontalAlignment="Left" Height="117" Margin="346,310,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="lstExtras" HorizontalAlignment="Left" Height="117" Margin="346,310,0,0" VerticalAlignment="Top" Width="100" MouseDoubleClick="lstExtras_MouseDoubleClick"/>
         <Button x:Name="btnExtraDelete" Content="Delete selected" HorizontalAlignment="Left" Margin="212,405,0,0" VerticalAlignment="Top" Width="107" Click="btnExtraDelete_Click"/>
 
     </Grid>

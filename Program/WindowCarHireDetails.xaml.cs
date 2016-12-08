@@ -27,9 +27,8 @@ namespace Program
         // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
 
-        // index of the extra in the current booking's decoration stack
-        // ( or -1 if new extra):
-        private int index;
+        // points to the CarHire extra edited (is null when creating new one).
+        private BookingDecorator carHire;
 
         // METHODS:
 
@@ -38,19 +37,26 @@ namespace Program
          * booking's decoration stack index as returned by 
          * ModelFacade.GetCurrentExtras()) or -1 for a new extra.
          */
-        public WindowCarHireDetails(ModelFacade mFacade, int index)
+        public WindowCarHireDetails(ModelFacade mFacade, 
+                                    BookingDecorator instance)
         {
             this.mFacade = mFacade;
-            this.index = index;
+            this.carHire = instance;
             InitializeComponent();
 
-            if (index >= 0)
+            if (this.carHire != null)
             {
-                // txtDietRequirements.Text = "display current value at index: " + index;
+                DateTime start;
+                DateTime end;
+                ((CarHire)instance).GetHireDates(out start, out end);
+                dtpStart.SelectedDate = start;
+                dtpEnd.SelectedDate = end;
+
+                txtDriverName.Text = ((CarHire)instance).GetDriverName();
             }
             else
             {
-                // txtDietRequirements.Text = String.Empty;
+                txtDriverName.Text = String.Empty;
             }
         }
 
@@ -61,9 +67,12 @@ namespace Program
         {
             if (areAllValuesValid())
             {
-                if (index >= 0)
+                if (this.carHire != null)
                 {
-                    // update
+                    mFacade.UpdateCarHire(this.carHire, 
+                                          txtDriverName.Text, 
+                                          (DateTime)dtpStart.SelectedDate, 
+                                          (DateTime)dtpEnd.SelectedDate);
                 }
                 else
                 {

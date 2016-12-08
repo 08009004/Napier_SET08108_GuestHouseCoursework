@@ -27,9 +27,8 @@ namespace Program
         // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
 
-        // index of the extra in the current booking's decoration stack
-        // ( or -1 if new extra):
-        private int index;
+        // points to the Breakfast edited (is null when creating new one).
+        private BookingDecorator breakfast;
 
         // METHODS:
 
@@ -38,15 +37,17 @@ namespace Program
          * booking's decoration stack as returned by 
          * ModelFacade.GetCurrentExtras()) or -1 for a new extra.
          */
-        public WindowBreakfastDetails(ModelFacade mFacade, int index)
+        public WindowBreakfastDetails(ModelFacade mFacade, 
+                                      BookingDecorator instance)
         {
             this.mFacade = mFacade;
-            this.index = index;
+            this.breakfast = instance;
             InitializeComponent();
 
-            if (index >= 0)
+            if (this.breakfast != null)
             {
-                txtDietRequirements.Text = "display current value at index: " + index;
+                txtDietRequirements.Text 
+                            = ((Breakfast)instance).GetDietRequirements();
             }
             else
             {
@@ -59,9 +60,10 @@ namespace Program
          */
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (index >= 0)
+            if (this.breakfast != null)
             {
-                // update
+                mFacade.UpdateBreakfast(this.breakfast,
+                                        txtDietRequirements.Text);
             }
             else
             {

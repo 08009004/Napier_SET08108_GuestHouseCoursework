@@ -16,8 +16,19 @@ namespace Program
     {
         // Properties:
         private String driverName;
+        public String GetDriverName()
+        {
+            return this.driverName;
+        }
+
         private DateTime start;
         private DateTime end;
+        public void GetHireDates(out DateTime start,
+                                 out DateTime end)
+        {
+            start = this.start;
+            end = this.end;
+        }
 
         /*
          * Constructor.

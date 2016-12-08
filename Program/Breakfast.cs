@@ -16,6 +16,10 @@ namespace Program
     {
         // Property:
         private String dietRequirement;
+        public String GetDietRequirements()
+        {
+            return this.dietRequirement;
+        }
 
         /*
          * Constructor.

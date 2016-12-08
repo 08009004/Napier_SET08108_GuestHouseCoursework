@@ -214,7 +214,7 @@ namespace Program
             if (mFacade.CurrentBook != null)
             {
                 lstExtras.Items.Clear();
-                foreach (String s in mFacade.GetCurrentExtras())
+                foreach (String s in mFacade.GetCurrentExtrasNames())
                 {
                     lstExtras.Items.Add(s);
                 }
@@ -355,10 +355,14 @@ namespace Program
             List<int> l = (List<int>) lstGuests.ItemsSource;
             int i = lstGuests.SelectedIndex;
 
-            if (i < 0) 
+            if (mFacade.GetCurrentNbGuests() == 0)
             {
-                MessageBox.Show("Please /*double click on a booking*/ from the"
-                            + " list to load it into the system.");
+                MessageBox.Show("There is currently no guests booked.");
+            }
+            else if(i < 0) 
+            {
+                MessageBox.Show("Please double click on the guest that"
+                            + " you want to edit");
             }
             else 
             {
@@ -398,7 +402,7 @@ namespace Program
             }
             else
             {
-                new WindowBreakfastDetails(mFacade, -1).ShowDialog();
+                new WindowBreakfastDetails(mFacade, null).ShowDialog();
                 refreshExtrasDisplay();
             }
         }
@@ -415,7 +419,7 @@ namespace Program
             }
             else
             {
-                new WindowEveningMealDetails(mFacade, -1).ShowDialog();
+                new WindowEveningMealDetails(mFacade, null).ShowDialog();
                 refreshExtrasDisplay();
             }
         }
@@ -432,7 +436,46 @@ namespace Program
             }
             else
             {
-                new WindowCarHireDetails(mFacade, -1).ShowDialog();
+                new WindowCarHireDetails(mFacade, null).ShowDialog();
+                refreshExtrasDisplay();
+            }
+        }
+
+        /*
+         * Opens a Window{ExtraType}Details to amend selected extra.
+         */
+        private void lstExtras_MouseDoubleClick(object sender, 
+                                                MouseButtonEventArgs e)
+        {
+            List<BookingDecorator> extras = mFacade.GetCurrentExtras();
+            int i = lstExtras.SelectedIndex;
+
+            if (extras != null && extras.Count == 0)
+            {
+                MessageBox.Show("There is no extra for this booking"
+                                + " at present.");
+            }
+            else if(i < 0) 
+            {
+                MessageBox.Show("Please double click on the extra that"
+                            + " you want to edit");
+            }
+            else 
+            {
+                if (extras.ElementAt(i).GetType() == typeof(Breakfast))
+                {
+                    new WindowBreakfastDetails(mFacade, extras.ElementAt(i)).ShowDialog();
+                    
+                }
+                else if (extras.ElementAt(i).GetType() == typeof(EveningMeal)) 
+                {
+                    new WindowEveningMealDetails(mFacade, extras.ElementAt(i)).ShowDialog();
+                }
+                else if (extras.ElementAt(i).GetType() == typeof(CarHire))
+                {
+                    new WindowCarHireDetails(mFacade, extras.ElementAt(i)).ShowDialog();
+                }
+
                 refreshExtrasDisplay();
             }
         }

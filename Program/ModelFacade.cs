@@ -71,6 +71,20 @@ namespace Program
         }
 
         /*
+         * Returns the number of guests currently booked for the current 
+         * booking(also 0 if no booking is currently loaded).
+         */
+        public int GetCurrentNbGuests()
+        {
+            int nbGuests = 0;
+            if (CurrentBook != null)
+            {
+                nbGuests = CurrentBook.GetNbGuests();
+            }
+            return nbGuests;
+        }
+
+        /*
          * Returns the current booking's number of nights, or -1 if no 
          * booking is currently loaded.
          */
@@ -94,7 +108,7 @@ namespace Program
             float costPerNight = -1;
             if (CurrentBook != null)
             {
-                List<BookingDecorator> extras;
+                List<BookingDecorator> extras = GetCurrentExtras();
                 costPerNight = CurrentBook.Unwrap(out extras).GetCostPerNight();
             }
             return costPerNight;
@@ -110,8 +124,7 @@ namespace Program
 
             if (CurrentBook != null)
             {
-                List<BookingDecorator> extras;
-                CurrentBook.Unwrap(out extras);
+                List<BookingDecorator> extras = GetCurrentExtras();
 
                 breakfastsCost = 0;
 
@@ -139,8 +152,7 @@ namespace Program
 
             if (CurrentBook != null)
             {
-                List<BookingDecorator> extras;
-                CurrentBook.Unwrap(out extras);
+                List<BookingDecorator> extras = GetCurrentExtras();
 
                 eveningMealsCost = 0;
 
@@ -168,8 +180,7 @@ namespace Program
 
             if (CurrentBook != null)
             {
-                List<BookingDecorator> extras;
-                CurrentBook.Unwrap(out extras);
+                List<BookingDecorator> extras = GetCurrentExtras();
 
                 carHiresCost = 0;
 
@@ -286,18 +297,6 @@ namespace Program
             else
             {
                 CurrentCust = pFact.RestoreCustomer(customerData);
-                /*
-                if (CurrentBook != null)
-                {
-                    foreach (PersonComponent g in CurrentBook.GetGuests())
-                    {
-                        if (g.IsCustomer())
-                        {
-                            CurrentBook.GetGuests().Remove(g);
-                        }
-                    }
-                }
-                 */
             }
             return wasRestored;
         }
@@ -470,15 +469,64 @@ namespace Program
         }
 
         /*
-         * Returns a list of textual representations of each of the 
-         * CurrentBooking's decorators (= extra).
+         * Updates properties of a given Breakfast.
          */
-        public List<String> GetCurrentExtras()
+        public void UpdateBreakfast(BookingDecorator reference, 
+                                    String newDietRequirements)
+        {
+            CurrentBook = CurrentBook.Undecorate(reference);
+            CurrentBook = bFact.AddBreakfast(CurrentBook, 
+                                             newDietRequirements);
+        }
+
+        /*
+         * Updates properties of a given EveningMeal.
+         */
+        public void UpdateEveningMeal(BookingDecorator reference,
+                                      String newDietRequirements)
+        {
+            CurrentBook = CurrentBook.Undecorate(reference);
+            CurrentBook = bFact.AddEveningMeal(CurrentBook, 
+                                               newDietRequirements);
+        }
+
+        /*
+         * Updates properties of a given CarHire.
+         */
+        public void UpdateCarHire(BookingDecorator reference,
+                                  String newDriverName,
+                                  DateTime newStart,
+                                  DateTime newEnd)
+        {
+            CurrentBook = CurrentBook.Undecorate(reference);
+            CurrentBook = bFact.AddCarHire(CurrentBook, 
+                                           newDriverName, 
+                                           newStart, 
+                                           newEnd);
+        }
+
+        /*
+         * Returns a list of references to each of the CurrentBooking's 
+         * decorators (= extras), or null if it is not decorated at all.
+         */
+        public List<BookingDecorator> GetCurrentExtras()
         {
 
             List<BookingDecorator> references;
             CurrentBook.Unwrap(out references);
+            return references;
+        }
+
+        /*
+         * Returns a list of textual representations of each of the 
+         * CurrentBooking's decorators (= extra).
+         */
+        public List<String> GetCurrentExtrasNames()
+        {
+
+            List<BookingDecorator> references = GetCurrentExtras();
             List<String> extras = new List<String>();
+
             if (references != null)
             {
                 foreach (BookingDecorator bd in references)
@@ -505,9 +553,7 @@ namespace Program
          */
         public void RemoveExtra(int index) 
         {
-            List<BookingDecorator> references;
-            CurrentBook.Unwrap(out references);
-            //CurrentBook = CurrentBook.Unwrap(out references);
+            List<BookingDecorator> references = GetCurrentExtras();
             if (references != null)
             {
                 CurrentBook = CurrentBook.Undecorate(references.ElementAt(index));
