@@ -22,11 +22,6 @@ namespace Program
      */
     public partial class WindowInvoice : Window
     {
-        // PROPERTIES:
-
-        // reference to a ModelFacade instance:
-        private ModelFacade mFacade;
-
         // METHODS:
 
         /*
@@ -34,8 +29,10 @@ namespace Program
          */
         public WindowInvoice(ModelFacade mFacade)
         {
-            this.mFacade = mFacade;
             InitializeComponent();
+
+            lblBookingNb.Content += " " + mFacade.GetCurrentBookingNb()
+                                                 .ToString();
         }
     }
 }
