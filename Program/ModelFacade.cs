@@ -79,7 +79,8 @@ namespace Program
             int nbNights = -1;
             if (CurrentBook != null)
             {
-                nbNights = CurrentBook.GetNbNights();
+                List<BookingDecorator> extras;
+                nbNights = CurrentBook.Unwrap(out extras).GetNbNights();
             }
             return nbNights;
         }
@@ -93,7 +94,8 @@ namespace Program
             float costPerNight = -1;
             if (CurrentBook != null)
             {
-                costPerNight = CurrentBook.GetCostPerNight();
+                List<BookingDecorator> extras;
+                costPerNight = CurrentBook.Unwrap(out extras).GetCostPerNight();
             }
             return costPerNight;
         }
