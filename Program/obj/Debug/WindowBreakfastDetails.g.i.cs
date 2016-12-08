@@ -39,6 +39,30 @@ namespace Program {
     /// </summary>
     public partial class WindowBreakfastDetails : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 6 "..\..\WindowBreakfastDetails.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lblHeader;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 7 "..\..\WindowBreakfastDetails.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lblDietRequirements;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 9 "..\..\WindowBreakfastDetails.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnSave;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -67,6 +91,26 @@ namespace Program {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            this.lblHeader = ((System.Windows.Controls.Label)(target));
+            return;
+            case 2:
+            this.lblDietRequirements = ((System.Windows.Controls.Label)(target));
+            return;
+            case 3:
+            
+            #line 8 "..\..\WindowBreakfastDetails.xaml"
+            ((System.Windows.Controls.TextBox)(target)).TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.TextBox_TextChanged);
+            
+            #line default
+            #line hidden
+            return;
+            case 4:
+            this.btnSave = ((System.Windows.Controls.Button)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }
