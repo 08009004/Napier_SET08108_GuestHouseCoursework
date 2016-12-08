@@ -54,6 +54,169 @@ namespace Program
             }
         }
 
+        // METHODS RELATED TO CURRENT BOOKING:
+
+        /*
+         * Returns the current booking's booking number, or -1 if no booking
+         * is currently loaded.
+         */
+        public int GetCurrentBookNb()
+        {
+            int currentBookingNb = -1;
+            if (CurrentBook != null)
+            {
+                currentBookingNb = CurrentBook.GetBookingNb();
+            }
+            return currentBookingNb;
+        }
+
+        /*
+         * Returns the current booking's number of nights, or -1 if no 
+         * booking is currently loaded.
+         */
+        public int GetCurrentNbNights()
+        {
+            int nbNights = -1;
+            if (CurrentBook != null)
+            {
+                nbNights = CurrentBook.GetNbNights();
+            }
+            return nbNights;
+        }
+
+        /*
+         * Returns the current booking's cost per night, or -1 if no booking
+         * is currently loaded.
+         */
+        public float GetCurrentCostPerNight()
+        {
+            float costPerNight = -1;
+            if (CurrentBook != null)
+            {
+                costPerNight = CurrentBook.GetCostPerNight();
+            }
+            return costPerNight;
+        }
+
+        /*
+         * Returns the current booking's cost for, breakfasts or -1 if no 
+         * booking is currently loaded.
+         */
+        public float GetCurrentBreakfastCost()
+        {
+            float breakfastsCost = -1;
+            List<BookingDecorator> extras;
+            CurrentBook.Unwrap(out extras);
+
+            if (CurrentBook != null)
+            {
+                breakfastsCost = 0;
+
+                foreach (BookingDecorator e in extras)
+                {
+                    if (e.GetType() == typeof(Breakfast))
+                    {
+                        breakfastsCost += e.GetCost();
+                    }
+                }
+            }
+            return breakfastsCost;
+        }
+
+        /*
+         * Returns the current booking's cost for, evening meals or -1 if no 
+         * booking is currently loaded.
+         */
+        public float GetCurrentEveningMealsCost()
+        {
+            float eveningMealsCost = -1;
+            List<BookingDecorator> extras;
+            CurrentBook.Unwrap(out extras);
+
+            if (CurrentBook != null)
+            {
+                eveningMealsCost = 0;
+
+                foreach (BookingDecorator e in extras)
+                {
+                    if (e.GetType() == typeof(EveningMeal))
+                    {
+                        eveningMealsCost += e.GetCost();
+                    }
+                }
+            }
+            return eveningMealsCost;
+        }
+
+        /*
+         * Returns the current booking's cost for, evening meals or -1 if no 
+         * booking is currently loaded.
+         */
+        public float GetCurrentCarHireCost()
+        {
+            float carHireCost = -1;
+            List<BookingDecorator> extras;
+            CurrentBook.Unwrap(out extras);
+
+            if (CurrentBook != null)
+            {
+                carHireCost = 0;
+
+                foreach (BookingDecorator e in extras)
+                {
+                    if (e.GetType() == typeof(CarHire))
+                    {
+                        carHireCost += e.GetCost();
+                    }
+                }
+            }
+            return carHireCost;
+        }
+
+        // METHODS RELATED TO THE CURRENT CUSTOMER:
+
+        /*
+         * Returns the current booking's customer number, or -1 if no booking
+         * is currently loaded.
+         */
+        public int GetCurrentCustNb()
+        {
+            int customerNb = -1;
+            if (CurrentBook != null)
+            {
+                customerNb = CurrentCust.GetCustNb();
+            }
+            return customerNb;
+        }
+
+        /*
+         * Returns the current booking's customer name, or null if no booking
+         * is currently loaded.
+         */
+        public String GetCurrentCustName()
+        {
+            String customerName = null;
+            if (CurrentBook != null)
+            {
+                customerName = CurrentCust.Name;
+            }
+            return customerName;
+        }
+
+        /*
+         * Returns the current booking's customer address, or null if no 
+         * booking is currently loaded.
+         */
+        public String GetCurrentCustAdress()
+        {
+            String customerAddress = null;
+            if (CurrentBook != null)
+            {
+                customerAddress = CurrentCust.GetAddress();
+            }
+            return customerAddress;
+        }
+
         /*
          * Recovers last system state persisted to file.
          */
