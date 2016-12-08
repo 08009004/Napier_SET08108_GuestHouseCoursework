@@ -6,7 +6,7 @@
         <Label x:Name="lblHeader" Content="Evening meal details:" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblDietRequirements" Content="Dietary requirements:" HorizontalAlignment="Left" Margin="24,39,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDietRequirements" HorizontalAlignment="Left" Height="23" Margin="153,42,0,0" TextWrapping="Wrap" Text="Value" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="108,93,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="108,93,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
 
     </Grid>
 </Window>

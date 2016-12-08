@@ -112,6 +112,12 @@ namespace Program {
             return;
             case 4:
             this.btnSave = ((System.Windows.Controls.Button)(target));
+            
+            #line 9 "..\..\WindowBreakfastDetails.xaml"
+            this.btnSave.Click += new System.Windows.RoutedEventHandler(this.btnSave_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

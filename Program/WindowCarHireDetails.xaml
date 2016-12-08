@@ -6,7 +6,7 @@
         <Label x:Name="lblHeader" Content="Car hire details:" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblDriverName" Content="Driver name:" HorizontalAlignment="Left" Margin="24,39,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDriverName" HorizontalAlignment="Left" Height="23" Margin="153,42,0,0" TextWrapping="Wrap" Text="Value" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="108,147,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="108,147,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
         <Label x:Name="lblStart" Content="Start:" HorizontalAlignment="Left" Margin="24,70,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblEnd" Content="End:" HorizontalAlignment="Left" Margin="24,101,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dtpStart" HorizontalAlignment="Left" Margin="153,72,0,0" VerticalAlignment="Top" Width="120"/>
