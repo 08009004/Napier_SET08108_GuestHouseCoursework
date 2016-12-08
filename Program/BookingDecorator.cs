@@ -144,22 +144,6 @@ namespace Program
         }
 
         /*
-         * Returns the cost of the decorated BookingComponent
-         * (or -1 if the root component is not a concrete Booking).
-         */
-        public override double GetCost()
-        {
-            double cost = -1;
-
-            if (DecoratedComponent != null)
-            {
-                cost = DecoratedComponent.GetCost();
-            }
-
-            return cost;
-        }
-
-        /*
          * Returns the booking start and end dates, or 01/01/1970 for both 
          * if an error occurs.
          */
@@ -210,6 +194,38 @@ namespace Program
             }
 
             return nbNights;
+        }
+
+        /*
+         * Returns the cost for each individual night booked
+         * (or -1 if the root component is not a concrete Booking).
+         */
+        public override float GetCostPerNight()
+        {
+            float costPerNight = -1;
+
+            if (DecoratedComponent != null)
+            {
+                costPerNight = DecoratedComponent.GetCost();
+            }
+
+            return costPerNight;
+        }
+
+        /*
+         * Returns the cost of the decorated BookingComponent
+         * (or -1 if the root component is not a concrete Booking).
+         */
+        public override float GetCost()
+        {
+            float cost = -1;
+
+            if (DecoratedComponent != null)
+            {
+                cost = DecoratedComponent.GetCost();
+            }
+
+            return cost;
         }
 
         /*

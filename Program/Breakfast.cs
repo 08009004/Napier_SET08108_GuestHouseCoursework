@@ -26,13 +26,12 @@ namespace Program
         }
 
         /*
-         * Returns the cost of the decorated BookingComponent, 
-         * breakfast included.
+         * Returns the extra cost of the breakfasts.
          */
-        public override double GetCost()
+        public override float GetCost()
         {
-            return base.GetCost() + (5 * base.DecoratedComponent.GetNbGuests()
-                                       * base.DecoratedComponent.GetNbNights());
+            return 5 * base.DecoratedComponent.GetNbGuests()
+                     * base.DecoratedComponent.GetNbNights();
         }
 
         /*

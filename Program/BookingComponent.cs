@@ -44,7 +44,8 @@ namespace Program
         /*
          * Must return the Booking start and end dates.
          */
-        public abstract void GetDates(out DateTime arrival, out DateTime departure);
+        public abstract void GetDates(out DateTime arrival, 
+                                      out DateTime departure);
 
         /*
          * Must return the number of nights booked.
@@ -52,9 +53,14 @@ namespace Program
         public abstract int GetNbNights();
 
         /*
+         * Must return the the cost for each individual night booked.
+         */
+        public abstract float GetCostPerNight();
+
+        /*
          * Must return the cost of the BookingComponent
          */
-        public abstract double GetCost();
+        public abstract float GetCost();
 
         /* 
          * Returns the BookingComponent itself; and references is null.

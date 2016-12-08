@@ -47,12 +47,11 @@ namespace Program
         }
 
         /*
-         * Returns the cost of the decorated BookingComponent, 
-         * car hire included.
+         * Returns the extra cost for the car hire.
          */
-        public override double GetCost()
+        public override float GetCost()
         {
-            return base.GetCost() +((end - start).Days * 50);
+            return 50 * (end - start).Days;
         }
 
         /*

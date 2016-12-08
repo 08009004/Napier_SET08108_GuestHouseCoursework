@@ -126,26 +126,33 @@ namespace Program
         }
 
         /*
-         * Returns the basic cost (extras excluded) of the booking.
+         * Returns the cost for each individual night booked.
          */
-        public override double GetCost()
+        public override float GetCostPerNight()
         {
-            double cost = 0;
-            int nights = this.GetNbNights();
+            float costPerNight = 0;
 
-            foreach (Guest g in guests)
+            foreach (PersonComponent g in guests)
             {
                 if (g.GetAge() < 18)
                 {
-                    cost += 30 * nights;
+                    costPerNight += 30;
                 }
                 else
                 {
-                    cost += 50 * nights;
+                    costPerNight += 50;
                 }
             }
 
-            return cost;
+            return costPerNight;
+        }
+
+        /*
+         * Returns the basic cost (extras excluded) of the booking.
+         */
+        public override float GetCost()
+        {
+            return GetCostPerNight() * GetNbNights();
         }
 
         /*
