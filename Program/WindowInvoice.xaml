@@ -5,7 +5,7 @@
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="392" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="272"/>
 
-        <Rectangle Fill="#FFE6C4C4" HorizontalAlignment="Left" Height="26" Margin="119,367,0,0" Stroke="Black" VerticalAlignment="Top" Width="154"/>
+        <Rectangle Fill="#FFC8F6FB" HorizontalAlignment="Left" Height="26" Margin="119,367,0,0" Stroke="Black" VerticalAlignment="Top" Width="154"/>
 
         <Label x:Name="lblHeader" Content="Invoice" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="9,5,0,0"/>
         <Label x:Name="lblBookingNb" Content="Booking number:" HorizontalAlignment="Left" Margin="28,39,0,0" VerticalAlignment="Top"/>
