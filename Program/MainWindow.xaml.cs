@@ -192,7 +192,7 @@ namespace Program
          */
         private void btnInvoice_Click(object sender, RoutedEventArgs e)
         {
-
+            new WindowInvoice(this.mFacade).ShowDialog();
         }
 
         /*
