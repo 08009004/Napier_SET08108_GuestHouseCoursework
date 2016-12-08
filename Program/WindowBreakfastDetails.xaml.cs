@@ -30,12 +30,23 @@ namespace Program
         // METHODS:
 
         /*
-         * Constructor.
+         * Constructor, the index passed must be the index in the current
+         * booking's decoration stack index as returned by 
+         * ModelFacade.GetCurrentExtras()) or -1 for a new extra.
          */
-        public WindowBreakfastDetails(ModelFacade mFacade)
+        public WindowBreakfastDetails(ModelFacade mFacade, int index)
         {
             this.mFacade = mFacade;
             InitializeComponent();
+
+            if (index >= 0)
+            {
+                txtDietRequirements.Text = "display current value at index: " + index;
+            }
+            else
+            {
+                txtDietRequirements.Text = String.Empty;
+            }
         }
     }
 }

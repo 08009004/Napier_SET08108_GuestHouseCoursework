@@ -398,7 +398,7 @@ namespace Program
             }
             else
             {
-                new WindowBreakfastDetails(mFacade).ShowDialog();
+                new WindowBreakfastDetails(mFacade, -1).ShowDialog();
                 refreshExtrasDisplay();
             }
         }
@@ -415,7 +415,7 @@ namespace Program
             }
             else
             {
-                new WindowEveningMealDetails(mFacade).ShowDialog();
+                new WindowEveningMealDetails(mFacade, -1).ShowDialog();
                 refreshExtrasDisplay();
             }
         }
@@ -432,7 +432,7 @@ namespace Program
             }
             else
             {
-                new WindowCarHireDetails(mFacade).ShowDialog();
+                new WindowCarHireDetails(mFacade, -1).ShowDialog();
                 refreshExtrasDisplay();
             }
         }
