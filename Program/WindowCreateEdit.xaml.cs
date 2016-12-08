@@ -387,11 +387,54 @@ namespace Program
         // METHODS RELATED TO EXTRAS:
 
         /*
-         * Adds a breakfast extra to the current booking.
+         * Opens a dialog to add a breakfasts extra to the current booking.
          */
         private void btnAddBreakfast_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (mFacade.CurrentBook == null)
+            {
+                MessageBox.Show("Please save your new booking before adding"
+                                + " a breakfast extra.");
+            }
+            else
+            {
+                new WindowBreakfastDetails(mFacade).ShowDialog();
+                refreshExtrasDisplay();
+            }
+        }
+
+        /*
+         * Opens a dialog to add an evening meals extra to the current booking.
+         */
+        private void btnAddEveningMeal_Click(object sender, RoutedEventArgs e)
+        {
+            if (mFacade.CurrentBook == null)
+            {
+                MessageBox.Show("Please save your new booking before adding"
+                                + " an evening meals extra.");
+            }
+            else
+            {
+                new WindowEveningMealDetails(mFacade).ShowDialog();
+                refreshExtrasDisplay();
+            }
+        }
+
+        /*
+         * Opens a dialog to add a car hire extra to the current booking.
+         */
+        private void btnAddCarHire_Click(object sender, RoutedEventArgs e)
+        {
+            if (mFacade.CurrentBook == null)
+            {
+                MessageBox.Show("Please save your new booking before adding"
+                                + " a car hire extra.");
+            }
+            else
+            {
+                new WindowCarHireDetails(mFacade).ShowDialog();
+                refreshExtrasDisplay();
+            }
         }
 
         /*
