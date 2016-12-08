@@ -146,9 +146,27 @@ namespace Program
          */
         public void UpdateBooking(DateTime arrival, DateTime departure)
         {
-            List<PersonComponent> saved = CurrentBook.GetGuests();
-            CurrentBook = bFact.UpdateBooking(CurrentBook.GetBookingNb(), CurrentCust, arrival, departure);
-            foreach (PersonComponent g in saved)
+            List<PersonComponent> savedGuests = CurrentBook.GetGuests();
+            List<BookingDecorator> decorationStack;
+            BookingComponent booking = CurrentBook.Unwrap(out decorationStack);
+
+            booking = bFact.UpdateBooking(booking.GetBookingNb(), 
+                                          CurrentCust, 
+                                          arrival, 
+                                          departure);
+
+            if (decorationStack != null)
+            {
+                foreach (BookingDecorator reference in decorationStack)
+                {
+                    reference.DecoratedComponent = booking;
+                    booking = reference;
+                }
+            }
+
+            CurrentBook = booking;
+
+            foreach (PersonComponent g in savedGuests)
             {
                 CurrentBook.AddGuest(g);
             }

@@ -67,6 +67,8 @@ namespace Program
             {
                 mFacade.AddBreakFast(txtDietRequirements.Text);
             }
+
+            this.Close();
         }
     }
 }

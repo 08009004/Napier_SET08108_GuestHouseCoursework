@@ -71,6 +71,7 @@ namespace Program
                                        (DateTime)dtpStart.SelectedDate,
                                        (DateTime)dtpEnd.SelectedDate);
                 }
+                this.Close();
             }
         }
 

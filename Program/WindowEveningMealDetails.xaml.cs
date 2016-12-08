@@ -67,6 +67,8 @@ namespace Program
             {
                 mFacade.AddEveningMeal(txtDietRequirements.Text);
             }
+
+            this.Close();
         }
     }
 }
