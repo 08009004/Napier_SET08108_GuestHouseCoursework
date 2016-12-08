@@ -10,16 +10,31 @@
         <Label x:Name="lblHeader" Content="Invoice" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Margin="9,5,0,0"/>
         <Label x:Name="lblBookingNb" Content="Booking number:" HorizontalAlignment="Left" Margin="28,39,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblCustomerNb" Content="Customer number:" HorizontalAlignment="Left" Margin="28,70,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblNbNights" Content="Number of nights:" HorizontalAlignment="Left" Margin="28,157,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblCostPerNight" Content="Cost per night:" HorizontalAlignment="Left" Margin="28,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.526,-0.654"/>
+        <Label x:Name="lblNbNights" Content="Number of nights  - - - - - - - - - - - -" HorizontalAlignment="Left" Margin="28,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCostPerNight" Content="Cost per night  - - - - - - - - - - -" HorizontalAlignment="Left" Margin="28,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.526,-0.654"/>
         <Label x:Name="lblSubtotal" Content="Subtotal: " HorizontalAlignment="Left" Margin="119,219,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblCustomerDetails" Content="Customer details:" HorizontalAlignment="Left" Margin="28,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.289,0.346"/>
         <Label x:Name="lblAddress" Content="{}{address}" HorizontalAlignment="Left" Margin="123,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.026,0"/>
-        <Label x:Name="lblBreakfast" Content="Breakfast cost:" HorizontalAlignment="Left" Margin="28,250,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblEveningMeals" Content="Evening meals cost:" HorizontalAlignment="Left" Margin="28,281,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblCarHire" Content="Car hire cost:" HorizontalAlignment="Left" Margin="28,312,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblBreakfastCost" Content="Breakfast cost   - - - - - - - - - - - " HorizontalAlignment="Left" Margin="28,250,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblEveningMeals" Content="Evening meals cost  - - - - - - - - " HorizontalAlignment="Left" Margin="28,281,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCarHire" Content="Car hire cost   - - - - - - - - - - - -" HorizontalAlignment="Left" Margin="28,312,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblExtrasTotal" Content="Extras total: " HorizontalAlignment="Left" Margin="119,336,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblTotalDue" Content="TOTAL DUE:" HorizontalAlignment="Left" Margin="119,367,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblNbNightsValue" Content="value" HorizontalAlignment="Right" Margin="0,157,25,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCostPerNightValue" Content="value" HorizontalAlignment="Right" Margin="0,188,25,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSubtotalValue" Content="value" HorizontalAlignment="Right" Margin="0,219,25,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblBreakfastCostValue" Content="value" HorizontalAlignment="Right" Margin="0,250,25,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblEveningMealsCostValue" Content="value" HorizontalAlignment="Right" Margin="0,281,25,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCarHireCostValue" Content="value" HorizontalAlignment="Right" Margin="0,312,25,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblExtrasTotalValue" Content="value" HorizontalAlignment="Right" Margin="0,336,25,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblTotalDueValue" Content="value" HorizontalAlignment="Right" Margin="0,367,25,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbl__Copy" Content="£" HorizontalAlignment="Left" Margin="208,188,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.562,2.846"/>
+        <Label x:Name="lbl__Copy1" Content="£" HorizontalAlignment="Left" Margin="208,219,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.562,2.846" FontWeight="Bold"/>
+        <Label x:Name="lbl__Copy2" Content="£" HorizontalAlignment="Left" Margin="208,250,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.562,2.846"/>
+        <Label x:Name="lbl__Copy3" Content="£" HorizontalAlignment="Left" Margin="208,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.562,2.846"/>
+        <Label x:Name="lbl__Copy4" Content="£" HorizontalAlignment="Left" Margin="208,312,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.562,2.846"/>
+        <Label x:Name="lbl__Copy5" Content="£" HorizontalAlignment="Left" Margin="208,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.562,2.846" FontWeight="Bold"/>
+        <Label x:Name="lbl__Copy6" Content="£" HorizontalAlignment="Left" Margin="208,367,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.562,2.846" FontWeight="Bold"/>
 
     </Grid>
 </Window>

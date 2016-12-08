@@ -192,7 +192,16 @@ namespace Program
          */
         private void btnInvoice_Click(object sender, RoutedEventArgs e)
         {
-            new WindowInvoice(this.mFacade).ShowDialog();
+            if (mFacade.CurrentBook == null)
+            {
+                MessageBox.Show("There is no booking loaded in the system"
+                                + " yet.\r\n"
+                                + "Load a booking to view it's invoice.");
+            }
+            else
+            {
+                new WindowInvoice(this.mFacade).ShowDialog();
+            }
         }
 
         /*

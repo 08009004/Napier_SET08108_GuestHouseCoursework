@@ -108,4 +108,3 @@ D:\htr\Program\obj\Debug\Program_MarkupCompile.cache
 D:\htr\Program\obj\Debug\Program.g.resources
 D:\htr\Program\obj\Debug\Program.Properties.Resources.resources
 D:\htr\Program\obj\Debug\Program.csproj.GenerateResource.Cache
-D:\tmp\Program\bin\Debug\Program.exe.config
