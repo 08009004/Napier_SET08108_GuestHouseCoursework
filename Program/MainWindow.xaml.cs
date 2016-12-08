@@ -24,10 +24,16 @@ namespace Program
      */
     public partial class MainWindow : Window
     {
-        // Properties
+        // PROPERTIES:
+
         // reference to a ModelFacade instance:
         private ModelFacade mFacade;
 
+        // METHODS:
+
+        /*
+         * Constructor.
+         */
         public MainWindow()
         {
             /*
@@ -145,15 +151,6 @@ namespace Program
         }
 
         /*
-         * Executed upon clicking the 'Clear' button.
-         */
-        private void btnCloseBooking_Click(object sender, RoutedEventArgs e)
-        {
-            this.mFacade.CurrentBook = null;
-            clearDisplay();
-        }
-
-        /*
          * Empties all boxes displayed in the MainWindow.
          */
         private void clearDisplay()
@@ -170,9 +167,19 @@ namespace Program
             // hide guests data display:
             lstGuests.Items.Clear();
         }
+
+        /*
+         * Closes the current booking.
+         */
+        private void btnCloseBooking_Click(object sender, RoutedEventArgs e)
+        {
+            this.mFacade.CurrentBook = null;
+            clearDisplay();
+        }
         
         /*
-         * Executed upon clicking the 'Create/Amend' button.
+         * Opens a WindowCreateEdit dialog to view & edit current booking
+         * or create a new one.
          */
         private void btnNewEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -181,7 +188,15 @@ namespace Program
         }
 
         /*
-         * Executed upon clicking the 'Save & Exit' button.
+         * Opens a WindowInvoice dialog to view current booking invoice.
+         */
+        private void btnInvoice_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /*
+         * Saves the current system state and closes the program.
          */
         private void btnExitProgram_Click(object sender, RoutedEventArgs e)
         {
