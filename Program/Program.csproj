@@ -79,8 +79,17 @@
     <Compile Include="PersonDecorator.cs" />
     <Compile Include="PersonFactory.cs" />
     <Compile Include="PersonFactoryField.cs" />
+    <Compile Include="WindowBreakfastDetails.xaml.cs">
+      <DependentUpon>WindowBreakfastDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowCarHireDetails.xaml.cs">
+      <DependentUpon>WindowCarHireDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowCreateEdit.xaml.cs">
       <DependentUpon>WindowCreateEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowEveningMealDetails.xaml.cs">
+      <DependentUpon>WindowEveningMealDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowGuestDetails.xaml.cs">
       <DependentUpon>WindowGuestDetails.xaml</DependentUpon>
@@ -100,7 +109,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WindowBreakfastDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowCarHireDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowCreateEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowEveningMealDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -409,6 +409,12 @@ namespace Program {
             return;
             case 23:
             this.btnAddBreakfast = ((System.Windows.Controls.Button)(target));
+            
+            #line 34 "..\..\WindowCreateEdit.xaml"
+            this.btnAddBreakfast.Click += new System.Windows.RoutedEventHandler(this.btnAddBreakfast_Click);
+            
+            #line default
+            #line hidden
             return;
             case 24:
             this.lblExtras = ((System.Windows.Controls.Label)(target));

@@ -246,10 +246,39 @@ namespace Program
         }
 
         /*
+         * Decorates the current booking with a Breakfast extra.
+         */
+        public void AddBreakFast(String dietRequirements)
+        {
+            CurrentBook = bFact.AddBreakfast(CurrentBook, dietRequirements);
+        }
+
+        /*
+         * Decorates the current booking with an EveningMeal extra.
+         */
+        public void AddEveningMeal(String dietRequirements)
+        {
+            CurrentBook = bFact.AddEveningMeal(CurrentBook, dietRequirements);
+        }
+
+        /*
+         * Decorates the current booking with a CarHire extra.
+         */
+        public void AddCarHire(String driverName, 
+                               DateTime start, 
+                               DateTime end)
+        {
+            CurrentBook = bFact.AddCarHire(CurrentBook, 
+                                           driverName, 
+                                           start, 
+                                           end);
+        }
+
+        /*
          * Returns a list of textual representations of each of the 
          * CurrentBooking's decorators (= extra).
          */
-        public List<String> getCurrentExtras()
+        public List<String> GetCurrentExtras()
         {
 
             List<BookingDecorator> references;
@@ -279,7 +308,7 @@ namespace Program
         /*
          * Removes the selected extra from the booking.
          */
-        public void removeExtra(int index) 
+        public void RemoveExtra(int index) 
         {
             List<BookingDecorator> references;
             CurrentBook.Unwrap(out references);

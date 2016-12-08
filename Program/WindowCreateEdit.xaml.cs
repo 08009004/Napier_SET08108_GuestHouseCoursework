@@ -26,6 +26,8 @@ namespace Program
         // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
 
+        // GENERIC WINDOW METHODS:
+
         /*
          * The window constructor.
          */
@@ -45,6 +47,78 @@ namespace Program
                 lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
                 refreshDisplay();
             }
+        }
+
+        /*
+         * Checks if the booking can be saved or updated on the basis of
+         * window field values, and acts accordingly (closes the window, 
+         * except if the booking was a new one).
+         */
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (areAllValuesValid())
+            {
+                if (mFacade.CurrentBook == null)
+                {
+                    mFacade.CreateBooking((DateTime)dtpArrival.SelectedDate,
+                                          (DateTime)dtpDeparture.SelectedDate);
+                    mFacade.PersistCurrentBooking();
+                    refreshDisplay();
+                }
+                else
+                {
+                    mFacade.UpdateBooking((DateTime)dtpArrival.SelectedDate,
+                                          (DateTime)dtpDeparture.SelectedDate);
+                    mFacade.PersistCurrentBooking();
+                    this.Close();
+                }
+            }
+        }
+
+        /*
+         * True if all the window fields are valid to create or amend a 
+         * booking, otherwise false.
+         * Displays error message windows.
+         */
+        private bool areAllValuesValid()
+        {
+            bool areValidValues = true;
+
+            if (mFacade.CurrentCust == null)
+            {
+                areValidValues = false;
+                MessageBox.Show("Please create or load a customer for"
+                                + " the booking before saving.");
+            }
+
+            if (dtpArrival.SelectedDate == null)
+            {
+                areValidValues = false;
+                MessageBox.Show("Please select a valid arrival date"
+                                + " before saving the booking.");
+            }
+            else if (dtpDeparture.SelectedDate == null)
+            {
+                areValidValues = false;
+                MessageBox.Show("Please select a valid departure date"
+                                + " before saving the booking.");
+            }
+            else if (dtpDeparture.SelectedDate <= dtpArrival.SelectedDate)
+            {
+                areValidValues = false;
+                MessageBox.Show("Departure date must be strictly"
+                                + " later than arrival date.");
+            }
+
+            return areValidValues;
+        }
+
+        /*
+         * Closes the Create/Edit dialog without commiting changes.
+         */
+        private void btnDiscard_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         /*
@@ -140,12 +214,14 @@ namespace Program
             if (mFacade.CurrentBook != null)
             {
                 lstExtras.Items.Clear();
-                foreach (String s in mFacade.getCurrentExtras())
+                foreach (String s in mFacade.GetCurrentExtras())
                 {
                     lstExtras.Items.Add(s);
                 }
             }
         }
+
+        // METHODS RELATED TO CUSTOMER:
 
         /*
          * Loads & displays the customer referenced by txtCustNumber.Text
@@ -170,7 +246,8 @@ namespace Program
         }
 
         /*
-         * Routine triggered upon clicking the 'New Customer' button.
+         * Verifies fields validity and creates a new customer instance if
+         * possible.
          */
         private void btnNewCust_Click(object sender, RoutedEventArgs e)
         {
@@ -188,74 +265,13 @@ namespace Program
                 refreshCustomerDisplay();
             }
         }
+        
+
+        // METHODS RELATED TO GUESTS:
 
         /*
-         * Checks if the booking can be saved or updated on the basis of
-         * window field values, and acts accordingly (closes the window, 
-         * except if the booking was a new one).
-         */
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            if (areAllValuesValid())
-            {
-                if (mFacade.CurrentBook == null)
-                {
-                    mFacade.CreateBooking((DateTime)dtpArrival.SelectedDate,
-                                          (DateTime)dtpDeparture.SelectedDate);
-                    mFacade.PersistCurrentBooking();
-                    refreshDisplay();
-                }
-                else
-                {
-                    mFacade.UpdateBooking((DateTime)dtpArrival.SelectedDate,
-                                          (DateTime)dtpDeparture.SelectedDate);
-                    mFacade.PersistCurrentBooking();
-                    this.Close();
-                }
-            }
-        }
-
-        /*
-         * True if all the window fields are valid to create or amend a 
-         * booking, otherwise false.
-         * Displays error message windows.
-         */
-        private bool areAllValuesValid()
-        {
-            bool areValidValues = true;
-
-            if (mFacade.CurrentCust == null)
-            {
-                areValidValues = false;
-                MessageBox.Show("Please create or load a customer for"
-                                + " the booking before saving.");
-            }
-
-            if (dtpArrival.SelectedDate == null)
-            {
-                areValidValues = false;
-                MessageBox.Show("Please select a valid arrival date"
-                                + " before saving the booking.");
-            }
-            else if (dtpDeparture.SelectedDate == null)
-            {
-                areValidValues = false;
-                MessageBox.Show("Please select a valid departure date"
-                                + " before saving the booking.");
-            }
-            else if (dtpDeparture.SelectedDate <= dtpArrival.SelectedDate)
-            {
-                areValidValues = false;
-                MessageBox.Show("Departure date must be strictly"
-                                + " later than arrival date.");
-            }
-
-            return areValidValues;
-        }
-
-        /*
-         * Opens an empty WindowGuestDetail window to input new guest details (if
-         * there is still less than 4 guests booked).
+         * Opens an empty WindowGuestDetail dialog to input new guest details
+         * (if there is still less than 4 guests booked).
          */
         private void btnNewGuest_Click(object sender, RoutedEventArgs e)
         {
@@ -263,18 +279,6 @@ namespace Program
             {
                 new WindowGuestDetails(mFacade, false).ShowDialog();
                 refreshDisplay();
-            }
-        }
-
-        /*
-         * Routine executed upon clicking the 'Add to guests' button.
-         */
-        private void btnAddCustToGuests_Click(object sender, RoutedEventArgs e)
-        {
-            if (canAddGuest() && !isCustInGuests())
-            {
-                new WindowGuestDetails(mFacade, true).ShowDialog();
-                refreshGuestsDisplay();
             }
         }
 
@@ -305,6 +309,19 @@ namespace Program
         }
 
         /*
+         * Opens a WindowGuestDetails dialog to enter guest details for 
+         * current customer entity.
+         */
+        private void btnAddCustToGuests_Click(object sender, RoutedEventArgs e)
+        {
+            if (canAddGuest() && !isCustInGuests())
+            {
+                new WindowGuestDetails(mFacade, true).ShowDialog();
+                refreshGuestsDisplay();
+            }
+        }
+
+        /*
          * Scans the list of guests to check if there already is a customer
          * in it.
          */
@@ -330,7 +347,7 @@ namespace Program
         }
 
         /*
-         * Opens a WindowGuestDetail to edit selected guest details.
+         * Opens a WindowGuestDetail to amend selected guest's details.
          */
         private void lstGuests_MouseDoubleClick(object sender, 
                                                 MouseButtonEventArgs e)
@@ -351,7 +368,7 @@ namespace Program
         }
 
         /*
-         * Deletes selected guest from the booking.
+         * Deletes selected guest from current booking.
          */
         private void btnDeleteGuest_Click(object sender, RoutedEventArgs e)
         {
@@ -367,19 +384,24 @@ namespace Program
             }
         }
 
+        // METHODS RELATED TO EXTRAS:
+
         /*
-         * Routine executed upon clicking the 'Close' button.
+         * Adds a breakfast extra to the current booking.
          */
-        private void btnDiscard_Click(object sender, RoutedEventArgs e)
+        private void btnAddBreakfast_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            
         }
 
+        /*
+         * Deletes the selected extra from the currwent booking.
+         */
         private void btnExtraDelete_Click(object sender, RoutedEventArgs e)
         {
             if (lstExtras.SelectedIndex >= 0)
             {
-                mFacade.removeExtra(lstExtras.SelectedIndex);
+                mFacade.RemoveExtra(lstExtras.SelectedIndex);
                 refreshExtrasDisplay();
             }
             else
