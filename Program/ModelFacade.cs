@@ -417,7 +417,15 @@ namespace Program
         {
             if (CurrentBook.GetGuests().ElementAt(index).IsCustomer())
             {
+                DateTime arrival;
+                DateTime departure;
+                CurrentBook.GetDates(out arrival, out departure);
+
                 CurrentCust = CurrentCust.Undecorate();
+                CurrentBook = bFact.UpdateBooking(CurrentBook.GetBookingNb(), 
+                                                  CurrentCust, 
+                                                  arrival, 
+                                                  departure);
             }
             CurrentBook.GetGuests().RemoveAt(index);
         }
