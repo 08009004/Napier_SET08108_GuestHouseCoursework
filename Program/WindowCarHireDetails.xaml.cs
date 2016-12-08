@@ -97,13 +97,13 @@ namespace Program
             {
                 areValidValues = false;
                 MessageBox.Show("Please select a start date for the"
-                                + "car hire.");
+                                + " car hire.");
             }
             else if (dtpStart.SelectedDate < arrival
                   || dtpStart.SelectedDate >= departure)
             {
                 areValidValues = false;
-                MessageBox.Show("The selected car hire start date is outwith "
+                MessageBox.Show("The selected start date is outwith "
                                 + " the booking dates.\r\n"
                                 + "Please select a start date between"
                                 + " booking arrival and departure dates.");
@@ -112,13 +112,13 @@ namespace Program
             {
                 areValidValues = false;
                 MessageBox.Show("Please select an end date for the"
-                                + "car hire.");
+                                + " car hire.");
             }
             else if (dtpEnd.SelectedDate <= arrival
                   || dtpEnd.SelectedDate > departure)
             {
                 areValidValues = false;
-                MessageBox.Show("The selected car hire end date is outwith "
+                MessageBox.Show("The selected end date is outwith "
                                 + " the booking dates.\r\n"
                                 + "Please select a start date between"
                                 + " booking arrival and departure dates.");
