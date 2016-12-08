@@ -190,7 +190,7 @@ namespace Program
 
             if (DecoratedComponent != null)
             {
-                nbNights = DecoratedComponent.GetNbGuests();
+                nbNights = DecoratedComponent.GetNbNights();
             }
 
             return nbNights;
