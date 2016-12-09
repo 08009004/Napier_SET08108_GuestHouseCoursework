@@ -386,35 +386,12 @@ namespace Program
                 dpFacade.Persist(processedBooking);
             }
 
-            /*
-             List<PersonComponent> savedGuests = CurrentBook.GetGuests();
-            List<BookingDecorator> decorationStack;
-            BookingComponent booking = CurrentBook.Unwrap(out decorationStack);
-
-            booking = bFact.UpdateBooking(booking.GetBookingNb(),
-                                          CurrentCust,
-                                          arrival,
-                                          departure);
-
-            if (decorationStack != null)
-            {
-                foreach (BookingDecorator reference in decorationStack)
-                {
-                    reference.DecoratedComponent = booking;
-                    booking = reference;
-                }
-            }
-
-            CurrentBook = booking;
-
-            foreach (PersonComponent g in savedGuests)
-            {
-                CurrentBook.AddGuest(g);
-            }
-             */
-
             // reload current booking into the system to upload changes
-            RestoreBooking(CurrentBook.GetBookingNb());
+            if (IsABookingLoaded())
+            {
+                RestoreBooking(CurrentBook.GetBookingNb());
+            } 
+            //else if (IsAc
         }
 
         private void persistNewCustomerValues(int customerNb, 
