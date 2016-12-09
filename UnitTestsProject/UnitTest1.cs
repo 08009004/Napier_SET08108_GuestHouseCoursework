@@ -1,9 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// Custom imports:
-using System.Collections.Generic;
-
 namespace Program
 {
     [TestClass]
