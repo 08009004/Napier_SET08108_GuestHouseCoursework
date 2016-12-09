@@ -99,6 +99,28 @@ namespace Program
         }
 
         /*
+         * Loads the booking matching given booking number into the system
+         * (from persisted data).
+         * Returns true if the booking was found & loaded successfully,
+         * otherwise false.
+         */
+        public bool RestoreBooking(int bookingNb)
+        {
+            bool wasRestored = true;
+            List<Dictionary<String, String>> bookingData;
+            if (!dpFacade.Read(bookingNb, out bookingData))
+            {
+                wasRestored = false;
+            }
+            else
+            {
+                CurrentBook = bFact.Restore(bookingData);
+                CurrentCust = CurrentBook.GetCustomer();
+            }
+            return wasRestored;
+        }
+
+        /*
          * Returns the current booking's booking number, or -1 if no booking
          * is currently loaded.
          */
@@ -271,38 +293,15 @@ namespace Program
                 CurrentBook.AddGuest(g);
             }
         }
-
-
-
+        
         /*
-         * Persists the current booking of the system.
+         * Persists the BookingComponent instance currently loaded in the 
+         * system to file.
          * Returns true if the booking was saved successfully, otherwise false.
          */
         public bool PersistCurrentBooking()
         {
             return dpFacade.Persist(CurrentBook);
-        }
-
-        /*
-         * Loads the booking matching given booking number into the system
-         * (from persisted data).
-         * Returns true if the booking was found & loaded successfully,
-         * otherwise false.
-         */
-        public bool RestoreBooking(int bookingNb)
-        {
-            bool wasRestored = true;
-            List<Dictionary<String, String>> bookingData;
-            if (!dpFacade.Read(bookingNb, out bookingData))
-            {
-                wasRestored = false;
-            }
-            else
-            {
-                CurrentBook = bFact.Restore(bookingData);
-                CurrentCust = CurrentBook.GetCustomer();
-            }
-            return wasRestored;
         }
 
         // METHODS RELATED TO THE CURRENT CUSTOMER:
@@ -313,6 +312,27 @@ namespace Program
         public void CreateCustomer(String name, String address)
         {
             CurrentCust = pFact.GetNewCustomer(name, address);
+        }
+
+        /*
+         * Loads the customer matching given customer number into the system
+         * (from persisted data).
+         * Returns true if the customer was found & loaded successfully,
+         * otherwise false.
+         */
+        public bool RestoreCustomer(int customerNb)
+        {
+            bool wasRestored = true;
+            Dictionary<String, String> customerData;
+            if (!dpFacade.Read(customerNb, out customerData))
+            {
+                wasRestored = false;
+            }
+            else
+            {
+                CurrentCust = pFact.RestoreCustomer(customerData);
+            }
+            return wasRestored;
         }
 
         /*
@@ -357,27 +377,6 @@ namespace Program
             return customerAddress;
         }
 
-        /*
-         * Loads the customer matching given customer number into the system
-         * (from persisted data).
-         * Returns true if the customer was found & loaded successfully,
-         * otherwise false.
-         */
-        public bool RestoreCustomer(int customerNb)
-        {
-            bool wasRestored = true;
-            Dictionary<String, String> customerData;
-            if (!dpFacade.Read(customerNb, out customerData))
-            {
-                wasRestored = false;
-            }
-            else
-            {
-                CurrentCust = pFact.RestoreCustomer(customerData);
-            }
-            return wasRestored;
-        }
-
         // METHOD RELATED TO CURRENT BOOKING'S GUESTS:
 
         /*
@@ -386,6 +385,31 @@ namespace Program
         public void AddGuest(String name, String passportNb, int age)
         {
             CurrentBook.AddGuest(pFact.GetNewGuest(name, passportNb, age));
+        }
+
+        /*
+         * Updates details of guest at given index in current booking's
+         * list of guests.
+         */
+        public void EditGuest(int index,
+                               String name,
+                               String passportNb,
+                               int age)
+        {
+            CurrentBook.GetGuests().RemoveAt(index);
+            CurrentBook.GetGuests().Insert(index,
+                                           pFact.GetNewGuest(name,
+                                                             passportNb,
+                                                             age));
+        }
+
+        /*
+         * True if the element at given index in list of guests is a
+         * cutomer.
+         */
+        public bool IsGuestACustomer(int index)
+        {
+            return CurrentBook.GetGuests().ElementAt(index).IsCustomer();
         }
 
         /*
@@ -412,22 +436,6 @@ namespace Program
             }
 
             CurrentBook.AddGuest(CurrentCust);
-        }
-
-        /*
-         * Updates details of guest at given index in current booking's
-         * list of guests.
-         */
-        public void EditGuest(int index, 
-                               String name, 
-                               String passportNb, 
-                               int age)
-        {
-            CurrentBook.GetGuests().RemoveAt(index);
-            CurrentBook.GetGuests().Insert(index, 
-                                           pFact.GetNewGuest(name,
-                                                             passportNb,
-                                                             age));
         }
 
         /*

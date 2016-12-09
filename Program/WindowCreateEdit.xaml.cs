@@ -154,6 +154,8 @@ namespace Program
             refreshExtrasDisplay();
         }
 
+        // METHODS RELATED TO CURRENT BOOKING:
+
         /*
          * Refreshes the booking fields displayed in the window.
          */
@@ -172,6 +174,8 @@ namespace Program
             }
         }
 
+        // METHODS RELATED TO CURRENT CUSTOMER:
+
         /*
          * Refreshes the customer fields displayed in the window.
          */
@@ -184,44 +188,6 @@ namespace Program
                 txtCustAddress.Text = mFacade.CurrentCust.GetAddress();
             }
         }
-
-        /*
-         * Refreshes the guests fields displayed in the window.
-         */
-        private void refreshGuestsDisplay()
-        {
-            if (mFacade.CurrentBook != null)
-            {
-                BookingComponent b = mFacade.CurrentBook;
-                PersonComponent c = mFacade.CurrentCust;
-
-                lblGuest.Visibility = Visibility.Visible;
-                lstGuests.Visibility = Visibility.Visible;
-
-                lstGuests.Items.Clear();
-                foreach (PersonComponent g in b.GetGuests())
-                {
-                    lstGuests.Items.Add(g.Name);
-                }
-            }
-        }
-
-        /*
-         * Refreshes the extras fields displayed in the window.
-         */
-        private void refreshExtrasDisplay()
-        {
-            if (mFacade.CurrentBook != null)
-            {
-                lstExtras.Items.Clear();
-                foreach (String s in mFacade.GetCurrentExtrasNames())
-                {
-                    lstExtras.Items.Add(s);
-                }
-            }
-        }
-
-        // METHODS RELATED TO CUSTOMER:
 
         /*
          * Loads & displays the customer referenced by txtCustNumber.Text
@@ -268,6 +234,27 @@ namespace Program
         
 
         // METHODS RELATED TO GUESTS:
+
+        /*
+         * Refreshes the guests fields displayed in the window.
+         */
+        private void refreshGuestsDisplay()
+        {
+            if (mFacade.CurrentBook != null)
+            {
+                BookingComponent b = mFacade.CurrentBook;
+                PersonComponent c = mFacade.CurrentCust;
+
+                lblGuest.Visibility = Visibility.Visible;
+                lstGuests.Visibility = Visibility.Visible;
+
+                lstGuests.Items.Clear();
+                foreach (PersonComponent g in b.GetGuests())
+                {
+                    lstGuests.Items.Add(g.Name);
+                }
+            }
+        }
 
         /*
          * Opens an empty WindowGuestDetail dialog to input new guest details
@@ -364,7 +351,12 @@ namespace Program
                 MessageBox.Show("Please double click on the guest that"
                             + " you want to edit");
             }
-            else 
+            else if (mFacade.IsGuestACustomer(i))
+            {
+                new WindowGuestDetails(mFacade, true, i).ShowDialog();
+                refreshGuestsDisplay();
+            }
+            else
             {
                 new WindowGuestDetails(mFacade, false, i).ShowDialog();
                 refreshGuestsDisplay();
@@ -389,6 +381,21 @@ namespace Program
         }
 
         // METHODS RELATED TO EXTRAS:
+
+        /*
+         * Refreshes the extras fields displayed in the window.
+         */
+        private void refreshExtrasDisplay()
+        {
+            if (mFacade.CurrentBook != null)
+            {
+                lstExtras.Items.Clear();
+                foreach (String s in mFacade.GetCurrentExtrasNames())
+                {
+                    lstExtras.Items.Add(s);
+                }
+            }
+        }
 
         /*
          * Opens a dialog to add a breakfasts extra to the current booking.

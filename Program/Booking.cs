@@ -94,7 +94,7 @@ namespace Program
          */
         public override void AddGuest(PersonComponent guest)
         {
-            //  Arcane compile error - need to solve
+            //  Obscure compile error - need to solve
             /*
             if (!guest.isGuest())
             {
