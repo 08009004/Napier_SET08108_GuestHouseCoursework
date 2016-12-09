@@ -94,7 +94,7 @@ namespace Program
             bool areValidValues = true;
             DateTime arrival;
             DateTime departure;
-            mFacade.CurrentBook.GetDates(out arrival, out departure);
+            mFacade.GetCurrentBookDates(out arrival, out departure);
 
             if (String.IsNullOrWhiteSpace(txtDriverName.Text))
             {
