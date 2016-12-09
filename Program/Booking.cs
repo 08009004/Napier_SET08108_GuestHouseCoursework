@@ -87,6 +87,31 @@ namespace Program
         }
 
         /*
+         * True if the contents of both bookings are identical, otherwise
+         * false
+         */
+        public override bool Equals(object obj)
+        {
+            // self check
+            if (this == obj) return true;
+
+            // null check
+            if (obj == null) return false;
+
+            // type check and cast
+            if (this.GetType() != obj.GetType()) return false;
+            Booking b = (Booking)obj;
+
+            // attribute content comparison
+            return this.bookingNb == b.bookingNb
+                && this.cust == b.cust
+                    // only checking reference equality because i am lacking
+                    // the time to implement customer 'deep' equallity check
+                && this.arrival == b.arrival
+                && this.departure == b.departure;
+        }
+
+        /*
          * Adds a guest to the booking.
          * 
          * Throws ArgumentException if there is already 4 guests added to
