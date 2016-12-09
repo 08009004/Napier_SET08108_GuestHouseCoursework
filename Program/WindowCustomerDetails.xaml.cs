@@ -47,7 +47,12 @@ namespace Program
         {
             clearDisplay();
             lstCustomers.ItemsSource = mFacade.GetAllCustomerNbs();
-            
+            if (mFacade.IsACustomerLoaded())
+            {
+                lblCustNumberValue.Content = mFacade.GetCurrentCustNb();
+                txtCustName.Text = mFacade.GetCurrentCustName();
+                txtCustAddress.Text = mFacade.GetCurrentCustAdress();
+            }
         }
 
         /*
@@ -108,7 +113,9 @@ namespace Program
         }
 
         
-
+        /*
+         * Creates or updates customer, and closes dialog.
+         */
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             if (areAllValuesValid())
@@ -123,11 +130,9 @@ namespace Program
                     mFacade.CreateCustomer(txtCustName.Text, 
                                            txtCustAddress.Text);
                 }
-                
-                MessageBox.Show("Customer saved.");
-                
+                this.Close();
             }
-            refreshCustDetailDisplay();
+            //refreshCustDetailDisplay();
         }
 
         /*

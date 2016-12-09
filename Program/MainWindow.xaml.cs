@@ -173,7 +173,7 @@ namespace Program
          */
         private void btnCloseBooking_Click(object sender, RoutedEventArgs e)
         {
-            this.mFacade.CurrentBook = null;
+            mFacade.CurrentBookingClose();
             clearDisplay();
         }
         

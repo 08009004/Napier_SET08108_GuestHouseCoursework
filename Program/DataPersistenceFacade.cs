@@ -100,6 +100,22 @@ namespace Program
             return bookingNb;
         }
 
+        /*
+         * Deletes the file storing given booking from disc if it
+         * exists.
+         */
+        public void Delete(int bookingNb)
+        {
+            String filePath = (String.Format(@"{0}/{1}.csv",
+                                             dataDirectory,
+                                             bookingNb));
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+        }
+
         // METHODS RELATED TO CUSTOMERS:
 
         /*

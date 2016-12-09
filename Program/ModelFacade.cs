@@ -95,6 +95,11 @@ namespace Program
             return dpFacade.GetAllCustomerNbs();
         }
 
+        public void DeleteBooking(int bookingNb)
+        {
+            dpFacade.Delete(bookingNb);
+        }
+
 
         // METHODS RELATED TO CURRENT BOOKING:
 
@@ -248,6 +253,15 @@ namespace Program
             {
                 CurrentBook.AddGuest(g);
             }
+        }
+
+        /*
+         * Closes the BookingComponent instance currently loaded in the 
+         * system.
+         */
+        public void CurrentBookingClose()
+        {
+            CurrentBook = null;
         }
         
         /*
