@@ -22,11 +22,12 @@ namespace Program
      */
     public partial class WindowCreateEdit : Window
     {
-        //Property:
+        //PROPERTIES:
+
         // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
 
-        // GENERIC WINDOW METHODS:
+        // METHODS:
 
         /*
          * The window constructor.
@@ -44,7 +45,8 @@ namespace Program
             }
             else
             {
-                lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
+                lblBookingRef.Content += mFacade.GetCurrentBookNb()
+                                                .ToString();
                 refreshDisplay();
             }
         }
@@ -58,7 +60,7 @@ namespace Program
         {
             if (areAllValuesValid())
             {
-                if (mFacade.CurrentBook == null)
+                if (!mFacade.IsABookingLoaded())
                 {
                     mFacade.CreateBooking((DateTime)dtpArrival.SelectedDate,
                                           (DateTime)dtpDeparture.SelectedDate);
@@ -70,7 +72,6 @@ namespace Program
                     mFacade.UpdateBooking((DateTime)dtpArrival.SelectedDate,
                                           (DateTime)dtpDeparture.SelectedDate);
                     mFacade.PersistCurrentBooking();
-                    this.Close();
                 }
             }
         }
@@ -84,7 +85,7 @@ namespace Program
         {
             bool areValidValues = true;
 
-            if (mFacade.CurrentCust == null)
+            if (!mFacade.IsACustomerLoaded())
             {
                 areValidValues = false;
                 MessageBox.Show("Please create or load a customer for"
@@ -111,14 +112,6 @@ namespace Program
             }
 
             return areValidValues;
-        }
-
-        /*
-         * Closes the Create/Edit dialog without commiting changes.
-         */
-        private void btnDiscard_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
 
         /*
@@ -161,15 +154,16 @@ namespace Program
          */
         private void refreshBookingDisplay()
         {
-            if (mFacade.CurrentBook != null)
+            if (mFacade.IsABookingLoaded())
             {
                 DateTime arrival;
                 DateTime departure;
-                mFacade.CurrentBook.GetDates(out arrival, out departure);
+                mFacade.GetCurrentBookDates(out arrival, out departure);
                 dtpArrival.SelectedDate = arrival;
                 dtpDeparture.SelectedDate = departure;
 
-                lblBookingRef.Content += mFacade.CurrentBook.GetBookingNb().ToString();
+                lblBookingRef.Content += mFacade.GetCurrentBookNb()
+                                                .ToString();
                 lblBookingRef.Visibility = Visibility.Visible;
             }
         }
@@ -181,11 +175,11 @@ namespace Program
          */
         private void refreshCustomerDisplay()
         {
-            if (mFacade.CurrentCust != null)
+            if (mFacade.IsACustomerLoaded())
             {
-                txtCustNumber.Text = mFacade.CurrentCust.GetCustNb().ToString();
-                txtCustName.Text = mFacade.CurrentCust.Name;
-                txtCustAddress.Text = mFacade.CurrentCust.GetAddress();
+                txtCustNumber.Text = mFacade.GetCurrentCustNb().ToString();
+                txtCustName.Text = mFacade.GetCurrentCustName();
+                txtCustAddress.Text = mFacade.GetCurrentCustAdress();
             }
         }
 
@@ -194,45 +188,11 @@ namespace Program
          */
         private void btnCreateLoadCust_Click(object sender, RoutedEventArgs e)
         {
-            /* OLD METHOD
-            int customerNb;
-
-            if (!Int32.TryParse(txtCustNumber.Text, out customerNb))
-            {
-                MessageBox.Show("Please enter a valid customer number.");
-            }
-            else if (!mFacade.RestoreCustomer(customerNb))
-            {
-                MessageBox.Show("Can't find customer number "
-                                + txtCustNumber.Text + ".\r\n"
-                                + "Please enter a valid"
-                                + " booking number.");
-            }
-             */
             new WindowCustomerDetails(this.mFacade).ShowDialog();
             refreshCustomerDisplay();
         }
 
-        /*
-         * Verifies fields validity and creates a new customer instance if
-         * possible.
-         */
-        private void btnNewCust_Click(object sender, RoutedEventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(txtCustName.Text))
-            {
-                MessageBox.Show("Please enter a valid customer name");
-            }
-            else if (String.IsNullOrWhiteSpace(txtCustAddress.Text))
-            {
-                MessageBox.Show("Please enter a valid customer address");
-            }
-            else
-            {
-                mFacade.CreateCustomer(txtCustName.Text, txtCustAddress.Text);
-                refreshCustomerDisplay();
-            }
-        }
+        
         
 
         // METHODS RELATED TO GUESTS:
@@ -242,19 +202,13 @@ namespace Program
          */
         private void refreshGuestsDisplay()
         {
-            if (mFacade.CurrentBook != null)
+            if (mFacade.IsABookingLoaded())
             {
-                BookingComponent b = mFacade.CurrentBook;
-                PersonComponent c = mFacade.CurrentCust;
-
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
 
                 lstGuests.Items.Clear();
-                foreach (PersonComponent g in b.GetGuests())
-                {
-                    lstGuests.Items.Add(g.Name);
-                }
+                lstGuests.ItemsSource = mFacade.GetGuestNames();
             }
         }
 
@@ -280,13 +234,13 @@ namespace Program
         {
             bool canAddGuest = true;
 
-            if (mFacade.CurrentBook == null)
+            if (!mFacade.IsABookingLoaded())
             {
                 canAddGuest = false;
                 MessageBox.Show("Please save the booking before adding"
                                 + " the guests.");
             }
-            else if (mFacade.CurrentBook.GetGuests().Count >= 4)
+            else if (mFacade.GetCurrentNbGuests() >= 4)
             {
                 canAddGuest = false;
                 MessageBox.Show("This booking is already full, the"
@@ -303,36 +257,19 @@ namespace Program
          */
         private void btnAddCustToGuests_Click(object sender, RoutedEventArgs e)
         {
-            if (canAddGuest() && !isCustInGuests())
+            if (canAddGuest())
             {
-                new WindowGuestDetails(mFacade, true).ShowDialog();
-                refreshGuestsDisplay();
-            }
-        }
-
-        /*
-         * Scans the list of guests to check if there already is a customer
-         * in it.
-         */
-        private bool isCustInGuests()
-        {
-            bool isCustInGuests = false;
-
-            if (mFacade.CurrentBook != null)
-            {
-                foreach (PersonComponent g in mFacade.CurrentBook.GetGuests())
+                if (mFacade.IsGuestACustomer(lstGuests.SelectedIndex))
                 {
-                    isCustInGuests = isCustInGuests || g.IsCustomer();
+                    MessageBox.Show("The customer is already booked as"
+                                    + " a guest.");
+                }
+                else
+                {
+                    new WindowGuestDetails(mFacade, true).ShowDialog();
+                    refreshGuestsDisplay();
                 }
             }
-
-            if (isCustInGuests)
-            {
-                MessageBox.Show("There is already a customer in the list"
-                                + " of guests.");
-            }
-
-            return isCustInGuests;
         }
 
         /*
@@ -372,7 +309,7 @@ namespace Program
         {
             if (lstGuests.SelectedIndex < 0 || lstGuests.SelectedIndex > 3)
             {
-                MessageBox.Show("Please select the guest"
+                MessageBox.Show("Please first select the guest"
                                 + " that you want to delete.");
             }
             else
@@ -389,7 +326,7 @@ namespace Program
          */
         private void refreshExtrasDisplay()
         {
-            if (mFacade.CurrentBook != null)
+            if (mFacade.IsABookingLoaded())
             {
                 lstExtras.Items.Clear();
                 foreach (String s in mFacade.GetCurrentExtrasNames())
@@ -404,7 +341,7 @@ namespace Program
          */
         private void btnAddBreakfast_Click(object sender, RoutedEventArgs e)
         {
-            if (mFacade.CurrentBook == null)
+            if (!mFacade.IsABookingLoaded())
             {
                 MessageBox.Show("Please save your new booking before adding"
                                 + " a breakfast extra.");
@@ -421,7 +358,7 @@ namespace Program
          */
         private void btnAddEveningMeal_Click(object sender, RoutedEventArgs e)
         {
-            if (mFacade.CurrentBook == null)
+            if (!mFacade.IsABookingLoaded())
             {
                 MessageBox.Show("Please save your new booking before adding"
                                 + " an evening meals extra.");
@@ -438,7 +375,7 @@ namespace Program
          */
         private void btnAddCarHire_Click(object sender, RoutedEventArgs e)
         {
-            if (mFacade.CurrentBook == null)
+            if (!mFacade.IsABookingLoaded())
             {
                 MessageBox.Show("Please save your new booking before adding"
                                 + " a car hire extra.");
@@ -464,7 +401,7 @@ namespace Program
                 MessageBox.Show("There is no extra for this booking"
                                 + " at present.");
             }
-            else if(i < 0) 
+            else if (i < 0) 
             {
                 MessageBox.Show("Please double click on the extra that"
                             + " you want to edit");

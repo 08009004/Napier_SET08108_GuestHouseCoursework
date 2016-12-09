@@ -153,6 +153,29 @@ namespace Program
         }
 
         /*
+         * Returns the current booking's departure and arrival dates.
+         */
+        public void GetCurrentBookDates(out DateTime arrival, 
+                                        out DateTime departure) 
+        {
+            CurrentBook.GetDates(out arrival, out departure);
+        }
+
+        /*
+         * Returns a list of the names of all the guests currently booked for 
+         * the current booking.
+         */
+        public List<String> GetGuestNames()
+        {
+            List<String> guestNames = new List<String>();
+            foreach (PersonComponent g in CurrentBook.GetGuests())
+            {
+                guestNames.Add(g.Name);
+            }
+            return guestNames;
+        }
+
+        /*
          * Returns the number of guests currently booked for the current 
          * booking(also 0 if no booking is currently loaded).
          */
