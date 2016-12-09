@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="242" Width="552" Closing="Window_Closing">
-    <Grid Height="238" VerticalAlignment="Top" Margin="0,0,2,-3">
+    <Grid Height="215" VerticalAlignment="Top" Margin="0,0,2,-3">
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="131" Margin="343,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="189"/>
 
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="131" Margin="185,67,0,0" Stroke="Black" VerticalAlignment="Top" Width="153"/>
@@ -37,7 +37,7 @@
         <Label x:Name="lblCustomerNbValue" Content="Value" HorizontalAlignment="Left" Margin="251,89,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="lblCustomerNameValue" Content="Value" HorizontalAlignment="Left" Margin="251,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,1.692" Width="81"/>
         <Button x:Name="btnInvoice" Content="Invoice" HorizontalAlignment="Left" Margin="315,36,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.253,0.136" Click="btnInvoice_Click"/>
-        <Button x:Name="btnDelete" Content="Delete booking" HorizontalAlignment="Left" Margin="407,36,0,0" VerticalAlignment="Top" Width="87"/>
+        <Button x:Name="btnDelete" Content="Delete booking" HorizontalAlignment="Left" Margin="407,36,0,0" VerticalAlignment="Top" Width="87" Click="btnDelete_Click"/>
 
     </Grid>
 </Window>

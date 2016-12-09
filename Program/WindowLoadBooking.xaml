@@ -8,7 +8,7 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="207" Margin="6,13,0,0" Stroke="Black" VerticalAlignment="Top" Width="135"/>
 
         <Label x:Name="lblHeader" Content="Bookings:" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <ListBox x:Name="lstBookings" HorizontalAlignment="Left" Height="136" Margin="13,46,0,0" VerticalAlignment="Top" Width="112" MouseDoubleClick="lstBookings_MouseDoubleClick"/>
+        <ListBox x:Name="lstBookings" HorizontalAlignment="Left" Height="165" Margin="13,46,0,0" VerticalAlignment="Top" Width="112" MouseDoubleClick="lstBookings_MouseDoubleClick"/>
         <Label x:Name="lblArrival" Content="Arrival Date:" HorizontalAlignment="Left" Margin="156,30,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblDeparture" Content="Departure Dates:" HorizontalAlignment="Left" Margin="156,61,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblCustName" Content="Customer:" HorizontalAlignment="Left" Margin="156,95,0,0" VerticalAlignment="Top"/>
@@ -17,7 +17,6 @@
         <Label x:Name="lblArrivalValue" Content="Value" HorizontalAlignment="Left" Margin="280,30,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="lblDepartureValue" Content="Value" HorizontalAlignment="Left" Margin="280,61,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="lblCustNameValue" Content="Value" HorizontalAlignment="Left" Margin="280,95,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="btnDelete" Content="Delete booking" HorizontalAlignment="Left" Margin="33,189,0,0" VerticalAlignment="Top" Width="92" Click="btnDelete_Click"/>
 
     </Grid>
 </Window>

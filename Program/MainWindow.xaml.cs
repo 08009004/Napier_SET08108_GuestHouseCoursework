@@ -189,5 +189,15 @@ namespace Program
             MessageBox.Show("Cheerio");
         }
 
+        /*
+         * Deletes the booking curently loaded in the system.
+         */
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            int bookingNb = mFacade.GetCurrentBookNb();
+            mFacade.CurrentBookingClose();
+            mFacade.DeleteBooking(bookingNb);
+            clearDisplay();
+        }
     }
 }
