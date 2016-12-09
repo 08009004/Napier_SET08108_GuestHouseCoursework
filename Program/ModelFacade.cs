@@ -262,6 +262,7 @@ namespace Program
         public void CurrentBookingClose()
         {
             CurrentBook = null;
+            CurrentCust = null;
         }
         
         /*
