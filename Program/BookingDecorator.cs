@@ -206,7 +206,7 @@ namespace Program
 
             if (DecoratedComponent != null)
             {
-                costPerNight = DecoratedComponent.GetCost();
+                costPerNight = DecoratedComponent.GetCostPerNight();
             }
 
             return costPerNight;
@@ -216,13 +216,14 @@ namespace Program
          * Returns the cost of the decorated BookingComponent
          * (or -1 if the root component is not a concrete Booking).
          */
-        public override float GetCost()
+        public virtual float GetExtraCost()
         {
             float cost = -1;
 
-            if (DecoratedComponent != null)
+            if (DecoratedComponent != null
+                && DecoratedComponent.isDecorator())
             {
-                cost = DecoratedComponent.GetCost();
+                cost = ((BookingDecorator)DecoratedComponent).GetExtraCost();
             }
 
             return cost;

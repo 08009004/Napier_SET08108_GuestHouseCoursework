@@ -63,7 +63,7 @@ namespace Program
         /*
          * Returns the extra cost for the car hire.
          */
-        public override float GetCost()
+        public override float GetExtraCost()
         {
             return 50 * (end - start).Days;
         }

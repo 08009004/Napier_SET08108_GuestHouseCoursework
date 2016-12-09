@@ -35,7 +35,7 @@ namespace Program
         /*
          * Returns the extra cost of the breakfasts.
          */
-        public override float GetCost()
+        public override float GetExtraCost()
         {
             return 5 * base.DecoratedComponent.GetNbGuests()
                      * base.DecoratedComponent.GetNbNights();

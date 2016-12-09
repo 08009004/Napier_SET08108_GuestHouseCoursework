@@ -57,11 +57,6 @@ namespace Program
          */
         public abstract float GetCostPerNight();
 
-        /*
-         * Must return the cost of the BookingComponent
-         */
-        public abstract float GetCost();
-
         /* 
          * Returns the BookingComponent itself; and references is null.
          */

@@ -173,14 +173,6 @@ namespace Program
         }
 
         /*
-         * Returns the basic cost (extras excluded) of the booking.
-         */
-        public override float GetCost()
-        {
-            return GetCostPerNight() * GetNbNights();
-        }
-
-        /*
          * Returns a reference to the Booking itself it is not decorated
          * at all.
          */

@@ -657,7 +657,7 @@ namespace Program
                     {
                         if (e.GetType() == typeof(Breakfast))
                         {
-                            breakfastsCost += e.GetCost();
+                            breakfastsCost += e.GetExtraCost();
                         }
                     }
                 }
@@ -685,7 +685,7 @@ namespace Program
                     {
                         if (e.GetType() == typeof(EveningMeal))
                         {
-                            eveningMealsCost += e.GetCost();
+                            eveningMealsCost += e.GetExtraCost();
                         }
                     }
                 }
@@ -713,7 +713,7 @@ namespace Program
                     {
                         if (e.GetType() == typeof(CarHire))
                         {
-                            carHiresCost += e.GetCost();
+                            carHiresCost += e.GetExtraCost();
                         }
                     }
                 }

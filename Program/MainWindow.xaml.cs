@@ -36,28 +36,6 @@ namespace Program
          */
         public MainWindow()
         {
-            /*
-            ModelFacade mf = new ModelFacade();
-            PersonFactory pf = PersonFactory.Instance;
-            BookingFactory bf = BookingFactory.Instance;
-            BookingComponent b = bf.GetNewBooking(pf.GetNewCustomer("custName", "custAddress"), 
-                                                  new DateTime(1998,04,30), 
-                                                  new DateTime(2007,11,05));
-
-            b = bf.AddBreakfast(b, "Brekfast_Diet");
-            b = bf.AddCarHire(b, "driverName", new DateTime(1998,05,12), new DateTime(1998,05,15));
-            b = bf.AddEveningMeal(b, "Brekfast_Diet");
-
-            mf.CurrentBook = b;
-
-            //b.Undecorate(bf.AddBreakfast(b, "Brekfast_Diet"));
-            foreach (String s in mf.getCurrentExtras())
-            {
-                MessageBox.Show(s);
-            }
-
-            InitializeComponent();
-            */
             this.mFacade = new ModelFacade();
             InitializeComponent();
             clearDisplay();
@@ -211,7 +189,7 @@ namespace Program
                                     System.ComponentModel.CancelEventArgs e)
         {
             mFacade.PersistSystemState();
-            MessageBox.Show("cheerio");
+            MessageBox.Show("Cheerio");
         }
 
     }
