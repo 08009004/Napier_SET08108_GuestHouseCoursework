@@ -20,7 +20,7 @@ namespace Program
      * Interaction logic for MainWindow.xaml
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
-     * last modified: 2016-12-07
+     * last modified: 2016-12-09
      */
     public partial class MainWindow : Window
     {

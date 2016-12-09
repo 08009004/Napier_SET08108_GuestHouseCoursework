@@ -14,14 +14,30 @@ using System.Windows.Shapes;
 
 namespace Program
 {
-    /// <summary>
-    /// Interaction logic for WindowCustomerDetails.xaml
-    /// </summary>
+    /*
+     * Interaction logic for WindowCustomerDetails.xaml
+     * 
+     * author: Pierre Ruiz (matriculation number 08009004)
+     * last modified: 2016-12-09
+     */
     public partial class WindowCustomerDetails : Window
     {
-        public WindowCustomerDetails()
+        //Property:
+        // reference to calling window's ModelFacade instance:
+        private ModelFacade mFacade;
+
+        // GENERIC WINDOW METHODS:
+
+        /*
+         * The window constructor.
+         */
+        public WindowCustomerDetails(ModelFacade modelFacade)
         {
+            this.mFacade = modelFacade;
+
             InitializeComponent();
         }
+
+
     }
 }

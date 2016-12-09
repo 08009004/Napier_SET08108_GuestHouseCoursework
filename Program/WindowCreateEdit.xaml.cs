@@ -192,8 +192,9 @@ namespace Program
         /*
          * Loads & displays the customer referenced by txtCustNumber.Text
          */
-        private void btnLoadCust_Click(object sender, RoutedEventArgs e)
+        private void btnCreateLoadCust_Click(object sender, RoutedEventArgs e)
         {
+            /* OLD METHOD
             int customerNb;
 
             if (!Int32.TryParse(txtCustNumber.Text, out customerNb))
@@ -207,7 +208,8 @@ namespace Program
                                 + "Please enter a valid"
                                 + " booking number.");
             }
-
+             */
+            new WindowCustomerDetails(this.mFacade).ShowDialog();
             refreshCustomerDisplay();
         }
 

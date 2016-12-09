@@ -10,7 +10,7 @@ namespace Program
      * Facade providing an interface to the system.
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
-     * last modified: 2016-12-08
+     * last modified: 2016-12-09
      */
     public class ModelFacade
     {

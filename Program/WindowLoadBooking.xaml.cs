@@ -120,13 +120,5 @@ namespace Program
 
             refreshBookDetailDisplay();
         }
-
-        /*
-         * Closes the window.
-         */
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
     }
 }
