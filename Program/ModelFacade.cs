@@ -325,6 +325,14 @@ namespace Program
         // METHODS RELATED TO THE CURRENT CUSTOMER:
 
         /*
+         * 
+         */
+        public bool IsACustomerLoaded()
+        {
+            return CurrentCust != null;
+        }
+
+        /*
          * Instanciates a new customer.
          */
         public void CreateCustomer(String name, String address)
@@ -360,7 +368,7 @@ namespace Program
         public int GetCurrentCustNb()
         {
             int customerNb = -1;
-            if (CurrentBook != null)
+            if (CurrentCust != null)
             {
                 customerNb = CurrentCust.GetCustNb();
             }
@@ -374,7 +382,7 @@ namespace Program
         public String GetCurrentCustName()
         {
             String customerName = null;
-            if (CurrentBook != null)
+            if (CurrentCust != null)
             {
                 customerName = CurrentCust.Name;
             }
@@ -388,7 +396,7 @@ namespace Program
         public String GetCurrentCustAdress()
         {
             String customerAddress = null;
-            if (CurrentBook != null)
+            if (CurrentCust != null)
             {
                 customerAddress = CurrentCust.GetAddress();
             }
