@@ -79,21 +79,20 @@ namespace Program
         }
 
         /*
-         * Returns a list of all the customer numbers persisted on disc.
-         */
-        public List<int> GetAllCustomerNbs()
-        {
-            List<int> temp = dpFacade.GetAllCustomerNbs();
-            return dpFacade.GetAllCustomerNbs();
-        }
-
-        /*
          * Returns a list of all the booking numbers persisted on disc made 
          * by a given customer.
          */
         public List<int> GetAllBookingNbs(PersonComponent customer)
         {
             return dpFacade.GetAllBookingNbs(customer.GetCustNb());
+        }
+
+        /*
+         * Returns a list of all the customer numbers persisted on disc.
+         */
+        public List<int> GetAllCustomerNbs()
+        {
+            return dpFacade.GetAllCustomerNbs();
         }
 
 

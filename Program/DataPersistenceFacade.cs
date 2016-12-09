@@ -143,6 +143,8 @@ namespace Program
          */
         public List<int> GetAllCustomerNbs()
         {
+            int customerNb;
+
             if (!Directory.Exists(dataDirectory))
             {
                 dataWriter.CreateDir(dataDirectory);
@@ -152,7 +154,11 @@ namespace Program
 
             foreach (String bookingFile in Directory.GetFiles(dataDirectory))
             {
-                customerNbs.Add(extractCustomerNb(bookingFile));
+                customerNb = extractCustomerNb(bookingFile);
+                if (!customerNbs.Contains(customerNb)) 
+                {
+                    customerNbs.Add(customerNb);
+                }
             }
 
             return customerNbs;
