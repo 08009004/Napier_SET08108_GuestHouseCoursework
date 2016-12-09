@@ -54,7 +54,49 @@ namespace Program
             }
         }
 
+        /*
+         * Recovers last system state persisted to file.
+         */
+        public bool RestoreSystemSavedState()
+        {
+            return false;
+        }
+
+        /*
+         * Persists current system state to file.
+         */
+        public bool PersistSystemState()
+        {
+            return dpFacade.PersistSystemState();
+        }
+
+        /*
+         * Returns a list of all the booking numbers persisted on disc.
+         */
+        public List<int> GetAllBookingNbs()
+        {
+            return dpFacade.GetAllBookingNbs();
+        }
+
+        /*
+         * Returns a list of all the booking numbers persisted on disc made 
+         * by a given customer.
+         */
+        public List<int> GetAllBookingNbs(PersonComponent customer)
+        {
+            return dpFacade.GetAllBookingNbs(customer.GetCustNb());
+        }
+
+
         // METHODS RELATED TO CURRENT BOOKING:
+
+        /*
+         * Instanciates a new booking for the current customer.
+         */
+        public void CreateBooking(DateTime arrival, DateTime departure)
+        {
+            CurrentBook = bFact.GetNewBooking(CurrentCust, arrival, departure);
+        }
 
         /*
          * Returns the current booking's booking number, or -1 if no booking
@@ -198,7 +240,80 @@ namespace Program
             return carHiresCost;
         }
 
+        /*
+         * Updates the BookingComponent instance currently loaded in the
+         * system.
+         */
+        public void UpdateBooking(DateTime arrival, DateTime departure)
+        {
+            List<PersonComponent> savedGuests = CurrentBook.GetGuests();
+            List<BookingDecorator> decorationStack;
+            BookingComponent booking = CurrentBook.Unwrap(out decorationStack);
+
+            booking = bFact.UpdateBooking(booking.GetBookingNb(),
+                                          CurrentCust,
+                                          arrival,
+                                          departure);
+
+            if (decorationStack != null)
+            {
+                foreach (BookingDecorator reference in decorationStack)
+                {
+                    reference.DecoratedComponent = booking;
+                    booking = reference;
+                }
+            }
+
+            CurrentBook = booking;
+
+            foreach (PersonComponent g in savedGuests)
+            {
+                CurrentBook.AddGuest(g);
+            }
+        }
+
+
+
+        /*
+         * Persists the current booking of the system.
+         * Returns true if the booking was saved successfully, otherwise false.
+         */
+        public bool PersistCurrentBooking()
+        {
+            return dpFacade.Persist(CurrentBook);
+        }
+
+        /*
+         * Loads the booking matching given booking number into the system
+         * (from persisted data).
+         * Returns true if the booking was found & loaded successfully,
+         * otherwise false.
+         */
+        public bool RestoreBooking(int bookingNb)
+        {
+            bool wasRestored = true;
+            List<Dictionary<String, String>> bookingData;
+            if (!dpFacade.Read(bookingNb, out bookingData))
+            {
+                wasRestored = false;
+            }
+            else
+            {
+                CurrentBook = bFact.Restore(bookingData);
+                CurrentCust = CurrentBook.GetCustomer();
+            }
+            return wasRestored;
+        }
+
         // METHODS RELATED TO THE CURRENT CUSTOMER:
+
+        /*
+         * Instanciates a new customer.
+         */
+        public void CreateCustomer(String name, String address)
+        {
+            CurrentCust = pFact.GetNewCustomer(name, address);
+        }
 
         /*
          * Returns the current booking's customer number, or -1 if no booking
@@ -243,44 +358,6 @@ namespace Program
         }
 
         /*
-         * Recovers last system state persisted to file.
-         */
-        public bool RestoreSystemSavedState()
-        {
-            return false;
-        }
-
-        /*
-         * Restores system state from file.
-         */
-        public bool PersistSystemState()
-        {
-            return dpFacade.PersistSystemState();
-        }
-
-        /*
-         * Loads the booking matching given booking number into the system
-         * (from persisted data).
-         * Returns true if the booking was found & loaded successfully,
-         * otherwise false.
-         */
-        public bool RestoreBooking(int bookingNb)
-        {
-            bool wasRestored = true;
-            List<Dictionary<String, String>> bookingData;
-            if (!dpFacade.Read(bookingNb, out bookingData))
-            {
-                wasRestored = false;
-            }
-            else
-            {
-                CurrentBook = bFact.Restore(bookingData);
-                CurrentCust = CurrentBook.GetCustomer();
-            }
-            return wasRestored;
-        }
-
-        /*
          * Loads the customer matching given customer number into the system
          * (from persisted data).
          * Returns true if the customer was found & loaded successfully,
@@ -301,61 +378,7 @@ namespace Program
             return wasRestored;
         }
 
-        /*
-         * Instanciates a new customer.
-         */
-        public void CreateCustomer(String name, String address) 
-        {
-            CurrentCust = pFact.GetNewCustomer(name, address);
-        }
-
-        /*
-         * Instanciates a new booking for the current customer.
-         */
-        public void CreateBooking(DateTime arrival, DateTime departure)
-        {
-            CurrentBook = bFact.GetNewBooking(CurrentCust, arrival, departure);
-        }
-
-        /*
-         * 
-         */
-        public void UpdateBooking(DateTime arrival, DateTime departure)
-        {
-            List<PersonComponent> savedGuests = CurrentBook.GetGuests();
-            List<BookingDecorator> decorationStack;
-            BookingComponent booking = CurrentBook.Unwrap(out decorationStack);
-
-            booking = bFact.UpdateBooking(booking.GetBookingNb(), 
-                                          CurrentCust, 
-                                          arrival, 
-                                          departure);
-
-            if (decorationStack != null)
-            {
-                foreach (BookingDecorator reference in decorationStack)
-                {
-                    reference.DecoratedComponent = booking;
-                    booking = reference;
-                }
-            }
-
-            CurrentBook = booking;
-
-            foreach (PersonComponent g in savedGuests)
-            {
-                CurrentBook.AddGuest(g);
-            }
-        }
-
-        /*
-         * Persists the current booking of the system.
-         * Returns true if the booking was saved successfully, otherwise false.
-         */
-        public bool PersistCurrentBooking()
-        {
-            return dpFacade.Persist(CurrentBook);
-        }
+        // METHOD RELATED TO CURRENT BOOKING'S GUESTS:
 
         /*
          * Adds a new person to current booking's list of guests.
@@ -370,9 +393,25 @@ namespace Program
          */
         public void AddCustomerToGuests(String passportNb, int age)
         {
-            CurrentBook.AddGuest(pFact.GetNewGuest(CurrentCust, 
-                                                   passportNb, 
-                                                   age));
+            List<PersonComponent> savedGuests = CurrentBook.GetGuests();
+            DateTime arrival;
+            DateTime departure;
+            CurrentBook.GetDates(out arrival, out departure); 
+            
+            CurrentCust = pFact.GetNewGuest(CurrentCust, 
+                                            passportNb, 
+                                            age);
+            CurrentBook = bFact.UpdateBooking(CurrentBook.GetBookingNb(),
+                                              CurrentCust,
+                                              arrival,
+                                              departure);
+
+            foreach (PersonComponent g in savedGuests)
+            {
+                CurrentBook.GetGuests().Add(g);
+            }
+
+            CurrentBook.AddGuest(CurrentCust);
         }
 
         /*
@@ -415,8 +454,11 @@ namespace Program
          */
         public void DeleteGuest(int index)
         {
+            // First unwrap guest decorator from current customer if they are
+            // the guest being deleted:
             if (CurrentBook.GetGuests().ElementAt(index).IsCustomer())
             {
+                List<PersonComponent> savedGuests = CurrentBook.GetGuests();
                 DateTime arrival;
                 DateTime departure;
                 CurrentBook.GetDates(out arrival, out departure);
@@ -426,26 +468,20 @@ namespace Program
                                                   CurrentCust, 
                                                   arrival, 
                                                   departure);
+
+                foreach (PersonComponent g in savedGuests)
+                {
+                    CurrentBook.GetGuests().Add(g);
+                }
+
+
             }
+
+            // Then delete selected guest reference from guests list:
             CurrentBook.GetGuests().RemoveAt(index);
         }
 
-        /*
-         * Returns a list of all the booking numbers in the system.
-         */
-        public List<int> GetAllBookingNbs()
-        {
-            return dpFacade.GetAllBookingNbs();
-        }
-
-        /*
-         * Returns a list of all the booking numbers of bookings made 
-         * by a given customer.
-         */
-        public List<int> GetAllBookingNbs(PersonComponent customer)
-        {
-            return dpFacade.GetAllBookingNbs(customer.GetCustNb());
-        }
+        // METHODS RELATED TO CURRENT BOOKING'S EXTRAS:
 
         /*
          * Decorates the current booking with a Breakfast extra.
