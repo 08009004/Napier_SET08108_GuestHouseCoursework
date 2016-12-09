@@ -205,12 +205,13 @@ namespace Program
         }
 
         /*
-         * Saves the current system state and closes the program.
+         * Saves the current system state when the program is closed.
          */
-        private void btnExitProgram_Click(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, 
+                                    System.ComponentModel.CancelEventArgs e)
         {
             mFacade.PersistSystemState();
-            this.Close();
+            MessageBox.Show("cheerio");
         }
 
     }
