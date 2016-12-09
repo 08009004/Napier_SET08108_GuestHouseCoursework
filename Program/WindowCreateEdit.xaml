@@ -14,8 +14,6 @@
         <Label x:Name="lblCustomer" Content="Customer:" HorizontalAlignment="Left" Margin="208,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblCustName" Content="Name: " HorizontalAlignment="Left" Margin="224,63,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblCustNumber" Content="Customer Number:" HorizontalAlignment="Left" Margin="223,35,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCustNumber" HorizontalAlignment="Left" Height="23" Margin="334,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtCustName" HorizontalAlignment="Left" Height="23" Margin="334,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblArrival" Content="Arrival:" HorizontalAlignment="Left" Margin="12,83,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblDeparture" Content="Departure:" HorizontalAlignment="Left" Margin="12,138,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lstGuests" HorizontalAlignment="Left" Height="54" Margin="224,190,0,0" VerticalAlignment="Top" Width="222" MouseDoubleClick="lstGuests_MouseDoubleClick"/>
@@ -26,7 +24,6 @@
         <Button x:Name="btnNewGuest" Content="Add" HorizontalAlignment="Left" Margin="254,255,0,0" VerticalAlignment="Top" Width="75" Click="btnNewGuest_Click"/>
         <Button x:Name="btnDeleteGuest" Content="Delete" HorizontalAlignment="Left" Margin="335,255,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteGuest_Click"/>
         <Label x:Name="lblCustAddress" Content="Address:" HorizontalAlignment="Left" Margin="224,91,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCustAddress" HorizontalAlignment="Left" Height="23" Margin="334,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="dtpArrival" HorizontalAlignment="Left" Margin="40,109,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="dtpDeparture" HorizontalAlignment="Left" Margin="40,164,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnAddCustToGuests" Content="Add to guests" HorizontalAlignment="Left" Margin="373,127,0,0" VerticalAlignment="Top" Width="79" Click="btnAddCustToGuests_Click"/>
@@ -36,6 +33,9 @@
         <Button x:Name="btnAddCarHire" Content="Add car hire" HorizontalAlignment="Left" Margin="212,378,0,0" VerticalAlignment="Top" Width="107" Click="btnAddCarHire_Click"/>
         <ListBox x:Name="lstExtras" HorizontalAlignment="Left" Height="117" Margin="346,310,0,0" VerticalAlignment="Top" Width="100" MouseDoubleClick="lstExtras_MouseDoubleClick"/>
         <Button x:Name="btnExtraDelete" Content="Delete selected" HorizontalAlignment="Left" Margin="212,405,0,0" VerticalAlignment="Top" Width="107" Click="btnExtraDelete_Click"/>
+        <Label x:Name="lblCustNumberValue" Content="Value" HorizontalAlignment="Left" Margin="339,35,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label x:Name="lblCustNameValue" Content="Value" HorizontalAlignment="Left" Margin="272,63,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label x:Name="lblCustAddressValue" Content="Value" HorizontalAlignment="Left" Margin="284,91,0,0" VerticalAlignment="Top" Width="168"/>
 
     </Grid>
 </Window>

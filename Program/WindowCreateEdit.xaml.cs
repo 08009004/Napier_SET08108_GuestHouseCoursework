@@ -41,7 +41,7 @@ namespace Program
 
             if (mFacade.CurrentBook == null)
             {
-                lblBookingRef.Visibility = Visibility.Hidden;
+                clearDisplay();
             }
             else
             {
@@ -125,9 +125,9 @@ namespace Program
             dtpArrival.SelectedDate = null;
             dtpDeparture.SelectedDate = null;
 
-            txtCustNumber.Text = String.Empty;
-            txtCustName.Text = String.Empty;
-            txtCustAddress.Text = String.Empty;
+            lblCustNumberValue.Content = String.Empty;
+            lblCustNameValue.Content = String.Empty;
+            lblCustAddressValue.Content = String.Empty;
 
           //  lstGuests.Items.Clear();
           //  lstExtras.Items.Clear();
@@ -177,9 +177,9 @@ namespace Program
         {
             if (mFacade.IsACustomerLoaded())
             {
-                txtCustNumber.Text = mFacade.GetCurrentCustNb().ToString();
-                txtCustName.Text = mFacade.GetCurrentCustName();
-                txtCustAddress.Text = mFacade.GetCurrentCustAdress();
+                lblCustNumberValue.Content = mFacade.GetCurrentCustNb().ToString();
+                lblCustNameValue.Content = mFacade.GetCurrentCustName();
+                lblCustAddressValue.Content = mFacade.GetCurrentCustAdress();
             }
         }
 
@@ -191,9 +191,6 @@ namespace Program
             new WindowCustomerDetails(this.mFacade).ShowDialog();
             refreshCustomerDisplay();
         }
-
-        
-        
 
         // METHODS RELATED TO GUESTS:
 
