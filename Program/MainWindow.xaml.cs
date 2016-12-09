@@ -56,7 +56,7 @@ namespace Program
          */
         private void refreshDisplay()
         {
-            if (mFacade.CurrentBook != null)
+            if (mFacade.IsABookingLoaded())
             {
                 clearDisplay();
                 refreshBookingDisplay();
@@ -70,13 +70,12 @@ namespace Program
          */
         private void refreshBookingDisplay()
         {
-            BookingComponent b = mFacade.CurrentBook;
             DateTime start;
             DateTime end;
-            b.GetDates(out start, out end);
+            mFacade.GetCurrentBookDates(out start, out end);
 
             // update labels content:
-            lblBookingNbValue.Content = b.GetBookingNb().ToString();
+            lblBookingNbValue.Content = mFacade.GetCurrentBookNb().ToString();
             lblArrivalValue.Content = start.ToString().Substring(0, 10);
             lblDepartureValue.Content = end.ToString().Substring(0, 10);
             
@@ -95,11 +94,9 @@ namespace Program
          */
         private void refreshCustomerDisplay()
         {
-            PersonComponent c = mFacade.CurrentCust;
-
             // update labels content:
-            lblCustomerNameValue.Content = c.Name;
-            lblCustomerNbValue.Content = c.GetCustNb().ToString();
+            lblCustomerNameValue.Content = mFacade.GetCurrentCustName();
+            lblCustomerNbValue.Content = mFacade.GetCurrentCustNb().ToString();
 
             // make labels visible:
             lblCustomer.Visibility = Visibility.Visible;
@@ -118,9 +115,9 @@ namespace Program
             PersonComponent c = mFacade.CurrentCust;
 
             // update listbox content:
-            foreach (PersonComponent g in b.GetGuests())
+            foreach (String g in mFacade.GetGuestNames())
             {
-                lstGuests.Items.Add(g.Name);
+                lstGuests.Items.Add(g);
             }
 
             // make label & list box visible:
@@ -161,7 +158,7 @@ namespace Program
          */
         private void btnNewEdit_Click(object sender, RoutedEventArgs e)
         {
-            new WindowCreateEdit(this.mFacade).ShowDialog();
+            new WindowCreateEdit(mFacade).ShowDialog();
             refreshDisplay();
         }
 
@@ -170,7 +167,7 @@ namespace Program
          */
         private void btnInvoice_Click(object sender, RoutedEventArgs e)
         {
-            if (mFacade.CurrentBook == null)
+            if (!mFacade.IsABookingLoaded())
             {
                 MessageBox.Show("There is no booking loaded in the system"
                                 + " yet.\r\n"
@@ -178,7 +175,7 @@ namespace Program
             }
             else
             {
-                new WindowInvoice(this.mFacade).ShowDialog();
+                new WindowInvoice(mFacade).ShowDialog();
             }
         }
 
