@@ -115,10 +115,8 @@ namespace Program
             {
                 if (mFacade.IsACustomerLoaded()) // update current customer
                 {
-                    /*
                     mFacade.UpdateCurrentCustomer(txtCustName.Text,
                                                   txtCustAddress.Text);
-                     */
                 }
                 else // create a new customer
                 {

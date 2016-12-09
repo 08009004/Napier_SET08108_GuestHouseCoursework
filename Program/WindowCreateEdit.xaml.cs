@@ -129,8 +129,8 @@ namespace Program
             txtCustName.Text = String.Empty;
             txtCustAddress.Text = String.Empty;
 
-            lstGuests.Items.Clear();
-            lstExtras.Items.Clear();
+          //  lstGuests.Items.Clear();
+          //  lstExtras.Items.Clear();
         }
 
         /*
@@ -207,7 +207,7 @@ namespace Program
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
 
-                lstGuests.Items.Clear();
+              //  lstGuests.Items.Clear();
                 lstGuests.ItemsSource = mFacade.GetGuestNames();
             }
         }

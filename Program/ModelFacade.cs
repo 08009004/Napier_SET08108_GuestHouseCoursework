@@ -350,6 +350,8 @@ namespace Program
         public void UpdateCurrentCustomer(String newName, String newAddress)
         {
             BookingComponent processedBooking;
+            List<PersonComponent> savedGuests;
+            List<BookingDecorator> decorationStack;
             List<Dictionary<String, String>> bookingData;
             DateTime arrival;
             DateTime departure;
@@ -360,15 +362,56 @@ namespace Program
                      in dpFacade.GetAllBookingNbs(CurrentCust.GetCustNb()))
             {
                 dpFacade.Read(bookingNb, out bookingData);
-                processedBooking = bFact.Restore(bookingData);
+                processedBooking = bFact.Restore(bookingData).Unwrap(out decorationStack);
+                savedGuests = processedBooking.GetGuests();
                 processedBooking.GetDates(out arrival, out departure);
                 processedBooking = bFact.UpdateBooking(
                                             processedBooking.GetBookingNb(), 
                                             pFact.UpdateCustomer(processedBooking.GetCustomer(), newName, newAddress), 
                                             arrival, 
                                             departure);
+                if (decorationStack != null)
+                {
+                    foreach (BookingDecorator reference in decorationStack)
+                    {
+                        reference.DecoratedComponent = processedBooking;
+                        processedBooking = reference;
+                    }
+                }
+                foreach (PersonComponent g in savedGuests)
+                {
+                    processedBooking.AddGuest(g);
+                }
+
                 dpFacade.Persist(processedBooking);
             }
+
+            /*
+             List<PersonComponent> savedGuests = CurrentBook.GetGuests();
+            List<BookingDecorator> decorationStack;
+            BookingComponent booking = CurrentBook.Unwrap(out decorationStack);
+
+            booking = bFact.UpdateBooking(booking.GetBookingNb(),
+                                          CurrentCust,
+                                          arrival,
+                                          departure);
+
+            if (decorationStack != null)
+            {
+                foreach (BookingDecorator reference in decorationStack)
+                {
+                    reference.DecoratedComponent = booking;
+                    booking = reference;
+                }
+            }
+
+            CurrentBook = booking;
+
+            foreach (PersonComponent g in savedGuests)
+            {
+                CurrentBook.AddGuest(g);
+            }
+             */
 
             // reload current booking into the system to upload changes
             RestoreBooking(CurrentBook.GetBookingNb());
