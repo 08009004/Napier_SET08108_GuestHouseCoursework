@@ -383,6 +383,7 @@ namespace Program
                     processedBooking.AddGuest(g);
                 }
 
+                CurrentCust = processedBooking.GetCustomer();
                 dpFacade.Persist(processedBooking);
             }
 
@@ -390,15 +391,7 @@ namespace Program
             if (IsABookingLoaded())
             {
                 RestoreBooking(CurrentBook.GetBookingNb());
-            } 
-            //else if (IsAc
-        }
-
-        private void persistNewCustomerValues(int customerNb, 
-                                              PersonComponent newCustomer)
-        {
-            
-             
+            }
         }
 
         // METHOD RELATED TO CURRENT BOOKING'S GUESTS:
