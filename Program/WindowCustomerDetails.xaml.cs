@@ -56,10 +56,12 @@ namespace Program
          */
         private void refreshCustDetailDisplay()
         {
-            if (mFacade.IsABookingLoaded())
+            if (mFacade.IsACustomerLoaded())
             {
                 // update field contents:
-                
+                lblCustNumberValue.Content = mFacade.GetCurrentCustNb();
+                txtCustName.Text = mFacade.GetCurrentCustName();
+                txtCustAddress.Text = mFacade.GetCurrentCustAdress();
             }
         }
 
@@ -105,5 +107,54 @@ namespace Program
             refreshCustDetailDisplay();
         }
 
+        
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (areAllValuesValid())
+            {
+                if (mFacade.IsACustomerLoaded()) // update current customer
+                {
+                    /*
+                    mFacade.UpdateCustomer(
+                                    Int32.Parse(lblCustNumberValue.Content),
+                                    txtCustName.Text,
+                                    txtCustAddress.Text);
+                     */
+                }
+                else // create a new customer
+                {
+                    mFacade.CreateCustomer(txtCustName.Text, 
+                                           txtCustAddress.Text);
+                }
+                
+                MessageBox.Show("Customer saved.");
+                
+            }
+            refreshCustDetailDisplay();
+        }
+
+        /*
+         * True if all fields contain valid values to create/update a
+         * customer.
+         * Displays error messages.
+         */
+        private bool areAllValuesValid()
+        {
+            bool areAllValid = true;
+
+            if (String.IsNullOrWhiteSpace(txtCustName.Text))
+            {
+                areAllValid = false;
+                MessageBox.Show("Please enter a valid customer name");
+            }
+            else if (String.IsNullOrWhiteSpace(txtCustAddress.Text))
+            {
+                areAllValid = false
+                MessageBox.Show("Please enter a valid customer address");
+            }
+
+            return areAllValid;
+        }
     }
 }

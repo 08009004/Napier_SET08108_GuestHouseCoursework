@@ -89,10 +89,12 @@ namespace Program
         private void clearDisplay()
         {
             clearBookingDetails();
+
             if (lstBookings.Items != null)
             {
                 lstBookings.Items.Clear();
             }
+
             lstGuests.Items.Clear();
         }
 

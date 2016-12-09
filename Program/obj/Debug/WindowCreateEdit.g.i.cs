@@ -138,7 +138,7 @@ namespace Program {
         
         #line 24 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnDiscard;
+        internal System.Windows.Controls.Button btnNewCust;
         
         #line default
         #line hidden
@@ -146,7 +146,7 @@ namespace Program {
         
         #line 25 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnNewCust;
+        internal System.Windows.Controls.Button btnCreateLoadCust;
         
         #line default
         #line hidden
@@ -154,7 +154,7 @@ namespace Program {
         
         #line 26 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnCreateLoadCust;
+        internal System.Windows.Controls.Button btnNewGuest;
         
         #line default
         #line hidden
@@ -162,7 +162,7 @@ namespace Program {
         
         #line 27 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnNewGuest;
+        internal System.Windows.Controls.Button btnDeleteGuest;
         
         #line default
         #line hidden
@@ -170,7 +170,7 @@ namespace Program {
         
         #line 28 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnDeleteGuest;
+        internal System.Windows.Controls.Label lblCustAddress;
         
         #line default
         #line hidden
@@ -178,7 +178,7 @@ namespace Program {
         
         #line 29 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblCustAddress;
+        internal System.Windows.Controls.TextBox txtCustAddress;
         
         #line default
         #line hidden
@@ -186,7 +186,7 @@ namespace Program {
         
         #line 30 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox txtCustAddress;
+        internal System.Windows.Controls.DatePicker dtpArrival;
         
         #line default
         #line hidden
@@ -194,7 +194,7 @@ namespace Program {
         
         #line 31 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DatePicker dtpArrival;
+        internal System.Windows.Controls.DatePicker dtpDeparture;
         
         #line default
         #line hidden
@@ -202,7 +202,7 @@ namespace Program {
         
         #line 32 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DatePicker dtpDeparture;
+        internal System.Windows.Controls.Button btnAddCustToGuests;
         
         #line default
         #line hidden
@@ -210,7 +210,7 @@ namespace Program {
         
         #line 33 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnAddCustToGuests;
+        internal System.Windows.Controls.Button btnAddBreakfast;
         
         #line default
         #line hidden
@@ -218,7 +218,7 @@ namespace Program {
         
         #line 34 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnAddBreakfast;
+        internal System.Windows.Controls.Label lblExtras;
         
         #line default
         #line hidden
@@ -226,7 +226,7 @@ namespace Program {
         
         #line 35 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblExtras;
+        internal System.Windows.Controls.Button btnAddEveningMeal;
         
         #line default
         #line hidden
@@ -234,7 +234,7 @@ namespace Program {
         
         #line 36 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnAddEveningMeal;
+        internal System.Windows.Controls.Button btnAddCarHire;
         
         #line default
         #line hidden
@@ -242,21 +242,13 @@ namespace Program {
         
         #line 37 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnAddCarHire;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 38 "..\..\WindowCreateEdit.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ListBox lstExtras;
         
         #line default
         #line hidden
         
         
-        #line 39 "..\..\WindowCreateEdit.xaml"
+        #line 38 "..\..\WindowCreateEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnExtraDelete;
         
@@ -342,114 +334,105 @@ namespace Program {
             this.lblHeader = ((System.Windows.Controls.Label)(target));
             return;
             case 13:
-            this.btnDiscard = ((System.Windows.Controls.Button)(target));
-            
-            #line 24 "..\..\WindowCreateEdit.xaml"
-            this.btnDiscard.Click += new System.Windows.RoutedEventHandler(this.btnDiscard_Click);
-            
-            #line default
-            #line hidden
-            return;
-            case 14:
             this.btnNewCust = ((System.Windows.Controls.Button)(target));
             
-            #line 25 "..\..\WindowCreateEdit.xaml"
+            #line 24 "..\..\WindowCreateEdit.xaml"
             this.btnNewCust.Click += new System.Windows.RoutedEventHandler(this.btnNewCust_Click);
             
             #line default
             #line hidden
             return;
-            case 15:
+            case 14:
             this.btnCreateLoadCust = ((System.Windows.Controls.Button)(target));
             
-            #line 26 "..\..\WindowCreateEdit.xaml"
+            #line 25 "..\..\WindowCreateEdit.xaml"
             this.btnCreateLoadCust.Click += new System.Windows.RoutedEventHandler(this.btnCreateLoadCust_Click);
             
             #line default
             #line hidden
             return;
-            case 16:
+            case 15:
             this.btnNewGuest = ((System.Windows.Controls.Button)(target));
             
-            #line 27 "..\..\WindowCreateEdit.xaml"
+            #line 26 "..\..\WindowCreateEdit.xaml"
             this.btnNewGuest.Click += new System.Windows.RoutedEventHandler(this.btnNewGuest_Click);
             
             #line default
             #line hidden
             return;
-            case 17:
+            case 16:
             this.btnDeleteGuest = ((System.Windows.Controls.Button)(target));
             
-            #line 28 "..\..\WindowCreateEdit.xaml"
+            #line 27 "..\..\WindowCreateEdit.xaml"
             this.btnDeleteGuest.Click += new System.Windows.RoutedEventHandler(this.btnDeleteGuest_Click);
             
             #line default
             #line hidden
             return;
-            case 18:
+            case 17:
             this.lblCustAddress = ((System.Windows.Controls.Label)(target));
             return;
-            case 19:
+            case 18:
             this.txtCustAddress = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 20:
+            case 19:
             this.dtpArrival = ((System.Windows.Controls.DatePicker)(target));
             return;
-            case 21:
+            case 20:
             this.dtpDeparture = ((System.Windows.Controls.DatePicker)(target));
             return;
-            case 22:
+            case 21:
             this.btnAddCustToGuests = ((System.Windows.Controls.Button)(target));
             
-            #line 33 "..\..\WindowCreateEdit.xaml"
+            #line 32 "..\..\WindowCreateEdit.xaml"
             this.btnAddCustToGuests.Click += new System.Windows.RoutedEventHandler(this.btnAddCustToGuests_Click);
             
             #line default
             #line hidden
             return;
-            case 23:
+            case 22:
             this.btnAddBreakfast = ((System.Windows.Controls.Button)(target));
             
-            #line 34 "..\..\WindowCreateEdit.xaml"
+            #line 33 "..\..\WindowCreateEdit.xaml"
             this.btnAddBreakfast.Click += new System.Windows.RoutedEventHandler(this.btnAddBreakfast_Click);
             
             #line default
             #line hidden
             return;
-            case 24:
+            case 23:
             this.lblExtras = ((System.Windows.Controls.Label)(target));
             return;
-            case 25:
+            case 24:
             this.btnAddEveningMeal = ((System.Windows.Controls.Button)(target));
             
-            #line 36 "..\..\WindowCreateEdit.xaml"
+            #line 35 "..\..\WindowCreateEdit.xaml"
             this.btnAddEveningMeal.Click += new System.Windows.RoutedEventHandler(this.btnAddEveningMeal_Click);
             
             #line default
             #line hidden
             return;
-            case 26:
+            case 25:
             this.btnAddCarHire = ((System.Windows.Controls.Button)(target));
             
-            #line 37 "..\..\WindowCreateEdit.xaml"
+            #line 36 "..\..\WindowCreateEdit.xaml"
             this.btnAddCarHire.Click += new System.Windows.RoutedEventHandler(this.btnAddCarHire_Click);
             
             #line default
             #line hidden
             return;
-            case 27:
+            case 26:
             this.lstExtras = ((System.Windows.Controls.ListBox)(target));
             
-            #line 38 "..\..\WindowCreateEdit.xaml"
+            #line 37 "..\..\WindowCreateEdit.xaml"
             this.lstExtras.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.lstExtras_MouseDoubleClick);
             
             #line default
             #line hidden
             return;
-            case 28:
+            case 27:
             this.btnExtraDelete = ((System.Windows.Controls.Button)(target));
             
-            #line 39 "..\..\WindowCreateEdit.xaml"
+            #line 38 "..\..\WindowCreateEdit.xaml"
             this.btnExtraDelete.Click += new System.Windows.RoutedEventHandler(this.btnExtraDelete_Click);
             
             #line default
