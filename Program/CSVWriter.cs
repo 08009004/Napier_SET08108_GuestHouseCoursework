@@ -47,7 +47,7 @@ namespace Program
 
             if (!Directory.Exists(dataDirName))
             {
-                Directory.CreateDirectory(dataDirName);
+                CreateDir(dataDirName);
             }
 
             if (File.Exists(filePath))
@@ -65,6 +65,11 @@ namespace Program
             }
 
             return true;
+        }
+
+        public void CreateDir(String dirPath)
+        {
+            Directory.CreateDirectory(dirPath);
         }
 
         /*

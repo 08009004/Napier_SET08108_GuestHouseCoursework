@@ -18,7 +18,8 @@ namespace Program
      */
     public class DataPersistenceFacade
     {
-        // Properties: 
+        // PROPERTIES:
+ 
         // the bookings data persistence directory.
         private String dataDirectory = @"bookings";
         // the system data persistence directory.
@@ -27,6 +28,8 @@ namespace Program
         private CSVWriter dataWriter = CSVWriter.Instance;
         // the data reader instance:
         private CSVReader dataReader = CSVReader.Instance;
+
+        // METHODS RELATED TO BOOKINGS:
 
         /*
          * Persists the BookingComponent to {dataDirectory}/{bookingNb}.csv; 
@@ -66,12 +69,17 @@ namespace Program
          */
         public List<int> GetAllBookingNbs()
         {
+            if (!Directory.Exists(dataDirectory))
+            {
+                dataWriter.CreateDir(dataDirectory);
+            }
+
             String[] filePaths = Directory.GetFiles(dataDirectory);
             List<int> bookingNbs = new List<int>();
 
             foreach (String fp in filePaths)
             {
-                bookingNbs.Add(extractRefNb(fp));
+                bookingNbs.Add(extractBookingNb(fp));
             }
 
             return bookingNbs;
@@ -80,7 +88,7 @@ namespace Program
         /*
          * Returns the booking number from given persisted booking file name.
          */
-        private int extractRefNb(String bookingFileName)
+        private int extractBookingNb(String bookingFileName)
         {
             int start = bookingFileName.LastIndexOf("\\") + 1;
             int end = bookingFileName.IndexOf(".") - start;
@@ -92,8 +100,10 @@ namespace Program
             return bookingNb;
         }
 
+        // METHODS RELATED TO CUSTOMERS:
+
         /*
-         * Returns a list of booking numbers, all of which were made by
+         * Returns a list of all booking numbers that were made by
          * a given customer.
          */
         public List<int> GetAllBookingNbs(int customerNb)
@@ -119,13 +129,64 @@ namespace Program
                                           out value)
                          && Int32.Parse(value) == customerNb)
                         {
-                            bookingNbs.Add(extractRefNb(fPath));
+                            bookingNbs.Add(extractBookingNb(fPath));
                         }
                     }
                 }
             }
 
             return bookingNbs;
+        }
+
+        /*
+         * Returns a list of all the customer numbers persisted to file.
+         */
+        public List<int> GetAllCustomerNbs()
+        {
+            if (!Directory.Exists(dataDirectory))
+            {
+                dataWriter.CreateDir(dataDirectory);
+            }
+
+            List<int> customerNbs = new List<int>();
+
+            foreach (String bookingFile in Directory.GetFiles(dataDirectory))
+            {
+                customerNbs.Add(extractCustomerNb(bookingFile));
+            }
+
+            return customerNbs;
+        }
+
+        /*
+         * Returns the customer number from given persisted booking file,
+         * or -1 if the file cant be found.
+         */
+        private int extractCustomerNb(String bookingFile)
+        {
+            List<Dictionary<String, String>> bookingData;
+            if (File.Exists(bookingFile)
+             && dataReader.ReadBooking(bookingFile, out bookingData))
+            {
+                int customerNb;
+                String customerNbString;
+
+                foreach (Dictionary<String, String> entity in bookingData)
+                {
+                    if (entity.TryGetValue(CustomerField.CUSTOMER_NUMBER
+                                                        .ToString(), 
+                                           out customerNbString)
+                     && Int32.TryParse(customerNbString, out customerNb))
+                    {
+                        return customerNb;
+                        /* short circuit looping and exit method as soon
+                         * as customer number was found.
+                         */
+                    }
+                }
+            }
+            
+            return -1; // or return -1
         }
 
         /*
@@ -166,6 +227,8 @@ namespace Program
             customerData = result;
             return wasSuccessful;
         }
+
+        // METHODS RELATED TO SYSTEM STATE:
 
         /*
          * Restores system state from file.

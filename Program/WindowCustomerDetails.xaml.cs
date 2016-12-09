@@ -36,6 +36,7 @@ namespace Program
         {
             this.mFacade = modelFacade;
             InitializeComponent();
+            refreshDisplay();
         }
 
         /*
@@ -46,6 +47,7 @@ namespace Program
         {
             clearDisplay();
             lstCustomers.ItemsSource = mFacade.GetAllCustomerNbs();
+            
         }
 
         /*

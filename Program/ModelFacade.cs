@@ -83,7 +83,8 @@ namespace Program
          */
         public List<int> GetAllCustomerNbs()
         {
-            return new List<int>();
+            List<int> temp = dpFacade.GetAllCustomerNbs();
+            return dpFacade.GetAllCustomerNbs();
         }
 
         /*
