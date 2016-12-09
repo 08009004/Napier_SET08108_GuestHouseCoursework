@@ -426,7 +426,14 @@ namespace Program
          */
         public bool IsGuestACustomer(int index)
         {
-            return CurrentBook.GetGuests().ElementAt(index).IsCustomer();
+            if (index >= 0)
+            {
+                return CurrentBook.GetGuests().ElementAt(index).IsCustomer();
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /*
