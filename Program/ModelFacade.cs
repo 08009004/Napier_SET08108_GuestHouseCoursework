@@ -220,90 +220,6 @@ namespace Program
         }
 
         /*
-         * Returns the current booking's cost for, breakfasts or -1 if no 
-         * booking is currently loaded.
-         */
-        public float GetCurrentBreakfastCost()
-        {
-            float breakfastsCost = -1;
-
-            if (CurrentBook != null)
-            {
-                List<BookingDecorator> extras = GetCurrentExtras();
-
-                breakfastsCost = 0;
-
-                if (extras != null)
-                {
-                    foreach (BookingDecorator e in extras)
-                    {
-                        if (e.GetType() == typeof(Breakfast))
-                        {
-                            breakfastsCost += e.GetCost();
-                        }
-                    }
-                }
-            }
-            return breakfastsCost;
-        }
-
-        /*
-         * Returns the current booking's cost for, evening meals or -1 if no 
-         * booking is currently loaded.
-         */
-        public float GetCurrentEveningMealsCost()
-        {
-            float eveningMealsCost = -1;
-
-            if (CurrentBook != null)
-            {
-                List<BookingDecorator> extras = GetCurrentExtras();
-
-                eveningMealsCost = 0;
-
-                if (extras != null)
-                {
-                    foreach (BookingDecorator e in extras)
-                    {
-                        if (e.GetType() == typeof(EveningMeal))
-                        {
-                            eveningMealsCost += e.GetCost();
-                        }
-                    }
-                }
-            }
-            return eveningMealsCost;
-        }
-
-        /*
-         * Returns the current booking's cost for, evening meals or -1 if no 
-         * booking is currently loaded.
-         */
-        public float GetCurrentCarHireCost()
-        {
-            float carHiresCost = -1;
-
-            if (CurrentBook != null)
-            {
-                List<BookingDecorator> extras = GetCurrentExtras();
-
-                carHiresCost = 0;
-
-                if (extras != null)
-                {
-                    foreach (BookingDecorator e in extras)
-                    {
-                        if (e.GetType() == typeof(CarHire))
-                        {
-                            carHiresCost += e.GetCost();
-                        }
-                    }
-                }
-            }
-            return carHiresCost;
-        }
-
-        /*
          * Updates the BookingComponent instance currently loaded in the
          * system.
          */
@@ -348,7 +264,8 @@ namespace Program
         // METHODS RELATED TO THE CURRENT CUSTOMER:
 
         /*
-         * 
+         * True if a customer is currently loaded in the system, otherwise
+         * false
          */
         public bool IsACustomerLoaded()
         {
@@ -426,6 +343,44 @@ namespace Program
             return customerAddress;
         }
 
+        /*
+         * Updates given customer's details with new values for all bookings 
+         * of his.
+         */
+        public void UpdateCurrentCustomer(String newName, String newAddress)
+        {
+            BookingComponent processedBooking;
+            List<Dictionary<String, String>> bookingData;
+            DateTime arrival;
+            DateTime departure;
+            
+            // update values within all persisted bookings made by current 
+            // customer
+            foreach (int bookingNb 
+                     in dpFacade.GetAllBookingNbs(CurrentCust.GetCustNb()))
+            {
+                dpFacade.Read(bookingNb, out bookingData);
+                processedBooking = bFact.Restore(bookingData);
+                processedBooking.GetDates(out arrival, out departure);
+                processedBooking = bFact.UpdateBooking(
+                                            processedBooking.GetBookingNb(), 
+                                            pFact.UpdateCustomer(processedBooking.GetCustomer(), newName, newAddress), 
+                                            arrival, 
+                                            departure);
+                dpFacade.Persist(processedBooking);
+            }
+
+            // reload current booking into the system to upload changes
+            RestoreBooking(CurrentBook.GetBookingNb());
+        }
+
+        private void persistNewCustomerValues(int customerNb, 
+                                              PersonComponent newCustomer)
+        {
+            
+             
+        }
+
         // METHOD RELATED TO CURRENT BOOKING'S GUESTS:
 
         /*
@@ -497,7 +452,7 @@ namespace Program
         {
             CurrentBook.GetGuests().RemoveAt(index);
             CurrentBook.GetGuests().Insert(index,
-                                           pFact.GetNewGuest(CurrentCust.Undecorate(),
+                                           pFact.GetNewGuest(CurrentCust.UndecorateOnce(),
                                                              passportNb,
                                                              age));
         }
@@ -520,7 +475,7 @@ namespace Program
                 DateTime departure;
                 CurrentBook.GetDates(out arrival, out departure);
 
-                CurrentCust = CurrentCust.Undecorate();
+                CurrentCust = CurrentCust.UndecorateOnce();
                 CurrentBook = bFact.UpdateBooking(CurrentBook.GetBookingNb(), 
                                                   CurrentCust, 
                                                   arrival, 
@@ -647,6 +602,90 @@ namespace Program
                 }
             }
             return  extras;
+        }
+
+        /*
+         * Returns the current booking's cost for, breakfasts or -1 if no 
+         * booking is currently loaded.
+         */
+        public float GetCurrentBreakfastCost()
+        {
+            float breakfastsCost = -1;
+
+            if (CurrentBook != null)
+            {
+                List<BookingDecorator> extras = GetCurrentExtras();
+
+                breakfastsCost = 0;
+
+                if (extras != null)
+                {
+                    foreach (BookingDecorator e in extras)
+                    {
+                        if (e.GetType() == typeof(Breakfast))
+                        {
+                            breakfastsCost += e.GetCost();
+                        }
+                    }
+                }
+            }
+            return breakfastsCost;
+        }
+
+        /*
+         * Returns the current booking's cost for, evening meals or -1 if no 
+         * booking is currently loaded.
+         */
+        public float GetCurrentEveningMealsCost()
+        {
+            float eveningMealsCost = -1;
+
+            if (CurrentBook != null)
+            {
+                List<BookingDecorator> extras = GetCurrentExtras();
+
+                eveningMealsCost = 0;
+
+                if (extras != null)
+                {
+                    foreach (BookingDecorator e in extras)
+                    {
+                        if (e.GetType() == typeof(EveningMeal))
+                        {
+                            eveningMealsCost += e.GetCost();
+                        }
+                    }
+                }
+            }
+            return eveningMealsCost;
+        }
+
+        /*
+         * Returns the current booking's cost for, evening meals or -1 if no 
+         * booking is currently loaded.
+         */
+        public float GetCurrentCarHireCost()
+        {
+            float carHiresCost = -1;
+
+            if (CurrentBook != null)
+            {
+                List<BookingDecorator> extras = GetCurrentExtras();
+
+                carHiresCost = 0;
+
+                if (extras != null)
+                {
+                    foreach (BookingDecorator e in extras)
+                    {
+                        if (e.GetType() == typeof(CarHire))
+                        {
+                            carHiresCost += e.GetCost();
+                        }
+                    }
+                }
+            }
+            return carHiresCost;
         }
 
         /*

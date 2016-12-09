@@ -57,10 +57,35 @@ namespace Program
         }
 
         /* 
-         * Returns a reference to the Personcomponent itself if it is 
-         * only decorated once.
+         * Returns the PersonComponent itself; and references is null.
          */
-        public virtual PersonComponent Undecorate()
+        public virtual PersonComponent Unwrap(out List<PersonDecorator> references)
+        {
+            references = null;
+            return this;
+        }
+
+        /*
+         * Returns true if the PersonComponent wraps another 
+         * BookingDecorator, otherwise false.
+         */
+        public virtual bool isDecorator()
+        {
+            return false;
+        }
+
+        /* 
+         * Returns the PersonComponent itself.
+         */
+        public virtual PersonComponent Undecorate(PersonDecorator reference)
+        {
+            return this;
+        }
+
+        /*
+         * Returns the PersonComponent itself.
+         */
+        public virtual PersonComponent UndecorateOnce()
         {
             return this;
         }

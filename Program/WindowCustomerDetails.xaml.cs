@@ -116,10 +116,8 @@ namespace Program
                 if (mFacade.IsACustomerLoaded()) // update current customer
                 {
                     /*
-                    mFacade.UpdateCustomer(
-                                    Int32.Parse(lblCustNumberValue.Content),
-                                    txtCustName.Text,
-                                    txtCustAddress.Text);
+                    mFacade.UpdateCurrentCustomer(txtCustName.Text,
+                                                  txtCustAddress.Text);
                      */
                 }
                 else // create a new customer
@@ -150,7 +148,7 @@ namespace Program
             }
             else if (String.IsNullOrWhiteSpace(txtCustAddress.Text))
             {
-                areAllValid = false
+                areAllValid = false;
                 MessageBox.Show("Please enter a valid customer address");
             }
 

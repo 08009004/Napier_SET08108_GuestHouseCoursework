@@ -14,7 +14,8 @@ namespace Program
      */
     public class Guest : PersonDecorator
     {
-        // Properties:
+        // PROPERTIES:
+
         private String passportNb;
         public override String GetPassportNb()
         {
@@ -26,6 +27,8 @@ namespace Program
         {
             return this.age;
         }
+
+        // METHODS:
 
         /*
         * Constructor.

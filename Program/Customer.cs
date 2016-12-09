@@ -14,7 +14,8 @@ namespace Program
      */
     public class Customer : PersonDecorator
     {
-        // Properties:
+        // PROPERTIES:
+
         private String address;
         public override String GetAddress()
         {
@@ -26,6 +27,8 @@ namespace Program
         {
             return this.customerNb;
         }
+
+        // METHODS:
 
         /*
          * Constructor.

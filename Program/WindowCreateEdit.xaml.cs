@@ -442,5 +442,10 @@ namespace Program
                                 + " delete from the booking");
             }
         }
+
+        private void btnNewCust_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

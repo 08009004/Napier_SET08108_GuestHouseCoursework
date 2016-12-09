@@ -68,6 +68,36 @@ namespace Program
         }
 
         /*
+         * Returns a reference to the updated PersonComponent instance.
+         */
+        public PersonComponent UpdateCustomer(PersonComponent customer,
+                                              String newName,
+                                              String newAddress)
+        {
+            // create a fresh customer with the new values but same customerNb
+            PersonComponent p = new Person(newName);
+            PersonDecorator c = new Customer(newAddress, customer.GetCustNb());
+            c.SetComponent(p);
+
+            // get all decorators of customer being updated
+            List<PersonDecorator> decorators;
+            customer.Unwrap(out decorators);
+
+            // decorate the new customer with those decorators except those 
+            // of type 'Customer'
+            foreach (PersonDecorator decorator in decorators)
+            {
+                if (decorator.GetType() != typeof(Customer))
+                {
+                    decorator.SetComponent(c);
+                    c = decorator;
+                }
+            }
+
+            return c;
+        }
+
+        /*
          * Instantiates a Customer from a dictonary<attribute, values>,
          * presumably recovered from persisted data (the dictonary keys 
          * should follow the naming implemented in the *Field.cs enumerations)

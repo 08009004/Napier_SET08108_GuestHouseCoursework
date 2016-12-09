@@ -105,19 +105,77 @@ namespace Program
             return age;
         }
 
-        /* 
-         * Returns a reference to the PersonDecorator's decorated component, 
-         * or the to the PersonDecorator itself if it is not decorated.
+        /*
+         * Returns the root PersonComponent of the decoration stack; 
+         * references outputs a list of pointers to all the PersonDecorator 
+         * instances in the decoration stack.
          */
-        public override PersonComponent Undecorate()
+        public override PersonComponent Unwrap(out List<PersonDecorator> references)
         {
-            PersonComponent p = this;
+            PersonComponent component = this;
+            List<PersonDecorator> decorators = new List<PersonDecorator>();
 
+            while (component.isDecorator())
+            {
+                decorators.Add((PersonDecorator)component);
+                component = ((PersonDecorator)component).decoratedComponent;
+            }
+
+            references = decorators;
+            return component;
+        }
+
+        /*
+         * Returns true if the PersonDecorator wraps another 
+         * PersonDecorator, otherwise false.
+         */
+        public override bool isDecorator()
+        {
+            return this.decoratedComponent != null;
+        }
+
+        /*
+         * Returns a reference to a new PersonComponent identical in content 
+         * to calling instance, except unwraped from the PersonDecorator 
+         * passed as a parameter (or the to the Booking itself if it is not 
+         * decorated at all).
+         */
+        public override PersonComponent Undecorate(PersonDecorator reference)
+        {
+            if (this == reference) return decoratedComponent;
+            /* Short circuit method if the decorator to remove is the
+             * last one added.
+             */
+            List<PersonDecorator> references;
+            PersonComponent result = this.Unwrap(out references);
+
+            foreach (PersonDecorator decorator in references)
+            {
+                if (decorator != reference)
+                {
+                    decorator.decoratedComponent = result;
+                    result = decorator;
+                }
+            }
+
+            return result;
+        }
+
+        /*
+         * Peels a single layer of decoration by returning the decorator's
+         * decorated component.
+         */
+        public override PersonComponent UndecorateOnce()
+        {
             if (decoratedComponent != null)
             {
-                p = decoratedComponent;
+                return decoratedComponent;
+            } 
+            else 
+            {
+                return this;
             }
-            return p;
+            
         }
 
 

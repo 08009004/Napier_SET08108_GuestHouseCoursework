@@ -14,12 +14,15 @@ namespace Program
      */
     public class EveningMeal : BookingDecorator
     {
-        // Property:
+        // PROPERTIES:
+
         private String dietRequirement;
         public String GetDietRequirements()
         {
             return this.dietRequirement;
         }
+
+        // METHODS :
 
         /*
          * Constructor.

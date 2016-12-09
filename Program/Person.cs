@@ -14,7 +14,8 @@ namespace Program
      */
     public class Person : PersonComponent
     {
-        // Property:
+        // PROPERTIES:
+
         private String name;
         public override String Name
         {
@@ -23,6 +24,8 @@ namespace Program
                 return this.name;
             }
         }
+
+        // METHODS:
 
         /*
          * Constructor.

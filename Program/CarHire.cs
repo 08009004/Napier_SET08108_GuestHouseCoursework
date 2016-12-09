@@ -14,7 +14,8 @@ namespace Program
      */
     public class CarHire : BookingDecorator
     {
-        // Properties:
+        // PROPERTIES:
+
         private String driverName;
         public String GetDriverName()
         {
@@ -29,6 +30,8 @@ namespace Program
             start = this.start;
             end = this.end;
         }
+
+        // METHODS:
 
         /*
          * Constructor.
