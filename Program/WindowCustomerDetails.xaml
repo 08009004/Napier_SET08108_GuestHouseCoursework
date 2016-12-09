@@ -13,7 +13,8 @@
         <TextBox x:Name="txtCustAddress" HorizontalAlignment="Left" Height="23" Margin="236,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="216" Margin="6,8,0,0" Stroke="Black" VerticalAlignment="Top" Width="135"/>
         <Label x:Name="lblHeader_Copy" Content="Customers:" HorizontalAlignment="Left" Margin="13,5,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <ListBox x:Name="lstBookings" HorizontalAlignment="Left" Height="176" Margin="13,41,0,0" VerticalAlignment="Top" Width="112"/>
+        <ListBox x:Name="lstCustomers" HorizontalAlignment="Left" Height="176" Margin="13,41,0,0" VerticalAlignment="Top" Width="112" MouseDoubleClick="lstCustomers_MouseDoubleClick"/>
+        <Label x:Name="lblCustNumberValue" Content="Value" HorizontalAlignment="Left" Margin="292,41,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

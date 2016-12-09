@@ -22,11 +22,12 @@ namespace Program
      */
     public partial class WindowCustomerDetails : Window
     {
-        //Property:
+        //PROPERTIES:
+
         // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
 
-        // GENERIC WINDOW METHODS:
+        // METHODS:
 
         /*
          * The window constructor.
@@ -34,10 +35,73 @@ namespace Program
         public WindowCustomerDetails(ModelFacade modelFacade)
         {
             this.mFacade = modelFacade;
-
             InitializeComponent();
         }
 
+        /*
+         * Refreshes all fields displayed in the window according to 
+         * current system objects states.
+         */
+        private void refreshDisplay()
+        {
+            clearDisplay();
+            lstCustomers.ItemsSource = mFacade.GetAllCustomerNbs();
+        }
+
+        /*
+         * Refreshes all customer detail fields displayed in the window 
+         * according to currently loaded customer data.
+         */
+        private void refreshCustDetailDisplay()
+        {
+            if (mFacade.IsABookingLoaded())
+            {
+                // update field contents:
+                
+            }
+        }
+
+        /*
+         * Empties all boxes displayed in the MainWindow.
+         */
+        private void clearDisplay()
+        {
+            clearCustomerDetails();
+
+            if (lstCustomers.Items != null)
+            {
+                lstCustomers.Items.Clear();
+            }
+        }
+
+        /*
+         * Hide empty all customer detail fields from the window.
+         */
+        private void clearCustomerDetails()
+        {
+            lblCustNumberValue.Content = String.Empty;
+            txtCustName.Text = String.Empty;
+            txtCustAddress.Text = String.Empty;
+        }
+
+        /*
+         * loads selected customer into the system when double clicking on it.
+         */
+        private void lstCustomers_MouseDoubleClick(object sender,
+                                                  MouseButtonEventArgs e)
+        {
+            List<int> l = (List<int>)lstCustomers.ItemsSource;
+            int i = lstCustomers.SelectedIndex;
+
+            if (i < 0 || !mFacade.RestoreCustomer(l.ElementAt(i)))
+            {
+                MessageBox.Show("Please double click on a customer from the"
+                            + " list to load it into the system, or create"
+                            + " a new one.");
+            }
+
+            refreshCustDetailDisplay();
+        }
 
     }
 }

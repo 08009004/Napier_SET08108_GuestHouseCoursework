@@ -22,10 +22,13 @@ namespace Program
      */
     public partial class WindowLoadBooking : Window
     {
-        // Property:
+        // PROPERTIES:
+
         // points to a ModelFacade instance.
         private ModelFacade mFacade;
 
+        // METHODS:
+        
         /*
          * Constructor.
          */
@@ -56,7 +59,7 @@ namespace Program
             DateTime start;
             DateTime end;
 
-            if (b != null)
+            if (mFacade.IsABookingLoaded())
             {
                 // update field contents:
                 b.GetDates(out start, out end);
@@ -92,8 +95,9 @@ namespace Program
             }
             lstGuests.Items.Clear();
         }
+
         /*
-         * Hide all all booking detail fields from the MainWindow.
+         * Hide all booking detail fields from the window.
          */
         private void clearBookingDetails()
         {

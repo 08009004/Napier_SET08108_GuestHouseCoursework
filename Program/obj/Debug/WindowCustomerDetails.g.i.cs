@@ -106,7 +106,15 @@ namespace Program {
         
         #line 16 "..\..\WindowCustomerDetails.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ListBox lstBookings;
+        internal System.Windows.Controls.ListBox lstCustomers;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 17 "..\..\WindowCustomerDetails.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lblCustNumberValue;
         
         #line default
         #line hidden
@@ -166,7 +174,16 @@ namespace Program {
             this.lblHeader_Copy = ((System.Windows.Controls.Label)(target));
             return;
             case 9:
-            this.lstBookings = ((System.Windows.Controls.ListBox)(target));
+            this.lstCustomers = ((System.Windows.Controls.ListBox)(target));
+            
+            #line 16 "..\..\WindowCustomerDetails.xaml"
+            this.lstCustomers.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.lstCustomers_MouseDoubleClick);
+            
+            #line default
+            #line hidden
+            return;
+            case 10:
+            this.lblCustNumberValue = ((System.Windows.Controls.Label)(target));
             return;
             }
             this._contentLoaded = true;

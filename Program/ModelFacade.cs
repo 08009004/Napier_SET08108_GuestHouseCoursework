@@ -79,6 +79,14 @@ namespace Program
         }
 
         /*
+         * Returns a list of all the customer numbers persisted on disc.
+         */
+        public List<int> GetAllCustomerNbs()
+        {
+            return new List<int>();
+        }
+
+        /*
          * Returns a list of all the booking numbers persisted on disc made 
          * by a given customer.
          */
@@ -89,6 +97,15 @@ namespace Program
 
 
         // METHODS RELATED TO CURRENT BOOKING:
+
+        /*
+         * True if there is a booking loaded in the system when method is 
+         * called, otherwise false.
+         */
+        public bool IsABookingLoaded()
+        {
+            return CurrentBook != null;
+        }
 
         /*
          * Instanciates a new booking for the current customer.
