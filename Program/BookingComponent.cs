@@ -60,7 +60,8 @@ namespace Program
         /* 
          * Returns the BookingComponent itself; and references is null.
          */
-        public virtual BookingComponent Unwrap(out List<BookingDecorator> references)
+        public virtual BookingComponent Unwrap(
+                                         out List<BookingDecorator> references)
         {
             references = null;
             return this;
