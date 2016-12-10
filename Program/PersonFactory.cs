@@ -105,7 +105,8 @@ namespace Program
          * Thows Argument exceptions if there is a problem with the contents
          * of the dictionary passed as a parameter.
          */
-        public PersonDecorator RestoreCustomer(Dictionary<String, String> attributes)
+        public PersonDecorator RestoreCustomer(
+                                    Dictionary<String, String> attributes)
         {
             String name;
             String address;
@@ -191,7 +192,8 @@ namespace Program
          * Thows Argument exceptions if there is a problem with the contents
          * of the dictionary passed as a parameter.
          */
-        public PersonComponent RestoreGuest(Dictionary<String, String> attributes)
+        public PersonComponent RestoreGuest(
+                                    Dictionary<String, String> attributes)
         {
             String name;
             String passportNb;
