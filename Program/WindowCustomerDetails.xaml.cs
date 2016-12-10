@@ -63,7 +63,6 @@ namespace Program
         {
             if (mFacade.IsACustomerLoaded())
             {
-                // update field contents:
                 lblCustNumberValue.Content = mFacade.GetCurrentCustNb();
                 txtCustName.Text = mFacade.GetCurrentCustName();
                 txtCustAddress.Text = mFacade.GetCurrentCustAdress();
@@ -132,7 +131,6 @@ namespace Program
                 }
                 this.Close();
             }
-            //refreshCustDetailDisplay();
         }
 
         /*
