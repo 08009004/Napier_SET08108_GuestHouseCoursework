@@ -22,16 +22,19 @@ namespace Program
      */
     public partial class WindowGuestDetails : Window
     {
-        // Properties: 
+        // PROPERTIES: 
+
         // reference to calling window's ModelFacade instance:
         private ModelFacade mFacade;
+
         // true if the new guest to create is the booking's customer.
         private bool isCustomer;
+
         // index of current guest in current booking'list of guests.
         private int guestIndex = -1;
 
         /*
-         * Constructor 1.
+         * Constructor 1: opens a window diplaying no value in any field.
          */
         public WindowGuestDetails(ModelFacade mFacade, bool isCustomer)
         {
