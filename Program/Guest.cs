@@ -41,7 +41,8 @@ namespace Program
             if (String.IsNullOrEmpty(passportNb))
             {
                 throw new ArgumentException("ConcreteDecoratorGuest.passportNb"
-                                            + " must not be null nor String.Empty");
+                                            + " must not be null nor"
+                                            + " String.Empty");
             }
 
             if (age < 0)

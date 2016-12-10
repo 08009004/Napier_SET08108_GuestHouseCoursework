@@ -37,8 +37,8 @@ namespace Program
          */
         public override float GetExtraCost()
         {
-            return 5 * base.DecoratedComponent.GetNbGuests()
-                     * base.DecoratedComponent.GetNbNights();
+            return 5 * base.decoratedComponent.GetNbGuests()
+                     * base.decoratedComponent.GetNbNights();
         }
 
         /*

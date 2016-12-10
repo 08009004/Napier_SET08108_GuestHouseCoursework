@@ -242,7 +242,7 @@ namespace Program
             {
                 foreach (BookingDecorator reference in decorationStack)
                 {
-                    reference.DecoratedComponent = booking;
+                    reference.Setcomponent(booking);
                     booking = reference;
                 }
             }
@@ -388,7 +388,7 @@ namespace Program
                 {
                     foreach (BookingDecorator reference in decorationStack)
                     {
-                        reference.DecoratedComponent = processedBooking;
+                        reference.Setcomponent(processedBooking);
                         processedBooking = reference;
                     }
                 }
