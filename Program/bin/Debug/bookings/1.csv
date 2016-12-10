@@ -1,11 +1,11 @@
 #BOOKING
 1,18/01/2016,20/01/2016
 #PERSON
-Dereck Trotter
+Dereck 'Delboy' Trotter
 #CUSTOMER
 1,FLAT 127 Nelson Mandela House Peckham
 #GUEST
-NO PASSPORT,36
+no passport,38
 #PERSON
 Rodney
 #GUEST
@@ -18,9 +18,3 @@ LostAtSea,72
 Trigger
 #GUEST
 0000BBB,41
-#CAR_HIRE
-delboy,18/01/2016,20/01/2016
-#BREAKFAST
-saussage rools
-#EVENING_MEAL
-curry & chips
