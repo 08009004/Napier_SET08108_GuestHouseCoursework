@@ -128,9 +128,6 @@ namespace Program
             lblCustNumberValue.Content = String.Empty;
             lblCustNameValue.Content = String.Empty;
             lblCustAddressValue.Content = String.Empty;
-
-          //  lstGuests.Items.Clear();
-          //  lstExtras.Items.Clear();
         }
 
         /*
@@ -177,9 +174,12 @@ namespace Program
         {
             if (mFacade.IsACustomerLoaded())
             {
-                lblCustNumberValue.Content = mFacade.GetCurrentCustNb().ToString();
-                lblCustNameValue.Content = mFacade.GetCurrentCustName();
-                lblCustAddressValue.Content = mFacade.GetCurrentCustAdress();
+                lblCustNumberValue.Content 
+                                      = mFacade.GetCurrentCustNb().ToString();
+                lblCustNameValue.Content 
+                                      = mFacade.GetCurrentCustName();
+                lblCustAddressValue.Content 
+                                      = mFacade.GetCurrentCustAdress();
             }
         }
 
@@ -188,7 +188,7 @@ namespace Program
          */
         private void btnCreateLoadCust_Click(object sender, RoutedEventArgs e)
         {
-            new WindowCustomerDetails(this.mFacade).ShowDialog();
+            new WindowCustomerDetails(mFacade).ShowDialog();
             refreshCustomerDisplay();
         }
 
@@ -204,7 +204,6 @@ namespace Program
                 lblGuest.Visibility = Visibility.Visible;
                 lstGuests.Visibility = Visibility.Visible;
 
-              //  lstGuests.Items.Clear();
                 lstGuests.ItemsSource = mFacade.GetGuestNames();
             }
         }
@@ -407,16 +406,19 @@ namespace Program
             {
                 if (extras.ElementAt(i).GetType() == typeof(Breakfast))
                 {
-                    new WindowBreakfastDetails(mFacade, extras.ElementAt(i)).ShowDialog();
+                    new WindowBreakfastDetails(
+                            mFacade, extras.ElementAt(i)).ShowDialog();
                     
                 }
                 else if (extras.ElementAt(i).GetType() == typeof(EveningMeal)) 
                 {
-                    new WindowEveningMealDetails(mFacade, extras.ElementAt(i)).ShowDialog();
+                    new WindowEveningMealDetails(
+                            mFacade, extras.ElementAt(i)).ShowDialog();
                 }
                 else if (extras.ElementAt(i).GetType() == typeof(CarHire))
                 {
-                    new WindowCarHireDetails(mFacade, extras.ElementAt(i)).ShowDialog();
+                    new WindowCarHireDetails(
+                            mFacade, extras.ElementAt(i)).ShowDialog();
                 }
 
                 refreshExtrasDisplay();
@@ -438,11 +440,6 @@ namespace Program
                 MessageBox.Show("Please select the extra that you want to"
                                 + " delete from the booking");
             }
-        }
-
-        private void btnNewCust_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
