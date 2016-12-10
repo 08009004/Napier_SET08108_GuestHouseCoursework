@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    /* Abstract class defining the minimum implementation of 
+    /* 
+     * Abstract class defining the minimum implementation of 
      * a concrete PersonDecorator.
      * 
      * author: Pierre Ruiz (matriculation number 08009004)
@@ -14,8 +15,9 @@ namespace Program
      */
     public abstract class PersonDecorator : PersonComponent
     {
-        // Properties:
-        // the decorator component
+        // PROPERTIES:
+
+        // the decorated component
         protected PersonComponent decoratedComponent;
         public void SetComponent(PersonComponent p)
         {
@@ -38,6 +40,8 @@ namespace Program
                 return name; 
             }
         }
+
+        // METHODS:
 
         /*
          * Returns the PersonDecorator's Address (is null if the root 
@@ -110,7 +114,8 @@ namespace Program
          * references outputs a list of pointers to all the PersonDecorator 
          * instances in the decoration stack.
          */
-        public override PersonComponent Unwrap(out List<PersonDecorator> references)
+        public override PersonComponent Unwrap(
+                                          out List<PersonDecorator> references)
         {
             PersonComponent component = this;
             List<PersonDecorator> decorators = new List<PersonDecorator>();
