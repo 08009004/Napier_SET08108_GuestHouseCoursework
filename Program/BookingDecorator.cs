@@ -17,25 +17,25 @@ namespace Program
      */
     public abstract class BookingDecorator : BookingComponent
     {
-        // Property : the BookingDecorator component
-        /*
-         * NOTE: Ideally this property should be 'protected' hence  
-         * visible only from children classes Customer.cs and Guest.cs  
-         * but VisualStudio genereates a compile time error if it is.
-         * 
-         * Simon and I looked into it together and could not figure out 
-         * why.
-         */
-        public BookingComponent DecoratedComponent { get; set; }
+        // PROPERTIES:
+        
+        // the BookingDecorator component
+        protected BookingComponent decoratedComponent { get; set; }
+        public void Setcomponent(BookingComponent booking)
+        {
+            decoratedComponent = booking;
+        }
+
+        // METHODS:
 
         /*
          * Adds a guest to the decorated booking.
          */
         public override void AddGuest(PersonComponent guest)
         {
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                DecoratedComponent.AddGuest(guest);
+                decoratedComponent.AddGuest(guest);
             }
         }
 
@@ -47,9 +47,9 @@ namespace Program
         {
             int bookingNb = -1;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                bookingNb = DecoratedComponent.GetBookingNb();
+                bookingNb = decoratedComponent.GetBookingNb();
             }
 
             return bookingNb;
@@ -63,9 +63,9 @@ namespace Program
         {
             PersonComponent customer = null;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                customer = DecoratedComponent.GetCustomer();
+                customer = decoratedComponent.GetCustomer();
             }
 
             return customer;
@@ -79,9 +79,9 @@ namespace Program
         {
             List<PersonComponent> guests = null;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                guests = DecoratedComponent.GetGuests();
+                guests = decoratedComponent.GetGuests();
             }
 
             return guests;
@@ -92,7 +92,8 @@ namespace Program
          * references outputs a list of pointers to all the BookingDecorator 
          * instances in the decoration stack.
          */
-        public override BookingComponent Unwrap(out List<BookingDecorator> references)
+        public override BookingComponent Unwrap(
+                                          out List<BookingDecorator> references)
         {
             BookingComponent component = this;
             List<BookingDecorator> decorators = new List<BookingDecorator>();
@@ -100,7 +101,7 @@ namespace Program
             while (component.isDecorator())
             {
                 decorators.Add((BookingDecorator)component);
-                component = ((BookingDecorator)component).DecoratedComponent;
+                component = ((BookingDecorator)component).decoratedComponent;
             }
 
             references = decorators;
@@ -113,7 +114,7 @@ namespace Program
          */
         public override bool isDecorator()
         {
-            return this.DecoratedComponent != null;
+            return this.decoratedComponent != null;
         }
 
         /*
@@ -124,7 +125,7 @@ namespace Program
          */
         public override BookingComponent Undecorate(BookingDecorator reference)
         {
-            if (this == reference) return DecoratedComponent;
+            if (this == reference) return decoratedComponent;
                 /* Short circuit method if the decorator to remove is the
                  * last one added.
                  */
@@ -135,7 +136,7 @@ namespace Program
             {
                 if (decorator != reference)
                 {
-                    decorator.DecoratedComponent = result;
+                    decorator.decoratedComponent = result;
                     result = decorator;
                 }
             }
@@ -153,9 +154,9 @@ namespace Program
             DateTime a = new DateTime(1970, 1, 1);
             DateTime d = new DateTime(1970, 1, 1);
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                DecoratedComponent.GetDates(out a, out d);
+                decoratedComponent.GetDates(out a, out d);
             }
 
             arrival = a;
@@ -171,9 +172,9 @@ namespace Program
         {
             int nbGuests = -1;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                nbGuests = DecoratedComponent.GetNbGuests();
+                nbGuests = decoratedComponent.GetNbGuests();
             }
 
             return nbGuests;
@@ -188,9 +189,9 @@ namespace Program
         {
             int nbNights = -1;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                nbNights = DecoratedComponent.GetNbNights();
+                nbNights = decoratedComponent.GetNbNights();
             }
 
             return nbNights;
@@ -204,9 +205,9 @@ namespace Program
         {
             float costPerNight = -1;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                costPerNight = DecoratedComponent.GetCostPerNight();
+                costPerNight = decoratedComponent.GetCostPerNight();
             }
 
             return costPerNight;
@@ -220,10 +221,10 @@ namespace Program
         {
             float cost = -1;
 
-            if (DecoratedComponent != null
-                && DecoratedComponent.isDecorator())
+            if (decoratedComponent != null
+                && decoratedComponent.isDecorator())
             {
-                cost = ((BookingDecorator)DecoratedComponent).GetExtraCost();
+                cost = ((BookingDecorator)decoratedComponent).GetExtraCost();
             }
 
             return cost;
@@ -239,9 +240,9 @@ namespace Program
         {
             String csv = String.Empty;
 
-            if (DecoratedComponent != null)
+            if (decoratedComponent != null)
             {
-                csv = DecoratedComponent.ToCSV();
+                csv = decoratedComponent.ToCSV();
             }
 
             return csv;
