@@ -15,9 +15,15 @@ namespace Program
      */
     public class BookingFactory
     {
-        //Properties:
+        //PROPERTIES:
+
+        // the next booking unique number:
         private int nxtBookingNb;
+
+        // points to the PersonFactory instance.
         private PersonFactory personFactory = PersonFactory.Instance;
+
+        // the singleton instance porperty
         private static BookingFactory instance;
         public static BookingFactory Instance
         {
@@ -30,6 +36,8 @@ namespace Program
                 return instance;
             }
         }
+
+        // METHODS
 
         /*
          * Private constructor, to prevent class instantiation from
@@ -99,7 +107,7 @@ namespace Program
                                       String dietRequirements)
         {
             Breakfast bf = new Breakfast(dietRequirements);
-            bf.DecoratedComponent = booking;
+            bf.Setcomponent(booking);
             return bf;
         }
 
@@ -111,7 +119,7 @@ namespace Program
                                           String dietRequirements)
         {
             EveningMeal em = new EveningMeal(dietRequirements);
-            em.DecoratedComponent = booking;
+            em.Setcomponent(booking);
             return em;
         }
 
@@ -139,17 +147,8 @@ namespace Program
             }
 
             CarHire ch = new CarHire(driverName, start, end);
-            ch.DecoratedComponent = booking;
+            ch.Setcomponent(booking);
             return ch;
-        }
-
-        /*
-         * Returns a textual representation of the BookingFactory object
-         * in order to persist it to a CSV file.
-         */
-        public String ToCSV()
-        {
-            return "#BOOKING_FACTORY\r\n" + nxtBookingNb + "\r\n";
         }
 
         /*
@@ -303,6 +302,15 @@ namespace Program
                 }
             }
             return b;
+        }
+
+        /*
+         * Returns a textual representation of the BookingFactory object
+         * in order to persist it to a CSV file.
+         */
+        public String ToCSV()
+        {
+            return "#BOOKING_FACTORY\r\n" + nxtBookingNb + "\r\n";
         }
     }
 }
