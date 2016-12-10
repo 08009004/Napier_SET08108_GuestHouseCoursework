@@ -794,24 +794,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="4477696e-485a-4896-a4d6-c650b47320a7"
-            name="Address"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="5f8b6bee-1d0d-42d1-98c0-ecd12ca1ecaa"
             name="customerRef"
             visibility="Private"
@@ -830,17 +812,6 @@
                 LastKnownLocation="ModelingProject.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="6f7f94a7-8469-4d40-872d-f4b5da954420"
-            name="CustomerNb"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -918,6 +889,78 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="d190741d-0433-4883-b0a0-46398afe4fd5"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bb67a345-7fe1-4cf2-b987-c54be9c336bc"
+            name="GetAddress"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2d53a0cc-997a-44e7-9fb2-7376677ae993"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d308f126-6fdc-4d88-ba64-d149d8d183ab"
+            name="GetAddress"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1a885691-4e28-48e7-a554-01ab07349f4f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ea467dbe-0124-4f1f-bfdd-bd321c5e8309"
+            name="IsGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="927163bf-7388-47cf-9a5c-6e0b37c8b78b"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
@@ -1055,30 +1098,6 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="ba36b50c-1d86-4f90-ae5b-28deb6c35ad9"
-            name="Age"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="64b57f1c-6cc4-4b6f-83f8-ccaaa443abb7"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
-                      LastKnownName="int"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="398e8aaf-d15d-448d-972d-5c7e8a5c9b58"
             name="IsCustomer"
             isLeaf="false"
@@ -1103,8 +1122,8 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="1967d588-505a-4969-bbc3-91669cd3653b"
-            name="PassportNb"
+            Id="110ff2da-b358-45b8-825b-8a250c3d366a"
+            name="GetPassportNb"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1113,13 +1132,61 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="06e8f43d-3b38-407e-b54c-c4c1d3b0904d"
+                  Id="2cd2001d-b150-497e-babc-aa34c8495921"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="994b5b17-b55f-4153-ac04-070d5e0eb2f9"
+            name="GetAge"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e5e7e03-802e-44da-9cd7-3d9c8dffa1c6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d93d9893-3347-4beb-b73c-6ad25129a655"
+            name="IsGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f559b32d-a17b-4505-bc84-672911c06273"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1136,6 +1203,18 @@
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="52fa974d-dc89-425d-b855-6993ceaa9918"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="fcfb3452-785b-4d85-8435-7d4f8923de94"
@@ -1251,6 +1330,234 @@
                     <undefinedTypeMoniker
                       Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
                       LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e103d3b8-9a15-4a7a-9541-7df36cb88b0f"
+            name="GetAddress"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14186f39-ee64-4641-a932-e568938adeaa"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="eed76af0-12e8-4890-be03-d8ff41b57010"
+            name="GetPassportNb"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="67b45746-288c-4fb5-988e-2a6e3850039e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ae417a1c-3e88-406c-8120-2ac0ec9044da"
+            name="GetAge"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9cfd85ae-b4f3-4cdc-b884-45d1c40f3c8e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="920483b8-b9c0-4388-828d-d637c9fe644f"
+            name="Unwrap"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f3c530fd-045a-4c36-bd7f-c03d316cbe6e"
+                  name="references"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c590ff47-08a6-4268-9490-37757c9865e2"
+                      LastKnownName="out List&lt;PersonDecorator&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="be3d07c7-5e78-4724-b9b4-0d0b5eca60e8"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="11395e8e-657d-4546-bca3-7ad82a9e41c1"
+            name="isDecorator"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="db8a352f-71c1-4418-ba23-7c31b04a379e"
+            name="Undecorate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d9be261-2889-4fd9-a92c-91115872ae21"
+                  name="reference"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="aa3a4952-344d-45f9-be5b-b3e31c80cc2f"
+                      LastKnownName="PersonDecorator"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="21733a49-98fe-45e7-b305-8ad86b33b32d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5a400d21-f02d-4fdd-b4d6-a45e5cadfd4e"
+            name="UndecorateOnce"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="acb66d32-1d1f-457f-b799-885785f7fe2e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1045db4e-fe16-4e2b-b334-09a60427b210"
+            name="IsCustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4d75055f-fe49-4dd7-a5e8-7658aaf6c127"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6c87cd21-cdf8-4a27-ab49-10a7ef344899"
+            name="IsGuest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fbb44f32-ce68-48b4-b769-2218cb0ac039"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2714,24 +3021,6 @@
                 LastKnownLocation="ModelingProject.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="a689e061-7dd9-4301-8853-8c5b8937df9b"
-            name="Name"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -2784,7 +3073,7 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="2c963692-4820-4124-a6c8-2c8f0982e50e"
+            Id="660f2b3f-2940-4e5b-b192-720b76b87eae"
             name="Name"
             isLeaf="false"
             isStatic="false"
@@ -2794,7 +3083,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="9e242b07-bd05-466f-b951-8c1c67b71993"
+                  Id="5894e623-d880-431f-b014-561484172b22"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
@@ -2890,31 +3179,6 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="ba77c5da-39e2-489d-a408-39c687f764b9"
-            name="Component"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="1d292167-5fc0-4206-a3f8-2eabbcc861bd"
-                  name="component"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
-                      LastKnownName="PersonComponent"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="d765ee0b-286a-4e5b-ba07-87af5bce5bf0"
             name="ToCSV"
             isLeaf="false"
@@ -2939,55 +3203,6 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="645d67c1-f153-4262-b671-07e50a60a047"
-            name="DecoratedComponent"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="80b9c2c3-1889-46cd-b231-1dbaf87fb888"
-                  name="value"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
-                      LastKnownName="PersonComponent"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="71aeca29-4c1d-4d4c-9016-15add68c04b4"
-            name="DecoratedComponent"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="616c7e63-7f88-4ee0-a2d9-293596fe744b"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
-                      LastKnownName="PersonComponent"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="28a0e2ff-db76-44e9-8f5d-06d882c52de9"
             name="IsCustomer"
             isLeaf="false"
@@ -3005,30 +3220,6 @@
                     <undefinedTypeMoniker
                       Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
                       LastKnownName="bool"
-                      LastKnownLocation="ModelingProject.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="3459fd21-4e7d-4da5-9c31-fc9716d8a407"
-            name="Name"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="bc5a1c87-289a-478e-846c-acd9457e517d"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -3078,6 +3269,243 @@
                     <undefinedTypeMoniker
                       Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
                       LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="22f82620-7026-4ca8-8b5a-399c3a1ad741"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4179df49-04ea-41c7-9aff-661845ad570f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="433b85d7-60ae-4ab0-82a5-a180c86fc5f5"
+            name="GetAddress"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d062292f-f3d2-492c-86a3-601ac80134ae"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e38dc969-6a83-4024-a80b-7eec78fb2c08"
+            name="GetCustNb"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ea3b9465-a8bd-4271-a49a-975fc5e896b0"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ccdbe68c-7d1d-4fde-99a9-664443a8eed5"
+            name="GetPassportNb"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="46ccabd7-726e-48ff-8afe-438c7002b955"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="18fd468a-e8d6-4c1c-b381-488bbba76e4a"
+            name="GetAge"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="29b10c84-d2c4-49b5-833c-779244ca334b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d8ce47c2-5e20-488b-a880-daa4d58686c2"
+                      LastKnownName="int"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0d302e27-2216-4b6d-b181-66931b2de4c1"
+            name="Unwrap"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="47a9532e-5f39-4944-9e01-816735b1e27e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="71d9db62-34c1-4eb8-ba7f-11e3d56473b1"
+                  name="references"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c590ff47-08a6-4268-9490-37757c9865e2"
+                      LastKnownName="out List&lt;PersonDecorator&gt;"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f0fae3f0-e042-4b83-bc04-a92e34e0ee34"
+            name="isDecorator"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d25dedd1-d28e-46b5-9bfd-b7452b1778b6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8336c596-80b9-4fe3-bb7f-9288dbcdefd5"
+                      LastKnownName="bool"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2d36d174-e3d8-46ca-b3ee-b9852f403114"
+            name="Undecorate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b750b0d5-64f4-4810-b692-1434b149a1f4"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="773d2790-4974-4b29-99dc-ebef31f7369a"
+                  name="reference PersonDecorator"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="69306372-b404-4200-a711-8a40d17d671c"
+            name="UndecorateOnce"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e115c800-826c-41ca-b392-b5ceff25100f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4bcd1725-84a0-431f-a6e1-87a051b9a471"
+                      LastKnownName="PersonComponent"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -5954,6 +6382,11 @@
           </property>
         </ownedAttributesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c590ff47-08a6-4268-9490-37757c9865e2"
+        name="out List&lt;PersonDecorator&gt;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
