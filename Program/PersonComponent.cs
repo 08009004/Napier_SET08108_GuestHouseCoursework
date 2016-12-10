@@ -59,7 +59,8 @@ namespace Program
         /* 
          * Returns the PersonComponent itself; and references is null.
          */
-        public virtual PersonComponent Unwrap(out List<PersonDecorator> references)
+        public virtual PersonComponent Unwrap(
+                                         out List<PersonDecorator> references)
         {
             references = null;
             return this;
