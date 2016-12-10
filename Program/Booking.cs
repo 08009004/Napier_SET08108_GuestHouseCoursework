@@ -119,17 +119,10 @@ namespace Program
          */
         public override void AddGuest(PersonComponent guest)
         {
-            //  Obscure compile error - need to solve
-            /*
-            if (!guest.isGuest())
-            {
-                throw new ArgumentException("this PersonComponent is not a guest");
-            }
-             */
-             
             if (guests.Count >= 4)
             {
-                throw new ArgumentException("this booking already has 4 guests");
+                throw new ArgumentException("this booking already has"
+                                            + " 4 guests");
             }
             this.guests.Add(guest);
         }
@@ -170,15 +163,6 @@ namespace Program
             }
 
             return costPerNight;
-        }
-
-        /*
-         * Returns a reference to the Booking itself it is not decorated
-         * at all.
-         */
-        public virtual BookingComponent Undecorate(BookingComponent decorator)
-        {
-            return this;
         }
 
         /*
