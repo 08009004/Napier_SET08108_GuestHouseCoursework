@@ -17,7 +17,9 @@ namespace Program
      */
     public class CSVWriter
     {
-        // Properties: 
+        // PROPERTIES:
+ 
+        // the singleton instance property
         private static CSVWriter instance;
         public static CSVWriter Instance
         {
@@ -30,6 +32,8 @@ namespace Program
                 return instance;
             }
         }
+
+        // METHODS
 
         /*
          * Private constructor, to prevent class instantiation from

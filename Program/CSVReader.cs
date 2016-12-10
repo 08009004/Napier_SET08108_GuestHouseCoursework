@@ -7,11 +7,6 @@ using System.Threading.Tasks;
 // Custom imports:
 using System.IO;
 
-// NOTE FOR GUI: open file dialogue
-// http://www.wpf-tutorial.com/dialogs/the-openfiledialog/
-// NOTE FOR STARTUP:
-// http://stackoverflow.com/questions/6301529/open-a-text-file-with-wpf
-
 namespace Program
 {
     /*
@@ -22,7 +17,9 @@ namespace Program
      */
     public class CSVReader
     {
-        // Properties: 
+        // PROPERTIES:
+ 
+        // the singleton instance property
         private static CSVReader instance;
         public static CSVReader Instance
         {
@@ -35,6 +32,8 @@ namespace Program
                 return instance;
             }
         }
+
+        // METHODS
 
         /*
          * Private constructor, to prevent class instantiation from
@@ -70,11 +69,13 @@ namespace Program
                     tmp2 = sysFilesLines.ElementAt(i + 1).Split(',');
                     tmp1[1] = tmp2[0];
 
-                    if (sysFilesLines.ElementAt(i).Equals("#PERSON_FACTORY"))
+                    if (sysFilesLines.ElementAt(i)
+                                     .Equals("#PERSON_FACTORY"))
                     {
                         data = join(data, index<PersonFactoryField>(tmp1));
                     }
-                    else if (sysFilesLines.ElementAt(i).Equals("#BOOKING_FACTORY"))
+                    else if (sysFilesLines.ElementAt(i)
+                                          .Equals("#BOOKING_FACTORY"))
                     {
                         data = join(data, index<BookingFactoryField>(tmp1));
                     }
