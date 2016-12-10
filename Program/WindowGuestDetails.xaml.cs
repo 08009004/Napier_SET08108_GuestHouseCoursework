@@ -131,7 +131,7 @@ namespace Program
                 areValidValues = false;
             }
             
-            if (mFacade.CurrentCust == null
+            if (!mFacade.IsACustomerLoaded()
              && String.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Please fill in the guest's name");

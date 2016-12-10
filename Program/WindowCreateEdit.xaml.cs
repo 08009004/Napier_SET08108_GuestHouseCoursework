@@ -39,7 +39,7 @@ namespace Program
             InitializeComponent();
             lblBookingRef.Content = "Booking number\r\n";
 
-            if (mFacade.CurrentBook == null)
+            if (!mFacade.IsABookingLoaded())
             {
                 clearDisplay();
             }

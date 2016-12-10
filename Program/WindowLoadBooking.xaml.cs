@@ -55,21 +55,20 @@ namespace Program
          */
         private void refreshBookDetailDisplay()
         {
-            BookingComponent b = mFacade.CurrentBook;
-            DateTime start;
-            DateTime end;
-
             if (mFacade.IsABookingLoaded())
             {
                 // update field contents:
-                b.GetDates(out start, out end);
+                DateTime start;
+                DateTime end;
+                mFacade.GetCurrentBookDates(out start, out end);
                 lblArrivalValue.Content = start.ToString().Substring(0, 10);
                 lblDepartureValue.Content = end.ToString().Substring(0, 10);
-                lblCustNameValue.Content = b.GetCustomer().Name;
+                lblCustNameValue.Content = mFacade.GetCurrentCustName();
                 lstGuests.Items.Clear();
-                foreach (PersonComponent g in b.GetGuests())
+
+                foreach (String g in mFacade.GetGuestNames())
                 {
-                    lstGuests.Items.Add(g.Name);
+                    lstGuests.Items.Add(g);
                 }
 
                 // make labels visible:

@@ -111,9 +111,6 @@ namespace Program
          */
         private void refreshGuestsDisplay()
         {
-            BookingComponent b = mFacade.CurrentBook;
-            PersonComponent c = mFacade.CurrentCust;
-
             // update listbox content:
             foreach (String g in mFacade.GetGuestNames())
             {

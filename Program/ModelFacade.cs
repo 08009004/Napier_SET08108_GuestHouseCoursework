@@ -18,21 +18,18 @@ namespace Program
 
         // points to the BookingFactory instance:
         private BookingFactory bFact;
-        public BookingFactory BFact { get { return bFact; } }
 
         // ponts to the PersonFactory instance:
         private PersonFactory pFact;
-        public PersonFactory PFact { get { return pFact; } }
 
         // points to a DataPersistenceFacade object:
         private DataPersistenceFacade dpFacade;
-        public DataPersistenceFacade DPFacade { get { return dpFacade; } }
 
         // points to the BookingComponent current working instance:
         public BookingComponent CurrentBook { get; set; }
 
         // points to the PersonComponent current working instance:
-        public PersonComponent CurrentCust { get; set; }
+        private PersonComponent CurrentCust { get; set; }
 
         // METHODS:
 
