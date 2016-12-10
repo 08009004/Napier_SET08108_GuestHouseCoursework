@@ -41,7 +41,8 @@ namespace Program
             if (String.IsNullOrEmpty(address))
             {
                 throw new ArgumentException("Customer.address"
-                                            + " must not be null nor String.Empty");
+                                            + " must not be null nor" 
+                                            + " String.Empty");
             }
 
             if (customerRefNb <= 0)
@@ -57,7 +58,8 @@ namespace Program
         /*
          * Returns a textual representation of the decorated Person  
          * (post Guest decoration) in order to persist it to a CSV file;
-         * fields must come in the same order as enumerated in CustomerFields.cs
+         * fields must come in the same order as enumerated in 
+         * CustomerFields.cs
          */
         public override String ToCSV()
         {
