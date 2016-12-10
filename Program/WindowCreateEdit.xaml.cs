@@ -277,33 +277,33 @@ namespace Program
             try
             {
                 List<int> l = (List<int>)lstGuests.ItemsSource;
+                int i = lstGuests.SelectedIndex;
+
+                if (mFacade.GetCurrentNbGuests() == 0)
+                {
+                    MessageBox.Show("There is currently no guests booked.");
+                }
+                else if (i < 0)
+                {
+                    MessageBox.Show("Please double click on the guest that"
+                                + " you want to edit");
+                }
+                else if (mFacade.IsGuestACustomer(i))
+                {
+                    new WindowGuestDetails(mFacade, true, i).ShowDialog();
+                    refreshGuestsDisplay();
+                }
+                else
+                {
+                    new WindowGuestDetails(mFacade, false, i).ShowDialog();
+                    refreshGuestsDisplay();
+                }
             }
             catch
             {
                 // do nothing
             }
-            
-            int i = lstGuests.SelectedIndex;
 
-            if (mFacade.GetCurrentNbGuests() == 0)
-            {
-                MessageBox.Show("There is currently no guests booked.");
-            }
-            else if(i < 0) 
-            {
-                MessageBox.Show("Please double click on the guest that"
-                            + " you want to edit");
-            }
-            else if (mFacade.IsGuestACustomer(i))
-            {
-                new WindowGuestDetails(mFacade, true, i).ShowDialog();
-                refreshGuestsDisplay();
-            }
-            else
-            {
-                new WindowGuestDetails(mFacade, false, i).ShowDialog();
-                refreshGuestsDisplay();
-            }
         }
 
         /*
