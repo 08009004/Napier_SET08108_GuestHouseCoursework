@@ -268,7 +268,8 @@ namespace Program
         /*
          * Persists the BookingComponent instance currently loaded in the 
          * system to file.
-         * Returns true if the booking was saved successfully, otherwise false.
+         * Returns true if the booking was saved successfully, otherwise 
+         * false.
          */
         public bool PersistCurrentBooking()
         {
@@ -376,14 +377,23 @@ namespace Program
                      in dpFacade.GetAllBookingNbs(CurrentCust.GetCustNb()))
             {
                 dpFacade.Read(bookingNb, out bookingData);
-                processedBooking = bFact.Restore(bookingData).Unwrap(out decorationStack);
+
+                processedBooking = bFact.Restore(bookingData)
+                                        .Unwrap(out decorationStack);
+
                 savedGuests = processedBooking.GetGuests();
+
                 processedBooking.GetDates(out arrival, out departure);
+
                 processedBooking = bFact.UpdateBooking(
                                             processedBooking.GetBookingNb(), 
-                                            pFact.UpdateCustomer(processedBooking.GetCustomer(), newName, newAddress), 
+                                            pFact.UpdateCustomer(
+                                                processedBooking.GetCustomer(), 
+                                                newName, 
+                                                newAddress), 
                                             arrival, 
                                             departure);
+
                 if (decorationStack != null)
                 {
                     foreach (BookingDecorator reference in decorationStack)
@@ -392,6 +402,7 @@ namespace Program
                         processedBooking = reference;
                     }
                 }
+
                 foreach (PersonComponent g in savedGuests)
                 {
                     processedBooking.AddGuest(g);
@@ -486,9 +497,10 @@ namespace Program
         {
             CurrentBook.GetGuests().RemoveAt(index);
             CurrentBook.GetGuests().Insert(index,
-                                           pFact.GetNewGuest(CurrentCust.UndecorateOnce(),
-                                                             passportNb,
-                                                             age));
+                                           pFact.GetNewGuest(
+                                              CurrentCust.UndecorateOnce(),
+                                              passportNb,
+                                              age));
         }
 
         /*
@@ -730,7 +742,8 @@ namespace Program
             List<BookingDecorator> references = GetCurrentExtras();
             if (references != null)
             {
-                CurrentBook = CurrentBook.Undecorate(references.ElementAt(index));
+                CurrentBook = CurrentBook.Undecorate(
+                                                references.ElementAt(index));
             }
         }
     }
