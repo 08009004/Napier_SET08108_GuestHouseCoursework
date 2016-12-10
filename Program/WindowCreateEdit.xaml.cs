@@ -274,7 +274,15 @@ namespace Program
         private void lstGuests_MouseDoubleClick(object sender, 
                                                 MouseButtonEventArgs e)
         {
-            List<int> l = (List<int>) lstGuests.ItemsSource;
+            try
+            {
+                List<int> l = (List<int>)lstGuests.ItemsSource;
+            }
+            catch
+            {
+                // do nothing
+            }
+            
             int i = lstGuests.SelectedIndex;
 
             if (mFacade.GetCurrentNbGuests() == 0)
