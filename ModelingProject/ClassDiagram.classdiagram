@@ -1094,30 +1094,844 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="81f39cb6-ebd7-40a2-bb99-1292dd887623" name="PersonFactory" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="81f39cb6-ebd7-40a2-bb99-1292dd887623" name="pFact" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1c0acc5b-8afc-46ac-8087-5ebd6e23feb4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="9d0cdb08-0d6d-4083-9f09-6693e590a1ef" LastKnownName="PersonFactory" />
+              <referencedTypeMoniker Id="0f25190f-b8c9-449a-90a0-cff952829c81" LastKnownName="PersonFactory" />
             </type_NamedElement>
           </property>
-          <property Id="e2dec221-82c9-4ec4-b6e0-323300ee00be" name="BookingFactory" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="e2dec221-82c9-4ec4-b6e0-323300ee00be" name="bFact" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b0ba61c9-718c-4728-85af-e71c7df3fa30" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="f7c477cb-ee24-4929-8991-e3fc29f2cc03" LastKnownName="BookingFactory" />
+              <referencedTypeMoniker Id="48199ae6-a8dc-436b-84e6-370dbdf27e28" LastKnownName="BookingFactory" />
             </type_NamedElement>
           </property>
-          <property Id="87aa7067-78a6-4151-b9ea-9c1d3425c986" name="DataFacade" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="87aa7067-78a6-4151-b9ea-9c1d3425c986" name="dpFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="777cf9ad-d860-4092-818f-81b06f36f42e" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="5f67769e-775d-4b24-90a1-9bc17b786cad" LastKnownName="DataPersistenceFacade" />
+              <referencedTypeMoniker Id="1149d345-0ea6-4149-a7e4-9cb4d9ab197a" LastKnownName="DataPersistenceFacade" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="886d2658-89de-449b-ae04-ef1ccbbd2121" name="CurrentCust" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="985dff9a-3ed0-46b4-aee1-8af92d7b0c9e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f203dd4-f3f8-4265-b130-c14685a17c5c" direction="Return" isUnique="false">
+                  <elementDefinition Id="56bae967-cf31-46d7-b72b-ef7494821889" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8d10dd8-7e30-43a4-ae4f-94c3274d0a61" LastKnownName="PersonComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a9194373-8158-427d-b921-c7e11502dbce" name="CurrentCust" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e9046bae-c3b5-4ef8-b528-0075f39c6a2a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4faa24e2-0984-46e9-9580-b50113b64ef8" name="value" direction="In" isUnique="false">
+                  <elementDefinition Id="23696f2d-2a87-4cf4-92c4-f8c7aae11310" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8d10dd8-7e30-43a4-ae4f-94c3274d0a61" LastKnownName="PersonComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7680cc3b-e885-45b9-ace1-851c40d380c8" name="CurrentBook" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="056bfffd-19d9-4489-9c32-19b437d2d3ee" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="27944c04-b620-4b16-ab1b-7e753b90f6d2" name="value" direction="In" isUnique="false">
+                  <elementDefinition Id="fc4fbc23-6b63-4f90-93f6-ce1b60acd2c0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e2c16a37-ce5b-4a52-a3c6-57a19530a4cc" name="CurrentBook" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="021dc2d0-ca94-446e-a1aa-d1207da21ebf" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7594e652-0bb3-4fbf-bc8a-e4c0870d387e" direction="Return" isUnique="false">
+                  <elementDefinition Id="e0791afd-7f4d-4270-b2bb-4e38118443ea" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6d3ba0d1-ba19-4dd4-9225-65ff8d19c9da" LastKnownName="BookingComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b1cb5f5d-cbea-487c-b30c-e7b4e111fe33" name="ModelFacade" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce1780a0-9e9b-43c6-9c1b-d3d4ab436410" />
+          </operation>
+          <operation Id="7b730c66-dbf4-4582-b828-a270d8b3dc33" name="RestoreSystemSavedState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c243b8e-abd3-42d8-8805-951b05f50cc4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="50d2f203-8bcf-4971-b61b-f0cc9fc21789" direction="Return" isUnique="false">
+                  <elementDefinition Id="508b9c65-d967-49ec-bae6-3dee03cdfd97" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fa5163b4-1540-4826-a23b-80a5c780e69b" name="PersistSystemState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="56563495-b24b-4f02-8e54-8b3c525c63cd" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a64d4801-f447-4365-85be-4e182ffd4628" direction="Return" isUnique="false">
+                  <elementDefinition Id="5301786b-2ba7-4763-95cf-4520f798a62e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="83a2c6a1-fd6d-4db0-8e10-9dd5209b05ca" name="GetAllBookingNbs" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1799c5a4-27e8-45f1-9c23-c033d62bae40" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="302dae4e-adcb-4d4a-97b4-cf35838ace4b" direction="Return" isUnique="false">
+                  <elementDefinition Id="a2f61418-2dd9-4b65-8183-712672d13743" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6c0269a1-33f6-4cb6-a5e2-60dd9a6c02a9" LastKnownName="List&lt;int&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="08ff52aa-c356-4feb-9c3b-115b11826224" name="GetAllBookingNbs" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="63e52c63-a1f3-462f-af2d-41f091d59283" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2f770e73-c110-4307-a207-06f326d26efd" name="customer" direction="In" isUnique="false">
+                  <elementDefinition Id="22a89577-02a6-453c-8e42-a683787a901f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8d10dd8-7e30-43a4-ae4f-94c3274d0a61" LastKnownName="PersonComponent" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="21cc6ce5-553a-4e85-b85a-ff48a5ba7d67" direction="Return" isUnique="false">
+                  <elementDefinition Id="a8026c7a-bd99-410a-8b76-05427c6ff4c1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6c0269a1-33f6-4cb6-a5e2-60dd9a6c02a9" LastKnownName="List&lt;int&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="32555805-4aa7-4f82-afe3-780e2a53e70a" name="GetAllCustomerNbs" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c8fc5bdb-7357-4567-9048-9f067223c092" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="676bba06-c87d-43db-bcaa-380d04c8a80d" direction="Return" isUnique="false">
+                  <elementDefinition Id="7bfdb6c9-be01-419c-a7da-bc02fb58653f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6c0269a1-33f6-4cb6-a5e2-60dd9a6c02a9" LastKnownName="List&lt;int&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6f1963cb-3c2d-4500-ba36-a043c05baad9" name="DeleteBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48d840a3-ca3b-4799-be49-0e67e1f0f4c0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d8ebdd03-f81d-4aff-9a6b-e19f7fba81ad" name="bookingNb" direction="In" isUnique="false">
+                  <elementDefinition Id="6b89324e-26d5-4539-abc0-cff775c7f564" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="37050ebe-9083-4eea-a238-89c54fcc2209" name="IsABookingLoaded" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0d02c8c-8110-4075-b443-8d626c59fde3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed42ded2-9371-4f39-9452-5f0b5b32108d" direction="Return" isUnique="false">
+                  <elementDefinition Id="7f5343be-1011-4c4a-b745-493925b442b2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7acc5e6d-40a9-441d-8ef7-5060f140ec2f" name="CreateBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6e6c19f3-937e-4ff8-93e6-47078208144f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7dc73226-de29-443a-b738-3e09cd244f7a" name="arrival" direction="In" isUnique="false">
+                  <elementDefinition Id="2e2a3cf3-4024-40d9-b7c5-30652474eb69" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7cfa2eec-5630-43eb-9e61-cead50e6072b" name="departure" direction="In" isUnique="false">
+                  <elementDefinition Id="64fb2da2-f4a5-4f8f-98bc-77654fecdaa3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9790886e-6dd0-4594-8111-44cdb40bb777" name="RestoreBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a5fb3a5f-1915-44ec-b0fa-214616ddd577" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f7c34bd-3e7f-487f-b1cd-697ff689ae5a" name="bookingNb" direction="In" isUnique="false">
+                  <elementDefinition Id="4790c432-30fa-42f0-ade1-010785cce006" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1542e6c8-5196-4659-9d44-2e3c9924f99b" direction="Return" isUnique="false">
+                  <elementDefinition Id="6980cf9f-25c5-45ae-8cc6-723d59cbe2ab" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="88c26993-2da8-4bc0-a526-a83406298547" name="GetCurrentBookNb" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb649ce5-0d2d-4132-9395-a4a8748a3a33" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ff9a087e-a249-498b-b8d1-72cc184ca10d" direction="Return" isUnique="false">
+                  <elementDefinition Id="932ce29c-ee99-4225-a58d-952c1cfd8373" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9ee19bc2-06f6-4f8a-90e5-dcf08ada954f" name="GetCurrentBookDates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1bb0285d-4069-4039-afb7-e96be456a4bd" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1169e361-82d3-4bef-baa5-df68ef312a69" name="arrival" direction="In" isUnique="false">
+                  <elementDefinition Id="426c36aa-63a0-4f45-af72-819ffa7640ea" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9157319d-3e45-43fe-994d-d0897a4c6762" LastKnownName="out DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="597ead65-ea64-4284-be41-a0ec988a58de" name="departure" direction="In" isUnique="false">
+                  <elementDefinition Id="3e04417f-19de-4ce2-af7c-93bd0cca11e6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9157319d-3e45-43fe-994d-d0897a4c6762" LastKnownName="out DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fcb9ce3b-b6d6-4df6-bb92-a1b42f20f730" name="GetGuestNames" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="846560fb-39d5-413f-b49e-451090110e01" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7e7bae42-2d59-4d0a-9cb1-232057e88502" direction="Return" isUnique="false">
+                  <elementDefinition Id="2962373b-76ec-4740-bd65-de4b1455a3c8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8806cba2-f0de-4bcd-9782-2db40f13356b" LastKnownName="List&lt;String&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4cf76483-09f3-4098-9422-dd27229cf9ce" name="GetCurrentNbGuests" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c2a0821d-2308-4104-a8f6-d5430b0b39d9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9310d0e9-362c-44eb-9c8d-cb91689572af" direction="Return" isUnique="false">
+                  <elementDefinition Id="44429f8b-a4d4-47c0-95f7-49fc12a818b7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="281f54da-57a0-4300-a156-0da4c48ccc91" name="GetCurrentNbNights" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="23e8eea7-fb7f-4ed4-a83a-70db2649c884" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4b92a003-bf06-41b1-93ae-191af5ecd5a9" direction="Return" isUnique="false">
+                  <elementDefinition Id="2198bad8-fbc1-40b9-adc7-6b19f5426232" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="660d46e8-5d47-4bfa-84b4-96d7c3854e5e" name="GetCurrentCostPerNight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3205979b-620e-41c2-8584-4a91f79069a6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="76d213dc-0b7b-4c22-91c0-2703780c1b49" direction="Return" isUnique="false">
+                  <elementDefinition Id="cf2fb5ea-9358-452a-aa4d-4a3ecfe52595" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="970e313e-6bda-44ac-aa50-5dd3b41fc76a" name="UpdateBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8ce58a89-b057-4dcb-ba48-de4ea3785b39" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b6fd76a2-0897-41af-a872-aa1ef0fccb95" name="arrival" direction="In" isUnique="false">
+                  <elementDefinition Id="80ce6c56-1c4c-4f80-b7f7-98bf83d7961f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9157319d-3e45-43fe-994d-d0897a4c6762" LastKnownName="out DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e73690b8-5ba1-481b-ab86-d1081d3f9629" name="departure" direction="In" isUnique="false">
+                  <elementDefinition Id="cdc78b25-8311-4a31-8140-91409ed004f4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9157319d-3e45-43fe-994d-d0897a4c6762" LastKnownName="out DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5c7a77a2-fdc5-457b-930c-dd6d9ca6c599" name="CurrentBookingClose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="00b4bb2e-cb23-4b71-93a8-8bf9b4404d5d" />
+          </operation>
+          <operation Id="fb0c65ca-1849-4014-928b-494004941c2a" name="PersistCurrentBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="203f39c5-d135-4ce8-b621-17e9563cb045" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8d7f57a5-8877-4909-ad6a-0c6bc4d10156" direction="Return" isUnique="false">
+                  <elementDefinition Id="a2676fa7-9e49-4cf3-9d6a-56e89c5e5fa0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8142257a-56d9-4a0c-a785-1c999f1cc36d" name="IsACustomerLoaded" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="81c8d28b-9246-4648-b560-89251963aaf6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="24df4bec-4ecc-41a7-a8cc-22ba496a1568" direction="Return" isUnique="false">
+                  <elementDefinition Id="b0b2d639-cbed-418a-bcd1-7027c5fbcbb2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1d308955-ca45-4bc5-8941-67acf8558a93" name="CreateCustomer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b9155c70-55d5-4214-89a6-82da3091fac0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="95e58685-b5ca-4dc0-a886-6300a1fddb87" name="name" direction="In" isUnique="false">
+                  <elementDefinition Id="3613a06a-9fe2-41ce-8c9e-2c3e4b9329e8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e7b8e1be-5e67-471c-8d87-47f676aae890" name="address" direction="In" isUnique="false">
+                  <elementDefinition Id="664020a6-d179-487d-b8b6-139e0a5d403e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1472ccdd-7fe9-4365-9ed8-7e5c16bd60ef" name="RestoreCustomer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0012a5b0-5db4-414b-9367-3c5abb0477e8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0de5dbc5-24d7-4ee5-afd2-d365e75162fa" name="customerNb" direction="In" isUnique="false">
+                  <elementDefinition Id="69877421-64dc-415a-820e-e8126e9f0539" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="82b55a6f-3b00-45f2-997f-9ad9990290e9" direction="Return" isUnique="false">
+                  <elementDefinition Id="12df6bca-f1e1-4a85-954b-21e413a1bd53" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4af1911c-22ac-41c8-9bc1-5403df1b9293" name="GetCurrentCustNb" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="804e305c-f8eb-4fbd-86ae-c2def6c3294a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5fa81ba0-a0b5-4135-a735-761c2b2a86e2" direction="Return" isUnique="false">
+                  <elementDefinition Id="6f639fee-ebb9-4eb0-8e64-0c200c5b56b1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c8403379-5c13-4dc1-a52f-cf24ffde0894" name="GetCurrentCustName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fdb7cf94-fca9-4881-8d56-a6b63949607e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="11a9daf5-c5cc-4634-91d9-443059e49e4f" direction="Return" isUnique="false">
+                  <elementDefinition Id="ade31af3-89c5-4045-bc96-591a3d0722ff" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8b17240d-a56c-4cf7-9795-62b1b21d9104" name="GetCurrentCustAdress" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0f7ba204-c34a-437c-8477-a9c5ec947623" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b4ac1a89-21d0-4d56-88f2-60e48a6740e2" direction="Return" isUnique="false">
+                  <elementDefinition Id="c51a44fe-80d4-4645-9c14-9004095eb7b5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e7b925ab-7de7-46ca-91f3-1bfb900f505a" name="UpdateCurrentCustomer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ab638cbe-dbcf-4f2d-8800-75e4dd597845" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ba7f3b05-0617-4252-be49-977bd10ce3cd" name="newName" direction="In" isUnique="false">
+                  <elementDefinition Id="ae52bfa9-8e64-4eab-ab23-b00fb67f82fb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="00cf4138-3a0e-4bb2-827d-1f6b18b0c063" name="newAddress" direction="In" isUnique="false">
+                  <elementDefinition Id="3757a910-3931-4cce-855e-2650cd143036" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e9b2f3b9-c81c-4e88-9227-ff230a183d78" name="AddGuest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7a0aa35a-1fdb-4841-88b7-0518c24b28f3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9565de33-5eb1-43d5-9ece-339845725a59" name="name" direction="In" isUnique="false">
+                  <elementDefinition Id="c1ff341c-cd74-4331-b152-402843896d28" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="08eaa4b8-7b3b-493c-b0f3-21ad92b52fd7" name="passportNb" direction="In" isUnique="false">
+                  <elementDefinition Id="1e40798a-584a-40ca-9c6b-90fcd7d979ef" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1f1b36b3-bac0-4d38-926d-9cae26642cc9" name="age" direction="In" isUnique="false">
+                  <elementDefinition Id="c5559447-cddf-4ece-bc88-0a37d37963b3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="52bfc092-8df8-4b63-a9e7-47d699656c70" name="EditGuest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b35ae521-bffd-4cf1-89e6-61fd3cc845ec" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="14486599-a68f-40d5-a2af-f88855921995" name="index" direction="In" isUnique="false">
+                  <elementDefinition Id="28af6a63-d875-42a3-89cc-d6fc29123deb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a4b6ffa1-0a0e-4b00-9c19-cdc37f6fa139" name="name" direction="In" isUnique="false">
+                  <elementDefinition Id="ca1c1366-bdfc-4cb8-b38c-3b45ea933ba9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="617d8c8f-d9eb-4aaa-b993-91bca980c2a3" name="passportNb" direction="In" isUnique="false">
+                  <elementDefinition Id="62a0b360-c247-420f-8151-2529f33ac823" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f53aae99-e6f2-46f1-8233-ef78bc19edf1" name="age" direction="In" isUnique="false">
+                  <elementDefinition Id="e0cb5c0e-541f-4fec-9023-8bbb6b7fad6d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8375355c-88e7-4d58-9679-0c8e3cea475e" name="IsGuestACustomer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c7d5601d-46b4-4160-91eb-b16e1e9ea22c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ce1c9461-6738-44eb-803d-5bacde30e46a" name="index" direction="In" isUnique="false">
+                  <elementDefinition Id="1052cf4a-cbfb-424e-8cc5-f0961c65ed33" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="242146b6-a9d8-4cc2-8914-48ccf5216070" direction="Return" isUnique="false">
+                  <elementDefinition Id="7d633662-f8de-4de0-a548-5b31ffe39c30" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b31608ac-ea75-473a-ab1e-22ae31e72d6e" name="AddCustomerToGuests" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="50a177e4-7f76-4843-b6fa-6f19fd979f0d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1f7ba2c7-a205-41c7-a6ed-24236574ded7" name="passportNb" direction="In" isUnique="false">
+                  <elementDefinition Id="8f7f4e19-ff4b-42e6-81cb-2b6229f3cdbe" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ac8bb2cb-ed4c-41a2-8772-92f486454500" name="age" direction="In" isUnique="false">
+                  <elementDefinition Id="30bdf361-90ab-46dd-9416-39d6f9f5ec4e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d9f227cd-92f1-482a-b4b4-a9b281b9f74b" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="132d26f1-f993-4131-96bc-5470b7a8567e" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3ffdc33d-48c4-458d-b2b7-4f40805552d6" name="EditCustomerGuestDetails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1f21553b-e840-4740-abb9-b3bf6e825b45" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="949e33c3-70e8-4a49-a7cb-cf405f0931cc" name="index" direction="In" isUnique="false">
+                  <elementDefinition Id="8b2e9aca-5300-4c66-b2ce-3bdcee3fb49a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2275e474-6542-496a-a8a5-31abaf0bfd3b" name="passportNb" direction="In" isUnique="false">
+                  <elementDefinition Id="ba09c1f1-4c91-4293-98b2-fe690c2cc628" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4734b8d2-f30f-4ef8-99e2-dc087cc60001" name="age" direction="In" isUnique="false">
+                  <elementDefinition Id="2ffc7937-7526-4e19-a33c-6d1eace4bcc4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4eeec9c6-1641-4a58-90e2-37eb91a90775" name="DeleteGuest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0d4e009d-dee8-4682-8c93-946650a508fe" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="13b3da28-e026-446e-aeec-e771498430d5" name="index" direction="In" isUnique="false">
+                  <elementDefinition Id="2c0bd4ef-5e83-4370-9e11-643e9f62d4c5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="054112b2-f9dd-4ce6-acdc-affe0e254b97" name="AddBreakFast" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8fde2852-b4e1-4636-8902-5ddb4622db46" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="808fd0b5-dfb0-4677-aaed-c58c5777a8f7" name="dietRequirements" direction="In" isUnique="false">
+                  <elementDefinition Id="7089255e-4304-49a5-a1a1-29caadb65b60" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="862924ee-4650-4fdd-8259-eedc647d3826" name="AddEveningMeal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b22ba835-91f0-46a3-a887-44aa84395bbf" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dd7a0194-306b-4f74-9f7a-8c3b9606e30b" name="dietRequirements" direction="In" isUnique="false">
+                  <elementDefinition Id="4541c30f-dbaa-4dfa-9ed4-b0105d42833c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="41bce63b-714e-46d2-9de8-9c0043256e79" name="AddCarHire" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a66346cd-f550-4a90-9f45-6b4dded2caed" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b08bb335-7fb0-46a5-801c-c6822fe49dae" name="driverName" direction="In" isUnique="false">
+                  <elementDefinition Id="820621b7-4aea-4aa2-aaa9-f0a5a0339236" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="85007282-6c11-4c88-8ec9-89db4b47b45c" name="start" direction="In" isUnique="false">
+                  <elementDefinition Id="1591c92a-383f-429f-b72c-8f37c9fb4ab5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0903748b-77ee-474e-8d39-6519e6486389" name="end" direction="In" isUnique="false">
+                  <elementDefinition Id="37fca3e5-0c45-428b-af6c-c1c96d31add4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="277733ba-610b-4278-9b81-2fbe4404ba04" name="UpdateBreakfast" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb85dc6a-25b0-44ee-8b82-6ca94beea34e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c4833648-1aaf-4e1e-ae82-2778a219c80f" name="reference" direction="In" isUnique="false">
+                  <elementDefinition Id="337df26e-c947-48cc-b95f-1f60ecddb612" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a2d23b88-2219-49f1-9b89-b2f1ff97aa0d" LastKnownName="BookingDecorator" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="adcbc750-9c08-449f-8e9e-4e6783d4cb98" name="newDietRequirements" direction="In" isUnique="false">
+                  <elementDefinition Id="6d6dd975-58fc-4cf5-9738-f514353b2446" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7fabf57c-258f-400f-834f-36da6e5213bd" name="UpdateEveningMeal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3685434a-0963-40b5-aabe-131c4a1e66e8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="85b10e5e-9416-449b-ab4f-14aab48af6a3" name="reference" direction="In" isUnique="false">
+                  <elementDefinition Id="9810bcde-6041-4dd1-8b0f-2a7f3231cce8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a2d23b88-2219-49f1-9b89-b2f1ff97aa0d" LastKnownName="BookingDecorator" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e5cae49a-e089-4ddb-8aff-1f2588873708" name="newDietRequirements" direction="In" isUnique="false">
+                  <elementDefinition Id="c4617904-06ac-4387-b084-ae95aa3edb15" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="854e6dd7-4272-4ea2-84f8-0a371b8260d5" name="UpdateCarHire" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="05292e74-5c34-443f-bdb2-1814ce24a30b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="354e4045-35ae-43ef-a208-54ab303370c5" name="reference" direction="In" isUnique="false">
+                  <elementDefinition Id="43db99e6-7c93-4db1-b1ad-0d2c01719eca" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a2d23b88-2219-49f1-9b89-b2f1ff97aa0d" LastKnownName="BookingDecorator" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="25f347ed-60e8-44a1-9e60-b6a9c70a4b99" name="newDriverName" direction="In" isUnique="false">
+                  <elementDefinition Id="f89f8d57-7259-4e9e-803a-45a13b35ad92" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0db94a5d-10d4-4660-99ef-4916a92bc846" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cebe6518-6edf-4ec2-94f5-1fda134cb2a4" name="newStart" direction="In" isUnique="false">
+                  <elementDefinition Id="12ae1b9c-4964-45a4-a946-9e271887858b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c7d09f41-ae5f-423c-b927-ff131fc14c20" name="newEnd" direction="In" isUnique="false">
+                  <elementDefinition Id="018e9ddc-bb43-4444-a8e5-816d911c8f96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6559c802-b145-40ac-8532-753487ad6c1a" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4cab4916-d4e2-4dc3-bd77-7bcbcf23b8f9" name="GetCurrentExtras" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4e66c4b7-023b-4ed1-a8eb-7a6cadf86866" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="54ef0006-b735-4d8d-919c-b89188faea24" direction="Return" isUnique="false">
+                  <elementDefinition Id="28cdc7a5-5805-4ca2-a7b6-aa5b4f5e1c41" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bf270441-0da2-48a3-8926-57bb655bef2c" LastKnownName="List&lt;BookingDecorator&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="54dfc796-7fbb-4671-b0e4-a46d799a0502" name="GetCurrentExtrasNames" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9d7fdad4-13bc-4bcd-8709-6c110c5932e7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bcc1c4f8-547f-423f-8904-ffb6bf867118" direction="Return" isUnique="false">
+                  <elementDefinition Id="123fb161-c7c3-479f-8c9b-2bcd8643845b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8806cba2-f0de-4bcd-9782-2db40f13356b" LastKnownName="List&lt;String&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9b8efff3-e2bc-46a8-b6c5-a28aea1a960f" name="GetCurrentBreakfastCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a5ba95e-26fb-450d-9043-055ba579ec9b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4aef62d8-57ae-4f2a-a5a4-a48c4a310335" direction="Return" isUnique="false">
+                  <elementDefinition Id="4dca8785-76e7-4ab6-8758-f6c5e0fe466d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b5b8be21-820f-4fbc-8bd2-a11ad644ce4e" name="GetCurrentEveningMealsCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4f04c080-f284-4d01-b7da-ba8a40bdbb47" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="43ebe710-9165-41f5-9fcf-fdf4dfdb84ea" direction="Return" isUnique="false">
+                  <elementDefinition Id="1d5cfe8c-fe46-47b0-badc-0c463a299823" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="434f60a3-6e42-42d8-9849-7296f59bebcd" name="GetCurrentCarHireCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f9722ca2-3141-4a3a-9d2c-d2d99044ef76" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="44dc16f1-56cc-4e23-9631-402dd45a1587" direction="Return" isUnique="false">
+                  <elementDefinition Id="f57a31a4-c889-4b70-bd57-501a8660346d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bc953aee-7f70-4292-a052-c29e044762c7" name="RemoveExtra" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d51f7a86-2f3b-4047-acb4-933481b74d1c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f22b5bc-bd5b-45fd-9ad2-dbdc558572a3" name="index" direction="In" isUnique="false">
+                  <elementDefinition Id="daf0c0d5-d861-4ed1-840d-7ac324fc331c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="669adf86-b237-4523-9f16-617147785733" name="MainWindow" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="3a9623b4-6b65-4441-b0be-50739d8c5fdd" />
+        <suppliersInternal>
+          <dependency Id="2c8802f4-2c81-42d8-b8cf-ace60650ce6a" name="opens">
+            <classMoniker Id="db94ff8d-aae6-46a3-ad7d-466b711e7984" LastKnownName="WindowInvoice" />
+            <elementDefinition Id="0c02c813-f957-4506-9507-3e0694c0efe3" />
+          </dependency>
+          <dependency Id="190f5a0b-9665-40bb-91ba-140930e1d3a1" name="opens">
+            <classMoniker Id="f7bdf1f0-e8ba-4738-a935-3af29193016c" LastKnownName="WindowLoadBooking" />
+            <elementDefinition Id="d857f11f-6a3d-4077-af59-54dafc8a4ced" />
+          </dependency>
+          <dependency Id="7c1e6faa-a876-4e8c-97f0-9d4edff10f6e" name="opens">
+            <classMoniker Id="e5e04c99-759e-435b-9a79-3535356081d3" LastKnownName="WindowCreateEdit" />
+            <elementDefinition Id="fc56eca4-f581-4141-aa3a-11629273d0f6" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association Id="d88bb35c-4f81-4a68-84e3-84205cdedd68" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
@@ -1144,6 +1958,152 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="0615db6f-71c6-4068-8e54-e320151c5491" name="MainWindow" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1028c970-0a06-48c3-a26a-65ffbafd4caa" />
+          </operation>
+          <operation Id="897eae8f-2ed1-47b1-94fe-d5309e8fc6d4" name="btnLoadBooking_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f23e7ee9-a618-4318-a7de-d7a8cc348d99" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6acaa573-ca19-4712-801f-4951f9febc88" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="314f6d34-c702-4da5-81e8-866299a6e9de" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="da53195d-9474-4a37-9d4a-725285655d65" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="6d45070e-bf10-4a28-b127-381bc92aa782" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0a176eb7-642f-4192-a115-9330cda3bb6f" name="refreshDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="941cd026-a14e-42b9-b208-74f5ab1f394e" />
+          </operation>
+          <operation Id="fe5175c8-8682-41f6-abaa-d038493b2d22" name="refreshBookingDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="146fca1b-4bcb-4f32-8058-4df12f159067" />
+          </operation>
+          <operation Id="af08f4a0-a83c-4830-9fb6-0800814d6d47" name="refreshCustomerDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b1ea7f66-62de-4330-8844-61d457659cd2" />
+          </operation>
+          <operation Id="062765bf-554b-4b16-9a05-15c6b52ab008" name="refreshGuestsDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="16da7940-22d3-4ade-a33d-d26145a4a338" />
+          </operation>
+          <operation Id="713019fb-d20a-45ec-b2ce-ff98b25ce9b4" name="clearDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a4879c22-9df3-4b99-a5ea-dc2b8a58798f" />
+          </operation>
+          <operation Id="c256b9bb-3992-46be-bf39-93bdb336a204" name="btnCloseBooking_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f50ffc9b-0a80-4691-a566-dd650e5675cc" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6343bf97-ef03-44a9-8c9a-8bca0b953db7" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="9ba685e8-4b18-4bc4-949a-a8e95382d605" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fc43075c-fc29-418e-927a-344f34820e96" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="3302d032-3a65-4fa8-9bd3-4cc35d66b8d6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="31bd66fe-9912-470b-b5ce-89cd94c30539" name="btnNewEdit_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0aa79dd4-6188-4cd1-84ec-d5de653c855b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="47ffd483-4edb-4ffa-a47f-306048a063c4" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="1a719f26-d204-47b1-a2b9-96a0c5b5305b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3b826129-e936-4277-842f-fedbf7208515" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="541b51a6-a9fc-4b69-b683-a41e1ee50f13" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a14686a3-eead-47ba-b5db-e8ddbdfdfbfb" name="btnInvoice_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1924f557-4cfd-4c1e-be62-a1ed062c55a9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="580597a0-27e7-47d2-a085-1ad3b1cb12f8" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="591f70ab-e8da-40e8-a609-7d63a7ce4f7b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="af6a5451-d674-4fab-952c-58591aec7ffa" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="de1c188e-c18b-46dc-9f15-4e72c03cd4c7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e6de8bb4-7e56-45b6-87e2-b3ac716bb893" name="Window_Closing" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a4776ee6-b921-4e1e-aad4-9ef0d3941aea" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dd44d656-4006-4827-a02a-72061431121e" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="11498b6e-bca0-4606-bc14-4b5eee3d8a66" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="220eab67-9e53-4269-ab88-0d37ae4b852d" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="dcdecc83-a04c-4c9d-9cf4-c9868a76680c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7b039763-550f-4273-b0de-e73c888719ae" name="btnDelete_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="602418e6-b761-46fa-8304-bd1cace0e44c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6e6ece28-e7df-49ac-b4b4-119b93519915" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="a0b2af09-11a1-4113-a237-d8d73aa304dc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3e45e006-84e2-4931-9790-318c936d78fe" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="46f1cc38-38c9-4345-b7d5-74389d302647" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -3628,11 +4588,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="5f67769e-775d-4b24-90a1-9bc17b786cad" name="DataPersistenceFacade" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::DataPersistenceFacade">
-        <elementDefinition Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="f7fea3ac-504d-479e-a44b-9e52a7fc0842" name="out  List&lt;Dictionary&lt;String" isAbstract="false" isLeaf="false" cachedFullName="out  List&lt;Dictionary&lt;String">
         <elementDefinition Id="8501c57d-7933-430c-ac6e-fe14b21dc0bf" />
       </referencedType>
@@ -3665,6 +4620,24 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="e2a5429c-f69b-4114-b5af-3cab28be2cb5" name="WindowBreakfastDetails" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="9f970c59-dbcc-4d10-a8ab-b7b379da3b54" />
+        <targetEnds>
+          <association Id="09409402-76f1-4255-b2a0-03ed7966cb98" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
+            <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dda4f533-6171-477e-9ebd-b99539a6ce54" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2e6331ec-5929-472c-a3b6-e958ea6c7877" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c5c082a3-a7d5-4a20-95e5-6321a36f9e73" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="04e7612b-4616-4a0a-a7e0-15aada4c5fe9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2b553635-dad6-4c88-b73e-32bdb064bb7f" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="b4d171a7-cfaf-4288-b456-9f0b419f008b" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="35bd9803-55de-4b52-ba73-f91fefc7b66f" />
@@ -3672,25 +4645,102 @@
               <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
             </type_NamedElement>
           </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="c2ac5c6d-bc53-496b-b9d7-ccede66d4193" name="WindowCarHireDetails" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="fec141ed-765f-4d44-92a4-553a8cfe94a2" />
-        <ownedAttributesInternal>
-          <property Id="6a40370d-55c0-47eb-be92-307fff9829cc" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="549fbab3-3081-4f6f-b527-f2d6990b0413" />
+          <property Id="6ed9e492-bc15-46fb-b0ff-cf8b881a911e" name="breakfast" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5586a601-5bb2-46d6-99e7-96631bc966e6" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+              <referencedTypeMoniker Id="a2d23b88-2219-49f1-9b89-b2f1ff97aa0d" LastKnownName="BookingDecorator" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b1ee53bc-6474-4846-95b4-7c8bbc3ce689" name="WindowBreakfastDetails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="924d7556-0b56-455e-8263-ddb0e229e303" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2d0eac12-45fc-424b-ae9b-c2e47622c946" name="mFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="f65b3b7c-aa06-46af-918a-60acb0ac7f20" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1593ecb-aa99-4ad4-be73-a2eba21defa9" name="instance" direction="In" isUnique="false">
+                  <elementDefinition Id="8fef2d94-bd6f-48fd-aacd-eecefb466e40" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a2d23b88-2219-49f1-9b89-b2f1ff97aa0d" LastKnownName="BookingDecorator" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ca488748-4caf-4aee-b48f-43107bc7e467" name="btnSave_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6cf9e9dd-6311-4541-9649-69966ec2ff84" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3a6e5161-3cb9-4925-bf8f-73a97550a2aa" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="1f7ee18e-9edb-42e2-bd44-b1b664fbae94" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e09adf7d-5b56-4da8-b93d-93c0e84d95b7" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="7bf96c72-9db8-4154-af0f-32923b895713" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="e5e04c99-759e-435b-9a79-3535356081d3" name="WindowCreateEdit" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="c2f41adc-ac97-47eb-bcfa-b788e9c3de46" />
+        <suppliersInternal>
+          <dependency Id="c1b4161b-e30c-4a63-b3aa-7a3c143f5ae7" name="opens">
+            <classMoniker Id="3567f739-a244-4efa-bac9-32bb33ef6699" LastKnownName="WindowGuestDetails" />
+            <elementDefinition Id="44624690-f633-4a7f-8042-e3ecdb7f2aa3" />
+          </dependency>
+          <dependency Id="4ffc8508-6ee1-4232-904e-3756249f400c" name="opens">
+            <classMoniker Id="fc004e8f-3aa8-4b85-9d1f-ca824bf3d6b6" LastKnownName="WindowCustomerDetails" />
+            <elementDefinition Id="8ca59eaf-6d88-4458-a717-3ab4da4ee628" />
+          </dependency>
+          <dependency Id="658b1aec-492a-4cf3-9f45-5e78388a395f" name="opens">
+            <classMoniker Id="23a6c692-f7de-44d4-9694-5914c6dbcbcf" LastKnownName="WindowCarHireDetails" />
+            <elementDefinition Id="ac60757d-cba2-4aad-850b-bbbf61d13918" />
+          </dependency>
+          <dependency Id="dbec6f5f-7bea-43a1-a9d1-11818ce12931" name="opens">
+            <classMoniker Id="e2a5429c-f69b-4114-b5af-3cab28be2cb5" LastKnownName="WindowBreakfastDetails" />
+            <elementDefinition Id="d45b491d-2996-4e69-954f-2d1810ae1735" />
+          </dependency>
+          <dependency Id="160c02f8-1791-4f5d-944b-54f60b056d03" name="opens">
+            <classMoniker Id="5df208db-c956-4741-9d60-cdc3e6682e16" LastKnownName="WindowEveningMealDetails" />
+            <elementDefinition Id="abdcd0e5-da62-406c-8453-c8c10772fe05" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="9cae4c3a-474c-4abd-b76d-6a091ae01b70" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
+            <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4912cf5f-57c5-413b-9755-c3caa3b4fb07" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="42bcf7b8-ab7a-4f53-be82-115faa751ea8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="425ef800-96eb-4478-8c8e-18253a891da8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6c3b694f-06c4-4fc2-974c-b1547bd2e549" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5463ea6e-970e-4565-b3a0-a519eeba2611" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="6df3655b-7de1-46ad-a222-98f8e26891a8" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="7c5682a0-583d-4a1f-b5b9-52784c51f112" />
@@ -3699,11 +4749,299 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="4f19dcde-40f0-40e5-a38c-2875ea5367be" name="WindowCreateEdit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d17262c5-c7ad-4fc7-b5ff-93a8a09c4a1e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0786c795-9c49-4510-871d-871a63b43498" name="modelFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="acdec734-b870-4922-8350-8a0e0fd0c4e4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2c2019b2-603d-4bdf-b1c8-4b437e7fe61c" name="btnSave_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a8a70da-5af4-42dd-9fd4-25454efa31b8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="275b3da3-f687-4f72-bfd4-b4316a0d8dda" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="425deef5-539f-416f-b1fa-5ac259e3f8c6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cb9ec6e9-6d42-46cc-b247-99dc16bc8c84" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="9419bfa5-8a55-4834-a356-d614cba4cb68" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="40f3d1c1-4627-4f3d-b698-b01967c192da" name="areAllValuesValid" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2defc854-ed56-4945-80ed-27817ea19af2" />
+          </operation>
+          <operation Id="309aa8a1-0d59-4167-846a-9fe6689ef49b" name="clearDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="83005e11-862a-46f7-ac57-3107d80e2092" />
+          </operation>
+          <operation Id="bdf67bcf-ccb6-44ee-b23b-a7f0ec041fa3" name="refreshDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="73102851-3020-497b-ba9a-5bcc990df3a0" />
+          </operation>
+          <operation Id="ecd38074-2b12-4487-96b0-2a60d836f031" name="refreshBookingDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="28d41cf8-05cb-43b5-8774-f5a95e2e287d" />
+          </operation>
+          <operation Id="6fb464be-ece3-41ad-a377-3867bd249ea6" name="refreshCustomerDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="96544da6-e1ce-463d-906b-006a2d7a085d" />
+          </operation>
+          <operation Id="97ed4624-2398-49c5-a94c-c95f0ce2cc96" name="btnCreateLoadCust_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="36ee1576-f6cf-4f12-9574-58226163cbb6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0e4159a2-502c-4224-8576-5a4c3adfcab9" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="1974ff16-4032-4ff1-89f6-3a870939022e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="01c07720-f5bc-4ecc-9b68-f73cb0382c09" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="f7888a82-e182-48c6-a6d6-7612f662b4e5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f134fc7b-dabe-4054-80aa-e74ff3ab6517" name="refreshGuestsDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e2610864-23e8-47be-bead-86dea8f183d9" />
+          </operation>
+          <operation Id="3f02d226-0efa-4f7f-9c07-0728f0328b0d" name="btnNewGuest_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="876690d3-32d3-4b85-a99e-0759725f5cee" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a2260402-1f01-4c3b-b283-6944f9b83545" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="5a4b9e13-99f3-4407-aaf2-6b9ae3c00d75" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="03a63edd-c827-497b-8761-b44c2424e42b" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="64b2d92e-ee2e-4a78-880d-25065dc36bf8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e0001dd5-4626-4c3e-a2c2-71eaad03f1cf" name="canAddGuest" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="33d9fb37-bed0-4a43-ab2f-df1eada2ae05" />
+          </operation>
+          <operation Id="1ff51d0b-0613-465d-84f0-151d1827ae8f" name="btnAddCustToGuests_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6a9eabd5-23cc-4292-982e-da3deec20c5a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="094a6b9a-ed5f-460b-bbfd-3167f3f41a9d" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="5241661e-8cb5-4544-9166-b66728edd63a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="019892aa-4329-4fff-a44d-be29974cfd36" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="4970f077-3311-48fe-8709-14f45bcf9779" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c4ec9386-f4e5-43c6-9e62-da252e578082" name="lstGuests_MouseDoubleClick" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4632ac24-6a55-4764-a00d-db53cf74d2d7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="255bc034-4125-4fd6-823e-9fecde2a9b9e" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="eef611fd-82d1-4c28-b920-867e4f2ac365" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5fe574c7-6a50-4fc3-b4b1-43d6a45989bd" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="3ddd5284-131d-4fba-b88c-6ca9abbda7ca" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7bbe119c-92ce-4966-b3a0-d1f5c2f022e0" name="btnDeleteGuest_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="56726492-92a4-4deb-974b-e5d89e040730" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f9240093-3ef9-4d05-8b16-4171d3be0f18" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="55f53446-d2ba-4c93-90eb-b308cc9960ee" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="45e74c09-8b9b-4303-b96c-5138548c8f25" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="bd8e7434-c000-41c5-825a-c94322ce648d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dc1e2983-fbb4-4c1c-8b8e-d0d6d94d0c75" name="refreshExtrasDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="24dca9f6-ae6c-4390-9d81-ae30338d3486" />
+          </operation>
+          <operation Id="fe8a50cc-efb9-4d19-a5aa-e70045a96f3e" name="btnAddBreakfast_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0f8b1d2a-93fe-45c6-90cf-a2c0c3a4cacb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e4365549-a6a1-490d-8e27-7bc084470581" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="8e7395a4-b40f-411f-8e77-20816adccc62" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="68bff41c-f35f-42b2-ae35-47171b7e1c53" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="82625d9d-fca4-4187-8d95-05a23e1e378f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bebbda2f-c5cc-454f-a9d1-539786a864ab" name="btnAddEveningMeal_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fae7e8ec-2de3-4220-8bf9-6fd182170b45" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9c4c9406-8661-418d-8335-d3931b13ea0b" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="a1c47b2b-2bea-4b3e-967e-f4da3d3c3b35" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="32f46aad-eb9b-4ed0-a765-e17b9d7984cb" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="4f05671a-532f-4c45-85d7-6e2e8a5b7325" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fd4f65dd-26fc-46da-8a55-dc95086c5cdf" name="btnAddCarHire_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="20f0a14a-c4fe-4b81-a371-e6c810e5b611" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cf85edab-7c67-4192-b0a1-d10988e18c97" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="45efcf58-cdc4-4c21-9697-311c1759d7bf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fb40afb0-1adf-4aa5-a7d3-f0dd4761a318" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="717e8257-974b-4f6d-af27-c1fe4e6198f0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a8cb4eab-58da-487f-9487-e94af60ed8c9" name="lstExtras_MouseDoubleClick" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cc93a7fd-d754-4a58-bf93-45b2168b19ba" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b7a28a7a-7a01-49e8-92fe-716e7f00331d" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="b2567a89-23ce-4c7b-8bcf-0ab9766bcc0d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="43a1abdd-e036-4e9d-9fe0-ba794e23567e" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="147544e8-e8b7-47b3-912b-fa574081630b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0226e178-d115-448d-bdd3-36484070ce68" name="btnExtraDelete_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4cd3432d-da1f-41c5-a316-f86f49f87445" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5702cc02-7e00-4499-9772-53fed6357033" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="e0b26e2c-8534-46ee-a6be-55fc947160f9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e371ad1c-9751-463f-a506-3ba66982467f" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="9d3ddab7-1211-49e2-80f3-4c48d72f9651" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="fc004e8f-3aa8-4b85-9d1f-ca824bf3d6b6" name="WindowCustomerDetails" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="a7aef215-ac6f-4c82-902e-70aed73a3041" />
+        <targetEnds>
+          <association Id="98086332-75b0-4141-867a-7af9f7524aa9" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
+            <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="05e014a9-5dec-4a16-92fb-318724217700" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bb5bdd97-5ebf-4424-a6a7-d016ad05b3c9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a9d1c0bf-1c80-4c78-80a8-75b8616e3b9e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6a15072e-9dfc-42b0-a40b-abd813e78631" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="86d52363-5d23-4277-bec8-ae2bed9dba6f" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="9fc6dd64-8c19-4709-a880-b60339223783" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="2faad001-d26f-4af1-8544-17ebf1c1bbdc" />
@@ -3712,31 +5050,231 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="9189d2a3-824b-4875-a13e-769ab4e0a171" name="WindowEveningMealDetails" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="22f091e9-b053-48b3-9bf9-9ecbcc95016c" />
-        <ownedAttributesInternal>
-          <property Id="8a9a3e92-aa9d-4d92-b9d5-d0c016a5263a" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="bf121b33-54a4-4af9-bede-0aacd00d5d38" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="4afb351b-dc23-4647-a565-cd06794eaddd" name="WindowCustomerDetails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bd33dcb4-621d-4509-8664-c91c987befa8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9eb69d4b-4ddc-433b-ab9b-9168bb23d168" name="modelFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="daad8e51-9ce3-454f-b6ea-3e4227de3451" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6b677861-4b3b-4695-93ae-989aee8f411b" name="refreshDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3ed68e75-93e1-49ae-9b2c-b7ed696b6db3" />
+          </operation>
+          <operation Id="64c8e18f-e1f2-485a-a969-ce026c9b0f79" name="refreshCustDetailDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a223bf84-8984-40ae-a1a7-fef913e0234c" />
+          </operation>
+          <operation Id="907a2670-3d65-4bbd-a741-834a3233f296" name="clearDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec5a5f28-dd6d-4afe-82f3-6fd6618b405f" />
+          </operation>
+          <operation Id="8ac34942-c420-4cea-a8a0-38fa21945ecd" name="clearCustomerDetails" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="340c2b5c-a3ba-4459-98df-cd715f9ff3b1" />
+          </operation>
+          <operation Id="a13ea6b6-4004-4d86-8ab5-8ca7bde972f0" name="lstCustomers_MouseDoubleClick" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dd5bd9ab-e875-4ff8-a0fb-e8d17f5b4ef6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="77fc8bde-156d-40e5-a419-93d36a6ab98c" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="c7abae4b-2005-4220-835b-cb39c8b35435" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1b4ad4d6-eec2-4f80-9d50-a48a9d97840c" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="44605c6c-0940-4f0c-905e-3986c37b04c0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5bc8f9cf-6285-4f95-abcf-af31258af17d" name="btnSave_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bd488a6f-a63d-4be9-8154-4e2c47fe37a3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8b38f4a1-2ad2-4c37-a05d-fb53970aab04" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="28c35c92-0933-4deb-94b5-82f5d8213b7c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e0640e24-b872-43b6-ad77-b7e922fa4a33" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="0be1c2cf-dd13-4e32-bce1-198ec0504059" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c94ec975-e661-441f-9e35-d2a5a36cc66c" name="areAllValuesValid" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5ee1d5de-2247-4005-b32e-cf67ee87c3d6" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="3567f739-a244-4efa-bac9-32bb33ef6699" name="WindowGuestDetails" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="119e4d30-68d4-4fb9-ba6f-91660e1b3ddc" />
+        <targetEnds>
+          <association Id="bebb262d-040b-4aff-8da1-91777fbded3a" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
+            <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c7465836-0328-4247-9752-a2ade8d01dbe" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e308afa6-a8b3-4c27-a80f-c6f6cab944e6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="89a1fb50-cff3-4634-b01b-bdc59fa9845e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3e27a220-87dc-48f4-a675-315ce32ddb5e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="23133207-3a16-4efb-a81d-965af1240c4b" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="07860a25-78c9-4695-bcda-7256c5de47df" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="12686bdb-cba0-4272-84cb-166f6649465d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+            </type_NamedElement>
+          </property>
+          <property Id="bb3e7bfe-8ecb-4c44-8177-e2977eede52d" name="isCustomer" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a5cb53d6-ef11-40b8-9d98-bd57e2069f49" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="8ee74dc6-102a-4459-95db-3c7bb1aa1eae" name="guestIndex" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="274a67d3-6e1e-47e9-9917-f862ca54a98d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d6d57586-c599-4aaf-be1b-d1e5a1788805" name="WindowGuestDetails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="767c2655-ddf3-46a6-8a7f-2b0fa10033e5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="060c1836-502f-41d6-8a74-bbe11746f3ea" name="modelFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="3150fe30-3f16-46c6-83a5-8f72185659fc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="407eff11-8ca4-4191-868a-501733023055" name="isCustomer" direction="In" isUnique="false">
+                  <elementDefinition Id="92c987a4-c3ab-4698-add6-9b6cecae3381" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="450b7f5b-0378-4048-8dc7-4931a456b7c7" name="WindowGuestDetails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="42aa392e-d0aa-4224-9a5a-df5606723b94" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3c1f7f68-caf9-4102-82ca-b0385bc001f3" name="modelFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="d0bdaacc-40f2-44a2-8b21-bf22c331daf6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b3ea211b-b23e-405d-87ed-ed47ba269342" name="isCustomer" direction="In" isUnique="false">
+                  <elementDefinition Id="f8dff61b-7795-49e6-b508-fcaffdc2dcab" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f716157d-e945-4dbb-b39d-d07cb9eb1442" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="60ed3532-d9b7-4a59-8ed5-7c8566613fa8" name="index" direction="In" isUnique="false">
+                  <elementDefinition Id="88e27199-c3cc-4984-9406-81b1a1770f41" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="93fef2b4-8bac-47cb-a385-ebf3f327509b" name="hideNameFields" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="56b11b15-bd2d-4024-84e3-bc332beef322" />
+          </operation>
+          <operation Id="5d74dc84-96c6-493d-9eec-a78416c610cc" name="btnSaveGuest_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0315419-cc4c-4642-b734-a3f226faddc6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b55b068f-8a91-4fd7-8b3f-32f0be61bd4c" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="75854e03-5bd3-4894-a213-5f93d7596a6f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2c335c25-ff1a-480b-a415-171fc2e931fe" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="4ce3cd28-6838-449a-882f-e3c026ec1d4a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="acca0029-83c7-4ab5-845e-541558e4211a" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e464a13d-d72e-4942-8025-240402817e76" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7c25887f-bfbc-4557-82e3-09d965b58714" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="4cb63dd8-509b-4f00-9a89-d92c0dca2ae7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bfb54c94-97eb-4371-8047-bdf1158b2b88" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="84fa95cb-efc9-41bf-abf7-6a977027c806" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8eb515c0-6c69-40f4-bbab-869748b2fd43" name="updateGuest" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e1e1899f-de5c-45f6-9019-a9f7d7fc8905" />
+          </operation>
+          <operation Id="66625d9c-680b-4b1b-951e-15a9d63058a4" name="createGuest" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bfa17d4a-d4ef-498d-9874-d6ea2ef5b389" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="f7bdf1f0-e8ba-4738-a935-3af29193016c" name="WindowInvoice" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="f7bdf1f0-e8ba-4738-a935-3af29193016c" name="WindowLoadBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="65ac7099-dbc8-430f-8fbc-254256507d77" />
         <targetEnds>
-          <association Id="1d3792f7-b9ee-4c33-8047-49e7b123ab6f" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="1d3792f7-b9ee-4c33-8047-49e7b123ab6f" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -3761,27 +5299,75 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1f5eadf4-cd3f-4e07-936b-7b94687fc3db" name="WindowLoadBooking" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2d974559-d4aa-49ea-923e-46ca3f632180" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5d25c11c-240e-402c-ba5c-c3be805decec" name="modelFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="804f1f23-a733-4151-a04f-41dc977fcace" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f5ec4f5c-57c6-49e1-8575-a188347fdf69" name="refreshDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1b2e6dca-5a4b-4c2f-869a-73b09f76d4a2" />
+          </operation>
+          <operation Id="cb67b11d-f64e-4b6f-b209-46ff0b44330f" name="refreshBookDetailDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="139d7e43-5d38-4641-8e71-ca8076371745" />
+          </operation>
+          <operation Id="bfa36cad-4ad6-4e49-a88b-d3fba30d79a9" name="clearDisplay" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4fcff873-a2bd-4336-b1d7-45498456466a" />
+          </operation>
+          <operation Id="2f3c41c7-4acc-476f-a865-8c72afabbb1a" name="clearBookingDetails" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8b5f76ca-251e-4333-a7b1-66b992e381ef" />
+          </operation>
+          <operation Id="ee1b04a7-0c2d-4148-8a39-b3eb645a3abb" name="lstBookings_MouseDoubleClick" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f3078817-bcfc-4f0b-8956-e86c533827fe" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e0033b08-8597-43b8-99d5-d91856d640d0" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="9d7102aa-e27c-47e1-bdf9-534ae8f157be" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2638ad18-15ae-40d9-acec-8956b44397b9" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e887338c-cd4d-4a54-8ca3-ed8ddac980ab" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="ecc3d3c5-e55c-4da2-8353-44821297354c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="db94ff8d-aae6-46a3-ad7d-466b711e7984" name="WindowLoadBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="db94ff8d-aae6-46a3-ad7d-466b711e7984" name="WindowInvoice" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="8a706407-63ab-4120-9ca3-c9874fb52af3" />
         <targetEnds>
-          <association Id="f0da3356-c19d-4705-958d-d8c411e6ed51" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+          <association Id="11334b9b-6f66-460c-a10e-7b0b18efd574" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
             <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="f8678fc2-92b5-44f6-927d-ca9b0389f527" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="2c9928db-9590-43a4-8edd-09489b619038" />
+                <memberEnd Id="2378b067-2758-4101-9906-fe8d3c944783" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="74f96f57-92a8-4357-8c70-4d187263228a" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="385e22af-d939-4341-932d-6a16395551a9" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="36aa5a74-b710-4f9a-b332-aabcd96f6bd7" />
+                <memberEnd Id="abb1febd-0aa5-4d70-94c2-fc63cf579015" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="73d70f6d-e01d-4c48-bb5a-2c269a77278e" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="f5b2c4f9-4fe5-4b02-8981-248534d5a894" />
+            <elementDefinition Id="a234c2a3-d293-4798-82b2-48c0d62e87b0" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -3792,6 +5378,87 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1eaa86fd-355a-4d55-adc0-05ddee02d2f7" name="WindowInvoice" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5744749c-eb42-4e28-a47d-25fefbfbe237" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3c9a5d0b-98d3-4d9d-927f-dfd8806b086a" name="mFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="b3468aef-4314-45f5-828f-48b7630eea31" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1599e508-388b-4ce4-9fd2-9eebf83b268f" name="printDetails" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f1b641b8-a732-452c-a9de-f2b1dbee5e7d" />
+          </operation>
+          <operation Id="b3421810-584d-4a5c-8d3a-4619c4314b2e" name="printBookingBreakdown" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1ea2b3ba-d597-4a59-b16c-3b1b4f580022" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0b8fc206-81f6-4391-acc9-2cc42c934733" name="nbNights" direction="In" isUnique="false">
+                  <elementDefinition Id="88760682-c4bd-4889-be20-c1ec9ec4254f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="59c3a949-3b80-452e-8bc2-d02f1d18e227" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1c85803e-1736-4277-b8f2-50b746b2cbc6" name="costPerNight" direction="In" isUnique="false">
+                  <elementDefinition Id="3f7f20f2-73bc-4946-886e-8ae1bde9ac97" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d15cfc9a-7198-400d-b3f2-a15392847af4" name="printExtrasBreakdown" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="94ccdf44-e954-4146-9667-28a1e12bb8e1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8da58540-9f58-4d26-940b-093106fd4d49" name="breakfastCost" direction="In" isUnique="false">
+                  <elementDefinition Id="7807fcea-d011-4e1b-a898-97f186f4ce90" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3098cb44-e3a5-480f-8a55-ddec60bed68d" name="eveningMealCost" direction="In" isUnique="false">
+                  <elementDefinition Id="2fd29035-b0cd-44bd-b945-1bd191291f11" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f628a239-4900-4202-a4f5-7c3337416779" name="carHireCost" direction="In" isUnique="false">
+                  <elementDefinition Id="98c1947f-8b84-44eb-9de0-facf3883f679" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c0b1d69a-53da-44f8-a54d-951587b8871f" name="printTotal" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="24b7028a-ece4-4ebf-b5e0-9a0b3d604ff7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f8f742af-a242-443d-b759-808b57935994" name="grandTotal" direction="In" isUnique="false">
+                  <elementDefinition Id="917d0967-52a1-41fe-b145-9613d764515b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c679a1a8-1ba3-43f3-b09d-e7cc73504cf3" LastKnownName="float" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -3874,6 +5541,251 @@
         </ownedLiterals>
       </enumeration>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="48199ae6-a8dc-436b-84e6-370dbdf27e28" name="BookingFactory" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingFactory">
+        <elementDefinition Id="6d4326c9-0228-4787-8724-7e76be7ed98b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1149d345-0ea6-4149-a7e4-9cb4d9ab197a" name="DataPersistenceFacade" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::DataPersistenceFacade">
+        <elementDefinition Id="e7aadee0-acfb-445f-a9e4-eb899d11f6a8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0f25190f-b8c9-449a-90a0-cff952829c81" name="PersonFactory" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::PersonFactory">
+        <elementDefinition Id="c2692cb2-229b-4340-b1ce-1de0ee842d42" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bf270441-0da2-48a3-8926-57bb655bef2c" name="List&lt;BookingDecorator&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;BookingDecorator&gt;">
+        <elementDefinition Id="99c32f3a-92a4-420e-85c2-23ca307b5494" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="64fe4888-ab43-4b89-897a-95ca6ec1710b" name="RoutedEventArgs" isAbstract="false" isLeaf="false" cachedFullName="RoutedEventArgs">
+        <elementDefinition Id="f6e32346-fb36-4cd6-92ff-84d7d7df5412" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cf904190-479b-4045-827f-67f6a7bd801b" name="ModelFacade" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::ModelFacade">
+        <elementDefinition Id="66799a3d-1356-4cbf-bafb-05bd2f8bf045" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d8de3191-4585-4595-a42d-4dc5580f4faa" name="BookingDecorator" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingDecorator">
+        <elementDefinition Id="bef20076-aaff-4624-9ada-e54585bd3641" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2aac8698-70d2-40d3-b437-21a4b352bd72" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+        <elementDefinition Id="95929df9-b440-41aa-8520-b2bd0120395c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="996fc52d-b159-478c-88dc-41b756854584" name="RoutedEventArgs" isAbstract="false" isLeaf="false" cachedFullName="RoutedEventArgs">
+        <elementDefinition Id="f6e32346-fb36-4cd6-92ff-84d7d7df5412" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5df208db-c956-4741-9d60-cdc3e6682e16" name="WindowEveningMealDetails" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e4e4ed62-2d49-4cde-85d9-6a8daf9be0a6" />
+        <targetEnds>
+          <association Id="e732bf9d-4a04-4bd0-93b2-bc2fd3bcc726" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
+            <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="453bab76-e381-4a7f-adab-47db1be4b829" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="34442736-13cd-4706-b177-cbcb326bd93d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="12d27c99-001c-4cae-8193-2d19d0b64ccb" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f317fd77-fb77-41b5-a9d8-e7524271c233" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a5c09593-7bfd-497f-aeb3-75ef8a0e0935" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="547c4e6f-d0c4-4977-847b-ca303fcfd526" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8f052d22-a5f4-4766-b09c-76de96a020b8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="cf904190-479b-4045-827f-67f6a7bd801b" LastKnownName="ModelFacade" />
+            </type_NamedElement>
+          </property>
+          <property Id="2f4f799f-7b9a-4d38-a6e5-6d41160e2255" name="eveningMeal" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8b6947b8-fc99-4c6a-95fc-56cbdc3cc78b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9f30b031-4122-4187-a030-a2680d01ab56" LastKnownName="BookingDecorator" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1e85185d-434d-44d0-bc16-2ea48199a019" name="WindowEveningMealDetails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="87b2806e-93da-4c1b-8b61-28671c6216ac" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f590190a-7e4a-4843-9946-4b8f78b6e79d" name="mFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="5871f7a9-04d8-418d-8ee9-3569dac58d17" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996e2d8b-7215-485a-be13-1cc6600ee6ba" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1e16aa0f-5293-4b78-bb68-2e694225e1d1" name="instance" direction="In" isUnique="false">
+                  <elementDefinition Id="d49aaa9a-02be-452f-9081-9a2766fb264f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d8de3191-4585-4595-a42d-4dc5580f4faa" LastKnownName="BookingDecorator" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c4ca06a7-cc8c-4275-a0ce-c2dccd656ce9" name="btnSave_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="330dc4ca-e47e-4e64-8bf1-f793955fcfe4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="03baa3a1-7586-4a69-af4a-dff4dd669ab0" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="a644ec43-6efb-4ac4-bc14-9739911b2d0c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2aac8698-70d2-40d3-b437-21a4b352bd72" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="903f916c-91cf-48e1-97c7-ce6ff87aa51e" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="0edeadda-e08b-4a69-a89d-b5cb769e27c8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="996fc52d-b159-478c-88dc-41b756854584" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9f30b031-4122-4187-a030-a2680d01ab56" name="BookingDecorator" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingDecorator">
+        <elementDefinition Id="bef20076-aaff-4624-9ada-e54585bd3641" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="72057749-0d8c-4c53-81b9-6f4a703f73af" name="ModelFacade" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::ModelFacade">
+        <elementDefinition Id="66799a3d-1356-4cbf-bafb-05bd2f8bf045" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7293ade1-0753-484c-bff1-e2165815fc9f" name="ModelFacade" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::ModelFacade">
+        <elementDefinition Id="66799a3d-1356-4cbf-bafb-05bd2f8bf045" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ceac70dc-7682-4404-9734-3884b8990144" name="BookingDecorator" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingDecorator">
+        <elementDefinition Id="bef20076-aaff-4624-9ada-e54585bd3641" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="70758e26-586f-4581-84a9-640fcbf96656" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+        <elementDefinition Id="95929df9-b440-41aa-8520-b2bd0120395c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4bc98e83-7c9d-4315-b6c3-b02aad39c5fb" name="RoutedEventArgs" isAbstract="false" isLeaf="false" cachedFullName="RoutedEventArgs">
+        <elementDefinition Id="f6e32346-fb36-4cd6-92ff-84d7d7df5412" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="23a6c692-f7de-44d4-9694-5914c6dbcbcf" name="WindowCarHireDetails" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d662b4a1-dae6-48f9-a30e-95c6a0f01055" />
+        <targetEnds>
+          <association Id="a7a2e968-4f1c-496e-93c1-6dd3a02313ab" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" name="points to" isAbstract="false">
+            <classMoniker Id="a04c05b3-5f92-40ee-a307-3ae7c994c705" LastKnownName="ModelFacade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5e8c4964-a47a-4317-82b4-098dae190000" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c5ea198a-1492-4001-8fa8-2260bd7fae3c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6dfc15f5-cd6e-4439-9479-1a40f1da4cde" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="00eb666c-bff3-45ac-95c3-d6114728abe4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d6cbbe20-0135-42a3-aa99-a93b67d7fca5" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="58721827-6d08-46d9-882b-03b913ba3b9c" name="mFacade" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d894aa2f-7448-40ba-8471-6b32cd7f302e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="72057749-0d8c-4c53-81b9-6f4a703f73af" LastKnownName="ModelFacade" />
+            </type_NamedElement>
+          </property>
+          <property Id="f0407e6f-e4f8-4d99-92cf-89ad97e95b64" name="carHire" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0072715f-7552-4810-a680-440477a2f5fd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5215cad7-5c8d-426f-a218-51bf782f4223" LastKnownName="BookingDecorator" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3b3e1655-d90d-49bb-8be0-2ef385b5ab35" name="WindowCarHireDetails" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="339d2074-c568-4b7c-a1ae-67911b1b7a8f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f1213746-5ea0-4d9b-bd5a-7723b434854e" name="mFacade" direction="In" isUnique="false">
+                  <elementDefinition Id="8af4052c-f63d-4fb2-a515-406ca125e2ab" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7293ade1-0753-484c-bff1-e2165815fc9f" LastKnownName="ModelFacade" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="701e50dd-3975-4c7c-a83e-2d6cc54cdaee" name="instance" direction="In" isUnique="false">
+                  <elementDefinition Id="b9c8a183-0c24-4a46-b1fe-cb91469ea3c9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ceac70dc-7682-4404-9734-3884b8990144" LastKnownName="BookingDecorator" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6a75e14f-cc22-4cb1-b779-f70774cffc25" name="btnSave_Click" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="74cc34c1-179f-4d30-9077-d85c457f8769" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6630bb8d-78ea-428e-a576-bbd5cc28e8f2" name="sender" direction="In" isUnique="false">
+                  <elementDefinition Id="f351ac70-af79-4b8a-bb71-8e3981bd68b0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="70758e26-586f-4581-84a9-640fcbf96656" LastKnownName="object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d1662648-8b25-4f5a-9937-8b63b7df8c3b" name="e" direction="In" isUnique="false">
+                  <elementDefinition Id="0be86827-eb63-497d-92db-5b357fac4e3c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4bc98e83-7c9d-4315-b6c3-b02aad39c5fb" LastKnownName="RoutedEventArgs" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="49ce26fb-9015-4b50-b2fe-0efe3c2e6749" name="areAllValuesValid" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="53da8ab8-b40e-4b62-b964-5401b4ee5f10" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5215cad7-5c8d-426f-a218-51bf782f4223" name="BookingDecorator" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::BookingDecorator">
+        <elementDefinition Id="bef20076-aaff-4624-9ada-e54585bd3641" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="be28578b-2f00-4c96-af05-4f7c7418fac8" name="ModelingProject">
     <elementDefinition Id="270a8040-b6a2-4b2d-8b63-ec89a017e2b8" />
